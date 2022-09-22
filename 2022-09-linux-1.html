@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MWJX8WCGVQ');
+</script>
+
+  <head>
+            <meta charset="utf-8">
+        <!-- Site Meta Data -->
+        <title>Cooking linux the right way: choosing the distribution</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Konstantin Ovchinnikov">
+
+        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="The Real Changes">
+        <meta itemprop="image" content="/theme/images/logo3_small.png">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+
+        <!-- Feed Meta Data -->
+            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="The Real Changes ATOM Feed"/>
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="">
+        <meta name="twitter:image" content="">
+
+
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:url" content="./2022-09-linux-1.html">
+    <meta name="twitter:title" content="The Real Changes ~ Cooking linux the right way: choosing the distribution">
+    <meta name="twitter:description" content="Someone has to write the truth on how to use Linux">
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:title" content="The Real Changes ~ Cooking linux the right way: choosing the distribution"/>
+    <meta property="og:description" content="Someone has to write the truth on how to use Linux"/>
+    <meta property="og:image" content=""/>
+</head>
+
+<body>
+<!-- Sidebar -->
+<aside>
+    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
+        <p>Konstantin Ovchinnikov's personal page</p>
+		<p>
+        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
+    <!-- Site search -->
+<script async src="https://cse.google.com/cse.js?cx=83e5897c79a72ea3d"></script>
+<div class="gcse-search"></div>
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
+                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+
+
+        </ul>
+    </nav>
+
+    <p class="social">
+                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
+                        src="./theme/images/icons/github.png"></a>
+            <a href="./feeds/all.atom.xml" rel="alternate">
+                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
+    </p>
+
+
+
+</aside>
+
+<!-- Content -->
+<article>
+
+    <section id="content">
+        <article>
+<!--End mc_embed_signup-->
+
+            <h2 class="post_title post_detail"><a href="./2022-09-linux-1.html" rel="bookmark" title="Permalink to Cooking linux the right way: choosing the distribution">Cooking linux the right way: choosing the distribution</a></h2>
+            <div class="entry-content blog-post">
+                <h2>Preface</h2>
+<p>Linux is great for a server, but it's still a challenge for a desktop. The server requires stability and minimal resource usage, but does anybody know what the desktop requires? I used Linux at home for 20 years and I used it at work for several months, so in my viewpoint the following is important:</p>
+<ul>
+<li>Hardware support; you <strong>can</strong> know beforehand, whether the hardware is supported and choose the compatible hardware; so, it's better to have a wider choice!</li>
+<li>Software availability: you <strong>will not know</strong> beforehand, what software you need for the desktop;</li>
+<li>Known issues and solutions database aka community support and documentation availability.</li>
+</ul>
+<p>If you value your time and prefer to get the job done (whether it's a hobby or a payable job) vs. fixing and tuning, according to my experience deb or rpm package formats are preferable. Hardware manufacturers distribute drivers and accompanying software in these formats, and commercial software manufacturers also prefer them. Some software is available in deb and not available in rpm and vice versa, but on average you can find a package you need in these two formats. Arch and Manjaro users suffer here, but you are welcome to install these in a virtual environment and play as much as you like.</p>
+<p>The software availability issue is <em>almost</em> fixed with the help of Flatpak and <a href="https://flathub.org/">Flathub</a>: you can have fresh software on any distribution now, but for a limited number of programs. </p>
+<h2>The menu</h2>
+<p>Regarding the list of distributions I'd list the following:</p>
+<table>
+<thead>
+<tr>
+<th>Package format</th>
+<th>Stable</th>
+<th>Unstable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rpm</td>
+<td><a href="https://rockylinux.org/">Rocky Linux</a> (CentOS)</td>
+<td><a href="https://getfedora.org/">Fedora</a></td>
+</tr>
+<tr>
+<td>deb</td>
+<td><a href="https://www.debian.org/">Debian</a></td>
+<td><a href="https://ubuntu.com/">Ubuntu</a></td>
+</tr>
+</tbody>
+</table>
+<p>I tried 3 of 4: Fedora as my main system at home, Ubuntu at work, and Debian for a few months at home. But first, a few words concering the 'stability'. Yes, it's about the number of bugs, which lead to system faults and excessive resource consumption, but 'stable' distributions are also less user-friendly. Let's go through the alternatives.</p>
+<h2>Rocky Linux</h2>
+<p>It's a successor for CentOS, which was very popular among scientists because scientists need to get the job done, they also need stability and they need it cheap. I can't say anything bad about it, maybe it doesn't have the latest software like Gnome, which is important for desktop users. Debian <a href="https://wiki.debian.org/DontBreakDebian#Don.27t_suffer_from_Shiny_New_Stuff_Syndrome">warns us</a>:</p>
+<blockquote>
+<p>Don't suffer from Shiny New Stuff Syndrome</p>
+</blockquote>
+<p>I can fully admit that when you need to just get the job done, new shiny animations matter less than stability. With Rocky Linux, you can also fully benefit from <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/">Red Hat Linux documentation</a>.</p>
+<p>I just don't need this stability at home, so why not be on the edge with Fedora?</p>
+<h2>Debian</h2>
+<p>Debian is great for servers, I tried it at home and it lacks hardware support and some essential desktop features, like VPN support in Network Manager. It requires more effort in cases that require no effort in Fedora and Ubuntu. When my hard disk died, I decided to return to Fedora. I liked Debian for stability and low resource usage, but small desktop issues are disturbing and hard to fix. I mean suspend mode works not so well, wi-fi needs time to connect after suspend.</p>
+<p>In terms of hardware support, some hardware manufacturers tend to have old software, so the software for my MFD worked in Debian, although it didn't work in Ubuntu and Fedora.</p>
+<p>My idea was to combine Debian stability with the latest software versions from Flatpak, but for the desktop that wasn't enough, regretfully. You are trying to do desktop things on a server.</p>
+<h2>Ubuntu</h2>
+<p>Ubuntu works, but it seems that it was designed by marketing managers instead of engineers. It's heavily patched and these patches bring more bugs: more resource usage, less speed, and stability. It feels like windows if you missed it. I didn't get it, I tried to fix it by installing 'vanilla' software versions. Yes, it worked, but I didn't like it. For me, it seems that some solutions in Ubuntu are dead: Snap and Unity. At the end of the day, Ubuntu takes solutions from Fedora: Gnome, pipewire audio system. With Ubuntu, you just wait for technologies to migrate from Fedora. Still, some bugs are fixed and Ubuntu generally is more stable, than Fedora.</p>
+<p>Besides, I consider the deb package format outdated, I had to fix corrupted dependencies several times.</p>
+<h2>Fedora</h2>
+<p>Fedora's way to fix things is like "let's invent another system". We don't like pulseaudio, let's make pipewire. We don't like deb, let's make rpm. We don't like yum, let's make dnf. It works in major versions, but it brings lots of bugs in the beginning. The kernel is so fresh, that it breaks hardware compatibility: during three years I had two severe bugs, last time wi-fi stopped working. And this high pace of progress is not going to stop. Too fresh software? We have a new answer: <a href="https://silverblue.fedoraproject.org/">immutable linux</a>.</p>
+<p>Regarding community it's smaller than Ubuntu's one, so sometimes you have to look for answers on Ubuntu (or Arch) wiki and forums.</p>
+<h2>Conclusion</h2>
+<p>It's hard to recommend anything from the list, Fedora requires less effort after installation and works well for me. If you read this, it means that my wi-fi card worked. :) We'll look at a minimal software list for any distribution and apps to unleash the true Linux power in the next episodes, stay tuned!</p>
+            </div>
+            <div class="post_list">
+                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
+                <span class="post_date">Thu 15 September 2022</span>
+                <div><span>Tags: </span>
+                            <span><a href="./tag/linux.html">#linux </a></span>
+                            <span><a href="./tag/productivity.html">#productivity </a></span>
+                </div>
+            </div>
+                <div class="comments">
+                    <h2>Comments</h2>
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript">
+                        var disqus_identifier = "2022-09-linux-1.html";
+                        (function () {
+                            var dsq = document.createElement('script');
+                            dsq.type = 'text/javascript';
+                            dsq.async = true;
+                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] ||
+                            document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+                </div>
+        </article>
+    </section>
+</article>
+
+<!-- Footer -->
+    <footer>
+        <p>
+	  Made with <a href="http://getpelican.com/">Pelican</a>, 
+      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
+        </p>
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+<head>
+            <meta charset="utf-8">
+        <!-- Site Meta Data -->
+        <title>Germany Transport System</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Konstantin Ovchinnikov">
+
+        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="The Real Changes">
+        <meta itemprop="image" content="/theme/images/logo3_small.png">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+
+        <!-- Feed Meta Data -->
+            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="The Real Changes ATOM Feed"/>
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="">
+        <meta name="twitter:image" content="">
+
+
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:url" content="./2022-09-germany-transport.html">
+    <meta name="twitter:title" content="The Real Changes ~ Germany Transport System">
+    <meta name="twitter:description" content="Hacking through transport associations and Deutche Bahn">
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:title" content="The Real Changes ~ Germany Transport System"/>
+    <meta property="og:description" content="Hacking through transport associations and Deutche Bahn"/>
+    <meta property="og:image" content=""/>
+</head>
+
+<body>
+<!-- Sidebar -->
+<aside>
+    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
+        <p>Konstantin Ovchinnikov's personal page</p>
+		<p>
+        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
+    <!-- Site search -->
+<script async src="https://cse.google.com/cse.js?cx=83e5897c79a72ea3d"></script>
+<div class="gcse-search"></div>
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
+                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+
+
+        </ul>
+    </nav>
+
+    <p class="social">
+                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
+                        src="./theme/images/icons/github.png"></a>
+            <a href="./feeds/all.atom.xml" rel="alternate">
+                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
+    </p>
+
+
+
+</aside>
+
+<!-- Content -->
+<article>
+
+    <section id="content">
+        <article>
+<!--End mc_embed_signup-->
+
+            <h2 class="post_title post_detail"><a href="./2022-09-germany-transport.html" rel="bookmark" title="Permalink to Germany Transport System">Germany Transport System</a></h2>
+            <div class="entry-content blog-post">
+                <p>German trains, buses and routes system is rather specific:</p>
+<ul>
+<li>Trains (Deutsche Bahn, further DB) have complicated tariffs</li>
+<li>Buses consist of independent associations, each of them has it's own prices and conditions</li>
+<li>Without mobile apps, which update routes in real time, it's hard to get somewhere</li>
+</ul>
+<p>So, let's analyze these issues:</p>
+<ol>
+<li>How the transport system works in Germany</li>
+<li>How to find prices for buses in particular region</li>
+<li>What mobile apps to use</li>
+</ol>
+<p>I spent 3 hours of my own time, it was quite amusing.</p>
+<h2>How the transport system works in Germany</h2>
+<p>It's quite clear with the railways: there are suburban trains and fast intercity trains (IC and others). Faster trains cost more, suburban trains are cheaper. For example, DB app has a setting "show our best prices" &ndash; most likely, it will use suburban trains and buses (the price of buses is not counted in DB apps, by the way).</p>
+<p>I found only <a href="https://en.wikipedia.org/wiki/List_of_German_transport_associations">one picture</a> with the bus associations, which only <strong>approximately</strong> shows the location of each association.</p>
+<p>There are zones inside each transport association, ticket price will depend on number of zones you cross: the further you get = the more you pay. If you buy ticket for 5 zones, but ride 6, it's a violation. Besides, each association has travel cards for a week and for a month. The tickets should be sold in machines and in the buses (from the driver), but in the worst case you can buy tickets only in the buses and only for cash. Advanced associations have their own mobile apps, less advanced have a website with tariffs only.</p>
+<p>There was an experiment at the summer of 2022: a travel card for all suburban trains and buses for 9 euro. It made the rides cheaper, more than that, it made easier to plan the trip and calculate its cost. The experiment is over, it will not be continued, travel cards are introduced in some regions.</p>
+<h2>How to find prices for buses in particular region</h2>
+<p>To learn how to buy a ticket, how much the tickets cost, what tickets are available, you need to find a particular transport association for a region. The algorithm is (approximately) the following:</p>
+<ol>
+<li>Find the name of association on the bus or on the station, often the title is large.</li>
+<li>Find to which region the town belongs to and find the name of association by the name of the region, like <a href="https://www.bus-clp.de">VGC</a> for Cloppenburg.</li>
+<li>If it didn't help, define the association using <a href="https://en.wikipedia.org/wiki/List_of_German_transport_associations">the scheme</a>, then visit its map and locate your town there. Thus you make sure, that your town belongs to this transport association.</li>
+</ol>
+<p>After that you can locate the website of the transport association and find all the necessary information there.</p>
+<h2>What mobile apps to use</h2>
+<p>I'll provide links to the two apps, which were sufficient for me (for Android):</p>
+<ul>
+<li><a href="https://play.google.com/store/search?q=offi&amp;c=apps">Offi</a></li>
+<li><a href="https://play.google.com/store/search?q=db%20navigator&amp;c=apps">DB Navigator</a></li>
+</ul>
+<p>After that we look at the app / website of a particular transport association, for example, <a href="https://play.google.com/store/apps/details?id=de.hafas.android.vgv">Moobil+</a> to order a minibus in VGC zone.</p>
+<p>DB Navigator is great, except for two issues:</p>
+<ol>
+<li>It plans the routes for a different time of the day, but doesn't show different routes visually on the time scale.</li>
+<li>It doesn't show local minibuses.</li>
+</ol>
+<p>Offi fixes these two issues, and besides it's updated in real time (actual movement of a particular train). Some more optimized route variants may exist regarding the price and the trip duration, Google Maps may show them or you can ask locals. :)</p>
+<p>DB Navigator app is great, but to buy tickets you need to register... on another website. Once you've done it and have connected a payment card, you can buy tickets easily and view the trains on the route online. It's the basic level, after that you can buy discount cards and travel cards. For example, there is a ticket "any 10 days within 30 days" or a travel card for a month, but you need to search for two points. There were no offers for points I looked up for.</p>
+<p>Without one of this apps it's difficult to get somewhere. For example, trains are delayed, so instead of a train at 15:55 another train comes, you take it and go in the opposite direction.</p>
+<p>DB is worthy of a separate article, and it has some tricks:</p>
+<ul>
+<li>You enter several persons, and it shows really beneficial offers for a particular route</li>
+<li>You can by tickets, which are unavailable in the machines on a railway station</li>
+<li>In my experience, it's better to buy beforehand, it can be almost twice cheaper</li>
+</ul>
+<p>Besides, machines on a railway station don't switch to English, but the app does.</p>
+<p>Please ask your questions, I have enough time for practice.</p>
+            </div>
+            <div class="post_list">
+                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
+                <span class="post_date">Sun 04 September 2022</span>
+                <div><span>Tags: </span>
+                            <span><a href="./tag/germany.html">#Germany </a></span>
+                </div>
+            </div>
+        </article>
+    </section>
+</article>
+
+<!-- Footer -->
+    <footer>
+        <p>
+	  Made with <a href="http://getpelican.com/">Pelican</a>, 
+      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
+        </p>
+    </footer>
+
+
+</body>
+</html>

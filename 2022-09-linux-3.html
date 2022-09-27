@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MWJX8WCGVQ');
+</script>
+
+  <head>
+            <meta charset="utf-8">
+        <!-- Site Meta Data -->
+        <title>Cooking Linux the right way: Gnome setup</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Konstantin Ovchinnikov">
+
+        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="The Real Changes">
+        <meta itemprop="image" content="/theme/images/logo3_small.png">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+
+        <!-- Feed Meta Data -->
+            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="The Real Changes ATOM Feed"/>
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="">
+        <meta name="twitter:image" content="">
+
+
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:url" content="./2022-09-linux-3.html">
+    <meta name="twitter:title" content="The Real Changes ~ Cooking Linux the right way: Gnome setup">
+    <meta name="twitter:description" content="Revealing Gnome potential">
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:title" content="The Real Changes ~ Cooking Linux the right way: Gnome setup"/>
+    <meta property="og:description" content="Revealing Gnome potential"/>
+    <meta property="og:image" content=""/>
+</head>
+
+<body>
+<!-- Sidebar -->
+<aside>
+    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
+        <p>Konstantin Ovchinnikov's personal page</p>
+		<p>
+        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
+    <!-- Site search -->
+<script async src="https://cse.google.com/cse.js?cx=75184ca4aae714aae">
+</script>
+<div class="gcse-search"></div>
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
+                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+
+
+        </ul>
+    </nav>
+
+    <p class="social">
+                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
+                        src="./theme/images/icons/github.png"></a>
+            <a href="./feeds/all.atom.xml" rel="alternate">
+                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
+    </p>
+
+
+
+</aside>
+
+<!-- Content -->
+<article>
+
+    <section id="content">
+        <article>
+<!--End mc_embed_signup-->
+
+            <h2 class="post_title post_detail"><a href="./2022-09-linux-3.html" rel="bookmark" title="Permalink to Cooking Linux the right way: Gnome setup">Cooking Linux the right way: Gnome setup</a></h2>
+            <div class="entry-content blog-post">
+                <h2>Preface</h2>
+<p>In this article we'll go through the following steps:</p>
+<ol>
+<li>Setting up network accounts</li>
+<li>Enhancing performance</li>
+<li>Starting apps automatically</li>
+<li>Placing apps automatically</li>
+<li>Minor tuning: tray, clipboard, and desktop indicator</li>
+</ol>
+<p>Great, let's do it!</p>
+<h2>Setting up network accounts</h2>
+<p>If you have a Google account, you may do it the old way: set your Gmail account in an email program or use a web interface for Gmail and Google Drive. Instead, you can do it once in Settings &ndash; Online Accounts. After that, the following will happen:</p>
+<ul>
+<li>Compatible email programs like Geary and Evolution will show your mail</li>
+<li>Nautilus will show your Google Drive as a folder</li>
+</ul>
+<p>More than that, if you have another email account, Gnome-way is to add it in Online Accounts as well.</p>
+<p>By the way, Deja dup backup tool will require authorization to use Google Drive, but it works.</p>
+<h2>Enhancing performance</h2>
+<p>The main trick here is to turn off animation. In Gnome version 2.42 it can be done in the Accessibility tab (I also turn on the large text setting there), before that it was in Gnome Tweaks.</p>
+<p>You can also visit the Power tab in Settings to check power mode &ndash; if you need performance, you can turn it on there.</p>
+<h2>Starting apps automatically</h2>
+<p>In my opinion, starting apps manually at a system startup is a waste of time. I use gnome-tweak to start apps I need:</p>
+<ul>
+<li>Terminal</li>
+<li>Nautilus</li>
+<li>Chrome</li>
+<li>Telegram</li>
+</ul>
+<h2>Placing apps automatically</h2>
+<p>The next step is to use workspaces. I limit the number of workspaces to three not to get confused (Settings &ndash; Multitasking) and also turn on the setting 'Application Switching &ndash; Include applications from the current workspace only'. Then you can install <a href="https://extensions.gnome.org/extension/16/auto-move-windows/">Auto Move Windows</a> extension and set auto-started apps, for example, like this:</p>
+<ol>
+<li>Terminal + text editor</li>
+<li>Nautilus + Chrome</li>
+<li>Telegram</li>
+</ol>
+<h2>Minor tuning: tray, clipboard, and desktop indicator</h2>
+<p>The tray was required by Telegram and Skype, now it's used by Skype only. So, I still prefer to have a tray not to look for Skype when I need it and <a href="https://extensions.gnome.org/extension/2890/tray-icons-reloaded/">Tray Icons: Reloaded</a> extension does it.</p>
+<p>Clipboard history is essential when you do a lot of copy-paste actions, so extensions like <a href="https://extensions.gnome.org/extension/4422/gnome-clipboard/">Gnome Clipboard</a> allow you to choose what to paste. I'd rank this number 1 for productivity because instead of switching multiple times between the apps it allows me to copy multiple links, switch to another app and paste anything I want. By the way, two hints:</p>
+<ul>
+<li>You can select the path for copy-paste in Nautilus hitting Ctrl+L.</li>
+<li>Copy-paste works in the Terminal with Ctrl+Shift+[С|V] by default.</li>
+</ul>
+<p>I also like to have a <a href="https://extensions.gnome.org/extension/21/workspace-indicator/">workspace indicator</a> whether it's visual or just a number.</p>
+<p>That's all, I wouldn't spoil Gnome too much with extensions when they begin to conflict with each other, consume memory, and crash. :) </p>
+<h2>Conclusion</h2>
+<p>I used this setup for heavy-duty copy-pasting at work, and it works fine for me. I even do not bother that the clipboard extension doesn't have a hotkey. For the rest just use hotkeys and everything will be fine. :) If you need more productivity, stay tuned for terminal and text editors setup.</p>
+            </div>
+            <div class="post_list">
+                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
+                <span class="post_date">Tue 27 September 2022</span>
+                <div><span>Tags: </span>
+                            <span><a href="./tag/linux.html">#linux </a></span>
+                            <span><a href="./tag/productivity.html">#productivity </a></span>
+                </div>
+            </div>
+                <div class="comments">
+                    <h2>Comments</h2>
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript">
+                        var disqus_identifier = "2022-09-linux-3.html";
+                        (function () {
+                            var dsq = document.createElement('script');
+                            dsq.type = 'text/javascript';
+                            dsq.async = true;
+                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] ||
+                            document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+                </div>
+        </article>
+    </section>
+</article>
+
+<!-- Footer -->
+    <footer>
+        <p>
+	  Made with <a href="http://getpelican.com/">Pelican</a>, 
+      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
+        </p>
+    </footer>
+
+
+</body>
+</html>

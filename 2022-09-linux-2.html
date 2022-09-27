@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MWJX8WCGVQ');
+</script>
+
+  <head>
+            <meta charset="utf-8">
+        <!-- Site Meta Data -->
+        <title>Cooking linux the right way: installing the right programs the right way</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Konstantin Ovchinnikov">
+
+        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="The Real Changes">
+        <meta itemprop="image" content="/theme/images/logo3_small.png">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+
+        <!-- Feed Meta Data -->
+            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="The Real Changes ATOM Feed"/>
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="">
+        <meta name="twitter:image" content="">
+
+
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:url" content="./2022-09-linux-2.html">
+    <meta name="twitter:title" content="The Real Changes ~ Cooking linux the right way: installing the right programs the right way">
+    <meta name="twitter:description" content="Installing programs without religious prejudice">
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:title" content="The Real Changes ~ Cooking linux the right way: installing the right programs the right way"/>
+    <meta property="og:description" content="Installing programs without religious prejudice"/>
+    <meta property="og:image" content=""/>
+</head>
+
+<body>
+<!-- Sidebar -->
+<aside>
+    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
+        <p>Konstantin Ovchinnikov's personal page</p>
+		<p>
+        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
+    <!-- Site search -->
+<script async src="https://cse.google.com/cse.js?cx=75184ca4aae714aae">
+</script>
+<div class="gcse-search"></div>
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
+                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+
+
+        </ul>
+    </nav>
+
+    <p class="social">
+                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
+                        src="./theme/images/icons/github.png"></a>
+            <a href="./feeds/all.atom.xml" rel="alternate">
+                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
+    </p>
+
+
+
+</aside>
+
+<!-- Content -->
+<article>
+
+    <section id="content">
+        <article>
+<!--End mc_embed_signup-->
+
+            <h2 class="post_title post_detail"><a href="./2022-09-linux-2.html" rel="bookmark" title="Permalink to Cooking linux the right way: installing the right programs the right way">Cooking linux the right way: installing the right programs the right way</a></h2>
+            <div class="entry-content blog-post">
+                <h2>Preface</h2>
+<p>Again, I'm aiming at a "general desktop Linux user", which is non-existent by default, but if you use a computer, sooner or later you use the following:</p>
+<ul>
+<li>Some desktop environment</li>
+<li>A browser</li>
+<li>A messaging app</li>
+<li>A text editor</li>
+<li>Office apps to edit rich format texts, presentations, spreadsheets</li>
+<li>A backups program</li>
+<li>A minimal image editing program (crop and resize)</li>
+</ul>
+<p>Video, photo, and audio editors are considered special for each case, so nothing to see here. :) The same for IDEs and games.</p>
+<p>So, the questions you probably have are:</p>
+<ul>
+<li>What to install</li>
+<li>How to install</li>
+</ul>
+<h2>What to install</h2>
+<p>Regarding <strong>the desktop environments</strong> I use Gnome and I'd recommend it for the best desktop experience. The only exception could be a PC with limited resources and I'd rather use LXDE (LXQt) for that. Gnome is the one to support Wayland, and Wayland is great for the desktop vs. X Window system. The other Gnome 'pros' are:</p>
+<ul>
+<li>Great look and feel</li>
+<li>Adequate resource usage</li>
+<li>Lots of integrated tools and programs (notably screenshots, file manager, VPN client)</li>
+<li>Great controls for hardware (battery, Bluetooth, sound, and brightness)</li>
+<li>Accessibility options</li>
+<li>Gnome extensions!</li>
+</ul>
+<p>It has a great terminal and a functional file manager, so the tuning you need here is gnome-tweaks and extensions. I'll cover Gnome setup in another article because it's where productivity matters.</p>
+<p>Chrome became a de-facto standard for <strong>web browsing</strong>, so the same issue here: there are alternatives, but they all have some drawbacks in terms of speed and website compatibility. You could use Chromium to be Google-free, but then you need at least to add some password storage extension.</p>
+<p>For <strong>messaging</strong> you could use Slack or Telegram. I'd not recommend web clients, as they are less functional. Some users may require bad old Skype, it's OK.</p>
+<p>For <strong>text editing</strong> the choice is wide, but to unleash the true Linux power (see the next article) you could install Vim and Emacs. They are great, I used both, although I'm writing this text inside Emacs. I had some problems with big texts in Geany, so I'd rather install some Electron-powered modern text editor if you edit plaintext-based files often. Even Visual Studio Code would do. :)</p>
+<p>You are welcome to <strong>edit office documents</strong> in Google Docs, but if you need to edit something fast or view the document on the local disk it's handy to have something:</p>
+<ul>
+<li>WPS is recommended, I tested it and liked the most for compatibility</li>
+<li>OnlyOffice is limited if you use office features heavily</li>
+<li>LibreOffice sometimes does the things others can't, so I still have it</li>
+</ul>
+<p>By the way, don't forget to install MS TTF core fonts to display presentations and rich format documents as it's intended to be.</p>
+<p>For <strong>backups</strong> I use Deja Dup, it saved my digital life twice already: in cases of accidental folder deletion and HDD failure. </p>
+<p>To <strong>edit images</strong> quickly (screenshots and memes) I use gThumb. Maybe there's a better alternative, I'm just quite satisfied with it.</p>
+<p>You can also install VLC as it has all the codecs for <strong>playing video</strong> from the local drive, although most of the videos are online nowadays.</p>
+<h2>How to install</h2>
+<p>To install programs properly we need to put them into two baskets: (1) when new features are critical and (2) when they are not. For office applications and messaging I'd say that new features are critical because it's all about compatibility. So the approaches are different for each category: we install the first category using flatpak, as it's isolated and won't ruin the system; it's also updated well. And we use a standard package manager (apt for Debian-based systems and dnf for RedHat-based) for all the rest packages to minimize resource consumption.</p>
+<p>Don't forget to <a href="https://flatpak.org/setup/">add a flatpak catalog</a> (or install flatpak first if it's not present). After that, we can install packages using instructions on <a href="https://flathub.org/home">flathub page</a>. So, we install the following using flatpak:</p>
+<ul>
+<li>Slack</li>
+<li>Telegram</li>
+<li>WPS Office</li>
+<li>Skype (in case you need it)</li>
+<li>LibreOffice</li>
+<li>OnlyOffice</li>
+</ul>
+<p>You can combine it in one command, just be sure to type the program names right. For the rest of the programs we do:</p>
+<div class="highlight"><pre><span></span><code>sudo [apt|dnf] install gnome-tweaks vim emacs deja-dup gthumb vlc
+</code></pre></div>
+
+<p>Chrome is easy to download and install from the official website. That's all for the programs installations, stay tuned for Gnome and core editors setup.</p>
+            </div>
+            <div class="post_list">
+                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
+                <span class="post_date">Tue 27 September 2022</span>
+                <div><span>Tags: </span>
+                            <span><a href="./tag/linux.html">#linux </a></span>
+                            <span><a href="./tag/productivity.html">#productivity </a></span>
+                </div>
+            </div>
+                <div class="comments">
+                    <h2>Comments</h2>
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript">
+                        var disqus_identifier = "2022-09-linux-2.html";
+                        (function () {
+                            var dsq = document.createElement('script');
+                            dsq.type = 'text/javascript';
+                            dsq.async = true;
+                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] ||
+                            document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+                </div>
+        </article>
+    </section>
+</article>
+
+<!-- Footer -->
+    <footer>
+        <p>
+	  Made with <a href="http://getpelican.com/">Pelican</a>, 
+      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
+        </p>
+    </footer>
+
+
+</body>
+</html>

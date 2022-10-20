@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MWJX8WCGVQ');
+</script>
+
+  <head>
+            <meta charset="utf-8">
+        <!-- Site Meta Data -->
+        <title>Cooking Linux the right way: Vim and Emacs</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Konstantin Ovchinnikov">
+
+        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="The Real Changes">
+        <meta itemprop="image" content="/theme/images/logo3_small.png">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+
+        <!-- Feed Meta Data -->
+            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="The Real Changes ATOM Feed"/>
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="">
+        <meta name="twitter:image" content="">
+
+
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:url" content="./2022-09-linux-5.html">
+    <meta name="twitter:title" content="The Real Changes ~ Cooking Linux the right way: Vim and Emacs">
+    <meta name="twitter:description" content="Vim and Emacs for Markdown, HTML, and note taking">
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:title" content="The Real Changes ~ Cooking Linux the right way: Vim and Emacs"/>
+    <meta property="og:description" content="Vim and Emacs for Markdown, HTML, and note taking"/>
+    <meta property="og:image" content=""/>
+</head>
+
+<body>
+<!-- Sidebar -->
+<aside>
+    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
+        <p>Konstantin Ovchinnikov's personal page</p>
+		<p>
+        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
+    <!-- Site search -->
+<script async src="https://cse.google.com/cse.js?cx=75184ca4aae714aae">
+</script>
+<div class="gcse-search"></div>
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
+                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+
+
+        </ul>
+    </nav>
+
+    <p class="social">
+                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
+                        src="./theme/images/icons/github.png"></a>
+            <a href="./feeds/all.atom.xml" rel="alternate">
+                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
+    </p>
+
+
+
+</aside>
+
+<!-- Content -->
+<article>
+
+    <section id="content">
+        <article>
+<!--End mc_embed_signup-->
+
+            <h2 class="post_title post_detail"><a href="./2022-09-linux-5.html" rel="bookmark" title="Permalink to Cooking Linux the right way: Vim and Emacs">Cooking Linux the right way: Vim and Emacs</a></h2>
+            <div class="entry-content blog-post">
+                <p>OK, let's talk about Linux superpowers. Vim's superpower is to move fast, really fast. To edit by commands with single keystrokes, cut, paste, find &amp; replace the text at a maximum speed. Yes, there's some learning curve, but you can start with Vim mode in some editors and IDE and after learning Vim make use of Vim keystrokes in other programs, including Chromium, for example. Navigating and editing with the keyboard, without using a mouse will be faster.</p>
+<p>Emacs' superpower is that you can get further than customizing, you can re-write the behavior of the editor using Lisp. As a demo of this deep customization or re-writing capabilities, you can use the Evil mode, which emulates Vim inside Emacs well. Emacs have modules for RSS reader, Telegram client, Media player, Email and Newsreader, IRC client, and more. The question with Emacs is actually "What do you want from it?"</p>
+<p>Vim and Emacs are different regarding approaches to text editing: Vim is like "The editor does exactly what I type", while Emacs is more "Let me do that for you", like inserting closing parenthesis, formatting text, etc. But both editors are customizable to the extent that you can have <strong>almost</strong> the same behavior. Both have file managers nowadays. Emacs is an integrated environment to suit all your needs, while Vim sticks to the standards and there's an advanced mode to use Vim, (which I'll cover in this article) with a terminal multiplexer. To demonstrate the superpowers I'll take three use cases Markdown, HTML, note taking. I'm not a programmer and that's what I use on a day-to-day basis. I worked in Vim and Emacs for several months like 8 hours a day, so it's not a first impression.</p>
+<p>Emacs is better as a GUI app, and Vim, from my viewpoint, is better in a terminal. Thus Vim has a life hack: if you have to work in Windows and you don't have privileges to install programs, you can install <a href="https://gitforwindows.org/">Git for Windows</a>. Vim is included, so you can install any plugins and customize Vim further.</p>
+<p>I'll provide very basic configs I use, and I'd recommend learning both text editors, they are nice. When you are bothered, you can switch and have fun. :) For each use case, I'll try to describe briefly some useful functions.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Vim</th>
+<th style="text-align: left;">Emacs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Notes</td>
+<td style="text-align: left;"><a href="https://github.com/vimwiki/vimwiki">VimWiki</a>, <a href="https://nvim-orgmode.github.io/">Orgmode.nvim</a>, <a href="https://github.com/nvim-neorg/neorg">Neorg</a></td>
+<td style="text-align: left;"><a href="https://orgmode.org/">Org mode</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">HTML</td>
+<td style="text-align: left;"><a href="https://github.com/mattn/emmet-vim">Emmet</a>, <a href="https://github.com/SirVer/ultisnips">Snippets</a></td>
+<td style="text-align: left;">HTML mode</td>
+</tr>
+<tr>
+<td style="text-align: left;">Markdown</td>
+<td style="text-align: left;"><a href="https://github.com/preservim/vim-markdown">Vim-markdown</a>, <a href="https://github.com/SirVer/ultisnips">Snippets</a></td>
+<td style="text-align: left;"><a href="https://jblevins.org/projects/markdown-mode/">Markdown mode</a></td>
+</tr>
+</tbody>
+</table>
+<h2>Initial setup</h2>
+<p>My configs are quite short, let's look at them, and then I'll explain everything line-by-line. So, my Vim config is the following</p>
+<div class="highlight"><pre><span></span><code><span class="nb">syntax</span> enable
+<span class="k">colorscheme</span> monokai
+<span class="k">set</span> <span class="nb">wrap</span> <span class="nb">linebreak</span> <span class="nb">nolist</span>
+<span class="k">call</span> plug#begin<span class="p">()</span>
+  Plug <span class="s1">&#39;itchyny/lightline.vim&#39;</span>
+
+  Plug <span class="s1">&#39;SirVer/ultisnips&#39;</span>
+  Plug <span class="s1">&#39;honza/vim-snippets&#39;</span>
+    <span class="k">let</span> <span class="k">g</span>:UltiSnipsExpandTrigger<span class="p">=</span><span class="s2">&quot;&lt;tab&gt;&quot;</span>
+    <span class="k">let</span> <span class="k">g</span>:UltiSnipsJumpForwardTrigger<span class="p">=</span><span class="s2">&quot;&lt;c-b&gt;&quot;</span>
+    <span class="k">let</span> <span class="k">g</span>:UltiSnipsJumpBackwardTrigger<span class="p">=</span><span class="s2">&quot;&lt;c-z&gt;&quot;</span>
+
+  Plug <span class="s1">&#39;plasticboy/vim-markdown&#39;</span>
+  Plug <span class="s1">&#39;godlygeek/tabular&#39;</span>
+  Plug <span class="s1">&#39;mattn/emmet-vim&#39;</span>
+  <span class="k">call</span> plug#<span class="k">end</span><span class="p">()</span>
+  <span class="k">set</span> <span class="nb">laststatus</span><span class="p">=</span><span class="m">2</span> 
+  <span class="k">set</span> <span class="nb">langmap</span><span class="p">=</span>ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ<span class="p">,</span>фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+  <span class="k">set</span> <span class="nb">conceallevel</span><span class="p">=</span><span class="m">2</span>
+</code></pre></div>
+
+<p>And this is my Emacs config file:</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">scroll-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nv">tool-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nv">menu-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">default-frame-alist</span><span class="w"> </span><span class="o">&#39;</span><span class="p">((</span><span class="nv">undecorated</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="no">t</span><span class="p">)))</span><span class="w"></span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">inhibit-startup-screen</span><span class="w"> </span><span class="no">t</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">dired-listing-switches</span><span class="w"> </span><span class="s">&quot;-laGh1v&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nv">setq-default</span><span class="w"> </span><span class="nv">word-wrap</span><span class="w"> </span><span class="no">t</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">sentence-end-double-space</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nv">custom-set-faces</span><span class="w"></span>
+<span class="o">&#39;</span><span class="p">(</span><span class="nv">default</span><span class="w"> </span><span class="p">((</span><span class="no">t</span><span class="w"> </span><span class="p">(</span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;Source Code Pro&quot;</span><span class="w"> </span><span class="ss">:foundry</span><span class="w"> </span><span class="s">&quot;ADBO&quot;</span><span class="w"> </span><span class="ss">:slant</span><span class="w"> </span><span class="nv">normal</span><span class="w"> </span><span class="ss">:weight</span><span class="w"> </span><span class="nv">semi-bold</span><span class="w"> </span><span class="ss">:height</span><span class="w"> </span><span class="mi">132</span><span class="w"> </span><span class="ss">:width</span><span class="w"> </span><span class="nv">normal</span><span class="p">)))))</span><span class="w"></span>
+<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;custom-theme-load-path</span><span class="w"> </span><span class="s">&quot;~/.emacs.d/themes/&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nv">load-theme</span><span class="w"> </span><span class="ss">&#39;monokai</span><span class="w"> </span><span class="no">t</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;package</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;package-archives</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;melpa&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;https://melpa.org/packages/&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="p">(</span><span class="nv">custom-set-variables</span><span class="w"></span>
+<span class="w">  </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">menu-bar-mode</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">package-selected-packages</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nb">use-package</span><span class="w"> </span><span class="nv">reverse-im</span><span class="w"> </span><span class="nv">markdown-mode</span><span class="p">))</span><span class="w"></span>
+<span class="w">  </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">tool-bar-mode</span><span class="w"> </span><span class="no">nil</span><span class="p">))</span><span class="w"></span>
+<span class="p">(</span><span class="nb">use-package</span><span class="w"> </span><span class="nv">reverse-im</span><span class="w"></span>
+<span class="w">  </span><span class="ss">:ensure</span><span class="w"> </span><span class="no">t</span><span class="w"></span>
+<span class="w">  </span><span class="ss">:custom</span><span class="w"></span>
+<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-input-methods</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;russian-computer&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="w">  </span><span class="ss">:config</span><span class="w"></span>
+<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-mode</span><span class="w"> </span><span class="no">t</span><span class="p">))</span><span class="w"></span>
+<span class="p">(</span><span class="nv">recentf-mode</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nv">global-set-key</span><span class="w"> </span><span class="p">(</span><span class="nv">kbd</span><span class="w"> </span><span class="s">&quot;C-x C-r&quot;</span><span class="p">)</span><span class="w"> </span><span class="ss">&#39;recentf-open-files</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+
+<p>For me, that doesn't look too complicated. For Vim I add the color scheme, add a status line, and a soft word wrap:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">syntax</span> enable
+<span class="k">colorscheme</span> monokai
+<span class="k">set</span> <span class="nb">wrap</span> <span class="nb">linebreak</span> <span class="nb">nolist</span>
+<span class="k">call</span> plug#begin<span class="p">()</span>
+  Plug <span class="s1">&#39;itchyny/lightline.vim&#39;</span>
+<span class="k">call</span> plug#<span class="k">end</span><span class="p">()</span>
+</code></pre></div>
+
+<p>To fix a bug with the status line and add mapping to Cyrillic keys (not to switch to Cyrillic in normal mode) we need to add this:</p>
+<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nb">laststatus</span><span class="p">=</span><span class="m">2</span> 
+<span class="k">set</span> <span class="nb">langmap</span><span class="p">=</span>ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ<span class="p">,</span>фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+</code></pre></div>
+
+<p>As Vim is launched in some terminals, I specify the font in the config for the terminal. Regarding Emacs, first, we need to switch off the menu (it's accessible with F10), and the scrollbar and switch off the window decoration to save some space. I also switch off the startup screen as it becomes annoying after a few launches. I turn on soft word wrap and make Dired, the file manager inside Emacs, look a bit prettier.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">scroll-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nv">tool-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nv">menu-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">default-frame-alist</span><span class="w"> </span><span class="o">&#39;</span><span class="p">((</span><span class="nv">undecorated</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="no">t</span><span class="p">)))</span><span class="w"></span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">inhibit-startup-screen</span><span class="w"> </span><span class="no">t</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">dired-listing-switches</span><span class="w"> </span><span class="s">&quot;-laGh1v&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nv">setq-default</span><span class="w"> </span><span class="nv">word-wrap</span><span class="w"> </span><span class="no">t</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+
+<p>To add a theme and specify a custom font set I do the following:</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">sentence-end-double-space</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nv">custom-set-faces</span><span class="w"></span>
+<span class="o">&#39;</span><span class="p">(</span><span class="nv">default</span><span class="w"> </span><span class="p">((</span><span class="no">t</span><span class="w"> </span><span class="p">(</span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;Source Code Pro&quot;</span><span class="w"> </span><span class="ss">:foundry</span><span class="w"> </span><span class="s">&quot;ADBO&quot;</span><span class="w"> </span><span class="ss">:slant</span><span class="w"> </span><span class="nv">normal</span><span class="w"> </span><span class="ss">:weight</span><span class="w"> </span><span class="nv">semi-bold</span><span class="w"> </span><span class="ss">:height</span><span class="w"> </span><span class="mi">132</span><span class="w"> </span><span class="ss">:width</span><span class="w"> </span><span class="nv">normal</span><span class="p">)))))</span><span class="w"></span>
+<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;custom-theme-load-path</span><span class="w"> </span><span class="s">&quot;~/.emacs.d/themes/&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nv">load-theme</span><span class="w"> </span><span class="ss">&#39;monokai</span><span class="w"> </span><span class="no">t</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+
+<p>I don't specify the font face manually, instead, I choose it from the menu and Emacs adds it to the config. For some reason Emacs thinks that sentences are divided using double spaces, so the first line is to fix it to be able to jump between sentences with Alt-E and Alt-A.</p>
+<p>I use a separate <a href="https://github.com/emacsmirror/reverse-im">reverse-im module</a> to make hotkeys work with Cyrillic keymap, first, we need to add repositories and install 'package':</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;package</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;package-archives</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;melpa&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;https://melpa.org/packages/&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="p">(</span><span class="nb">use-package</span><span class="w"> </span><span class="nv">reverse-im</span><span class="w"></span>
+<span class="w">  </span><span class="ss">:ensure</span><span class="w"> </span><span class="no">t</span><span class="w"></span>
+<span class="w">  </span><span class="ss">:custom</span><span class="w"></span>
+<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-input-methods</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;russian-computer&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="w">  </span><span class="ss">:config</span><span class="w"></span>
+<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-mode</span><span class="w"> </span><span class="no">t</span><span class="p">))</span><span class="w"></span>
+</code></pre></div>
+
+<h2>Markdown</h2>
+<p>Regarding Markdown, let's take Vim first:</p>
+<ul>
+<li>Snippets allow you to insert markup for almost everything (links, images, headers, etc.)</li>
+<li>Vim-markdown allows folding, insert table of contents and also have TOC inside Vim to move faster between sections!</li>
+<li>Bullets auto-insert is also available</li>
+<li>Auto table formatting</li>
+</ul>
+<p>To do this, you need to install several plugins and set conceal level:</p>
+<div class="highlight"><pre><span></span><code><span class="k">call</span> plug#begin<span class="p">()</span>
+  Plug <span class="s1">&#39;SirVer/ultisnips&#39;</span>
+  Plug <span class="s1">&#39;honza/vim-snippets&#39;</span>
+    <span class="k">let</span> <span class="k">g</span>:UltiSnipsExpandTrigger<span class="p">=</span><span class="s2">&quot;&lt;tab&gt;&quot;</span>
+    <span class="k">let</span> <span class="k">g</span>:UltiSnipsJumpForwardTrigger<span class="p">=</span><span class="s2">&quot;&lt;c-b&gt;&quot;</span>
+    <span class="k">let</span> <span class="k">g</span>:UltiSnipsJumpBackwardTrigger<span class="p">=</span><span class="s2">&quot;&lt;c-z&gt;&quot;</span>
+
+  Plug <span class="s1">&#39;plasticboy/vim-markdown&#39;</span>
+  Plug <span class="s1">&#39;godlygeek/tabular&#39;</span>
+  <span class="k">call</span> plug#<span class="k">end</span><span class="p">()</span>
+  <span class="k">set</span> <span class="nb">conceallevel</span><span class="p">=</span><span class="m">2</span>
+</code></pre></div>
+
+<p>Snippets are quite useful and some people don't get their full capabilities. For a link, for example, I enter '[c' and then Tab in Insert mode, then enter the name for the link, press Ctrl-B and then enter the URL. I also can get back to the link name with Ctrl-Z in Insert mode. Well, it doesn't work so well with links inside tables. :( Concealing also breaks formatting sometimes, like you have plenty of whitespace at the end of the line and some characters on the next line.</p>
+<p>Emacs allows it all this plus a bit more:</p>
+<ul>
+<li>It can automatically insert numbered list as well</li>
+<li>Links concealing is a bit better</li>
+<li>A few more functions to work with headers</li>
+</ul>
+<p>All of this is done in the Markdown package. Emacs adds lines to config itself, you need to run a package install command. I like Emacs' documentation a bit more because it's embedded into the code. In Vim you have to look at the actual snippet code, and in Emacs, I do Ctrl-H M to view all the up-to-date documentation for Markdown mode.</p>
+<h2>HTML</h2>
+<p>It's simple, you need to insert tags, lots of tags. Emmet is available for Emacs, as for Vim. With Emmet you can enter ul&gt;li*3 to insert an unordered list with 3 bullets. Emmet is a bit overkill for me, so I use embedded HTML mode in Emacs and snippets in Vim to insert paragraphs and some lists. For example, in Vim this could be 'p' and Tab, in Emacs Ctrl-C and then Enter. The workflow after that can be different, as in the terminal I can use xclip to copy a file to the buffer, in Vim you can do ':%y+' and in Emacs, you can do Ctrl-X H and then Alt+W. </p>
+<h2>Taking notes</h2>
+<p>Org mode generally is a reason to use and learn Emacs, and it's great. At first, I didn't get it so I started with VimWiki. I had to leave it towards Emacs for several reasons:</p>
+<ul>
+<li>Working with links in convenient ways matters</li>
+<li>Big headers help a lot</li>
+<li>I know that I can have more dimensions: categories and tags</li>
+<li>Lots of tools to work with org files also matter</li>
+</ul>
+<p>Org mode is embedded, so you can just open an .org file and start experimenting!</p>
+<p>For Vim you are welcome to try Orgmode.nvim and Neorg, they look promising, but I didn't try them. You can also use vim-markdown for note-taking, you'll be able to jump between files using links or preview HTML in a browser.</p>
+<h2>Vim advanced mode</h2>
+<p>The 'standard' Vim use is Gnome Terminal + Vim or GVim. What I call 'advanced' mode is a terminal multiplexer like Tmux + terminal (I prefer Alacritty) + Vim. It's a separate topic, how to set it up and use it, I'll just mention what it <strong>allows</strong> you to do:</p>
+<ul>
+<li>Have a terminal pane and a Vim pane inside one window and use Tmux to switch between windows</li>
+<li>Have pre-defined sessions with pre-defined windows and panes</li>
+<li>Copy and paste a text from the terminal using the keyboard</li>
+</ul>
+<p>Some people say that it's less disturbing to have everything in a terminal, as you don't switch the context. Just try it and decide for yourself. :)</p>
+<h2>Conclusions</h2>
+<p>Emacs is my choice at the moment because my acid test revealed that I can do more and get stressed less with Emacs. For example, I work a lot with links, and my workflow is the following:</p>
+<ol>
+<li>Type some text</li>
+<li>Decide that some words should become a link, so I select those words</li>
+<li>Insert link target from the clipboard, Emacs just inserts all the markup</li>
+</ol>
+<p>I suffer to do the same with snippets. I had a lot of mistakes with link markup, so I prefer the Emacs way to work with them as it's error-proof. Besides, Org mode was developed in Emacs and it's polished, and Emacs has a lot of export functions which saved a ton of time for me. I learned about Orgmode.nvim and Neorg doing quick research right before writing this article, they seem to be still under development, and I had no reason to switch from Emacs. Although I wrote this particular article in Vim just to be sure that my .vimrc works. :)</p>
+            </div>
+            <div class="post_list">
+                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
+                <span class="post_date">Thu 20 October 2022</span>
+                <div><span>Tags: </span>
+                            <span><a href="./tag/linux.html">#linux </a></span>
+                            <span><a href="./tag/productivity.html">#productivity </a></span>
+                </div>
+            </div>
+                <div class="comments">
+                    <h2>Comments</h2>
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript">
+                        var disqus_identifier = "2022-09-linux-5.html";
+                        (function () {
+                            var dsq = document.createElement('script');
+                            dsq.type = 'text/javascript';
+                            dsq.async = true;
+                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] ||
+                            document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+                </div>
+        </article>
+    </section>
+</article>
+
+<!-- Footer -->
+    <footer>
+        <p>
+	  Made with <a href="http://getpelican.com/">Pelican</a>, 
+      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
+        </p>
+    </footer>
+
+
+</body>
+</html>

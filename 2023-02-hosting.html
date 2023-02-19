@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MWJX8WCGVQ');
+</script>
+
+  <head>
+            <meta charset="utf-8">
+        <!-- Site Meta Data -->
+        <title>Choosing a web hosting at the end of 2022</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Konstantin Ovchinnikov">
+
+        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="The Real Changes">
+        <meta itemprop="image" content="/theme/images/logo3_small.png">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+
+        <!-- Feed Meta Data -->
+            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="The Real Changes ATOM Feed"/>
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="">
+        <meta name="twitter:image" content="">
+
+
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:url" content="./2023-02-hosting.html">
+    <meta name="twitter:title" content="The Real Changes ~ Choosing a web hosting at the end of 2022">
+    <meta name="twitter:description" content="Web hosting adventures and analysis">
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:title" content="The Real Changes ~ Choosing a web hosting at the end of 2022"/>
+    <meta property="og:description" content="Web hosting adventures and analysis"/>
+    <meta property="og:image" content=""/>
+</head>
+
+<body>
+<!-- Sidebar -->
+<aside>
+    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
+        <p>Konstantin Ovchinnikov's personal page</p>
+		<p>
+        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
+    <!-- Site search -->
+<script async src="https://cse.google.com/cse.js?cx=75184ca4aae714aae">
+</script>
+<div class="gcse-search"></div>
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
+                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+
+
+        </ul>
+    </nav>
+
+    <p class="social">
+                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
+                        src="./theme/images/icons/github.png"></a>
+            <a href="./feeds/all.atom.xml" rel="alternate">
+                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
+    </p>
+
+
+
+</aside>
+
+<!-- Content -->
+<article>
+
+    <section id="content">
+        <article>
+<!--End mc_embed_signup-->
+
+            <h2 class="post_title post_detail"><a href="./2023-02-hosting.html" rel="bookmark" title="Permalink to Choosing a web hosting at the end of 2022">Choosing a web hosting at the end of 2022</a></h2>
+            <div class="entry-content blog-post">
+                <h2>The Problem</h2>
+<p>I hosted my projects at Dreamhost (and I'll not provide the link on purpose), so I was quite happy with the service and paid 100-120 USD yearly, which included two domains and shared web hosting. But then I encountered this:</p>
+<p><img alt="My current hosting plan" src="images/hosting-old.png"></p>
+<p>Why's that? Why do I have to pay 156 USD for the same service? It's not about inflation, for sure. Well, the answer was on the front page of the same hosting provider &ndash; hosting plans for the new customers:</p>
+<p><img alt="New hosting plan offerings" src="images/hosting-new.png"></p>
+<p>So, new customers pay 36 USD for the same service and they can do it monthly! Who's paying for that? Old loyal customers like me! And it's the same for the other providers, so I had to find a <strong>real</strong> alternative.</p>
+<h2>The Alternatives</h2>
+<p>So, I found the following alternatives:</p>
+<ul>
+<li>Cloud services like AWS and Google Cloud</li>
+<li>Static hostings at <a href="https://pages.github.com/">GitHub Pages</a> and <a href="https://pages.cloudflare.com/">Cloudflare Pages</a></li>
+</ul>
+<p>Technically, you also need domain hosting to park your domains somewhere and point to your actual hosting, and Cloudflare or Google Domains offer this service.</p>
+<p>But let's first look at the requirements.</p>
+<h2>The Requirements</h2>
+<p>I had some sites requiring PHP and SQL databases, but I doubted whether I needed these sites. Ok, what would happen if I stop them? How many people were using them? The answers were "nothing" and "two" accordingly, so I decided to back up one website and send the backup to another user.</p>
+<p>So, static websites were quite sufficient for my needs, but is that all about requirements? Well, I got used to updating my websites using git, so...</p>
+<h2>The Solution</h2>
+<p>You can host dynamic and static websites using cloud services. The drawback? You have to install the operating system and software yourself, configure it and protect it against attacks, and so on.</p>
+<p>With static hostings, you can host static pages only, but it's free, and they manage all the operating system/web server/security issues themselves.</p>
+<p>I had one particular question, which made me choose GitHub over Cloudflare for pages hosting: how do I host several websites for different domains? GitHub docs got this topic covered, but I didn't find the answer in Cloudflare Pages' docs.</p>
+<p>And I also chose Cloudflare for DNS hosting as it's free for personal use.</p>
+<p>So, the transit was the following:</p>
+<ol>
+<li>Move domains to Cloudflare</li>
+<li>Move pages to GitHub</li>
+<li>Connect pages on GitHub and domains at Cloudflare</li>
+</ol>
+<p>That's all. I paid some fees for domain transfer, and I also had to pay for my domains for another year, but that's a lot less than 156 USD. The timeframe was tight, so my plan B was to pay for another month and finish this procedure. Technically domain transfer takes some time, but all went well, and &ndash; bye, shared web hosting!</p>
+<h2>P.S.</h2>
+<p>And Dreamhost also charged me an additional 17 USD for domain registration. Yes, it was in the contract.</p>
+<p><img alt="Doiman fee" src="images/hosting-due.png"></p>
+            </div>
+            <div class="post_list">
+                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
+                <span class="post_date">Sun 19 February 2023</span>
+                <div><span>Tags: </span>
+                            <span><a href="./tag/hosting.html">#hosting </a></span>
+                </div>
+            </div>
+                <div class="comments">
+                    <h2>Comments</h2>
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript">
+                        var disqus_identifier = "2023-02-hosting.html";
+                        (function () {
+                            var dsq = document.createElement('script');
+                            dsq.type = 'text/javascript';
+                            dsq.async = true;
+                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] ||
+                            document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+                </div>
+        </article>
+    </section>
+</article>
+
+<!-- Footer -->
+    <footer>
+        <p>
+	  Made with <a href="http://getpelican.com/">Pelican</a>, 
+      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
+        </p>
+    </footer>
+
+
+</body>
+</html>

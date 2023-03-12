@@ -5,8 +5,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://en.kovchinnikov.info/</loc>
-<lastmod>2023-03-11T15:06:08-00:00</lastmod>
+<lastmod>2023-03-12T14:02:46-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://en.kovchinnikov.info/2023-03-linuxlaptop.html</loc>
+<lastmod>2023-03-12T12:17:00+01:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -75,7 +82,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://en.kovchinnikov.info/category/blog.html</loc>
-<lastmod>2023-02-22T20:00:00+01:00</lastmod>
+<lastmod>2023-03-12T12:17:00+01:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://en.kovchinnikov.info/tag/linux.html</loc>
+<lastmod>2023-03-12T12:17:00+01:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -90,13 +104,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://en.kovchinnikov.info/tag/hosting.html</loc>
 <lastmod>2023-02-19T19:15:00+01:00</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://en.kovchinnikov.info/tag/linux.html</loc>
-<lastmod>2022-10-25T21:12:00+01:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -124,7 +131,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://en.kovchinnikov.info/author/konstantin-ovchinnikov.html</loc>
-<lastmod>2023-02-22T20:00:00+01:00</lastmod>
+<lastmod>2023-03-12T12:17:00+01:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

@@ -11,9 +11,9 @@
 &lt;p&gt;Not bad, right? Well, for my childhood that was great and you could do just anything with it. But how do we judge devices now? Wi-Fi should work and it should play YouTube. Well, I didn't get that and gave this laptop to my friend to install some old Windows version. Why's that? Well, everything working and not working is described on &lt;a href="https://wiki.ubuntu.com/LaptopTestingTeam/FujitsuAmiloLa1703"&gt;this Ubuntu page&lt;/a&gt;, and I couldn't get any better. The device is so old, that some links from this page don't work.&lt;/p&gt;
 &lt;p&gt;The process was interesting though because I tried different distributions and they performed surprisingly for me. Some were surprisingly good, some were surprisingly bad. As I'm not religious and Win10 has relatively modest system requirements, I tried to install it as well (several times). If you want to learn about this process and some unexpected outcomes, that's what this post is about.&lt;/p&gt;
 &lt;h2&gt;Linux distributions&lt;/h2&gt;
-&lt;p&gt;For those who don't know, you have 64 and 32-bit options, but not for all the distributions. This laptop supports 64-bit, but as it has 2Gb&amp;nbsp;RAM, a 32-bit distro could fit well. Unfortunately, Fedora (one of my favorites) doesn't support 32-bit anymore, so I had to try the 64-bit version. So, I tried:&lt;/p&gt;
+&lt;p&gt;For those who don't know, you have 64 and 32-bit options, but not for all the distributions. This laptop supports 64-bit, but as it has 2Gb&amp;nbsp;RAM, a 32-bit distro could fit well. Unfortunately, Fedora (one of my favorites) and Ubuntu don't support 32-bit anymore, so I had to try the 64-bit versions. So, I tried:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Ubuntu 32-bit&lt;/li&gt;
+&lt;li&gt;Ubuntu 64-bit&lt;/li&gt;
 &lt;li&gt;Debian 32-bit&lt;/li&gt;
 &lt;li&gt;Fedora 64-bit&lt;/li&gt;
 &lt;/ul&gt;

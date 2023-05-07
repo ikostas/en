@@ -155,32 +155,32 @@
 </code></pre></div>
 
 <p>And this is my Emacs config file:</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">scroll-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="nv">tool-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="nv">menu-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">default-frame-alist</span><span class="w"> </span><span class="o">&#39;</span><span class="p">((</span><span class="nv">undecorated</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="no">t</span><span class="p">)))</span><span class="w"></span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">inhibit-startup-screen</span><span class="w"> </span><span class="no">t</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">dired-listing-switches</span><span class="w"> </span><span class="s">&quot;-laGh1v&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="nv">setq-default</span><span class="w"> </span><span class="nv">word-wrap</span><span class="w"> </span><span class="no">t</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">sentence-end-double-space</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="nv">custom-set-faces</span><span class="w"></span>
-<span class="o">&#39;</span><span class="p">(</span><span class="nv">default</span><span class="w"> </span><span class="p">((</span><span class="no">t</span><span class="w"> </span><span class="p">(</span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;Source Code Pro&quot;</span><span class="w"> </span><span class="ss">:foundry</span><span class="w"> </span><span class="s">&quot;ADBO&quot;</span><span class="w"> </span><span class="ss">:slant</span><span class="w"> </span><span class="nv">normal</span><span class="w"> </span><span class="ss">:weight</span><span class="w"> </span><span class="nv">semi-bold</span><span class="w"> </span><span class="ss">:height</span><span class="w"> </span><span class="mi">132</span><span class="w"> </span><span class="ss">:width</span><span class="w"> </span><span class="nv">normal</span><span class="p">)))))</span><span class="w"></span>
-<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;custom-theme-load-path</span><span class="w"> </span><span class="s">&quot;~/.emacs.d/themes/&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="nv">load-theme</span><span class="w"> </span><span class="ss">&#39;monokai</span><span class="w"> </span><span class="no">t</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;package</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;package-archives</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;melpa&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;https://melpa.org/packages/&quot;</span><span class="p">))</span><span class="w"></span>
-<span class="p">(</span><span class="nv">custom-set-variables</span><span class="w"></span>
-<span class="w">  </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">menu-bar-mode</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">package-selected-packages</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nb">use-package</span><span class="w"> </span><span class="nv">reverse-im</span><span class="w"> </span><span class="nv">markdown-mode</span><span class="p">))</span><span class="w"></span>
-<span class="w">  </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">tool-bar-mode</span><span class="w"> </span><span class="no">nil</span><span class="p">))</span><span class="w"></span>
-<span class="p">(</span><span class="nb">use-package</span><span class="w"> </span><span class="nv">reverse-im</span><span class="w"></span>
-<span class="w">  </span><span class="ss">:ensure</span><span class="w"> </span><span class="no">t</span><span class="w"></span>
-<span class="w">  </span><span class="ss">:custom</span><span class="w"></span>
-<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-input-methods</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;russian-computer&quot;</span><span class="p">))</span><span class="w"></span>
-<span class="w">  </span><span class="ss">:config</span><span class="w"></span>
-<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-mode</span><span class="w"> </span><span class="no">t</span><span class="p">))</span><span class="w"></span>
-<span class="p">(</span><span class="nv">recentf-mode</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="nv">global-set-key</span><span class="w"> </span><span class="p">(</span><span class="nv">kbd</span><span class="w"> </span><span class="s">&quot;C-x C-r&quot;</span><span class="p">)</span><span class="w"> </span><span class="ss">&#39;recentf-open-files</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">scroll-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">tool-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">menu-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">default-frame-alist</span><span class="w"> </span><span class="o">&#39;</span><span class="p">((</span><span class="nv">undecorated</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="no">t</span><span class="p">)))</span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">inhibit-startup-screen</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">dired-listing-switches</span><span class="w"> </span><span class="s">&quot;-laGh1v&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">setq-default</span><span class="w"> </span><span class="nv">word-wrap</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">sentence-end-double-space</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">custom-set-faces</span>
+<span class="o">&#39;</span><span class="p">(</span><span class="nv">default</span><span class="w"> </span><span class="p">((</span><span class="no">t</span><span class="w"> </span><span class="p">(</span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;Source Code Pro&quot;</span><span class="w"> </span><span class="ss">:foundry</span><span class="w"> </span><span class="s">&quot;ADBO&quot;</span><span class="w"> </span><span class="ss">:slant</span><span class="w"> </span><span class="nv">normal</span><span class="w"> </span><span class="ss">:weight</span><span class="w"> </span><span class="nv">semi-bold</span><span class="w"> </span><span class="ss">:height</span><span class="w"> </span><span class="mi">132</span><span class="w"> </span><span class="ss">:width</span><span class="w"> </span><span class="nv">normal</span><span class="p">)))))</span>
+<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;custom-theme-load-path</span><span class="w"> </span><span class="s">&quot;~/.emacs.d/themes/&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">load-theme</span><span class="w"> </span><span class="ss">&#39;monokai</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;package</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;package-archives</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;melpa&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;https://melpa.org/packages/&quot;</span><span class="p">))</span>
+<span class="p">(</span><span class="nv">custom-set-variables</span>
+<span class="w">  </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">menu-bar-mode</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span>
+<span class="w">  </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">package-selected-packages</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nb">use-package</span><span class="w"> </span><span class="nv">reverse-im</span><span class="w"> </span><span class="nv">markdown-mode</span><span class="p">))</span>
+<span class="w">  </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">tool-bar-mode</span><span class="w"> </span><span class="no">nil</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">use-package</span><span class="w"> </span><span class="nv">reverse-im</span>
+<span class="w">  </span><span class="ss">:ensure</span><span class="w"> </span><span class="no">t</span>
+<span class="w">  </span><span class="ss">:custom</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-input-methods</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;russian-computer&quot;</span><span class="p">))</span>
+<span class="w">  </span><span class="ss">:config</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-mode</span><span class="w"> </span><span class="no">t</span><span class="p">))</span>
+<span class="p">(</span><span class="nv">recentf-mode</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">global-set-key</span><span class="w"> </span><span class="p">(</span><span class="nv">kbd</span><span class="w"> </span><span class="s">&quot;C-x C-r&quot;</span><span class="p">)</span><span class="w"> </span><span class="ss">&#39;recentf-open-files</span><span class="p">)</span>
 </code></pre></div>
 
 <p>For me, that doesn't look too complicated. For Vim I add the color scheme, add a status line, and a soft word wrap:</p>
@@ -198,33 +198,33 @@
 </code></pre></div>
 
 <p>As Vim is launched in some terminals, I specify the font in the config for the terminal. Regarding Emacs, first, we need to switch off the menu (it's accessible with F10), and the scrollbar and switch off the window decoration to save some space. I also switch off the startup screen as it becomes annoying after a few launches. I turn on soft word wrap and make Dired, the file manager inside Emacs, look a bit prettier.</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">scroll-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="nv">tool-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="nv">menu-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">default-frame-alist</span><span class="w"> </span><span class="o">&#39;</span><span class="p">((</span><span class="nv">undecorated</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="no">t</span><span class="p">)))</span><span class="w"></span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">inhibit-startup-screen</span><span class="w"> </span><span class="no">t</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">dired-listing-switches</span><span class="w"> </span><span class="s">&quot;-laGh1v&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="nv">setq-default</span><span class="w"> </span><span class="nv">word-wrap</span><span class="w"> </span><span class="no">t</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">scroll-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">tool-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">menu-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">default-frame-alist</span><span class="w"> </span><span class="o">&#39;</span><span class="p">((</span><span class="nv">undecorated</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="no">t</span><span class="p">)))</span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">inhibit-startup-screen</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">dired-listing-switches</span><span class="w"> </span><span class="s">&quot;-laGh1v&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">setq-default</span><span class="w"> </span><span class="nv">word-wrap</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
 </code></pre></div>
 
 <p>To add a theme and specify a custom font set I do the following:</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">sentence-end-double-space</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="nv">custom-set-faces</span><span class="w"></span>
-<span class="o">&#39;</span><span class="p">(</span><span class="nv">default</span><span class="w"> </span><span class="p">((</span><span class="no">t</span><span class="w"> </span><span class="p">(</span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;Source Code Pro&quot;</span><span class="w"> </span><span class="ss">:foundry</span><span class="w"> </span><span class="s">&quot;ADBO&quot;</span><span class="w"> </span><span class="ss">:slant</span><span class="w"> </span><span class="nv">normal</span><span class="w"> </span><span class="ss">:weight</span><span class="w"> </span><span class="nv">semi-bold</span><span class="w"> </span><span class="ss">:height</span><span class="w"> </span><span class="mi">132</span><span class="w"> </span><span class="ss">:width</span><span class="w"> </span><span class="nv">normal</span><span class="p">)))))</span><span class="w"></span>
-<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;custom-theme-load-path</span><span class="w"> </span><span class="s">&quot;~/.emacs.d/themes/&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="nv">load-theme</span><span class="w"> </span><span class="ss">&#39;monokai</span><span class="w"> </span><span class="no">t</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">sentence-end-double-space</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">custom-set-faces</span>
+<span class="o">&#39;</span><span class="p">(</span><span class="nv">default</span><span class="w"> </span><span class="p">((</span><span class="no">t</span><span class="w"> </span><span class="p">(</span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;Source Code Pro&quot;</span><span class="w"> </span><span class="ss">:foundry</span><span class="w"> </span><span class="s">&quot;ADBO&quot;</span><span class="w"> </span><span class="ss">:slant</span><span class="w"> </span><span class="nv">normal</span><span class="w"> </span><span class="ss">:weight</span><span class="w"> </span><span class="nv">semi-bold</span><span class="w"> </span><span class="ss">:height</span><span class="w"> </span><span class="mi">132</span><span class="w"> </span><span class="ss">:width</span><span class="w"> </span><span class="nv">normal</span><span class="p">)))))</span>
+<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;custom-theme-load-path</span><span class="w"> </span><span class="s">&quot;~/.emacs.d/themes/&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">load-theme</span><span class="w"> </span><span class="ss">&#39;monokai</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
 </code></pre></div>
 
 <p>I don't specify the font face manually, instead, I choose it from the menu and Emacs adds it to the config. For some reason Emacs thinks that sentences are divided using double spaces, so the first line is to fix it to be able to jump between sentences with Alt-E and Alt-A.</p>
 <p>I use a separate <a href="https://github.com/emacsmirror/reverse-im">reverse-im module</a> to make hotkeys work with Cyrillic keymap, first, we need to add repositories and install 'package':</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;package</span><span class="p">)</span><span class="w"></span>
-<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;package-archives</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;melpa&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;https://melpa.org/packages/&quot;</span><span class="p">))</span><span class="w"></span>
-<span class="p">(</span><span class="nb">use-package</span><span class="w"> </span><span class="nv">reverse-im</span><span class="w"></span>
-<span class="w">  </span><span class="ss">:ensure</span><span class="w"> </span><span class="no">t</span><span class="w"></span>
-<span class="w">  </span><span class="ss">:custom</span><span class="w"></span>
-<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-input-methods</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;russian-computer&quot;</span><span class="p">))</span><span class="w"></span>
-<span class="w">  </span><span class="ss">:config</span><span class="w"></span>
-<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-mode</span><span class="w"> </span><span class="no">t</span><span class="p">))</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;package</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;package-archives</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;melpa&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;https://melpa.org/packages/&quot;</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">use-package</span><span class="w"> </span><span class="nv">reverse-im</span>
+<span class="w">  </span><span class="ss">:ensure</span><span class="w"> </span><span class="no">t</span>
+<span class="w">  </span><span class="ss">:custom</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-input-methods</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;russian-computer&quot;</span><span class="p">))</span>
+<span class="w">  </span><span class="ss">:config</span>
+<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-mode</span><span class="w"> </span><span class="no">t</span><span class="p">))</span>
 </code></pre></div>
 
 <h2>Markdown</h2>

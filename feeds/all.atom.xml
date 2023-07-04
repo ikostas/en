@@ -19,7 +19,7 @@
 &lt;li&gt;Regular push-ups just to relieve the strain&lt;/li&gt;
 &lt;li&gt;Getting out for a walk&lt;/li&gt;
 &lt;li&gt;Taking time to think&lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"></category><category term="productivity"></category></entry><entry><title>We need older software</title><link href="https://en.kovchinnikov.info/2023-07-software.html" rel="alternate"></link><published>2023-07-03T23:49:00+02:00</published><updated>2023-07-03T23:49:00+02:00</updated><author><name>Konstantin Ovchinnikov</name></author><id>tag:en.kovchinnikov.info,2023-07-03:/2023-07-software.html</id><summary type="html">&lt;p&gt;Changing linux distributions and hoping for the best&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;/ul&gt;</content><category term="blog"></category><category term="productivity"></category></entry><entry><title>We need older software</title><link href="https://en.kovchinnikov.info/2023-07-software.html" rel="alternate"></link><published>2023-07-03T23:49:00+02:00</published><updated>2023-07-03T23:49:00+02:00</updated><author><name>Konstantin Ovchinnikov</name></author><id>tag:en.kovchinnikov.info,2023-07-03:/2023-07-software.html</id><summary type="html">&lt;p&gt;Changing linux distributions and hoping for the best&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;As you may already know, 2023 is not the year of linux on the desktop, despite many predictions. As a (not so typical) linux user I continue to experience major difficulties using linux as my desktop, so I have to change linux distributions from time to time. My current choice is CentOS Stream (oh no!) and it feels good, despite some minor issues. So in this article, I'll try to cover: &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The distribution choice&lt;/li&gt;
@@ -27,7 +27,7 @@
 &lt;li&gt;Some conclusions&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;I hope you'll enjoy it and please don't treat it 100% seriously. There's still a lot of fun. At least we can continue to think so.&lt;/p&gt;
-&lt;h3&gt;The distribution choice&lt;/h3&gt;
+&lt;h2&gt;The distribution choice&lt;/h2&gt;
 &lt;p&gt;So my path to CentOS and the logic behind this choice was like this:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;I used &lt;strong&gt;Fedora&lt;/strong&gt; at home for a long time.&lt;/li&gt;
@@ -68,7 +68,7 @@
 &lt;li&gt;Maybe it's not a bad idea to have a little fresher software than RHEL.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;So, I decided to try CentOS, but I hope the description of my migration procedure will help someone.&lt;/p&gt;
-&lt;h3&gt;Migration process&lt;/h3&gt;
+&lt;h2&gt;Migration process&lt;/h2&gt;
 &lt;p&gt;We need to do three tasks:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Prepare installation media&lt;/li&gt;
@@ -120,7 +120,7 @@
 &lt;/ol&gt;
 &lt;p&gt;By the way, I don't get all this anxiety about desktop icons. It's better with desktop icons, but I have no problems launching Minecraft and Camunda Modeler from &lt;kbd&gt;Alt-F2&lt;/kbd&gt; prompt. Yes, this prompt has auto-completion. And you can name your symlinks in &lt;code&gt;/usr/bin&lt;/code&gt; whatever you want.&lt;/p&gt;
 &lt;p&gt;Last, but not the least, we need backups! I used Deja Dup to make weekly backups to Google Drive, but I failed to install Google Drive support for Deja Dup in CentOS. But then I thought that my internet connection is slow and uploading 4 Gb to Google Drive takes a lot of bandwidth. I switched to &lt;a href="https://torsion.org/borgmatic/"&gt;borgmatic&lt;/a&gt; backup to an external HDD.  It's easy to set up and it takes just seconds. Maybe my backups to Google Drive were the reason for the lagging Zoom video or it was just a coincidence. No, Ubuntu couldn't do that to me.&lt;/p&gt;
-&lt;h3&gt;Some conclusions&lt;/h3&gt;
+&lt;h2&gt;Some conclusions&lt;/h2&gt;
 &lt;p&gt;Regarding CentOS, it works great with some minor 'desktop experience' exceptions:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;2 of 4 of my favorite Gnome extensions won't install for this Gnome version, but I was able to install Unity.&lt;/li&gt;

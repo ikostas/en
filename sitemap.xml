@@ -5,8 +5,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://en.kovchinnikov.info/</loc>
-<lastmod>2023-07-06T18:44:00-00:00</lastmod>
+<lastmod>2023-07-13T10:11:52-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://en.kovchinnikov.info/2023-07-programs.html</loc>
+<lastmod>2023-07-12T09:54:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -145,20 +152,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://en.kovchinnikov.info/category/blog.html</loc>
-<lastmod>2023-07-06T12:13:00+01:00</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://en.kovchinnikov.info/tag/linux.html</loc>
-<lastmod>2023-07-06T12:13:00+01:00</lastmod>
+<lastmod>2023-07-12T09:54:00+01:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/productivity.html</loc>
+<lastmod>2023-07-12T09:54:00+01:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://en.kovchinnikov.info/tag/linux.html</loc>
 <lastmod>2023-07-06T12:13:00+01:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -208,7 +215,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://en.kovchinnikov.info/author/konstantin-ovchinnikov.html</loc>
-<lastmod>2023-07-06T12:13:00+01:00</lastmod>
+<lastmod>2023-07-12T09:54:00+01:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

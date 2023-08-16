@@ -1,5 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>The Real Changes</title><link href="https://en.kovchinnikov.info/" rel="alternate"></link><link href="https://en.kovchinnikov.info/feeds/all.atom.xml" rel="self"></link><id>https://en.kovchinnikov.info/</id><updated>2023-08-07T20:43:00+02:00</updated><subtitle>Konstantin Ovchinikov's personal page</subtitle><entry><title>Learning German</title><link href="https://en.kovchinnikov.info/2023-08-german.html" rel="alternate"></link><published>2023-08-07T20:43:00+02:00</published><updated>2023-08-07T20:43:00+02:00</updated><author><name>Konstantin Ovchinnikov</name></author><id>tag:en.kovchinnikov.info,2023-08-07:/2023-08-german.html</id><summary type="html">&lt;p&gt;Based on my own experience, some tips included&lt;/p&gt;</summary><content type="html">&lt;p&gt;First, I need to start with a few disclaimers:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>The Real Changes</title><link href="https://en.kovchinnikov.info/" rel="alternate"></link><link href="https://en.kovchinnikov.info/feeds/all.atom.xml" rel="self"></link><id>https://en.kovchinnikov.info/</id><updated>2023-08-16T22:56:00+02:00</updated><subtitle>Konstantin Ovchinikov's personal page</subtitle><entry><title>Taking Emacs and Neovim to the next level</title><link href="https://en.kovchinnikov.info/2023-08-vim-emacs.html" rel="alternate"></link><published>2023-08-16T22:56:00+02:00</published><updated>2023-08-16T22:56:00+02:00</updated><author><name>Konstantin Ovchinnikov</name></author><id>tag:en.kovchinnikov.info,2023-08-16:/2023-08-vim-emacs.html</id><summary type="html">&lt;p&gt;New requirements with the start of web app development&lt;/p&gt;</summary><content type="html">&lt;h2&gt;The story&lt;/h2&gt;
+&lt;p&gt;I was quite content with Emacs, especially with Markdown and Org modes. But then I started to develop a web application, and it became obvious, that a standard Emacs sucks in many ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Switching between buffers, the order of the buffers always changes&lt;/li&gt;
+&lt;li&gt;Moving through the text and editing files&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The answer to the first issue can be a fuzzy finder, regarding the second issue the answer is called modal editing which is impemented in Vim, notably. Emacs has several advantages, though:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Highly intellectual editing, most of all I like editing links and tables in Org and Markdown modes&lt;/li&gt;
+&lt;li&gt;Very good 'monolythic' modes for any language&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you want to use these advantages, you could install... a few more modes. But in this article I'd like to look further. Maybe we could use Neovim or some other editor for programming? Before we start, I'd like to mention a few points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If you start from scratch, maybe &lt;a href="2022-09-linux-5.html"&gt;the first article about Vim and Emacs configs&lt;/a&gt; could be useful for you&lt;/li&gt;
+&lt;li&gt;I created &lt;a href="https://github.com/ikostas/misc/"&gt;a git repo with my configs&lt;/a&gt;, for reference&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Emacs&lt;/h2&gt;
+&lt;p&gt;First, we activate &lt;a href="https://docs.projectile.mx/projectile/index.html"&gt;projectile&lt;/a&gt; to be able to navigate within the project:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;projectile-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;+1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;define-key&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;projectile-mode-map&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;kbd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;C-c p&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;#39;projectile-command-map&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then we activate &lt;a href="https://www.masteringemacs.org/article/introduction-to-ido-mode"&gt;ido&lt;/a&gt;, which a fuzzy finder. You could use &lt;a href="https://tuhdo.github.io/helm-intro.html"&gt;helm&lt;/a&gt; as well, by the way:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ido-enable-flex-matching&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ido-everywhere&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;ido-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ido-ignore-buffers&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;\\` &amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^\*&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ido-ignore-files&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;^\#&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;\~$&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I added some lines to activate backup files Emacs create. And we also make ibuffer default:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;defalias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;#39;list-buffers&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;#39;ibuffer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we are ready to activate evil-mode, which emulates Vim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;#39;evil&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;evil-mode&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And jumping between lines is easier with relative numbers:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;display-line-numbers-type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;#39;relative&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;"It ain't much, but it's honest work." &amp;copy; I still don't feel comfortable though.&lt;/p&gt;
+&lt;h2&gt;Neovim&lt;/h2&gt;
+&lt;p&gt;What are Neovim's super-powers? I think, &lt;a href="https://github.com/nvim-treesitter/nvim-treesitter"&gt;treesitter&lt;/a&gt; and &lt;a href="https://github.com/nvim-telescope/telescope.nvim"&gt;telescope&lt;/a&gt; are among them. You could also turn on LSP, but I try to learn programming without it.&lt;/p&gt;
+&lt;p&gt;I used vim a lot, but I can't get rid of a thought that it's not logical. You could change the keystrokes, but I mean the deeper logic for the editor, it feels that it's just absent sometimes. Could it be better?&lt;/p&gt;
+&lt;p&gt;And I also have some doubts regarding Emacs. Do we really need a Lisp environment just to write texts? Doesn't it get bloated with all that extensions? Evil mode works quite well, but does it seem alien to the whole logic of Emacs?&lt;/p&gt;
+&lt;p&gt;Could we have just a simple editor, maybe lacking some features, but with a more holistic approach? An editor, which would not require to search for plugins and install them and then finding where these plugins conflict with each other? Maybe an editor, which could be written with modern achievement like language and the whole idea of modern text editing and writing programs?&lt;/p&gt;
+&lt;p&gt;Well, if you don't need LSPs and modal editing, maybe you could go with &lt;a href="https://micro-editor.github.io/"&gt;micro&lt;/a&gt;. It has themes and plugins.&lt;/p&gt;
+&lt;h2&gt;Bonus: helix&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://helix-editor.com/"&gt;Helix&lt;/a&gt; has been there for a while, and &lt;a href="https://www.youtube.com/watch?v=xHebvTGOdH8"&gt;this video&lt;/a&gt; includes a good explanation of differences with vim. It doesn't explain though, that helix lacks some features, like jumping between sentences (maybe because it's a programming editor, first of all), and it lacks snippets. But based on idea &lt;a href="https://www.youtube.com/shorts/Ev1n7y_RVOE"&gt;in this video&lt;/a&gt; even a looser like me can write &lt;a href="https://github.com/ikostas/misc/blob/main/sn"&gt;a bash script&lt;/a&gt; to insert some HTML and Markdown. After using it for a while, I have some thoughts to share:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It's more logical, than vim, and 'modes' are just to explain the logic behind the keystrokes&lt;/li&gt;
+&lt;li&gt;I struggle switching from vim with some keystrokes, especially 'x', which is 'select line' in helix&lt;/li&gt;
+&lt;li&gt;It's great that's it rather simple, so you don't get too frustrated studing it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With all that said, it's a lot of fun editing files in Helix. As a user I can't say how the fact that's it's written in Rust makes it better, I don't think Emacs is slow, although it's been criticised for that. It's more user-friendly, than Emacs, and a lot user-friendly, than vim, but these friendly features don't prevent you from beeing fast and highly effective. If you don't need information in these pop-ups, you could just ignore them and nothing will happen.&lt;/p&gt;
+&lt;p&gt;If you use tmux, don't forget to put this into your tmux.config:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="p"&gt;-&lt;/span&gt;sg escape&lt;span class="p"&gt;-&lt;/span&gt;time &lt;span class="m"&gt;0&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="blog"></category><category term="productivity"></category><category term="Neovim"></category><category term="Emacs"></category></entry><entry><title>Learning German</title><link href="https://en.kovchinnikov.info/2023-08-german.html" rel="alternate"></link><published>2023-08-07T20:43:00+02:00</published><updated>2023-08-07T20:43:00+02:00</updated><author><name>Konstantin Ovchinnikov</name></author><id>tag:en.kovchinnikov.info,2023-08-07:/2023-08-german.html</id><summary type="html">&lt;p&gt;Based on my own experience, some tips included&lt;/p&gt;</summary><content type="html">&lt;p&gt;First, I need to start with a few disclaimers:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;I learned English (for 30 years), Spanish (for 4 years in the school) and French (4 years in the institute), so my experience with German is subjective because of that;&lt;/li&gt;
 &lt;li&gt;I chose Lingoda as the main way of learning, and although I like it, this article is about why you &lt;strong&gt;shouldn't&lt;/strong&gt; stick to Lingoda only;&lt;/li&gt;

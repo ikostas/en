@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MWJX8WCGVQ');
+</script>
+            <meta charset="utf-8">
+        <!-- Site Meta Data -->
+        <title>Taking Emacs and Neovim to the next level</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Konstantin Ovchinnikov">
+
+        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="The Real Changes">
+        <meta itemprop="image" content="/theme/images/logo3_small.png">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+
+        <!-- Feed Meta Data -->
+            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="The Real Changes ATOM Feed"/>
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="Konstan21511383">
+        <meta name="twitter:image" content="">
+
+
+    <meta name="twitter:creator" content="Konstan21511383">
+    <meta name="twitter:url" content="./2023-08-vim-emacs.html">
+    <meta name="twitter:title" content="The Real Changes ~ Taking Emacs and Neovim to the next level">
+    <meta name="twitter:description" content="New requirements with the start of web app development">
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:title" content="The Real Changes ~ Taking Emacs and Neovim to the next level"/>
+    <meta property="og:description" content="New requirements with the start of web app development"/>
+    <meta property="og:image" content=""/>
+</head>
+
+<body>
+<!-- Sidebar -->
+<aside>
+    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
+        <p>Konstantin Ovchinnikov's personal page</p>
+		<p>
+        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
+    <!-- Site search -->
+<script async src="https://cse.google.com/cse.js?cx=75184ca4aae714aae">
+</script>
+<div class="gcse-search"></div>
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
+                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+
+
+        </ul>
+    </nav>
+
+    <p class="social">
+                <a href="https://twitter.com/Konstan21511383" target="_blank"><img alt="Twitter"
+                        src="./theme/images/icons/twitter.png"></a>
+                <a href="https://t.me/therealchanges" target="_blank"><img alt="Telegram"
+                        src="./theme/images/icons/telegram.png"></a>
+                <a href="https://www.linkedin.com/in/konstantinovchinnikov/" target="_blank"><img alt="LinkedIn"
+                        src="./theme/images/icons/linkedin.png"></a>
+                <a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg" target="_blank"><img alt="YouTube"
+                        src="./theme/images/icons/youtube.png"></a>
+                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
+                        src="./theme/images/icons/github.png"></a>
+            <a href="./feeds/all.atom.xml" rel="alternate">
+                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
+    </p>
+
+
+
+</aside>
+
+<!-- Content -->
+<article>
+
+    <section id="content">
+        <article>
+<!--End mc_embed_signup-->
+
+            <h2 class="post_title post_detail"><a href="./2023-08-vim-emacs.html" rel="bookmark" title="Permalink to Taking Emacs and Neovim to the next level">Taking Emacs and Neovim to the next level</a></h2>
+            <div class="entry-content blog-post">
+                <h2>The story</h2>
+<p>I was quite content with Emacs, especially with Markdown and Org modes. But then I started to develop a web application, and it became obvious, that a standard Emacs sucks in many ways:</p>
+<ul>
+<li>Switching between buffers, the order of the buffers always changes</li>
+<li>Moving through the text and editing files</li>
+</ul>
+<p>The answer to the first issue can be a fuzzy finder, regarding the second issue the answer is called modal editing which is impemented in Vim, notably. Emacs has several advantages, though:</p>
+<ul>
+<li>Highly intellectual editing, most of all I like editing links and tables in Org and Markdown modes</li>
+<li>Very good 'monolythic' modes for any language</li>
+</ul>
+<p>If you want to use these advantages, you could install... a few more modes. But in this article I'd like to look further. Maybe we could use Neovim or some other editor for programming? Before we start, I'd like to mention a few points:</p>
+<ul>
+<li>If you start from scratch, maybe <a href="2022-09-linux-5.html">the first article about Vim and Emacs configs</a> could be useful for you</li>
+<li>I created <a href="https://github.com/ikostas/misc/">a git repo with my configs</a>, for reference</li>
+</ul>
+<h2>Emacs</h2>
+<p>First, we activate <a href="https://docs.projectile.mx/projectile/index.html">projectile</a> to be able to navigate within the project:</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">projectile-mode</span><span class="w"> </span><span class="mi">+1</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">define-key</span><span class="w"> </span><span class="nv">projectile-mode-map</span><span class="w"> </span><span class="p">(</span><span class="nv">kbd</span><span class="w"> </span><span class="s">&quot;C-c p&quot;</span><span class="p">)</span><span class="w"> </span><span class="ss">&#39;projectile-command-map</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Then we activate <a href="https://www.masteringemacs.org/article/introduction-to-ido-mode">ido</a>, which a fuzzy finder. You could use <a href="https://tuhdo.github.io/helm-intro.html">helm</a> as well, by the way:</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">ido-enable-flex-matching</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">ido-everywhere</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">ido-mode</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">ido-ignore-buffers</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;\\` &quot;</span><span class="w"> </span><span class="s">&quot;^\*&quot;</span><span class="p">))</span>
+<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">ido-ignore-files</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;^\#&quot;</span><span class="w"> </span><span class="s">&quot;\~$&quot;</span><span class="p">))</span>
+</code></pre></div>
+
+<p>I added some lines to activate backup files Emacs create. And we also make ibuffer default:</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">defalias</span><span class="w"> </span><span class="ss">&#39;list-buffers</span><span class="w"> </span><span class="ss">&#39;ibuffer</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Now we are ready to activate evil-mode, which emulates Vim:</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;evil</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">evil-mode</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+<p>And jumping between lines is easier with relative numbers:</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">display-line-numbers-type</span><span class="w"> </span><span class="ss">&#39;relative</span><span class="p">)</span>
+</code></pre></div>
+
+<p>"It ain't much, but it's honest work." &copy; I still don't feel comfortable though.</p>
+<h2>Neovim</h2>
+<p>What are Neovim's super-powers? I think, <a href="https://github.com/nvim-treesitter/nvim-treesitter">treesitter</a> and <a href="https://github.com/nvim-telescope/telescope.nvim">telescope</a> are among them. You could also turn on LSP, but I try to learn programming without it.</p>
+<p>I used vim a lot, but I can't get rid of a thought that it's not logical. You could change the keystrokes, but I mean the deeper logic for the editor, it feels that it's just absent sometimes. Could it be better?</p>
+<p>And I also have some doubts regarding Emacs. Do we really need a Lisp environment just to write texts? Doesn't it get bloated with all that extensions? Evil mode works quite well, but does it seem alien to the whole logic of Emacs?</p>
+<p>Could we have just a simple editor, maybe lacking some features, but with a more holistic approach? An editor, which would not require to search for plugins and install them and then finding where these plugins conflict with each other? Maybe an editor, which could be written with modern achievement like language and the whole idea of modern text editing and writing programs?</p>
+<p>Well, if you don't need LSPs and modal editing, maybe you could go with <a href="https://micro-editor.github.io/">micro</a>. It has themes and plugins.</p>
+<h2>Bonus: helix</h2>
+<p><a href="https://helix-editor.com/">Helix</a> has been there for a while, and <a href="https://www.youtube.com/watch?v=xHebvTGOdH8">this video</a> includes a good explanation of differences with vim. It doesn't explain though, that helix lacks some features, like jumping between sentences (maybe because it's a programming editor, first of all), and it lacks snippets. But based on idea <a href="https://www.youtube.com/shorts/Ev1n7y_RVOE">in this video</a> even a looser like me can write <a href="https://github.com/ikostas/misc/blob/main/sn">a bash script</a> to insert some HTML and Markdown. After using it for a while, I have some thoughts to share:</p>
+<ul>
+<li>It's more logical, than vim, and 'modes' are just to explain the logic behind the keystrokes</li>
+<li>I struggle switching from vim with some keystrokes, especially 'x', which is 'select line' in helix</li>
+<li>It's great that's it rather simple, so you don't get too frustrated studing it</li>
+</ul>
+<p>With all that said, it's a lot of fun editing files in Helix. As a user I can't say how the fact that's it's written in Rust makes it better, I don't think Emacs is slow, although it's been criticised for that. It's more user-friendly, than Emacs, and a lot user-friendly, than vim, but these friendly features don't prevent you from beeing fast and highly effective. If you don't need information in these pop-ups, you could just ignore them and nothing will happen.</p>
+<p>If you use tmux, don't forget to put this into your tmux.config:</p>
+<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="p">-</span>sg escape<span class="p">-</span>time <span class="m">0</span>
+</code></pre></div>
+            </div>
+            <div class="post_list">
+                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
+                <span class="post_date">Wed 16 August 2023</span>
+                <div><span>Tags: </span>
+                            <span><a href="./tag/productivity.html">#productivity </a></span>
+                            <span><a href="./tag/neovim.html">#Neovim </a></span>
+                            <span><a href="./tag/emacs.html">#Emacs </a></span>
+                </div>
+            </div>
+                <div class="comments">
+                    <h2>Comments</h2>
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript">
+                        var disqus_identifier = "2023-08-vim-emacs.html";
+                        (function () {
+                            var dsq = document.createElement('script');
+                            dsq.type = 'text/javascript';
+                            dsq.async = true;
+                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] ||
+                            document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+                </div>
+        </article>
+    </section>
+</article>
+
+<!-- Footer -->
+    <footer>
+        <p>
+	  Made with <a href="http://getpelican.com/">Pelican</a>, 
+      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
+        </p>
+    </footer>
+
+
+</body>
+</html>

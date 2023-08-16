@@ -44,7 +44,7 @@
 
 &lt;p&gt;"It ain't much, but it's honest work." &amp;copy; I still don't feel comfortable though.&lt;/p&gt;
 &lt;h2&gt;Neovim&lt;/h2&gt;
-&lt;p&gt;What are Neovim's super-powers? I think, &lt;a href="https://github.com/nvim-treesitter/nvim-treesitter"&gt;treesitter&lt;/a&gt; and &lt;a href="https://github.com/nvim-telescope/telescope.nvim"&gt;telescope&lt;/a&gt; are among them. You could also turn on LSP, but I try to learn programming without it.&lt;/p&gt;
+&lt;p&gt;What are Neovim's super-powers? I think, &lt;a href="https://github.com/nvim-treesitter/nvim-treesitter"&gt;tree sitter&lt;/a&gt; and &lt;a href="https://github.com/nvim-telescope/telescope.nvim"&gt;telescope&lt;/a&gt; are among them. You could also turn on LSP, but I try to learn programming without it.&lt;/p&gt;
 &lt;p&gt;I used vim a lot, but I can't get rid of a thought that it's not logical. You could change the keystrokes, but I mean the deeper logic for the editor, it feels that it's just absent sometimes. Could it be better?&lt;/p&gt;
 &lt;p&gt;And I also have some doubts regarding Emacs. Do we really need a Lisp environment just to write texts? Doesn't it get bloated with all that extensions? Evil mode works quite well, but does it seem alien to the whole logic of Emacs?&lt;/p&gt;
 &lt;p&gt;Could we have just a simple editor, maybe lacking some features, but with a more holistic approach? An editor, which would not require to search for plugins and install them and then finding where these plugins conflict with each other? Maybe an editor, which could be written with modern achievement like language and the whole idea of modern text editing and writing programs?&lt;/p&gt;

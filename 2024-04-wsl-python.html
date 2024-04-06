@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MWJX8WCGVQ');
+</script>
+            <meta charset="utf-8">
+        <!-- Site Meta Data -->
+        <title>Python/Django development in Windows Terminal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Konstantin Ovchinnikov">
+
+        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="The Real Changes">
+        <meta itemprop="image" content="/theme/images/logo3_small.png">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+
+        <!-- Feed Meta Data -->
+            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="The Real Changes ATOM Feed"/>
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="Konstan21511383">
+        <meta name="twitter:image" content="">
+
+
+    <meta name="twitter:creator" content="Konstan21511383">
+    <meta name="twitter:url" content="./2024-04-wsl-python.html">
+    <meta name="twitter:title" content="The Real Changes ~ Python/Django development in Windows Terminal">
+    <meta name="twitter:description" content="A minimal development environment for those who prefer a terminal">
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:title" content="The Real Changes ~ Python/Django development in Windows Terminal"/>
+    <meta property="og:description" content="A minimal development environment for those who prefer a terminal"/>
+    <meta property="og:image" content=""/>
+</head>
+
+<body>
+<!-- Sidebar -->
+<aside>
+    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
+        <p>Konstantin Ovchinnikov's personal page</p>
+		<p>
+        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
+    <!-- Site search -->
+<script async src="https://cse.google.com/cse.js?cx=75184ca4aae714aae">
+</script>
+<div class="gcse-search"></div>
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
+                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+
+
+        </ul>
+    </nav>
+
+    <p class="social">
+                <a href="https://twitter.com/Konstan21511383" target="_blank"><img alt="Twitter"
+                        src="./theme/images/icons/twitter.png"></a>
+                <a href="https://t.me/therealchanges" target="_blank"><img alt="Telegram"
+                        src="./theme/images/icons/telegram.png"></a>
+                <a href="https://www.linkedin.com/in/konstantinovchinnikov/" target="_blank"><img alt="LinkedIn"
+                        src="./theme/images/icons/linkedin.png"></a>
+                <a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg" target="_blank"><img alt="YouTube"
+                        src="./theme/images/icons/youtube.png"></a>
+                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
+                        src="./theme/images/icons/github.png"></a>
+            <a href="./feeds/all.atom.xml" rel="alternate">
+                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
+    </p>
+
+
+
+</aside>
+
+<!-- Content -->
+<article>
+
+    <section id="content">
+        <article>
+<!--End mc_embed_signup-->
+
+            <h2 class="post_title post_detail"><a href="./2024-04-wsl-python.html" rel="bookmark" title="Permalink to Python/Django development in Windows Terminal">Python/Django development in Windows Terminal</a></h2>
+            <div class="entry-content blog-post">
+                <p>Well, I decided to write a small Django app, and as Windows is used at our workplaces and I've gotten used to linux, two problems arose:</p>
+<ul>
+<li>You need to call admin every time you install any program</li>
+<li>WSL is rather limited</li>
+</ul>
+<p>So, after some tinkering, tries, and errors I came to a minimal configuration, which I'll describe in this article. Hope, it helps someone somehow. :) I'm also new to programming and Django in particular, so it took me a while to find an optimal setup.</p>
+<p>My requirements are very simple:</p>
+<ul>
+<li>Terminal-based workflow</li>
+<li>A few steps to setup</li>
+<li>Reproducible, if something goes wrong</li>
+</ul>
+<p>I ended up with the following:</p>
+<ul>
+<li>Ubuntu in WSL2, just the default</li>
+<li>Windows Terminal, why not</li>
+<li>tmux is used with two or three windows: neovim, runserver, find something/look in the database</li>
+<li>neovim + <a href="https://github.com/nvim-lua/kickstart.nvim">kickstart</a></li>
+<li>Python 3 + pip, nothing special</li>
+<li>GitHub Projects to have a task list</li>
+<li>git to track versions when I complete a task</li>
+</ul>
+<p>For the current project I use SQLite, but it shouldn't be an issue with any other database.</p>
+<p>The only thing worth discussing here is neovim, so let's dive into that.</p>
+<p>First I tried emacs-nox as I use emacs for writing texts. But for programming emacs is too much with its functions, and windows management becomes a problem as well: it creates lots of service buffers. On the other hand, neovim + Telescope is a nice solution for windows management, neovim has just the functions I need for editing, so it's a lot easier to get into the 'flow state' for programming.</p>
+<p>By the way, I don't use a language server for Python, but I use an emmet language server to write HTML faster. I don't use LSP for Python just because I learn Django and Python and I need first of all to understand, so I look into documentation and try to write when I'm sure what I'm doing. Django requires writing very little text, but switching between (or having them on one screen) models, forms, urls, and views is critical. And neovim does that pretty well.</p>
+<p>Again, due to WSL limitations, I was able to use neovim binary only from the official site: AppImage didn't work for me. And you need a fresh neovim version for Lazy, which is used by kickstart.</p>
+<p>You can find great ways to use tmux and also bind neovim and tmux together, I just keep it simple.</p>
+<p>Someone could use docker, but Python's virtual environment works pretty well for me, I was able to copy it to the linux machine, mostly with <code>pip freeze</code> and <code>pip install -r</code>. And the app just works.</p>
+            </div>
+            <div class="post_list">
+                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
+                <span class="post_date">Sat 06 April 2024</span>
+                <div><span>Tags: </span>
+                            <span><a href="./tag/python.html">#python </a></span>
+                            <span><a href="./tag/vim.html">#vim </a></span>
+                </div>
+            </div>
+                <div class="comments">
+                    <h2>Comments</h2>
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript">
+                        var disqus_identifier = "2024-04-wsl-python.html";
+                        (function () {
+                            var dsq = document.createElement('script');
+                            dsq.type = 'text/javascript';
+                            dsq.async = true;
+                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] ||
+                            document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+                </div>
+        </article>
+    </section>
+</article>
+
+<!-- Footer -->
+    <footer>
+        <p>
+	  Made with <a href="http://getpelican.com/">Pelican</a>, 
+      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
+        </p>
+    </footer>
+
+
+</body>
+</html>

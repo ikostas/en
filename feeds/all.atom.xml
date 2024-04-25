@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>The Real Changes</title><link href="https://en.kovchinnikov.info/" rel="alternate"></link><link href="https://en.kovchinnikov.info/feeds/all.atom.xml" rel="self"></link><id>https://en.kovchinnikov.info/</id><updated>2024-04-06T11:49:00+02:00</updated><subtitle>Konstantin Ovchinikov's personal page</subtitle><entry><title>Python/Django development in Windows Terminal</title><link href="https://en.kovchinnikov.info/2024-04-wsl-python.html" rel="alternate"></link><published>2024-04-06T11:49:00+02:00</published><updated>2024-04-06T11:49:00+02:00</updated><author><name>Konstantin Ovchinnikov</name></author><id>tag:en.kovchinnikov.info,2024-04-06:/2024-04-wsl-python.html</id><summary type="html">&lt;p&gt;A minimal development environment for those who prefer a terminal&lt;/p&gt;</summary><content type="html">&lt;p&gt;Well, I decided to write a small Django app, and as Windows is used at our workplaces and I've gotten used to linux, two problems arose:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>The Real Changes</title><link href="https://en.kovchinnikov.info/" rel="alternate"></link><link href="https://en.kovchinnikov.info/feeds/all.atom.xml" rel="self"></link><id>https://en.kovchinnikov.info/</id><updated>2024-04-25T22:33:00+02:00</updated><subtitle>Konstantin Ovchinikov's personal page</subtitle><entry><title>A few maturity models</title><link href="https://en.kovchinnikov.info/2024-04-maturity.html" rel="alternate"></link><published>2024-04-25T22:33:00+02:00</published><updated>2024-04-25T22:33:00+02:00</updated><author><name>Konstantin Ovchinnikov</name></author><id>tag:en.kovchinnikov.info,2024-04-25:/2024-04-maturity.html</id><summary type="html">&lt;p&gt;Maturity models for Sales&amp;amp;Marketing, Project Management Office and digitalization&lt;/p&gt;</summary><content type="html">&lt;p&gt;The story of the Capability Maturity Model started, according to Wikipedia, in 1986 with the U.S. Department of Defense. Since then a CMM institute was established and several models were developed.&lt;/p&gt;
+&lt;p&gt;I found it useful to develop a model for a particular area with a subject matter expert and apply it, answering the Three Main Questions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Where are we?&lt;/li&gt;
+&lt;li&gt;Where are we heading to?&lt;/li&gt;
+&lt;li&gt;How do we get there?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It's important to understand that the criteria in the model are not comprehensive, but rather indicative. It's also important, that the model defines absolute levels, so it should be updated as new practices emerge. The levels themselves can be depicted using the radar chart, which many top managers from my experience find intuitive and easy to understand. So, I decided to publish the following models:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="pdf/s3m.pdf"&gt;Sales Maturity Model&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="pdf/p3m.pdf"&gt;Project Management Maturity Model&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="pdf/dmm.pdf"&gt;Digitalization Maturity Model&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Special thanks to the people, who helped me a lot with my development effort:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Andrey Malakhov for Project Management Maturity Model&lt;/li&gt;
+&lt;li&gt;Ekaterina Mityasova for Sales Maturity Model&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;p&gt;Please remember to put a link to this website as a source, if you use it.&lt;/p&gt;</content><category term="blog"></category><category term="maturity"></category><category term="sales"></category><category term="digitalization"></category><category term="project management"></category></entry><entry><title>Python/Django development in Windows Terminal</title><link href="https://en.kovchinnikov.info/2024-04-wsl-python.html" rel="alternate"></link><published>2024-04-06T11:49:00+02:00</published><updated>2024-04-06T11:49:00+02:00</updated><author><name>Konstantin Ovchinnikov</name></author><id>tag:en.kovchinnikov.info,2024-04-06:/2024-04-wsl-python.html</id><summary type="html">&lt;p&gt;A minimal development environment for those who prefer a terminal&lt;/p&gt;</summary><content type="html">&lt;p&gt;Well, I decided to write a small Django app, and as Windows is used at our workplaces and I've gotten used to linux, two problems arose:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;You need to call admin every time you install any program&lt;/li&gt;
 &lt;li&gt;WSL is rather limited&lt;/li&gt;

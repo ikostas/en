@@ -6,7 +6,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://en.kovchinnikov.info/</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -194,204 +194,218 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://en.kovchinnikov.info/2024-05-webapp.html</loc>
+<lastmod>2024-05-16T19:18:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://en.kovchinnikov.info/archives.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/author/konstantin-ovchinnikov.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/author/konstantin-ovchinnikov2.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/author/konstantin-ovchinnikov3.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/authors.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/categories.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/category/blog.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/category/blog2.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/category/blog3.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/index2.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/index3.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/3d-printing.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/cycling.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://en.kovchinnikov.info/tag/dev.html</loc>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/digitalization.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/emacs.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/german.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/germany.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/hosting.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/linux.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/linux2.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/maturity.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/opensource.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/productivity.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/productivity2.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/project-management.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/python.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/sales.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tag/vim.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://en.kovchinnikov.info/tags.html</loc>
-<lastmod>2024-04-25T22:46:48-00:00</lastmod>
+<lastmod>2024-05-16T19:36:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

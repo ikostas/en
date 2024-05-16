@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MWJX8WCGVQ');
+</script>
+            <meta charset="utf-8">
+        <!-- Site Meta Data -->
+        <title>We're writing a web app</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Konstantin Ovchinnikov">
+
+        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="The Real Changes">
+        <meta itemprop="image" content="/theme/images/logo3_small.png">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+
+        <!-- Feed Meta Data -->
+            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="The Real Changes ATOM Feed"/>
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="Konstan21511383">
+        <meta name="twitter:image" content="">
+
+
+    <meta name="twitter:creator" content="Konstan21511383">
+    <meta name="twitter:url" content="./2024-05-webapp.html">
+    <meta name="twitter:title" content="The Real Changes ~ We're writing a web app">
+    <meta name="twitter:description" content="Learning web apps from a historical perspective">
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:title" content="The Real Changes ~ We're writing a web app"/>
+    <meta property="og:description" content="Learning web apps from a historical perspective"/>
+    <meta property="og:image" content=""/>
+</head>
+
+<body>
+<!-- Sidebar -->
+<aside>
+    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
+        <p>Konstantin Ovchinnikov's personal page</p>
+		<p>
+        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
+    <!-- Site search -->
+<script async src="https://cse.google.com/cse.js?cx=75184ca4aae714aae">
+</script>
+<div class="gcse-search"></div>
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
+                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+
+
+        </ul>
+    </nav>
+
+    <p class="social">
+                <a href="https://twitter.com/Konstan21511383" target="_blank"><img alt="Twitter"
+                        src="./theme/images/icons/twitter.png"></a>
+                <a href="https://t.me/therealchanges" target="_blank"><img alt="Telegram"
+                        src="./theme/images/icons/telegram.png"></a>
+                <a href="https://www.linkedin.com/in/konstantinovchinnikov/" target="_blank"><img alt="LinkedIn"
+                        src="./theme/images/icons/linkedin.png"></a>
+                <a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg" target="_blank"><img alt="YouTube"
+                        src="./theme/images/icons/youtube.png"></a>
+                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
+                        src="./theme/images/icons/github.png"></a>
+            <a href="./feeds/all.atom.xml" rel="alternate">
+                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
+    </p>
+
+
+
+</aside>
+
+<!-- Content -->
+<article>
+
+    <section id="content">
+        <article>
+<!--End mc_embed_signup-->
+
+            <h2 class="post_title post_detail"><a href="./2024-05-webapp.html" rel="bookmark" title="Permalink to We're writing a web app">We're writing a web app</a></h2>
+            <div class="entry-content blog-post">
+                <h2>Why write a web app &#35;1</h2>
+<p>I wrote a lot about learning Linux tools and using them effectively. The question is what do we do with that? Or: what's next regarding personal development? What I've noticed, is that a lot of people tend to go into system administration, meaning setting up server applications. Here I should mention <a href="https://www.ubuntupit.com/">UbuntuPit</a> as a great source for these projects. This path has a few drawbacks, although it's useful for learning what exists:</p>
+<ul>
+<li>You are limited to the tools which are already available</li>
+<li>It can be frustrating because if it doesn't work, you're stuck; you're unable to modify the source code</li>
+</ul>
+<p>I think learning programming is beneficial regarding personal development, having new challenges, and so on. But why create a web app?</p>
+<h2>Why write a web app &#35;2</h2>
+<p>For simplicity, we can distinguish the two app types: those intended for individual use and those intended for collaborating with others. It tends that people are hugely more productive when they collaborate (no, I don't mean boring Zoom meetings), while personal productivity is limited. If we have a new app, the more people use it, the more productive, potentially, they can get. So what types of apps exist to interact with each other:</p>
+<ul>
+<li>Command-line apps (CLI) are the easiest to write, and are fun to start with, but the visualization is limited</li>
+<li>Graphical desktop apps are great, but you (normally) need special tools for Linux, Mac and Windows</li>
+<li>Mobile apps have several platforms as well, Android and iOS</li>
+<li>The web apps, finally</li>
+</ul>
+<p>The web apps are displayed in any standard-conformant browser, but they can also have a special mobile layout and they can be converted to mobile apps (or lite mobile apps) &ndash; being a mobile app, just cashing the assets for a faster display. At first, we could start even without that, and we'll be able to open our web app on any platform in any browser when the app and the browser stick to the standards. It motivated me to start, but to manage your expectations you should be probably aware of some drawbacks.</p>
+<h2>Why it's hard</h2>
+<p>It's just hard to make web apps, and the list of the reasons can be very long:</p>
+<ul>
+<li>The tools to build web apps are less sophisticated, than IDEs for mobile or desktop apps. Sometimes it seems like you're back in time and you don't have the tools desktop developers already have. Nevertheless, you can start development with any text editor and it takes some practice to feel comfortable in this environment.</li>
+<li>Web dev is not so much about dev. You have three parts (normally): a front-end, a back-end, and a database. You'll spend a lot of time messing with joining these parts together and looking for errors 'in-between'. Sometimes you'll find yourself spending 80% of your time creating front-end because it's all about tiny details. So, you have less time for the logic of the app.</li>
+<li>The number of web frameworks is overwhelming, and it took me several months to choose one (so you don't have to), and I'm still in the process.</li>
+<li>Choosing components for the front end, choosing a database engine, and choosing a back-end framework can be overwhelming too.</li>
+<li>All this makes the progress relatively slow.</li>
+</ul>
+<p>It's not that technically hard, but it puts a moral toll on you when you're moving not that fast or (what I did several times) you have to choose another framework for your app and rewrite everything.</p>
+<p>The tools you have, again for simplicity, can be divided into the things you can easily get without and the things you should know. But in what order to learn them? Well, ...</p>
+<h2>Learning the web from a historical perspective</h2>
+<p>I came to this idea recently, and I think it makes some sense: you could learn web technologies in the order they evolved because that happened for a reason. A reason for that was that humanity (or developers) came to some limitations with technology, so they invented a new technology until they had a better idea. I suggest that you learn in this order and the sign that you learned something is that you <strong>feel</strong> the limitations of a technology. This means you are probably ready for the next step.</p>
+<p>Roughly speaking, the sequence was like this:</p>
+<ol>
+<li>Static web meaning HTML and CSS, are the basics.</li>
+<li>Relational databases meaning SQL.</li>
+<li>Basic back-end framework, here I was quite happy to start with <a href="https://flask.palletsprojects.com/">Flask</a>.</li>
+<li>Opionated back-end framework, which gives you at least a variant, of how this could be done. I'm here now and I'm starting to feel the limits of <a href="https://www.djangoproject.com/">Django</a>.</li>
+<li>Non-opinionated modern back-end framework, it seems that <a href="https://expressjs.com/">Express JS</a> is quite popular, and I'm targeting it now.</li>
+</ol>
+<p>There are a lot of things like React/Angular/Vue or Next.js/Nuxt.js, I just don't understand what limitations would make me use them. Generally maintaining focus and taking one step at a time is a good idea, from my experience, for the reason I've already mentioned: the number of frameworks is overwhelming. And there's a bit of hype, too.</p>
+<h2>What I've learned so far</h2>
+<p>I'll go through the same list from the previous section to note my conclusions and let a lot of people laugh at them. :)</p>
+<ol>
+<li>Static means you can't change anything, but when you generate the static code on the server it's generally more stable, just because the client side is simple. Unless you need an interactive app like a game or an interactive map, you can go further with HTML and CSS. There are plenty of ready CSS styles as well.</li>
+<li>SQL databases are great when you understand what's going on. If you can model a data structure beforehand, I see no drawbacks, although I get the idea that NoSQL databases speed up the development. I'm just old, so I stick to SQL. Some frameworks have tools to write platform-independent SQL, I'm also happy to use that.</li>
+<li>I was stuck with Flask and the authentication task. The number of modules you have to find and include is a bit overwhelming just to do the basic things. It blurs a bit the whole picture of what's going on, but maybe it's a perfect place to start because you get the basics without too complicated concepts and you get a result fast.</li>
+<li>I'm working with a calendar app, and now the idea of having a very limited language in the templates doesn't feel right. Yes, you could use Django as an API for a front-end app, but I was eager to leverage all of its advantages, fast models and fast templates being among them.</li>
+<li>When you step on JS and Express territory, you again have to choose the modules and you also feel the absence of documentation, compared to pythonic tools and specifically Django. It sucks, but there's a reason it's so popular, and it's interesting to find it out, so my journey continues.</li>
+</ol>
+            </div>
+            <div class="post_list">
+                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
+                <span class="post_date">Thu 16 May 2024</span>
+                <div><span>Tags: </span>
+                            <span><a href="./tag/dev.html">#dev </a></span>
+                            <span><a href="./tag/productivity.html">#productivity </a></span>
+                            <span><a href="./tag/python.html">#python </a></span>
+                </div>
+            </div>
+                <div class="comments">
+                    <h2>Comments</h2>
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript">
+                        var disqus_identifier = "2024-05-webapp.html";
+                        (function () {
+                            var dsq = document.createElement('script');
+                            dsq.type = 'text/javascript';
+                            dsq.async = true;
+                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] ||
+                            document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+                </div>
+        </article>
+    </section>
+</article>
+
+<!-- Footer -->
+    <footer>
+        <p>
+	  Made with <a href="http://getpelican.com/">Pelican</a>, 
+      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
+        </p>
+    </footer>
+
+
+</body>
+</html>

@@ -1,106 +1,323 @@
 <!doctype html>
-<html lang="en" itemscope itemtype="http://schema.org/Person">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Taking Emacs and Neovim to the next level</title>
+		<meta name="description" content="New requirements with the start of web app development">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
 
-  gtag('config', 'G-MWJX8WCGVQ');
-</script>
-            <meta charset="utf-8">
-        <!-- Site Meta Data -->
-        <title>Taking Emacs and Neovim to the next level</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="Konstantin Ovchinnikov">
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
 
-        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
 
-        <!-- schema.org -->
-        <meta itemprop="name" content="The Real Changes">
-        <meta itemprop="image" content="/theme/images/logo3_small.png">
-        <meta itemprop="description" content="">
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
 
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-        <!-- Style Meta Data -->
-        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
-        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
 
-        <!-- Feed Meta Data -->
-            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-                  title="The Real Changes ATOM Feed"/>
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
 
-        <!-- Twitter Feed -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="Konstan21511383">
-        <meta name="twitter:image" content="">
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
 
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
 
-    <meta name="twitter:creator" content="Konstan21511383">
-    <meta name="twitter:url" content="./2023-08-vim-emacs.html">
-    <meta name="twitter:title" content="The Real Changes ~ Taking Emacs and Neovim to the next level">
-    <meta name="twitter:description" content="New requirements with the start of web app development">
+.token.punctuation {
+	color: #f8f8f2;
+}
 
-    <!-- Facebook Meta Data -->
-    <meta property="og:title" content="The Real Changes ~ Taking Emacs and Neovim to the next level"/>
-    <meta property="og:description" content="New requirements with the start of web app development"/>
-    <meta property="og:image" content=""/>
-</head>
+.token.namespace {
+	opacity: .7;
+}
 
-<body>
-<!-- Sidebar -->
-<aside>
-    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
-        <p>Konstantin Ovchinnikov's personal page</p>
-		<p>
-        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
-    <!-- Site search -->
-<script async src="https://cse.google.com/cse.js?cx=75184ca4aae714aae">
-</script>
-<div class="gcse-search"></div>
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
 
-    <nav class="nav">
-        <ul class="list-bare">
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
 
-                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
-                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
 
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
 
-        </ul>
-    </nav>
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
 
-    <p class="social">
-                <a href="https://twitter.com/Konstan21511383" target="_blank"><img alt="Twitter"
-                        src="./theme/images/icons/twitter.png"></a>
-                <a href="https://t.me/therealchanges" target="_blank"><img alt="Telegram"
-                        src="./theme/images/icons/telegram.png"></a>
-                <a href="https://www.linkedin.com/in/konstantinovchinnikov/" target="_blank"><img alt="LinkedIn"
-                        src="./theme/images/icons/linkedin.png"></a>
-                <a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg" target="_blank"><img alt="YouTube"
-                        src="./theme/images/icons/youtube.png"></a>
-                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
-                        src="./theme/images/icons/github.png"></a>
-            <a href="./feeds/all.atom.xml" rel="alternate">
-                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
-    </p>
+.token.keyword {
+	color: #66d9ef;
+}
 
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
 
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
 
-</aside>
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
 
-<!-- Content -->
-<article>
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
 
-    <section id="content">
-        <article>
-<!--End mc_embed_signup-->
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
 
-            <h2 class="post_title post_detail"><a href="./2023-08-vim-emacs.html" rel="bookmark" title="Permalink to Taking Emacs and Neovim to the next level">Taking Emacs and Neovim to the next level</a></h2>
-            <div class="entry-content blog-post">
-                <h2>The story</h2>
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+footer {
+	text-align: center;
+	font-size: 0.7em;
+}
+html {
+  font-family: 'Open Sans', 'helvetica', sans-serif;
+}
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: block;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+  display: inline-flex;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	display: block;
+	padding-top: 0.5em;
+	word-spacing: -0.5px;
+}
+.postlist-description {
+	display: block;
+	padding-top: 0.5em;
+}
+.postlist-link {
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+}
+.postlist-item-active .postlist-link {
+		font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.postlist-item > .post-tag {
+		align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata-li {
+	list-style: none;
+}
+
+.post-metadata time {
+		margin-right: 1em;
+}
+.links-nextprev {
+	display: flex;
+	justify-content: space-between;
+	gap: .5em 1em;
+	padding: 1em 0;
+}
+.links-nextprev-next {
+	text-align: right;
+	list-style: none;
+}
+.links-nextprev-prev {
+	text-align: left;
+	list-style: none;
+}</style>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="/pagefind/pagefind-ui.js"></script>
+		 <style>
+    svg {
+      width: var(--font-size);
+      height: var(--font-size);
+      color: var(--contrast);
+    }
+    </style>
+	</head>
+	<body>
+	<header class="container">
+			<div id="search"></div>
+			<script>
+			window.addEventListener('DOMContentLoaded', (event) => {
+				new PagefindUI({ element: "#search", showSubResults: true });
+			});
+			</script>
+		<nav>
+		<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/.11ty/image/?src=content%2Fimg%2Ftrc-logo.png&width=100&format=png&via=transform" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+		</ul>
+		<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/blog/">Archive</a></li>
+				<li><a href="/tags/">Tags</a></li>
+				<li>| </li>
+				<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-twitter"></i></a></li>
+				<li><a href="https://t.me/therealchanges"><i class="fa-brands fa-telegram"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+				<li><a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg"><i class="fa-brands fa-youtube"></i></a></li>
+				<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+				<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+				<li>| </li>
+				<li><a href="#" color="black" id="theme_switcher"></a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="container">
+			<heading-anchors data-pagefind-body="">
+				
+<h1 id="taking-emacs-and-neovim-to-the-next-level">Taking Emacs and Neovim to the next level</h1>
+
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2023-08-16">16 August 2023</time></li>
+	<li class="post-tag"><a href="/tags/productivity/" class="post-tag">#productivity</a>, </li>
+	<li class="post-tag"><a href="/tags/vim/" class="post-tag">#vim</a>, </li>
+	<li class="post-tag"><a href="/tags/emacs/" class="post-tag">#emacs</a></li>
+</ul>
+
+<h2 id="the-story">The story</h2>
 <p>I was quite content with Emacs, especially with Markdown and Org modes. But then I started to develop a web application, and it became obvious, that a standard Emacs sucks in many ways:</p>
 <ul>
 <li>Switching between buffers, the order of the buffers always changes</li>
@@ -116,41 +333,36 @@
 <li>If you start from scratch, maybe <a href="2022-09-linux-5.html">the first article about Vim and Emacs configs</a> could be useful for you</li>
 <li>I created <a href="https://github.com/ikostas/misc/">a git repo with my configs</a>, for reference</li>
 </ul>
-<h2>Emacs</h2>
+<h2 id="emacs">Emacs</h2>
 <p>First, we activate <a href="https://docs.projectile.mx/projectile/index.html">projectile</a> to be able to navigate within the project:</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">projectile-mode</span><span class="w"> </span><span class="mi">+1</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">define-key</span><span class="w"> </span><span class="nv">projectile-mode-map</span><span class="w"> </span><span class="p">(</span><span class="nv">kbd</span><span class="w"> </span><span class="s">&quot;C-c p&quot;</span><span class="p">)</span><span class="w"> </span><span class="ss">&#39;projectile-command-map</span><span class="p">)</span>
-</code></pre></div>
-
+<p>:::lisp
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd &quot;C-c p&quot;) 'projectile-command-map)</p>
 <p>Then we activate <a href="https://www.masteringemacs.org/article/introduction-to-ido-mode">ido</a>, which a fuzzy finder. You could use <a href="https://tuhdo.github.io/helm-intro.html">helm</a> as well, by the way:</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">ido-enable-flex-matching</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">ido-everywhere</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">ido-mode</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">ido-ignore-buffers</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;\\` &quot;</span><span class="w"> </span><span class="s">&quot;^\*&quot;</span><span class="p">))</span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">ido-ignore-files</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;^\#&quot;</span><span class="w"> </span><span class="s">&quot;\~$&quot;</span><span class="p">))</span>
-</code></pre></div>
-
+<p>:::lisp
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+(setq ido-ignore-buffers '(&quot;\` &quot; &quot;^*&quot;))
+(setq ido-ignore-files '(&quot;^#&quot; &quot;~$&quot;))</p>
 <p>I added some lines to ignore backup files Emacs creates. And we also make ibuffer default:</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">defalias</span><span class="w"> </span><span class="ss">&#39;list-buffers</span><span class="w"> </span><span class="ss">&#39;ibuffer</span><span class="p">)</span>
-</code></pre></div>
-
+<p>:::lisp
+(defalias 'list-buffers 'ibuffer)</p>
 <p>Now we are ready to activate evil-mode, which emulates Vim:</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;evil</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">evil-mode</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-</code></pre></div>
-
+<p>:::lisp
+(require 'evil)
+(evil-mode 1)</p>
 <p>And jumping between lines is easier with relative numbers:</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">display-line-numbers-type</span><span class="w"> </span><span class="ss">&#39;relative</span><span class="p">)</span>
-</code></pre></div>
-
-<p>"It ain't much, but it's honest work." &copy; I still don't feel comfortable though.</p>
-<h2>Neovim</h2>
+<p>:::lisp
+(setq display-line-numbers-type 'relative)</p>
+<p>&quot;It ain't much, but it's honest work.&quot; © I still don't feel comfortable though.</p>
+<h2 id="neovim">Neovim</h2>
 <p>What are Neovim's super-powers? I think, <a href="https://github.com/nvim-treesitter/nvim-treesitter">tree sitter</a> and <a href="https://github.com/nvim-telescope/telescope.nvim">telescope</a> are among them. You could also turn on LSP, but I try to learn programming without it.</p>
 <p>I used vim a lot, but I can't get rid of a thought that it's not logical. You could change the keystrokes, but I mean the deeper logic for the editor, it feels that it's just absent sometimes. Could it be better?</p>
 <p>And I also have some doubts regarding Emacs. Do we really need a Lisp environment just to write texts? Doesn't it get bloated with all that extensions? Evil mode works quite well, but does it seem alien to the whole logic of Emacs?</p>
 <p>Could we have just a simple editor, maybe lacking some features, but with a more holistic approach? An editor, which would not require to search for plugins and install them and then finding where these plugins conflict with each other? Maybe an editor, which could be written with modern achievement like language and the whole idea of modern text editing and writing programs?</p>
 <p>Well, if you don't need LSPs and modal editing, maybe you could go with <a href="https://micro-editor.github.io/">micro</a>. It has themes and plugins.</p>
-<h2>Bonus: helix</h2>
+<h2 id="bonus-helix">Bonus: helix</h2>
 <p><a href="https://helix-editor.com/">Helix</a> has been there for a while, and <a href="https://www.youtube.com/watch?v=xHebvTGOdH8">this video</a> includes a good explanation of differences with vim. It doesn't explain though, that helix lacks some features, like jumping between sentences (maybe because it's a programming editor, first of all), and it lacks snippets. But based on idea <a href="https://www.youtube.com/shorts/Ev1n7y_RVOE">in this video</a> even a looser like me can write <a href="https://github.com/ikostas/misc/blob/main/sn">a bash script</a> to insert some HTML and Markdown. After using it for a while, I have some thoughts to share:</p>
 <ul>
 <li>It's more logical, than vim, and 'modes' are just to explain the logic behind the keystrokes</li>
@@ -159,45 +371,53 @@
 </ul>
 <p>With all that said, it's a lot of fun editing files in Helix. As a user I can't say how the fact that's it's written in Rust makes it better, I don't think Emacs is slow, although it's been criticised for that. It's more user-friendly, than Emacs, and a lot user-friendly, than vim, but these friendly features don't prevent you from beeing fast and highly effective. If you don't need information in these pop-ups, you could just ignore them and nothing will happen.</p>
 <p>If you use tmux, don't forget to put this into your tmux.config:</p>
-<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="p">-</span>sg escape<span class="p">-</span>time <span class="m">0</span>
-</code></pre></div>
-            </div>
-            <div class="post_list">
-                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
-                <span class="post_date">Wed 16 August 2023</span>
-                <div><span>Tags: </span>
-                            <span><a href="./tag/productivity.html">#productivity </a></span>
-                            <span><a href="./tag/vim.html">#vim </a></span>
-                            <span><a href="./tag/emacs.html">#emacs </a></span>
-                </div>
-            </div>
-                <div class="comments">
-                    <h2>Comments</h2>
-                    <div id="disqus_thread"></div>
-                    <script type="text/javascript">
-                        var disqus_identifier = "2023-08-vim-emacs.html";
-                        (function () {
-                            var dsq = document.createElement('script');
-                            dsq.type = 'text/javascript';
-                            dsq.async = true;
-                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
-                            (document.getElementsByTagName('head')[0] ||
-                            document.getElementsByTagName('body')[0]).appendChild(dsq);
-                        })();
-                    </script>
-                </div>
-        </article>
-    </section>
-</article>
+<pre class="language-vim" tabindex="0"><code class="language-vim"><span class="token keyword">set</span> <span class="token operator">-</span>sg escape<span class="token operator">-</span>time <span class="token number">0</span></code></pre>
 
-<!-- Footer -->
-    <footer>
-        <p>
-	  Made with <a href="http://getpelican.com/">Pelican</a>, 
-      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
-        </p>
-    </footer>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2023-08-german.html">Learning German</a></li><li class="links-nextprev-next">Next <i class="fa-solid fa-arrow-right"></i><br><a href="/2023-10-3d-printing.html">A dive into 3D-printing</a></li>
+</ul>
 
+			</heading-anchors>
+	</main>
 
-</body>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2023-08-vim-emacs.html` was built on 2024-11-11T20:56:56.055Z -->
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+<script>
+    const html = document.documentElement;
+    const switchTheme = document.getElementById('theme_switcher');
+    const sun = '<i class="fa-regular fa-sun"></i>';
+    const moon = '<i class="fa-solid fa-moon"></i>';
+
+    // Load the theme from localStorage or set to light by default
+    let isLight = localStorage.getItem('theme') === 'light';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Set initial theme
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+        removeTooltip(3000);
+    });
+
+    switchTheme.addEventListener('click', (e) => {
+        e.preventDefault();
+        isLight = !isLight;
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+
+        // Save the current theme to localStorage
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+        removeTooltip();
+    });
+
+    const removeTooltip = (timeInt = 1750) => {
+        setTimeout(() => {
+        switchTheme.blur();
+        }, timeInt);
+    }
+</script>
+	</body>
 </html>

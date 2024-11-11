@@ -1,106 +1,321 @@
 <!doctype html>
-<html lang="en" itemscope itemtype="http://schema.org/Person">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>My new old 3d-printer</title>
+		<meta name="description" content="Some positive personal experience">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
 
-  gtag('config', 'G-MWJX8WCGVQ');
-</script>
-            <meta charset="utf-8">
-        <!-- Site Meta Data -->
-        <title>My new old 3d-printer</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="Konstantin Ovchinnikov">
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
 
-        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
 
-        <!-- schema.org -->
-        <meta itemprop="name" content="The Real Changes">
-        <meta itemprop="image" content="/theme/images/logo3_small.png">
-        <meta itemprop="description" content="">
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
 
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-        <!-- Style Meta Data -->
-        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
-        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
 
-        <!-- Feed Meta Data -->
-            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-                  title="The Real Changes ATOM Feed"/>
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
 
-        <!-- Twitter Feed -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="Konstan21511383">
-        <meta name="twitter:image" content="">
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
 
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
 
-    <meta name="twitter:creator" content="Konstan21511383">
-    <meta name="twitter:url" content="./2024-04-3d-printer.html">
-    <meta name="twitter:title" content="The Real Changes ~ My new old 3d-printer">
-    <meta name="twitter:description" content="Some positive personal experience">
+.token.punctuation {
+	color: #f8f8f2;
+}
 
-    <!-- Facebook Meta Data -->
-    <meta property="og:title" content="The Real Changes ~ My new old 3d-printer"/>
-    <meta property="og:description" content="Some positive personal experience"/>
-    <meta property="og:image" content=""/>
-</head>
+.token.namespace {
+	opacity: .7;
+}
 
-<body>
-<!-- Sidebar -->
-<aside>
-    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
-        <p>Konstantin Ovchinnikov's personal page</p>
-		<p>
-        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
-    <!-- Site search -->
-<script async src="https://cse.google.com/cse.js?cx=75184ca4aae714aae">
-</script>
-<div class="gcse-search"></div>
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
 
-    <nav class="nav">
-        <ul class="list-bare">
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
 
-                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
-                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
 
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
 
-        </ul>
-    </nav>
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
 
-    <p class="social">
-                <a href="https://twitter.com/Konstan21511383" target="_blank"><img alt="Twitter"
-                        src="./theme/images/icons/twitter.png"></a>
-                <a href="https://t.me/therealchanges" target="_blank"><img alt="Telegram"
-                        src="./theme/images/icons/telegram.png"></a>
-                <a href="https://www.linkedin.com/in/konstantinovchinnikov/" target="_blank"><img alt="LinkedIn"
-                        src="./theme/images/icons/linkedin.png"></a>
-                <a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg" target="_blank"><img alt="YouTube"
-                        src="./theme/images/icons/youtube.png"></a>
-                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
-                        src="./theme/images/icons/github.png"></a>
-            <a href="./feeds/all.atom.xml" rel="alternate">
-                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
-    </p>
+.token.keyword {
+	color: #66d9ef;
+}
 
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
 
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
 
-</aside>
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
 
-<!-- Content -->
-<article>
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
 
-    <section id="content">
-        <article>
-<!--End mc_embed_signup-->
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
 
-            <h2 class="post_title post_detail"><a href="./2024-04-3d-printer.html" rel="bookmark" title="Permalink to My new old 3d-printer">My new old 3d-printer</a></h2>
-            <div class="entry-content blog-post">
-                <h2>Introduction</h2>
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+footer {
+	text-align: center;
+	font-size: 0.7em;
+}
+html {
+  font-family: 'Open Sans', 'helvetica', sans-serif;
+}
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: block;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+  display: inline-flex;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	display: block;
+	padding-top: 0.5em;
+	word-spacing: -0.5px;
+}
+.postlist-description {
+	display: block;
+	padding-top: 0.5em;
+}
+.postlist-link {
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+}
+.postlist-item-active .postlist-link {
+		font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.postlist-item > .post-tag {
+		align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata-li {
+	list-style: none;
+}
+
+.post-metadata time {
+		margin-right: 1em;
+}
+.links-nextprev {
+	display: flex;
+	justify-content: space-between;
+	gap: .5em 1em;
+	padding: 1em 0;
+}
+.links-nextprev-next {
+	text-align: right;
+	list-style: none;
+}
+.links-nextprev-prev {
+	text-align: left;
+	list-style: none;
+}</style>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="/pagefind/pagefind-ui.js"></script>
+		 <style>
+    svg {
+      width: var(--font-size);
+      height: var(--font-size);
+      color: var(--contrast);
+    }
+    </style>
+	</head>
+	<body>
+	<header class="container">
+			<div id="search"></div>
+			<script>
+			window.addEventListener('DOMContentLoaded', (event) => {
+				new PagefindUI({ element: "#search", showSubResults: true });
+			});
+			</script>
+		<nav>
+		<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/.11ty/image/?src=content%2Fimg%2Ftrc-logo.png&width=100&format=png&via=transform" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+		</ul>
+		<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/blog/">Archive</a></li>
+				<li><a href="/tags/">Tags</a></li>
+				<li>| </li>
+				<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-twitter"></i></a></li>
+				<li><a href="https://t.me/therealchanges"><i class="fa-brands fa-telegram"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+				<li><a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg"><i class="fa-brands fa-youtube"></i></a></li>
+				<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+				<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+				<li>| </li>
+				<li><a href="#" color="black" id="theme_switcher"></a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="container">
+			<heading-anchors data-pagefind-body="">
+				
+<h1 id="my-new-old-3d-printer">My new old 3d-printer</h1>
+
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2024-04-01">01 April 2024</time></li>
+	<li class="post-tag"><a href="/tags/3d-printing/" class="post-tag">#3d-printing</a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
 <p>Year 2024: Core-XY printers took over the world. They are quick, but they are also big and loud. What should a normal dude like me do just get into 3D printing and not suffer so much? Notably, I suffer from poor quality and from the printer being unstable.</p>
 <p>For the cheap printers tier, Creality V3 SE or V3 KE seems to be the obvious choice, but they have problems not so many people talk about:</p>
 <ul>
@@ -112,7 +327,7 @@
 <p>By the way, Qidi Tech Smart X3 is a small Core-XY printer with a relatively low price, but... there are not so many positive reviews, some questions regarding non-replaceable carbon rods, and... it's not available in the EU. And this can be for a reason: in the EU the law protects the customers, so when the quality of the product is poor, the manufacturers prefer to exit this market.</p>
 <p>You can say, that there's Bambu Lab A1 Mini. When I was choosing a printer, it wasn't available without AMS Lite, which I don't need. I also have some questions regarding the construction and the approach of the company in general: closed-source, not friendly for tinkering or customization. Well, it's something different: it's completely hostile to these kind of things. And I'm not going to vote with my money for this approach.</p>
 <p>For lots of other manufacturers, the problems are the same as for Creality: print plates are bent and the software support is awful.</p>
-<h2>The requirements</h2>
+<h2 id="the-requirements">The requirements</h2>
 <p>The print volume is a good question. I printed some models and I needed this print volume only twice. In one case I could buy a laptop on Amazon. I thought even about Voron 0.2, but a 120x cube seems too little. I thought I could live with a 180x cube.</p>
 <p>I also wanted the printer to be stable in terms of print quality, quick, and silent. The last two characteristics are contradicting. Well, they start to contradict when the printer pushes speed too much. But you need good engineering, good quality parts, and anti-shaping technology, ideally with sensors on the printer.</p>
 <p>I thought about Sovol SV 06, but you need to replace some parts right away. And the print quality I saw on videos by the guys who did it, still sucked. And it just seems irrational to me to pay for the parts that go right into the bin.</p>
@@ -121,17 +336,17 @@
 <li>I had experience with AnyCubic, which is still alive. It's loud and the engineering is just anti-humane, which results in unstable and often bad print quality.</li>
 <li>AnkerMake... just take a look at their group on Reddit... it is full of complains</li>
 <li>FlashForge... again, awful software and lots of questions regarding the electrical safety of these devices</li>
-<li>Neptune printers have problems with geometry, they are just not square, just as the prints they produce </li>
+<li>Neptune printers have problems with geometry, they are just not square, just as the prints they produce</li>
 <li>The 100 is a great project, but it requires sourcing and assembly... and some special tools which also cost a few hundred euros</li>
 </ul>
-<h2>Prusa</h2>
+<h2 id="prusa">Prusa</h2>
 <p>OK, what about Prusa? These printers are expensive, they say. Is it the only drawback? If it is, I can live with that. You can find some negative reviews about Prusa Mini, but the current model is called Prusa Mini+, it also has firmware upgrades, and Prusa Slicer took a long path as well. And the fact is that Prusa Mini was used on lots of print farms. Now many print enthusiasts have replaced it with BambuLab Core-XY printers. Does it make Prusa Mini+ a bad printer? I don't think so. There are lots of advantages of small print volume:</p>
 <ul>
 <li>It's energy efficient as the heated table is small</li>
 <li>The construction has worked well for this volume</li>
 </ul>
 <p>The approach here's the following: you can fully disassemble, service, and assemble the printer yourself. As it's not new on the market, there are plenty of upgrades available for cheap. For example, it uses a standard v6 nozzle, you can buy 8 of them for 14 EUR and they will be made of hardened steel.</p>
-<h2>My experience</h2>
+<h2 id="my-experience">My experience</h2>
 <p>First, I should put a disclaimer, my printer came with some upgrades and I can't say anything about how the printer works without them:</p>
 <ul>
 <li>The heat block</li>
@@ -143,41 +358,52 @@
 <p>Is it silent? It is until it gets to full speed, but the noise comes mostly from the print head. The print quality is great and stable. More than that, often I print with 15% infill, so I use less material.</p>
 <p>Regarding the print speed, I have another dirty secret for those who don't know: if you want speed, just install a bigger nozzle.</p>
 <p>The guys who paid for these great Core-XY machines often write the same thing: it's overkill, I printed all I wanted and I don't know what else to print. That's the power of marketing, folks. These Core-XY machines are nice, but you bought them although you didn't need them. My printer is just good enough for the tasks I have, small enough to fit right on my table, silent enough, and still quick enough.</p>
-            </div>
-            <div class="post_list">
-                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
-                <span class="post_date">Mon 01 April 2024</span>
-                <div><span>Tags: </span>
-                            <span><a href="./tag/3d-printing.html">#3d-printing </a></span>
-                </div>
-            </div>
-                <div class="comments">
-                    <h2>Comments</h2>
-                    <div id="disqus_thread"></div>
-                    <script type="text/javascript">
-                        var disqus_identifier = "2024-04-3d-printer.html";
-                        (function () {
-                            var dsq = document.createElement('script');
-                            dsq.type = 'text/javascript';
-                            dsq.async = true;
-                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
-                            (document.getElementsByTagName('head')[0] ||
-                            document.getElementsByTagName('body')[0]).appendChild(dsq);
-                        })();
-                    </script>
-                </div>
-        </article>
-    </section>
-</article>
 
-<!-- Footer -->
-    <footer>
-        <p>
-	  Made with <a href="http://getpelican.com/">Pelican</a>, 
-      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
-        </p>
-    </footer>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2023-10-3d-printing.html">A dive into 3D-printing</a></li><li class="links-nextprev-next">Next <i class="fa-solid fa-arrow-right"></i><br><a href="/2024-04-wsl-python.html">Python/Django development in Windows Terminal</a></li>
+</ul>
 
+			</heading-anchors>
+	</main>
 
-</body>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2024-04-3d-printer.html` was built on 2024-11-11T20:56:56.055Z -->
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+<script>
+    const html = document.documentElement;
+    const switchTheme = document.getElementById('theme_switcher');
+    const sun = '<i class="fa-regular fa-sun"></i>';
+    const moon = '<i class="fa-solid fa-moon"></i>';
+
+    // Load the theme from localStorage or set to light by default
+    let isLight = localStorage.getItem('theme') === 'light';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Set initial theme
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+        removeTooltip(3000);
+    });
+
+    switchTheme.addEventListener('click', (e) => {
+        e.preventDefault();
+        isLight = !isLight;
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+
+        // Save the current theme to localStorage
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+        removeTooltip();
+    });
+
+    const removeTooltip = (timeInt = 1750) => {
+        setTimeout(() => {
+        switchTheme.blur();
+        }, timeInt);
+    }
+</script>
+	</body>
 </html>

@@ -1,106 +1,321 @@
 <!doctype html>
-<html lang="en" itemscope itemtype="http://schema.org/Person">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Use cases for opensource apps in business</title>
+		<meta name="description" content="Several examples of opensource apps in a corporate environment">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
 
-  gtag('config', 'G-MWJX8WCGVQ');
-</script>
-            <meta charset="utf-8">
-        <!-- Site Meta Data -->
-        <title>Use cases for opensource apps in business</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="Konstantin Ovchinnikov">
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
 
-        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
 
-        <!-- schema.org -->
-        <meta itemprop="name" content="The Real Changes">
-        <meta itemprop="image" content="/theme/images/logo3_small.png">
-        <meta itemprop="description" content="">
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
 
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-        <!-- Style Meta Data -->
-        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
-        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
 
-        <!-- Feed Meta Data -->
-            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-                  title="The Real Changes ATOM Feed"/>
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
 
-        <!-- Twitter Feed -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="Konstan21511383">
-        <meta name="twitter:image" content="">
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
 
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
 
-    <meta name="twitter:creator" content="Konstan21511383">
-    <meta name="twitter:url" content="./2023-03-opensourceusecases.html">
-    <meta name="twitter:title" content="The Real Changes ~ Use cases for opensource apps in business">
-    <meta name="twitter:description" content="Several examples of opensource apps in a corporate environment">
+.token.punctuation {
+	color: #f8f8f2;
+}
 
-    <!-- Facebook Meta Data -->
-    <meta property="og:title" content="The Real Changes ~ Use cases for opensource apps in business"/>
-    <meta property="og:description" content="Several examples of opensource apps in a corporate environment"/>
-    <meta property="og:image" content=""/>
-</head>
+.token.namespace {
+	opacity: .7;
+}
 
-<body>
-<!-- Sidebar -->
-<aside>
-    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
-        <p>Konstantin Ovchinnikov's personal page</p>
-		<p>
-        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
-    <!-- Site search -->
-<script async src="https://cse.google.com/cse.js?cx=75184ca4aae714aae">
-</script>
-<div class="gcse-search"></div>
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
 
-    <nav class="nav">
-        <ul class="list-bare">
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
 
-                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
-                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
 
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
 
-        </ul>
-    </nav>
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
 
-    <p class="social">
-                <a href="https://twitter.com/Konstan21511383" target="_blank"><img alt="Twitter"
-                        src="./theme/images/icons/twitter.png"></a>
-                <a href="https://t.me/therealchanges" target="_blank"><img alt="Telegram"
-                        src="./theme/images/icons/telegram.png"></a>
-                <a href="https://www.linkedin.com/in/konstantinovchinnikov/" target="_blank"><img alt="LinkedIn"
-                        src="./theme/images/icons/linkedin.png"></a>
-                <a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg" target="_blank"><img alt="YouTube"
-                        src="./theme/images/icons/youtube.png"></a>
-                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
-                        src="./theme/images/icons/github.png"></a>
-            <a href="./feeds/all.atom.xml" rel="alternate">
-                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
-    </p>
+.token.keyword {
+	color: #66d9ef;
+}
 
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
 
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
 
-</aside>
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
 
-<!-- Content -->
-<article>
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
 
-    <section id="content">
-        <article>
-<!--End mc_embed_signup-->
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
 
-            <h2 class="post_title post_detail"><a href="./2023-03-opensourceusecases.html" rel="bookmark" title="Permalink to Use cases for opensource apps in business">Use cases for opensource apps in business</a></h2>
-            <div class="entry-content blog-post">
-                <h2>Introduction</h2>
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+footer {
+	text-align: center;
+	font-size: 0.7em;
+}
+html {
+  font-family: 'Open Sans', 'helvetica', sans-serif;
+}
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: block;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+  display: inline-flex;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	display: block;
+	padding-top: 0.5em;
+	word-spacing: -0.5px;
+}
+.postlist-description {
+	display: block;
+	padding-top: 0.5em;
+}
+.postlist-link {
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+}
+.postlist-item-active .postlist-link {
+		font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.postlist-item > .post-tag {
+		align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata-li {
+	list-style: none;
+}
+
+.post-metadata time {
+		margin-right: 1em;
+}
+.links-nextprev {
+	display: flex;
+	justify-content: space-between;
+	gap: .5em 1em;
+	padding: 1em 0;
+}
+.links-nextprev-next {
+	text-align: right;
+	list-style: none;
+}
+.links-nextprev-prev {
+	text-align: left;
+	list-style: none;
+}</style>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="/pagefind/pagefind-ui.js"></script>
+		 <style>
+    svg {
+      width: var(--font-size);
+      height: var(--font-size);
+      color: var(--contrast);
+    }
+    </style>
+	</head>
+	<body>
+	<header class="container">
+			<div id="search"></div>
+			<script>
+			window.addEventListener('DOMContentLoaded', (event) => {
+				new PagefindUI({ element: "#search", showSubResults: true });
+			});
+			</script>
+		<nav>
+		<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/.11ty/image/?src=content%2Fimg%2Ftrc-logo.png&width=100&format=png&via=transform" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+		</ul>
+		<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/blog/">Archive</a></li>
+				<li><a href="/tags/">Tags</a></li>
+				<li>| </li>
+				<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-twitter"></i></a></li>
+				<li><a href="https://t.me/therealchanges"><i class="fa-brands fa-telegram"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+				<li><a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg"><i class="fa-brands fa-youtube"></i></a></li>
+				<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+				<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+				<li>| </li>
+				<li><a href="#" color="black" id="theme_switcher"></a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="container">
+			<heading-anchors data-pagefind-body="">
+				
+<h1 id="use-cases-for-opensource-apps-in-business">Use cases for opensource apps in business</h1>
+
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2023-03-22">22 March 2023</time></li>
+	<li class="post-tag"><a href="/tags/opensource/" class="post-tag">#opensource</a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
 <p>Some opensource apps are old, and with rapid technology development, we all hoped that some new great apps would evolve. But the reality is that the 'good old apps' I used more than 8 years ago are still here, and they are still a reasonable choice for several tasks. The key to implementing a business app in a corporate environment, from my viewpoint, is not in the app itself, but in the business process around it.</p>
 <p>So, in this article I'll cover two 'apps of choice' for me, which I used several times:</p>
 <ul>
@@ -113,7 +328,7 @@
 <li>A task management system using a bug tracker</li>
 <li>A claims management system using a bug tracker</li>
 </ol>
-<h2>A knowledge base using wiki</h2>
+<h2 id="a-knowledge-base-using-wiki">A knowledge base using wiki</h2>
 <p>The requirements are quite simple: make knowledge inside a consulting company available to the staff, because when you stop 'reinventing the wheel' on every project it costs less and involves fewer risks. I saw a knowledge database that failed because of access issues. If you want maximum leverage of the knowledge, you have to make it a priority to maximize the usage:</p>
 <ul>
 <li>Make the knowledge accessible to everyone</li>
@@ -132,7 +347,7 @@
 <p>Again, if you want to maximize the leverage of the work accomplished (and the knowledge you have), then 'can' turns into 'should': we should connect the knowledge from particular phases and we should use it first when we are looking for the solution on other projects.</p>
 <p>You could have separate processes for that, but the easiest way is to get current processes and instead include this Input and Output as procedures in particular places. Thus it's a change and it requires less effort to implement.</p>
 <p>What's different about these 'knowledge database-related' processes and procedures is that people get excited about collecting useful knowledge for the team. So making a 'top contributors' list is a good idea to encourage them.</p>
-<h2>A task management system using a bug tracker</h2>
+<h2 id="a-task-management-system-using-a-bug-tracker">A task management system using a bug tracker</h2>
 <p>Every organization has a kind of workflow and task management tasks that fall outside the scope of specific systems like ERP (enterprise resource management systems). Now we have BPM (business process management) systems, that allow us to construct almost any kind of process, and further automate some of the functions inside the process. The question is: can this be simplified? I tried to simplify this, and it worked, and the main idea is the following.</p>
 <p>What if we say that we won't construct a process out of <strong>any</strong> fantasies, but instead use <strong>a template</strong>: someone starts an action, it should be approved, assigned, executed, and controlled. It could be different, but it <strong>should</strong> be something similar. And we could have several templates, but let's just get the idea with one. It works as simple as that for 90-95% of cases, then why should you pay more?</p>
 <p>If you can fit the majority of your processes, then... welcome to the world of bug trackers! You do not need a BPMN system, you could have issues, issue statuses, and comments (with some attachments), which is dead simple and deadly effective.</p>
@@ -145,7 +360,7 @@
 <li>An issue is checked by someone else and closed</li>
 </ol>
 <p>Mantis is one of the simplest systems. What's important: first, it's stable and it works and, second, it allows to have a kind of forum/discussion for each issue with file attachments. This history of issue execution was vitally important for the business.</p>
-<h2>A claims management system using a bug tracker</h2>
+<h2 id="a-claims-management-system-using-a-bug-tracker">A claims management system using a bug tracker</h2>
 <p>A claims management system has several differences from the workflow described above:</p>
 <ul>
 <li>It's initiated by the customer</li>
@@ -165,43 +380,54 @@
 <li>We could investigate, who was in charge of the consequences and provide feedback for that person (sorry for the 'managerial' language here, I hope you got the idea)</li>
 </ul>
 <p>On the tech side, we could download the statistics from the Mantis database, build some reporting, and make some conclusions. The structure of the database allows you to do that, because... it's dead simple as well.</p>
-<h2>Conclusions</h2>
+<h2 id="conclusions">Conclusions</h2>
 <p>I prefer the lean approach, and the simplest solutions work cost-effectively. What I love about bug tracker systems, is that they got through a long evolution, and they are feature-rich, stable, scalable, and nice to work with. At first, they can be a bit awkward to use for 'business' people (yes, the 'managers'), but no one could ever raise any particular issue about that. An old-fashioned interface? Well, it works. Not too much AJAX? Fortunately, 'business' people don't know these words. Everyone was quite happy about those systems and I hope they are still in place.</p>
-            </div>
-            <div class="post_list">
-                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
-                <span class="post_date">Wed 22 March 2023</span>
-                <div><span>Tags: </span>
-                            <span><a href="./tag/opensource.html">#opensource </a></span>
-                </div>
-            </div>
-                <div class="comments">
-                    <h2>Comments</h2>
-                    <div id="disqus_thread"></div>
-                    <script type="text/javascript">
-                        var disqus_identifier = "2023-03-opensourceusecases.html";
-                        (function () {
-                            var dsq = document.createElement('script');
-                            dsq.type = 'text/javascript';
-                            dsq.async = true;
-                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
-                            (document.getElementsByTagName('head')[0] ||
-                            document.getElementsByTagName('body')[0]).appendChild(dsq);
-                        })();
-                    </script>
-                </div>
-        </article>
-    </section>
-</article>
 
-<!-- Footer -->
-    <footer>
-        <p>
-	  Made with <a href="http://getpelican.com/">Pelican</a>, 
-      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
-        </p>
-    </footer>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2023-03-linuxlaptop.html">Spending a Christmas eve installing Linux on an old laptop</a></li><li class="links-nextprev-next">Next <i class="fa-solid fa-arrow-right"></i><br><a href="/2023-03-commuting2.html">Commuting on a bike: adventures begin</a></li>
+</ul>
 
+			</heading-anchors>
+	</main>
 
-</body>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2023-03-opensourceusecases.html` was built on 2024-11-11T20:56:56.053Z -->
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+<script>
+    const html = document.documentElement;
+    const switchTheme = document.getElementById('theme_switcher');
+    const sun = '<i class="fa-regular fa-sun"></i>';
+    const moon = '<i class="fa-solid fa-moon"></i>';
+
+    // Load the theme from localStorage or set to light by default
+    let isLight = localStorage.getItem('theme') === 'light';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Set initial theme
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+        removeTooltip(3000);
+    });
+
+    switchTheme.addEventListener('click', (e) => {
+        e.preventDefault();
+        isLight = !isLight;
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+
+        // Save the current theme to localStorage
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+        removeTooltip();
+    });
+
+    const removeTooltip = (timeInt = 1750) => {
+        setTimeout(() => {
+        switchTheme.blur();
+        }, timeInt);
+    }
+</script>
+	</body>
 </html>

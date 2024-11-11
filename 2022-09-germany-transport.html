@@ -1,106 +1,321 @@
 <!doctype html>
-<html lang="en" itemscope itemtype="http://schema.org/Person">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Germany Transport System</title>
+		<meta name="description" content="Hacking through transport associations and Deutche Bahn">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
 
-  gtag('config', 'G-MWJX8WCGVQ');
-</script>
-            <meta charset="utf-8">
-        <!-- Site Meta Data -->
-        <title>Germany Transport System</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="Konstantin Ovchinnikov">
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
 
-        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
 
-        <!-- schema.org -->
-        <meta itemprop="name" content="The Real Changes">
-        <meta itemprop="image" content="/theme/images/logo3_small.png">
-        <meta itemprop="description" content="">
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
 
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-        <!-- Style Meta Data -->
-        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
-        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
 
-        <!-- Feed Meta Data -->
-            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-                  title="The Real Changes ATOM Feed"/>
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
 
-        <!-- Twitter Feed -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="Konstan21511383">
-        <meta name="twitter:image" content="">
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
 
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
 
-    <meta name="twitter:creator" content="Konstan21511383">
-    <meta name="twitter:url" content="./2022-09-germany-transport.html">
-    <meta name="twitter:title" content="The Real Changes ~ Germany Transport System">
-    <meta name="twitter:description" content="Hacking through transport associations and Deutche Bahn">
+.token.punctuation {
+	color: #f8f8f2;
+}
 
-    <!-- Facebook Meta Data -->
-    <meta property="og:title" content="The Real Changes ~ Germany Transport System"/>
-    <meta property="og:description" content="Hacking through transport associations and Deutche Bahn"/>
-    <meta property="og:image" content=""/>
-</head>
+.token.namespace {
+	opacity: .7;
+}
 
-<body>
-<!-- Sidebar -->
-<aside>
-    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
-        <p>Konstantin Ovchinnikov's personal page</p>
-		<p>
-        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
-    <!-- Site search -->
-<script async src="https://cse.google.com/cse.js?cx=75184ca4aae714aae">
-</script>
-<div class="gcse-search"></div>
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
 
-    <nav class="nav">
-        <ul class="list-bare">
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
 
-                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
-                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
 
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
 
-        </ul>
-    </nav>
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
 
-    <p class="social">
-                <a href="https://twitter.com/Konstan21511383" target="_blank"><img alt="Twitter"
-                        src="./theme/images/icons/twitter.png"></a>
-                <a href="https://t.me/therealchanges" target="_blank"><img alt="Telegram"
-                        src="./theme/images/icons/telegram.png"></a>
-                <a href="https://www.linkedin.com/in/konstantinovchinnikov/" target="_blank"><img alt="LinkedIn"
-                        src="./theme/images/icons/linkedin.png"></a>
-                <a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg" target="_blank"><img alt="YouTube"
-                        src="./theme/images/icons/youtube.png"></a>
-                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
-                        src="./theme/images/icons/github.png"></a>
-            <a href="./feeds/all.atom.xml" rel="alternate">
-                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
-    </p>
+.token.keyword {
+	color: #66d9ef;
+}
 
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
 
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
 
-</aside>
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
 
-<!-- Content -->
-<article>
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
 
-    <section id="content">
-        <article>
-<!--End mc_embed_signup-->
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
 
-            <h2 class="post_title post_detail"><a href="./2022-09-germany-transport.html" rel="bookmark" title="Permalink to Germany Transport System">Germany Transport System</a></h2>
-            <div class="entry-content blog-post">
-                <p>German trains, buses, and routes system is rather specific:</p>
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+footer {
+	text-align: center;
+	font-size: 0.7em;
+}
+html {
+  font-family: 'Open Sans', 'helvetica', sans-serif;
+}
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: block;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+  display: inline-flex;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	display: block;
+	padding-top: 0.5em;
+	word-spacing: -0.5px;
+}
+.postlist-description {
+	display: block;
+	padding-top: 0.5em;
+}
+.postlist-link {
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+}
+.postlist-item-active .postlist-link {
+		font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.postlist-item > .post-tag {
+		align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata-li {
+	list-style: none;
+}
+
+.post-metadata time {
+		margin-right: 1em;
+}
+.links-nextprev {
+	display: flex;
+	justify-content: space-between;
+	gap: .5em 1em;
+	padding: 1em 0;
+}
+.links-nextprev-next {
+	text-align: right;
+	list-style: none;
+}
+.links-nextprev-prev {
+	text-align: left;
+	list-style: none;
+}</style>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="/pagefind/pagefind-ui.js"></script>
+		 <style>
+    svg {
+      width: var(--font-size);
+      height: var(--font-size);
+      color: var(--contrast);
+    }
+    </style>
+	</head>
+	<body>
+	<header class="container">
+			<div id="search"></div>
+			<script>
+			window.addEventListener('DOMContentLoaded', (event) => {
+				new PagefindUI({ element: "#search", showSubResults: true });
+			});
+			</script>
+		<nav>
+		<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/.11ty/image/?src=content%2Fimg%2Ftrc-logo.png&width=100&format=png&via=transform" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+		</ul>
+		<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/blog/">Archive</a></li>
+				<li><a href="/tags/">Tags</a></li>
+				<li>| </li>
+				<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-twitter"></i></a></li>
+				<li><a href="https://t.me/therealchanges"><i class="fa-brands fa-telegram"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+				<li><a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg"><i class="fa-brands fa-youtube"></i></a></li>
+				<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+				<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+				<li>| </li>
+				<li><a href="#" color="black" id="theme_switcher"></a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="container">
+			<heading-anchors data-pagefind-body="">
+				
+<h1 id="germany-transport-system">Germany Transport System</h1>
+
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2022-09-12">12 September 2022</time></li>
+	<li class="post-tag"><a href="/tags/germany/" class="post-tag">#Germany</a></li>
+</ul>
+
+<p>German trains, buses, and routes system is rather specific:</p>
 <ul>
 <li>Trains (Deutsche Bahn, further DB) have complicated tariffs</li>
 <li>Buses consist of independent associations, each of them has its prices and conditions</li>
@@ -113,12 +328,12 @@
 <li>What mobile apps to use</li>
 </ol>
 <p>I spent 3 hours of my own time, it was quite amusing.</p>
-<h2>How the transport system works in Germany</h2>
-<p>It's quite clear with the railways: there are suburban trains and fast intercity trains (IC and others). Faster trains cost more, and suburban trains are cheaper. For example, the DB app has a setting "show our best prices" &ndash; most likely, it will use suburban trains and buses (the price of buses is not counted in DB apps, by the way).</p>
+<h2 id="how-the-transport-system-works-in-germany">How the transport system works in Germany</h2>
+<p>It's quite clear with the railways: there are suburban trains and fast intercity trains (IC and others). Faster trains cost more, and suburban trains are cheaper. For example, the DB app has a setting &quot;show our best prices&quot; – most likely, it will use suburban trains and buses (the price of buses is not counted in DB apps, by the way).</p>
 <p>I found only <a href="https://en.wikipedia.org/wiki/List_of_German_transport_associations">one picture</a> with the bus associations, which only <strong>approximately</strong> shows the location of each association.</p>
 <p>There are zones inside each transport association, ticket price will depend on the number of zones you cross: the further you get = the more you pay. If you buy a ticket for 5 zones, but ride 6, it's a violation. Besides, each association has travel cards for a week and a month. The tickets should be sold in machines and on the buses (from the driver), but in the worst case, you can buy tickets only on the buses and only for cash. Advanced associations have their mobile apps, and less advanced have a website with tariffs only.</p>
 <p>There was an experiment in the summer of 2022: a travel card for all suburban trains and buses for 9 euros. It made the rides cheaper, more than that, it made it easier to plan the trip and calculate its cost. The experiment is over, it will not be continued, and travel cards are introduced in some regions.</p>
-<h2>How to find prices for buses in a particular region</h2>
+<h2 id="how-to-find-prices-for-buses-in-a-particular-region">How to find prices for buses in a particular region</h2>
 <p>To learn how to buy a ticket, how much the tickets cost, and what tickets are available, you need to find a particular transport association for a region. The algorithm is (approximately) the following:</p>
 <ol>
 <li>Find the name of the association on the bus or on the station, often the title is large.</li>
@@ -126,7 +341,7 @@
 <li>If it didn't help, define the association using <a href="https://en.wikipedia.org/wiki/List_of_German_transport_associations">the scheme</a>, then visit its map and locate your town there. Thus you make sure, that your town belongs to this transport association.</li>
 </ol>
 <p>After that, you can locate the website of the transport association and find all the necessary information there.</p>
-<h2>What mobile apps to use</h2>
+<h2 id="what-mobile-apps-to-use">What mobile apps to use</h2>
 <p>I'll provide links to the two apps, which were sufficient for me (for Android):</p>
 <ul>
 <li><a href="https://play.google.com/store/search?q=offi&amp;c=apps">Offi</a></li>
@@ -139,7 +354,7 @@
 <li>It doesn't show local minibusses.</li>
 </ol>
 <p>Offi fixes these two issues, and besides, it's updated in real-time (actual movement of a particular train). Some more optimized route variants may exist regarding the price and the trip duration, Google Maps may show them or you can ask locals. :)</p>
-<p>DB Navigator app is great, but to buy tickets you need to register... on another website. Once you've done it and have connected a payment card, you can buy tickets easily and view the trains on the route online. It's the basic level, after that you can buy discount cards and travel cards. For example, there is a ticket "any 10 days within 30 days" or a travel card for a month, but you need to search for two points. There were no offers for points I looked up.</p>
+<p>DB Navigator app is great, but to buy tickets you need to register... on another website. Once you've done it and have connected a payment card, you can buy tickets easily and view the trains on the route online. It's the basic level, after that you can buy discount cards and travel cards. For example, there is a ticket &quot;any 10 days within 30 days&quot; or a travel card for a month, but you need to search for two points. There were no offers for points I looked up.</p>
 <p>Without one of these apps, it's difficult to get somewhere. For example, trains are delayed, so instead of a train at 15:55 another train comes, you take it and go in the opposite direction.</p>
 <p>DB is worthy of a separate article, and it has some tricks:</p>
 <ul>
@@ -149,41 +364,52 @@
 </ul>
 <p>Besides, machines on a railway station don't switch to English, but the app does.</p>
 <p>Please ask your questions, I have enough time for practice.</p>
-            </div>
-            <div class="post_list">
-                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
-                <span class="post_date">Mon 12 September 2022</span>
-                <div><span>Tags: </span>
-                            <span><a href="./tag/germany.html">#Germany </a></span>
-                </div>
-            </div>
-                <div class="comments">
-                    <h2>Comments</h2>
-                    <div id="disqus_thread"></div>
-                    <script type="text/javascript">
-                        var disqus_identifier = "2022-09-germany-transport.html";
-                        (function () {
-                            var dsq = document.createElement('script');
-                            dsq.type = 'text/javascript';
-                            dsq.async = true;
-                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
-                            (document.getElementsByTagName('head')[0] ||
-                            document.getElementsByTagName('body')[0]).appendChild(dsq);
-                        })();
-                    </script>
-                </div>
-        </article>
-    </section>
-</article>
 
-<!-- Footer -->
-    <footer>
-        <p>
-	  Made with <a href="http://getpelican.com/">Pelican</a>, 
-      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
-        </p>
-    </footer>
+<ul class="links-nextprev"><li class="links-nextprev-next">Next <i class="fa-solid fa-arrow-right"></i><br><a href="/2022-09-obsidian-and-others.html">Obsidian And Others</a></li>
+</ul>
 
+			</heading-anchors>
+	</main>
 
-</body>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2022-09-germany-transport.html` was built on 2024-11-11T20:56:56.051Z -->
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+<script>
+    const html = document.documentElement;
+    const switchTheme = document.getElementById('theme_switcher');
+    const sun = '<i class="fa-regular fa-sun"></i>';
+    const moon = '<i class="fa-solid fa-moon"></i>';
+
+    // Load the theme from localStorage or set to light by default
+    let isLight = localStorage.getItem('theme') === 'light';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Set initial theme
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+        removeTooltip(3000);
+    });
+
+    switchTheme.addEventListener('click', (e) => {
+        e.preventDefault();
+        isLight = !isLight;
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+
+        // Save the current theme to localStorage
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+        removeTooltip();
+    });
+
+    const removeTooltip = (timeInt = 1750) => {
+        setTimeout(() => {
+        switchTheme.blur();
+        }, timeInt);
+    }
+</script>
+	</body>
 </html>

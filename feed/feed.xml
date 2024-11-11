@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="pretty-atom-feed.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>The Real Changes</title>
+  <subtitle>A blog about life &amp; tech</subtitle>
+  <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
+  <link href="https://en.kovchinnikov.info/" />
+  <updated>2024-05-16T19:18:00Z</updated>
+  <id>https://en.kovchinnikov.info/</id>
+  <author>
+    <name>Konstantin Ovchinnikov</name>
+  </author>
+  <entry>
+    <title>We&#39;re writing a web app</title>
+    <link href="https://en.kovchinnikov.info/2024-05-webapp.html" />
+    <updated>2024-05-16T19:18:00Z</updated>
+    <id>https://en.kovchinnikov.info/2024-05-webapp.html</id>
+    <content type="html">&lt;h2 id=&quot;why-write-a-web-app-1&quot;&gt;Why write a web app #1&lt;/h2&gt;
+&lt;p&gt;I wrote a lot about learning Linux tools and using them effectively. The question is what do we do with that? Or: what&#39;s next regarding personal development? What I&#39;ve noticed, is that a lot of people tend to go into system administration, meaning setting up server applications. Here I should mention &lt;a href=&quot;https://www.ubuntupit.com/&quot;&gt;UbuntuPit&lt;/a&gt; as a great source for these projects. This path has a few drawbacks, although it&#39;s useful for learning what exists:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You are limited to the tools which are already available&lt;/li&gt;
+&lt;li&gt;It can be frustrating because if it doesn&#39;t work, you&#39;re stuck; you&#39;re unable to modify the source code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I think learning programming is beneficial regarding personal development, having new challenges, and so on. But why create a web app?&lt;/p&gt;
+&lt;h2 id=&quot;why-write-a-web-app-2&quot;&gt;Why write a web app #2&lt;/h2&gt;
+&lt;p&gt;For simplicity, we can distinguish the two app types: those intended for individual use and those intended for collaborating with others. It tends that people are hugely more productive when they collaborate (no, I don&#39;t mean boring Zoom meetings), while personal productivity is limited. If we have a new app, the more people use it, the more productive, potentially, they can get. So what types of apps exist to interact with each other:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Command-line apps (CLI) are the easiest to write, and are fun to start with, but the visualization is limited&lt;/li&gt;
+&lt;li&gt;Graphical desktop apps are great, but you (normally) need special tools for Linux, Mac and Windows&lt;/li&gt;
+&lt;li&gt;Mobile apps have several platforms as well, Android and iOS&lt;/li&gt;
+&lt;li&gt;The web apps, finally&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The web apps are displayed in any standard-conformant browser, but they can also have a special mobile layout and they can be converted to mobile apps (or lite mobile apps) – being a mobile app, just cashing the assets for a faster display. At first, we could start even without that, and we&#39;ll be able to open our web app on any platform in any browser when the app and the browser stick to the standards. It motivated me to start, but to manage your expectations you should be probably aware of some drawbacks.&lt;/p&gt;
+&lt;h2 id=&quot;why-its-hard&quot;&gt;Why it&#39;s hard&lt;/h2&gt;
+&lt;p&gt;It&#39;s just hard to make web apps, and the list of the reasons can be very long:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The tools to build web apps are less sophisticated, than IDEs for mobile or desktop apps. Sometimes it seems like you&#39;re back in time and you don&#39;t have the tools desktop developers already have. Nevertheless, you can start development with any text editor and it takes some practice to feel comfortable in this environment.&lt;/li&gt;
+&lt;li&gt;Web dev is not so much about dev. You have three parts (normally): a front-end, a back-end, and a database. You&#39;ll spend a lot of time messing with joining these parts together and looking for errors &#39;in-between&#39;. Sometimes you&#39;ll find yourself spending 80% of your time creating front-end because it&#39;s all about tiny details. So, you have less time for the logic of the app.&lt;/li&gt;
+&lt;li&gt;The number of web frameworks is overwhelming, and it took me several months to choose one (so you don&#39;t have to), and I&#39;m still in the process.&lt;/li&gt;
+&lt;li&gt;Choosing components for the front end, choosing a database engine, and choosing a back-end framework can be overwhelming too.&lt;/li&gt;
+&lt;li&gt;All this makes the progress relatively slow.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It&#39;s not that technically hard, but it puts a moral toll on you when you&#39;re moving not that fast or (what I did several times) you have to choose another framework for your app and rewrite everything.&lt;/p&gt;
+&lt;p&gt;The tools you have, again for simplicity, can be divided into the things you can easily get without and the things you should know. But in what order to learn them? Well, ...&lt;/p&gt;
+&lt;h2 id=&quot;learning-the-web-from-a-historical-perspective&quot;&gt;Learning the web from a historical perspective&lt;/h2&gt;
+&lt;p&gt;I came to this idea recently, and I think it makes some sense: you could learn web technologies in the order they evolved because that happened for a reason. A reason for that was that humanity (or developers) came to some limitations with technology, so they invented a new technology until they had a better idea. I suggest that you learn in this order and the sign that you learned something is that you &lt;strong&gt;feel&lt;/strong&gt; the limitations of a technology. This means you are probably ready for the next step.&lt;/p&gt;
+&lt;p&gt;Roughly speaking, the sequence was like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Static web meaning HTML and CSS, are the basics.&lt;/li&gt;
+&lt;li&gt;Relational databases meaning SQL.&lt;/li&gt;
+&lt;li&gt;Basic back-end framework, here I was quite happy to start with &lt;a href=&quot;https://flask.palletsprojects.com/&quot;&gt;Flask&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Opionated back-end framework, which gives you at least a variant, of how this could be done. I&#39;m here now and I&#39;m starting to feel the limits of &lt;a href=&quot;https://www.djangoproject.com/&quot;&gt;Django&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Non-opinionated modern back-end framework, it seems that &lt;a href=&quot;https://expressjs.com/&quot;&gt;Express JS&lt;/a&gt; is quite popular, and I&#39;m targeting it now.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;There are a lot of things like React/Angular/Vue or Next.js/Nuxt.js, I just don&#39;t understand what limitations would make me use them. Generally maintaining focus and taking one step at a time is a good idea, from my experience, for the reason I&#39;ve already mentioned: the number of frameworks is overwhelming. And there&#39;s a bit of hype, too.&lt;/p&gt;
+&lt;h2 id=&quot;what-i-ve-learned-so-far&quot;&gt;What I&#39;ve learned so far&lt;/h2&gt;
+&lt;p&gt;I&#39;ll go through the same list from the previous section to note my conclusions and let a lot of people laugh at them. :)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Static means you can&#39;t change anything, but when you generate the static code on the server it&#39;s generally more stable, just because the client side is simple. Unless you need an interactive app like a game or an interactive map, you can go further with HTML and CSS. There are plenty of ready CSS styles as well.&lt;/li&gt;
+&lt;li&gt;SQL databases are great when you understand what&#39;s going on. If you can model a data structure beforehand, I see no drawbacks, although I get the idea that NoSQL databases speed up the development. I&#39;m just old, so I stick to SQL. Some frameworks have tools to write platform-independent SQL, I&#39;m also happy to use that.&lt;/li&gt;
+&lt;li&gt;I was stuck with Flask and the authentication task. The number of modules you have to find and include is a bit overwhelming just to do the basic things. It blurs a bit the whole picture of what&#39;s going on, but maybe it&#39;s a perfect place to start because you get the basics without too complicated concepts and you get a result fast.&lt;/li&gt;
+&lt;li&gt;I&#39;m working with a calendar app, and now the idea of having a very limited language in the templates doesn&#39;t feel right. Yes, you could use Django as an API for a front-end app, but I was eager to leverage all of its advantages, fast models and fast templates being among them.&lt;/li&gt;
+&lt;li&gt;When you step on JS and Express territory, you again have to choose the modules and you also feel the absence of documentation, compared to pythonic tools and specifically Django. It sucks, but there&#39;s a reason it&#39;s so popular, and it&#39;s interesting to find it out, so my journey continues.&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+  </entry>
+  <entry>
+    <title>A few maturity models</title>
+    <link href="https://en.kovchinnikov.info/2024-04-maturity.html" />
+    <updated>2024-04-25T22:33:00Z</updated>
+    <id>https://en.kovchinnikov.info/2024-04-maturity.html</id>
+    <content type="html">&lt;p&gt;The story of the Capability Maturity Model started, according to Wikipedia, in 1986 with the U.S. Department of Defense. Since then a CMM institute was established and several models were developed.&lt;/p&gt;
+&lt;p&gt;I found it useful to develop a model for a particular area with a subject matter expert and apply it, answering the Three Main Questions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Where are we?&lt;/li&gt;
+&lt;li&gt;Where are we heading to?&lt;/li&gt;
+&lt;li&gt;How do we get there?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It&#39;s important to understand that the criteria in the model are not comprehensive, but rather indicative. It&#39;s also important, that the model defines absolute levels, so it should be updated as new practices emerge. The levels themselves can be depicted using the radar chart, which many top managers from my experience find intuitive and easy to understand. So, I decided to publish the following models:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.kovchinnikov.info/pdf/s3m.pdf&quot;&gt;Sales Maturity Model&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.kovchinnikov.info/pdf/p3m.pdf&quot;&gt;Project Management Maturity Model&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.kovchinnikov.info/pdf/dmm.pdf&quot;&gt;Digitalization Maturity Model&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Special thanks to the people, who helped me a lot with my development effort:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Andrey Malakhov for Project Management Maturity Model&lt;/li&gt;
+&lt;li&gt;Ekaterina Mityasova for Sales Maturity Model&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;p&gt;Please remember to put a link to this website as a source, if you use it.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Python/Django development in Windows Terminal</title>
+    <link href="https://en.kovchinnikov.info/2024-04-wsl-python.html" />
+    <updated>2024-04-06T11:49:00Z</updated>
+    <id>https://en.kovchinnikov.info/2024-04-wsl-python.html</id>
+    <content type="html">&lt;p&gt;Well, I decided to write a small Django app, and as Windows is used at our workplaces and I&#39;ve gotten used to linux, two problems arose:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You need to call admin every time you install any program&lt;/li&gt;
+&lt;li&gt;WSL is rather limited&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So, after some tinkering, tries, and errors I came to a minimal configuration, which I&#39;ll describe in this article. Hope, it helps someone somehow. :) I&#39;m also new to programming and Django in particular, so it took me a while to find an optimal setup.&lt;/p&gt;
+&lt;p&gt;My requirements are very simple:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Terminal-based workflow&lt;/li&gt;
+&lt;li&gt;A few steps to setup&lt;/li&gt;
+&lt;li&gt;Reproducible, if something goes wrong&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I ended up with the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ubuntu in WSL2, just the default&lt;/li&gt;
+&lt;li&gt;Windows Terminal, why not&lt;/li&gt;
+&lt;li&gt;tmux is used with two or three windows: neovim, runserver, find something/look in the database&lt;/li&gt;
+&lt;li&gt;neovim + &lt;a href=&quot;https://github.com/nvim-lua/kickstart.nvim&quot;&gt;kickstart&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Python 3 + pip, nothing special&lt;/li&gt;
+&lt;li&gt;GitHub Projects to have a task list&lt;/li&gt;
+&lt;li&gt;git to track versions when I complete a task&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For the current project I use SQLite, but it shouldn&#39;t be an issue with any other database.&lt;/p&gt;
+&lt;p&gt;The only thing worth discussing here is neovim, so let&#39;s dive into that.&lt;/p&gt;
+&lt;p&gt;First I tried emacs-nox as I use emacs for writing texts. But for programming emacs is too much with its functions, and windows management becomes a problem as well: it creates lots of service buffers. On the other hand, neovim + Telescope is a nice solution for windows management, neovim has just the functions I need for editing, so it&#39;s a lot easier to get into the &#39;flow state&#39; for programming.&lt;/p&gt;
+&lt;p&gt;By the way, I don&#39;t use a language server for Python, but I use an emmet language server to write HTML faster. I don&#39;t use LSP for Python just because I learn Django and Python and I need first of all to understand, so I look into documentation and try to write when I&#39;m sure what I&#39;m doing. Django requires writing very little text, but switching between (or having them on one screen) models, forms, urls, and views is critical. And neovim does that pretty well.&lt;/p&gt;
+&lt;p&gt;Again, due to WSL limitations, I was able to use neovim binary only from the official site: AppImage didn&#39;t work for me. And you need a fresh neovim version for Lazy, which is used by kickstart.&lt;/p&gt;
+&lt;p&gt;You can find great ways to use tmux and also bind neovim and tmux together, I just keep it simple.&lt;/p&gt;
+&lt;p&gt;Someone could use docker, but Python&#39;s virtual environment works pretty well for me, I was able to copy it to the linux machine, mostly with &lt;code&gt;pip freeze&lt;/code&gt; and &lt;code&gt;pip install -r&lt;/code&gt;. And the app just works.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>My new old 3d-printer</title>
+    <link href="https://en.kovchinnikov.info/2024-04-3d-printer.html" />
+    <updated>2024-04-01T12:12:00Z</updated>
+    <id>https://en.kovchinnikov.info/2024-04-3d-printer.html</id>
+    <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Year 2024: Core-XY printers took over the world. They are quick, but they are also big and loud. What should a normal dude like me do just get into 3D printing and not suffer so much? Notably, I suffer from poor quality and from the printer being unstable.&lt;/p&gt;
+&lt;p&gt;For the cheap printers tier, Creality V3 SE or V3 KE seems to be the obvious choice, but they have problems not so many people talk about:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The print plate is always bent&lt;/li&gt;
+&lt;li&gt;Aluminium frame may not survive the assembly and it&#39;s hard to make it stable again&lt;/li&gt;
+&lt;li&gt;They are supplied with some screwed software and you need to put some effort to get profiles for these printers in the slicer you want&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Creality Ender V3 seems to be better, but it&#39;s also more expensive. Creality CR-10 has problems with layers in all the reviews.&lt;/p&gt;
+&lt;p&gt;By the way, Qidi Tech Smart X3 is a small Core-XY printer with a relatively low price, but... there are not so many positive reviews, some questions regarding non-replaceable carbon rods, and... it&#39;s not available in the EU. And this can be for a reason: in the EU the law protects the customers, so when the quality of the product is poor, the manufacturers prefer to exit this market.&lt;/p&gt;
+&lt;p&gt;You can say, that there&#39;s Bambu Lab A1 Mini. When I was choosing a printer, it wasn&#39;t available without AMS Lite, which I don&#39;t need. I also have some questions regarding the construction and the approach of the company in general: closed-source, not friendly for tinkering or customization. Well, it&#39;s something different: it&#39;s completely hostile to these kind of things. And I&#39;m not going to vote with my money for this approach.&lt;/p&gt;
+&lt;p&gt;For lots of other manufacturers, the problems are the same as for Creality: print plates are bent and the software support is awful.&lt;/p&gt;
+&lt;h2 id=&quot;the-requirements&quot;&gt;The requirements&lt;/h2&gt;
+&lt;p&gt;The print volume is a good question. I printed some models and I needed this print volume only twice. In one case I could buy a laptop on Amazon. I thought even about Voron 0.2, but a 120x cube seems too little. I thought I could live with a 180x cube.&lt;/p&gt;
+&lt;p&gt;I also wanted the printer to be stable in terms of print quality, quick, and silent. The last two characteristics are contradicting. Well, they start to contradict when the printer pushes speed too much. But you need good engineering, good quality parts, and anti-shaping technology, ideally with sensors on the printer.&lt;/p&gt;
+&lt;p&gt;I thought about Sovol SV 06, but you need to replace some parts right away. And the print quality I saw on videos by the guys who did it, still sucked. And it just seems irrational to me to pay for the parts that go right into the bin.&lt;/p&gt;
+&lt;p&gt;Some more bad candidates:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I had experience with AnyCubic, which is still alive. It&#39;s loud and the engineering is just anti-humane, which results in unstable and often bad print quality.&lt;/li&gt;
+&lt;li&gt;AnkerMake... just take a look at their group on Reddit... it is full of complains&lt;/li&gt;
+&lt;li&gt;FlashForge... again, awful software and lots of questions regarding the electrical safety of these devices&lt;/li&gt;
+&lt;li&gt;Neptune printers have problems with geometry, they are just not square, just as the prints they produce&lt;/li&gt;
+&lt;li&gt;The 100 is a great project, but it requires sourcing and assembly... and some special tools which also cost a few hundred euros&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;prusa&quot;&gt;Prusa&lt;/h2&gt;
+&lt;p&gt;OK, what about Prusa? These printers are expensive, they say. Is it the only drawback? If it is, I can live with that. You can find some negative reviews about Prusa Mini, but the current model is called Prusa Mini+, it also has firmware upgrades, and Prusa Slicer took a long path as well. And the fact is that Prusa Mini was used on lots of print farms. Now many print enthusiasts have replaced it with BambuLab Core-XY printers. Does it make Prusa Mini+ a bad printer? I don&#39;t think so. There are lots of advantages of small print volume:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It&#39;s energy efficient as the heated table is small&lt;/li&gt;
+&lt;li&gt;The construction has worked well for this volume&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The approach here&#39;s the following: you can fully disassemble, service, and assemble the printer yourself. As it&#39;s not new on the market, there are plenty of upgrades available for cheap. For example, it uses a standard v6 nozzle, you can buy 8 of them for 14 EUR and they will be made of hardened steel.&lt;/p&gt;
+&lt;h2 id=&quot;my-experience&quot;&gt;My experience&lt;/h2&gt;
+&lt;p&gt;First, I should put a disclaimer, my printer came with some upgrades and I can&#39;t say anything about how the printer works without them:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The heat block&lt;/li&gt;
+&lt;li&gt;The Bondtech extruder he he he&lt;/li&gt;
+&lt;li&gt;A printed stabilizer for the Z-axis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The problem was that the previous owner tried to print with nylon, and this material was in the heatsink, on the heatblock, and it clogged my new nozzle. So I ended up changing the heatsink and the nozzle again and warming up and cleaning the heat block. It took 1 evening and after that it was fine. And the previous owner sent lots of spare parts to me, including the upgrades.&lt;/p&gt;
+&lt;p&gt;But it started with assembly as my printer came partially disassembled. Here&#39;s the question for those who say that it costs too much: Do great assembly instructions with photos cost anything? I think they do and I was able to assemble the printer and after that change the nozzle, although I&#39;ve never done it before. I needed only hex wrenches for that. I also lubed the bearings and checked the belts and all the bolts. And after that I can say, that the engineering of this printer is great, because it&#39;s simple.&lt;/p&gt;
+&lt;p&gt;Is it silent? It is until it gets to full speed, but the noise comes mostly from the print head. The print quality is great and stable. More than that, often I print with 15% infill, so I use less material.&lt;/p&gt;
+&lt;p&gt;Regarding the print speed, I have another dirty secret for those who don&#39;t know: if you want speed, just install a bigger nozzle.&lt;/p&gt;
+&lt;p&gt;The guys who paid for these great Core-XY machines often write the same thing: it&#39;s overkill, I printed all I wanted and I don&#39;t know what else to print. That&#39;s the power of marketing, folks. These Core-XY machines are nice, but you bought them although you didn&#39;t need them. My printer is just good enough for the tasks I have, small enough to fit right on my table, silent enough, and still quick enough.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>A dive into 3D-printing</title>
+    <link href="https://en.kovchinnikov.info/2023-10-3d-printing.html" />
+    <updated>2023-10-29T12:18:00Z</updated>
+    <id>https://en.kovchinnikov.info/2023-10-3d-printing.html</id>
+    <content type="html">&lt;h2 id=&quot;my-story&quot;&gt;My story&lt;/h2&gt;
+&lt;p&gt;It all started when my friend found a 3D printer on the street with lots of filament rolls. Here in Germany, people put stuff right on the street when they move to another apartment or when they don&#39;t need it. I decided to take a look:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;I made a photo and googled by image; it happened to be &lt;a href=&quot;https://www.anycubic.com/products/anycubic-i3-mega&quot;&gt;Anycubic M3 Mega&lt;/a&gt;, an old printer.&lt;/li&gt;
+&lt;li&gt;The bed was covered with filament, I cleaned it and found that it was damaged, probably due to a lack of bed leveling, so I ordered a bad replacement, for 20 €. I leveled the bed and was able to print a mic stand, as my mic stand was broken.&lt;/li&gt;
+&lt;li&gt;I found a new &lt;a href=&quot;https://github.com/davidramiro/Marlin-Ai3M&quot;&gt;custom firmware for this printer&lt;/a&gt;, which had great features: 25-point manual bed leveling, auto nozzle, and bed calibration, which significantly reduced the noise and probably power consumption as well. It printed, but then the filament didn&#39;t stop leaking, so I ordered print nozzles made of hardened steel, 15 € for a pack of 8.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I leveled the bed again and... it printed great! Well, after lots of prints, I found the drawbacks:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For sure it&#39;s slow and loud&lt;/li&gt;
+&lt;li&gt;The construction which is advertised as &amp;quot;hardened Ender&amp;quot; sucks, especially filament sensor placement&lt;/li&gt;
+&lt;li&gt;The quality sucks, it has issues with &lt;a href=&quot;https://www.youtube.com/watch?v=BMqLe_tQEVA&amp;amp;t=197s&quot;&gt;the extruder&lt;/a&gt; and the motion system; it&#39;s rough&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Still, I was excited, because I was able to print lots of useful and entertaining prints. For prints without details draft quality works well and is almost 2x faster. If you struggle with the question &amp;quot;What to print?&amp;quot;, there are two main categories:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Something useful like clips, organizers, stands&lt;/li&gt;
+&lt;li&gt;Something entertaining like anime figures, decorations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;its-time-to-move-on&quot;&gt;It&#39;s time to move on&lt;/h2&gt;
+&lt;p&gt;This particular printer could be upgraded with Klipper, so at least you need Banana Pi and some soldering. Then it probably will be able to print 2x faster with a better quality. I don&#39;t think this printer is worth it. More than that, some research revealed that lots of YouTubers (at least) have this printer, but no one is excited about it. I guess that they all experience issues with the quality.&lt;/p&gt;
+&lt;p&gt;The next step to go further with 3D printing is to start 3D modeling myself, I have some ideas to make fastenings on my bike. I was shocked at how many models are available online for free, you can spend ages digging through these catalogs.&lt;/p&gt;
+&lt;h2 id=&quot;current-market-for-3d-printers&quot;&gt;Current market for 3d printers&lt;/h2&gt;
+&lt;p&gt;I&#39;d like to change the printer itself and it happened that although FDM printing is old, a few things have happened recently in this market.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;It all started with Bambu Lab x1, followed by more affordable P1P and smaller, but even more affordable A1 mini. I was able to launch their &lt;a href=&quot;https://github.com/bambulab/BambuStudio/releases&quot;&gt;slicer in Linux&lt;/a&gt;, but they have really &lt;a href=&quot;https://www.youtube.com/watch?v=Neakuea_uBY&amp;amp;t=1431s&quot;&gt;weird user agreement&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Other companies also decided to make a fast CoreXY printer, but all of them suck: &lt;a href=&quot;https://www.reddit.com/r/klippers/comments/134lh7s/comment/jin81g0/?utm_source=reddit&amp;amp;utm_medium=web2x&amp;amp;context=3&quot;&gt;Qidi Smart3&lt;/a&gt;, &lt;a href=&quot;https://www.reddit.com/r/FlashForge/comments/17aozng/adventurer_5m_in_stock/&quot;&gt;Flashforge Adventurer 5M&lt;/a&gt;, Creality K1. But Creality stands out as they fix the issues and finally, they came out with the full version of Klipper.&lt;/li&gt;
+&lt;li&gt;Some companies came out with fast sling-bed printers: Neptune 4 Pro &lt;a href=&quot;https://www.youtube.com/watch?v=-rlOoGLZdoo&amp;amp;t=5s&quot;&gt;can&#39;t print the cylinder&lt;/a&gt; and AnkerMake M5C needs a mobile app to operate, also tinkering is minimized: all the contacts are glued.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I also learned about Voron printers and THE 100. They need some tools to build worth 170 €. And I&#39;m not sure that I&#39;ll cope with the assembly and will finish the tuning.&lt;/p&gt;
+&lt;p&gt;Everyone is so excited about fast printing, but it comes at a cost: it&#39;s always noisy (and costly). Other than speed, some great models are still available on the market. I mean Creality Ender 3 V3 SE and Creality Ender 5 S1. I&#39;m thinking about buying one of them, and after that maybe add Klipper with Orange Pi or something, which also allows to print using WiFi. Ender is more like evolution, rather than revolution. And it&#39;s not only about the community, lots of replacement and upgrade parts are available. It&#39;s not about the first print, it&#39;s about printing for some time, which requires some service. I&#39;d also like to have a working printer out of the box, and then maybe gradually upgrade it. Becase printing is fun!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Taking Emacs and Neovim to the next level</title>
+    <link href="https://en.kovchinnikov.info/2023-08-vim-emacs.html" />
+    <updated>2023-08-16T22:56:00Z</updated>
+    <id>https://en.kovchinnikov.info/2023-08-vim-emacs.html</id>
+    <content type="html">&lt;h2 id=&quot;the-story&quot;&gt;The story&lt;/h2&gt;
+&lt;p&gt;I was quite content with Emacs, especially with Markdown and Org modes. But then I started to develop a web application, and it became obvious, that a standard Emacs sucks in many ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Switching between buffers, the order of the buffers always changes&lt;/li&gt;
+&lt;li&gt;Moving through the text and editing files&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The answer to the first issue can be a fuzzy finder, regarding the second issue the answer is called modal editing which is impemented in Vim, notably. Emacs has several advantages, though:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Highly intellectual editing, most of all I like editing links and tables in Org and Markdown modes&lt;/li&gt;
+&lt;li&gt;Very good &#39;monolythic&#39; modes for any language&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you want to use these advantages, you could install... a few more modes. But in this article I&#39;d like to look further. Maybe we could use Neovim or some other editor for programming? Before we start, I&#39;d like to mention a few points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If you start from scratch, maybe &lt;a href=&quot;https://en.kovchinnikov.info/2022-09-linux-5.html&quot;&gt;the first article about Vim and Emacs configs&lt;/a&gt; could be useful for you&lt;/li&gt;
+&lt;li&gt;I created &lt;a href=&quot;https://github.com/ikostas/misc/&quot;&gt;a git repo with my configs&lt;/a&gt;, for reference&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;emacs&quot;&gt;Emacs&lt;/h2&gt;
+&lt;p&gt;First, we activate &lt;a href=&quot;https://docs.projectile.mx/projectile/index.html&quot;&gt;projectile&lt;/a&gt; to be able to navigate within the project:&lt;/p&gt;
+&lt;p&gt;:::lisp
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd &amp;quot;C-c p&amp;quot;) &#39;projectile-command-map)&lt;/p&gt;
+&lt;p&gt;Then we activate &lt;a href=&quot;https://www.masteringemacs.org/article/introduction-to-ido-mode&quot;&gt;ido&lt;/a&gt;, which a fuzzy finder. You could use &lt;a href=&quot;https://tuhdo.github.io/helm-intro.html&quot;&gt;helm&lt;/a&gt; as well, by the way:&lt;/p&gt;
+&lt;p&gt;:::lisp
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+(setq ido-ignore-buffers &#39;(&amp;quot;&#92;` &amp;quot; &amp;quot;^*&amp;quot;))
+(setq ido-ignore-files &#39;(&amp;quot;^#&amp;quot; &amp;quot;~$&amp;quot;))&lt;/p&gt;
+&lt;p&gt;I added some lines to ignore backup files Emacs creates. And we also make ibuffer default:&lt;/p&gt;
+&lt;p&gt;:::lisp
+(defalias &#39;list-buffers &#39;ibuffer)&lt;/p&gt;
+&lt;p&gt;Now we are ready to activate evil-mode, which emulates Vim:&lt;/p&gt;
+&lt;p&gt;:::lisp
+(require &#39;evil)
+(evil-mode 1)&lt;/p&gt;
+&lt;p&gt;And jumping between lines is easier with relative numbers:&lt;/p&gt;
+&lt;p&gt;:::lisp
+(setq display-line-numbers-type &#39;relative)&lt;/p&gt;
+&lt;p&gt;&amp;quot;It ain&#39;t much, but it&#39;s honest work.&amp;quot; © I still don&#39;t feel comfortable though.&lt;/p&gt;
+&lt;h2 id=&quot;neovim&quot;&gt;Neovim&lt;/h2&gt;
+&lt;p&gt;What are Neovim&#39;s super-powers? I think, &lt;a href=&quot;https://github.com/nvim-treesitter/nvim-treesitter&quot;&gt;tree sitter&lt;/a&gt; and &lt;a href=&quot;https://github.com/nvim-telescope/telescope.nvim&quot;&gt;telescope&lt;/a&gt; are among them. You could also turn on LSP, but I try to learn programming without it.&lt;/p&gt;
+&lt;p&gt;I used vim a lot, but I can&#39;t get rid of a thought that it&#39;s not logical. You could change the keystrokes, but I mean the deeper logic for the editor, it feels that it&#39;s just absent sometimes. Could it be better?&lt;/p&gt;
+&lt;p&gt;And I also have some doubts regarding Emacs. Do we really need a Lisp environment just to write texts? Doesn&#39;t it get bloated with all that extensions? Evil mode works quite well, but does it seem alien to the whole logic of Emacs?&lt;/p&gt;
+&lt;p&gt;Could we have just a simple editor, maybe lacking some features, but with a more holistic approach? An editor, which would not require to search for plugins and install them and then finding where these plugins conflict with each other? Maybe an editor, which could be written with modern achievement like language and the whole idea of modern text editing and writing programs?&lt;/p&gt;
+&lt;p&gt;Well, if you don&#39;t need LSPs and modal editing, maybe you could go with &lt;a href=&quot;https://micro-editor.github.io/&quot;&gt;micro&lt;/a&gt;. It has themes and plugins.&lt;/p&gt;
+&lt;h2 id=&quot;bonus-helix&quot;&gt;Bonus: helix&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://helix-editor.com/&quot;&gt;Helix&lt;/a&gt; has been there for a while, and &lt;a href=&quot;https://www.youtube.com/watch?v=xHebvTGOdH8&quot;&gt;this video&lt;/a&gt; includes a good explanation of differences with vim. It doesn&#39;t explain though, that helix lacks some features, like jumping between sentences (maybe because it&#39;s a programming editor, first of all), and it lacks snippets. But based on idea &lt;a href=&quot;https://www.youtube.com/shorts/Ev1n7y_RVOE&quot;&gt;in this video&lt;/a&gt; even a looser like me can write &lt;a href=&quot;https://github.com/ikostas/misc/blob/main/sn&quot;&gt;a bash script&lt;/a&gt; to insert some HTML and Markdown. After using it for a while, I have some thoughts to share:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It&#39;s more logical, than vim, and &#39;modes&#39; are just to explain the logic behind the keystrokes&lt;/li&gt;
+&lt;li&gt;I struggle switching from vim with some keystrokes, especially &#39;x&#39;, which is &#39;select line&#39; in helix&lt;/li&gt;
+&lt;li&gt;It&#39;s great that&#39;s it rather simple, so you don&#39;t get too frustrated studing it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With all that said, it&#39;s a lot of fun editing files in Helix. As a user I can&#39;t say how the fact that&#39;s it&#39;s written in Rust makes it better, I don&#39;t think Emacs is slow, although it&#39;s been criticised for that. It&#39;s more user-friendly, than Emacs, and a lot user-friendly, than vim, but these friendly features don&#39;t prevent you from beeing fast and highly effective. If you don&#39;t need information in these pop-ups, you could just ignore them and nothing will happen.&lt;/p&gt;
+&lt;p&gt;If you use tmux, don&#39;t forget to put this into your tmux.config:&lt;/p&gt;
+&lt;pre class=&quot;language-vim&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-vim&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;sg escape&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;time &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Learning German</title>
+    <link href="https://en.kovchinnikov.info/2023-08-german.html" />
+    <updated>2023-08-07T20:43:00Z</updated>
+    <id>https://en.kovchinnikov.info/2023-08-german.html</id>
+    <content type="html">&lt;p&gt;First, I need to start with a few disclaimers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I learned English (for 30 years), Spanish (for 4 years in the school) and French (4 years in the institute), so my experience with German is subjective because of that;&lt;/li&gt;
+&lt;li&gt;I chose Lingoda as the main way of learning, and although I like it, this article is about why you &lt;strong&gt;shouldn&#39;t&lt;/strong&gt; stick to Lingoda only;&lt;/li&gt;
+&lt;li&gt;I&#39;m not affiliated with Lignoda, I pay for my learning myself, but you can find a link to save 50 USD if you join the sect; :)&lt;/li&gt;
+&lt;li&gt;With Lingoda I completed 50 lessons from A 1.2 course and started A 2.1 course recently;&lt;/li&gt;
+&lt;li&gt;I&#39;m not always satisfied with Lingoda, but it&#39;s beyond the scope of this particular article; instead, I&#39;ll share my thoughts on Lingoda&#39;s limits.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With all this in mind, let&#39;s start! In this post I&#39;m going to share some thoughts regarding the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What makes German complicated and how to deal with it&lt;/li&gt;
+&lt;li&gt;What structure do you need to study a language&lt;/li&gt;
+&lt;li&gt;What particular tools you can use to study German&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the end, I&#39;ll provide some hints to ease the learning process.&lt;/p&gt;
+&lt;h2 id=&quot;german-is-complicated&quot;&gt;German is complicated&lt;/h2&gt;
+&lt;p&gt;I underestimated the extent, to which German is difficult, so it requires, in my mind, way more time and patience to master it. When you start, everything seems simple, even articles (definite/indefinite), conjugations, and declinations are not that hard. The problem is that when you speak, you need to think about all the rules at once:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pronunciation&lt;/li&gt;
+&lt;li&gt;Choosing an article (or no article)&lt;/li&gt;
+&lt;li&gt;Declination&lt;/li&gt;
+&lt;li&gt;Conjugation&lt;/li&gt;
+&lt;li&gt;Word order, which is very different from other languages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I hypothesize that Germans just don&#39;t do it – instead, they remember the templates. And remembering the templates is a good way to learn any language. Still, pronunciation rules help a lot. To my surprise teacher, which are native German speakers, were not able to tell these rules. And these rules were absent in the book we had on my first learning course. I found these rules in a book called &#39;German Demystified&#39;. You read one page and you start to read properly.&lt;/p&gt;
+&lt;p&gt;The way all the other topics are explained differs &lt;strong&gt;a lot&lt;/strong&gt; in various books and guides. My choice is the same book mentioned above because I like the way it&#39;s explained in plain English. Regretfully, I found very few explanations on grammar in the Lingoda course.&lt;/p&gt;
+&lt;p&gt;So, it&#39;s a lot about grammar: the learning process, speaking and understanding German. Pronunciation is still hard, but we&#39;ll deal with it.&lt;/p&gt;
+&lt;h2 id=&quot;a-structure-to-learn-a-language&quot;&gt;A structure to learn a language&lt;/h2&gt;
+&lt;p&gt;So, let&#39;s talk about the target structure you need to master the language. In my opinion, you need to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Talk&lt;/li&gt;
+&lt;li&gt;Write&lt;/li&gt;
+&lt;li&gt;Understand&lt;/li&gt;
+&lt;li&gt;Learn grammar&lt;/li&gt;
+&lt;li&gt;Learn vocabulary&lt;/li&gt;
+&lt;li&gt;Have a feedback&lt;/li&gt;
+&lt;li&gt;Have a roadmap&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By each activity I mean the process, when at the beginning you are not able to do it, and at the end you can do it for sure. It&#39;s not like you visited some class, where the teacher explained grammar, but you didn&#39;t get it. So, we need a &lt;strong&gt;result&lt;/strong&gt;, and a result requires investing some time in each activity and implementing the proper process. So, what is the proper process?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To talk the best thing is story-telling. If you tell a story to your neighbor in German, that&#39;s it! You can find a native speaker through the app or take the courses. With the app I assume that the native speaker will be interested from the B1 level, otherwise it hurts. With the courses, the idea is to take every opportunity to speak. While you are not fluent, just repeating podcasts in German helps a lot.&lt;/li&gt;
+&lt;li&gt;To write is to have enough writing exercises to make use of your muscle memory. I think that Lingoda does not have enough written exercises, but you can look for other resources. I found exercises in the same book I mentioned above, you can also find exercises online. The idea is to write full sentences by hand or type them, not just to fill in the gaps.&lt;/li&gt;
+&lt;li&gt;Listening to podcasts, music, news, and watching movies in the target language helps a lot. At first, it&#39;s hard, but then there&#39;s a moment like: &amp;quot;Oh, I can understand 60%&amp;quot;. And the only way to get there is to start and do it regularly.&lt;/li&gt;
+&lt;li&gt;I don&#39;t believe that anyone learns grammar after oral explanations. I know, for example, that the human brain has two modes: communication and deep thinking, needed for learning. So I strongly believe that only studying written explanations of grammar helps, along with the written exercises, to apply the knowledge and convert remembered information into knowledge.&lt;/li&gt;
+&lt;li&gt;To learn vocabulary you need to remember the words, a lot of words. Thankfully, humanity invented lots of ways to remember things, so just google it and find the way you like. The idea is that it&#39;s a conscious intent to remember a lot of words, so you remember them when you need them.&lt;/li&gt;
+&lt;li&gt;The feedback is the most valuable part. With a book, you can have keys to a fixed number of exercises. But every human invents his/her way to express ideas, and it&#39;s great to have a native speaker who can correct you. And two more points here: studying in a group is more encouraging and is cheaper. With Lingoda you&#39;ll have a different teacher each time, but I like it, because every time I have a fresh feedback.&lt;/li&gt;
+&lt;li&gt;A roadmap is the second most valuable thing every course needs. There are some unified German certifications/exams, so it&#39;s better not to skip anything. The interesting point is that I studied with a book, which was approved by BAMF (Bundesamt für Migration und Flüchtlinge, a migration service, in short) and it was so far behind Lingoda&#39;s course for the same level.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;tools-and-resources-to-learn-a-language&quot;&gt;Tools and resources to learn a language&lt;/h2&gt;
+&lt;p&gt;Ok, just a list of resources I use every day:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Google Translate, to check pronunciation and the meaning, of course&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.verbformen.com/&quot;&gt;Netzverb Dictionary&lt;/a&gt; for declanations and conjugations&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://slowgerman.com/&quot;&gt;Slow German podcast&lt;/a&gt;, I repeat a phrase by phrase&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/@froehlichDeutsch&quot;&gt;fröhlich Deutsch&lt;/a&gt; – a YouTube teacher, who helped me with my German &#39;R&#39;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.duden.de/&quot;&gt;Duden&lt;/a&gt;, the most respected German dictionary, if you have doubts&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://germanwithlaura.com/&quot;&gt;German with Laura&lt;/a&gt;, lot&#39;s of grammar rules simplified&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;the-only-tip-you-need&quot;&gt;The only tip you need&lt;/h2&gt;
+&lt;p&gt;There&#39;s a great article &lt;a href=&quot;https://blog.lingoda.com/en/how-to-love-language-learning/&quot;&gt;8 ways to fall in love with language learning&lt;/a&gt;, and I highly recommend it. I could deal with the grammar in German, but I didn&#39;t like the pronunciation. I didn&#39;t like to speak German, it hurt even if I missed unnecessary consonants. I didn&#39;t like the sound, it was heavy and tuneless and the sound itself also hurt me. But the idea to find a way to love German changed everything, and it happened. I remember the two moments vividly:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I met the teacher from Switzerland. His speech was so melodic and sweet and soft. I thought: that&#39;s it, I want to speak like that! And I just started speaking like that, so a teacher from Germany told me that I have a Swiss accent. It&#39;s not good or bad: everyone understands me, and I&#39;m happy to speak like that. There are numerous accents in Germany, and some of them are melodic, but I liked the Swiss variant the best.&lt;/li&gt;
+&lt;li&gt;In the Slow German podcast there was an &lt;a href=&quot;https://slowgerman.com/2023/03/16/noch-mehr-deutsche-musik-sg-254/&quot;&gt;issue about modern German music&lt;/a&gt;, and I found indie German music. Not all of these bands sing in German, regretfully, but I liked &lt;a href=&quot;https://www.youtube.com/channel/UCheky_SBEExtbK_T0onuDwg&quot;&gt;AnnenMayKantereit&lt;/a&gt; (a link to their YouTube channel), which do. And again, the sounds of the language are so soft and sweet... This band is now among my favorites on Spotify.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So, if you want to save 50 USD with Lingoda, &lt;a href=&quot;https://learn.lingoda.com/en/referral/ve3amy&quot;&gt;here&#39;s the link&lt;/a&gt;. By the way, I chose Lingoda based on &lt;a href=&quot;https://www.thebalancemoney.com/best-online-german-classes-4844948&quot;&gt;this review&lt;/a&gt;. And that&#39;s it!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Four most valuable programs for Me</title>
+    <link href="https://en.kovchinnikov.info/2023-07-programs.html" />
+    <updated>2023-07-12T09:54:00Z</updated>
+    <id>https://en.kovchinnikov.info/2023-07-programs.html</id>
+    <content type="html">&lt;p&gt;In this article I&#39;ll be not talking about a terminal emulator or a browser, it&#39;s just not much to do with a computer nowadays without them. Instead, I&#39;d like to cover the following topics:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PDF annotation&lt;/li&gt;
+&lt;li&gt;Typing trainers&lt;/li&gt;
+&lt;li&gt;PDF editing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Xournal is a program I use not so often to fill in some PDF forms. They are not designed as PDF forms, they are just PDFs to fill in some information and put a signature. My process without a special program would be the following:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Find a place to print a document (as I don&#39;t have a printer or MFD at home)&lt;/li&gt;
+&lt;li&gt;Fill in and sign the document&lt;/li&gt;
+&lt;li&gt;Scan a document somewhere (because smartphone photos are not good enough)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;That&#39;s a loss of paper, time, and money. With Xournal and similar software, you can fill everything in the PDF and send it right away. I can&#39;t say whether there&#39;s an alternative for this program in Linux, it just works great. You can also create a signature in another program and insert it whenever you need it. In Europe, it works for most of the cases. By the way, I use xournal++ which is a fork of the original xournal.&lt;/p&gt;
+&lt;p&gt;Next, there are two programs I try to use daily, and using them is the simplest way to increase productivity. I&#39;m talking about the typing trainers, I just search for them using the package manager in my distribution, so my findings are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;gtypist, it works in terminal&lt;/li&gt;
+&lt;li&gt;klavaro, a GUI app&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I think that any app will do, you just need to install it and practice regularly.&lt;/p&gt;
+&lt;p&gt;And a bonus: if you need to edit PDF, LibreOffice Draw can do that!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Emacs is so underrated</title>
+    <link href="https://en.kovchinnikov.info/2023-07-emacs.html" />
+    <updated>2023-07-06T12:13:00Z</updated>
+    <id>https://en.kovchinnikov.info/2023-07-emacs.html</id>
+    <content type="html">&lt;p&gt;What initially sparked my interest in Emacs was that &lt;a href=&quot;https://survey.stackoverflow.co/2023/#section-most-popular-technologies-integrated-development-environment&quot;&gt;it was used so little&lt;/a&gt; (among developers). At this point, I used Emacs and Vim a lot and I chose Emacs for text writing (I&#39;m not a programmer) for Markdown (mostly this website), HTML (my private journal), and &lt;a href=&quot;https://orgmode.org/&quot;&gt;Org&lt;/a&gt; (structuring any information). I tried Doom Emacs and yet I&#39;m using vanilla Emacs with 45-line config, of which 11 lines are comments. So, in this post, I&#39;d like to comment on the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Doom Emacs and Spacemacs: the Good and the Bad&lt;/li&gt;
+&lt;li&gt;Writing texts vs. programming and the vi-mode&lt;/li&gt;
+&lt;li&gt;Using Emacs&#39; modes&lt;/li&gt;
+&lt;li&gt;Current state of Neovim development vs. Emacs&lt;/li&gt;
+&lt;li&gt;Emacs extensions, are they really useful&lt;/li&gt;
+&lt;li&gt;Use cases where Vim is unbeatable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It&#39;s not a &#39;Emacs vs. Vim&#39; article, I just try to structure my thoughts. Let&#39;s start then.&lt;/p&gt;
+&lt;h2 id=&quot;doom-emacs-and-spacemacs-the-good-and-the-bad&quot;&gt;Doom Emacs and Spacemacs: the good and the bad&lt;/h2&gt;
+&lt;p&gt;There are lots of great things about &lt;a href=&quot;https://github.com/doomemacs/doomemacs&quot;&gt;Doom Emacs&lt;/a&gt; and &lt;a href=&quot;https://www.spacemacs.org/&quot;&gt;Spacemacs&lt;/a&gt;. And first of all, I&#39;d like to say that the concepts and the products are great, from my viewpoint. Notably, for the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;These products initiated a new wave of interest towards Emacs and maybe inspired lots of other products, including &lt;a href=&quot;https://www.lazyvim.org/&quot;&gt;LazyVim&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;It&#39;s a lot easier to install packages in these products, especially when you need a lot of extensions&lt;/li&gt;
+&lt;li&gt;They add a fresh look to a really old product, which is valued by new users&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are some drawbacks though, which made me stay with vanilla Emacs, because I use only a few modes and extensions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Both are environments, made for someone else&#39;s needs, not mine&lt;/li&gt;
+&lt;li&gt;At least Doom Emacs isn&#39;t very stable&lt;/li&gt;
+&lt;li&gt;I&#39;m totally fine with the Emacs standard package installation method&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I started tuning vanilla Emacs, got what I wanted in a few hours and I&#39;m still satisfied with that. But let&#39;s take a step back and look at my requirements.&lt;/p&gt;
+&lt;h2 id=&quot;writing-texts-vs-programming-and-the-vi-mode&quot;&gt;Writing texts vs. programming and the vi-mode&lt;/h2&gt;
+&lt;p&gt;I write texts, and I spend a lot more time writing than editing text. I just have some ideas, I need to put them into files fast. In programming, it&#39;s different, I assume, especially when you do some code refactoring. So I don&#39;t need to switch to &#39;edit mode&#39; (in any editor) very often. I&#39;d rather prefer to enter &#39;edit mode&#39; temporarily, fix a few things and then just continue writing the text. I need to minimize distraction and be able to move and fix things ASAP and think about my ideas and not about how to edit the text. I have vi keybindings in my muscle memory and still I&#39;m more comfortable with Emacs vanilla keybindings.&lt;/p&gt;
+&lt;p&gt;The second thing about &#39;vi modes&#39; in Emacs is that Emacs modes have &#39;Emacs-style&#39; keybindings. On the contrary, vim plugins have &#39;vi-style&#39; keybindings. But mixing these two drives me crazy. Yes, in Emacs you can customize any keybindings, but there are lots of them in just 4 modes I use (including plain-text editing). I assume it&#39;s not worth wasting my time on that. And even if you customize the keybindings... old keybindings will stay in the help files, which I use a lot. For example, I don&#39;t work often with tables in Markdown, so after customization, I&#39;ll have to look in my config and not in the Markdown help file.&lt;/p&gt;
+&lt;p&gt;There are two arguments, that Vim is more ergonomic than Emacs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Editing in Vim requires fewer keystrokes&lt;/li&gt;
+&lt;li&gt;You don&#39;t need to press &lt;kbd&gt;Ctrl-Alt-something&lt;/kbd&gt;, which brings pain to your fingers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let&#39;s look at a particular use case: I need to insert a bulleted list in HTML:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In Emacs, you can do that with HTML mode, which is installed by default. In Vim, you can install snippets or Emmet.&lt;/li&gt;
+&lt;li&gt;In Emacs, I press &lt;kbd&gt;Ctrl&lt;/kbd&gt; with one hand and press &lt;kbd&gt;C C&lt;/kbd&gt; with another hand, then release &lt;kbd&gt;Ctrl&lt;/kbd&gt; and press &lt;kbd&gt;U&lt;/kbd&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It&#39;s very important to press modifier keys with another hand to evade discomfort. And it requires some self-discipline, but it&#39;s worth it. But what I see here, is that I pressed &lt;kbd&gt;Ctrl&lt;/kbd&gt; once: I pressed it, held it, and then released it. Instead, in Vim I need to enter command mode and exit command mode with two keystrokes. And in Emacs, I don&#39;t think about &#39;entering command mode&#39; and &#39;exiting command mode&#39; while I hold &lt;kbd&gt;Ctrl&lt;/kbd&gt;. What&#39;s more ergonomic then?&lt;/p&gt;
+&lt;p&gt;Ok, let&#39;s talk about the modes I use every day.&lt;/p&gt;
+&lt;h2 id=&quot;using-emacs-modes&quot;&gt;Using Emacs&#39; modes&lt;/h2&gt;
+&lt;p&gt;I use three modes main modes (and text mode, of course): Markdown, Org, and HTML.&lt;/p&gt;
+&lt;p&gt;Regarding &lt;strong&gt;Markdown&lt;/strong&gt; Emacs has a great mode written by &lt;a href=&quot;https://jblevins.org/projects/markdown-mode/&quot;&gt;Jason Blevins&lt;/a&gt;. Just install it, open the .md file in Emacs, and press &lt;kbd&gt;Ctrl-H M&lt;/kbd&gt;. It&#39;s just great, it can do almost everything. And there are some more markdown modes available, notably for creating a table of contents. On the contrary, in Vim I tried to use &lt;a href=&quot;https://github.com/vimwiki/vimwiki&quot;&gt;vimwiki&lt;/a&gt; and &lt;a href=&quot;https://github.com/honza/vim-snippets&quot;&gt;snippets&lt;/a&gt;, but I wasn&#39;t able to get even some part of Markdown mode functions in Emacs. It&#39;s very sad, but it seems that Vim is more used by programmers who don&#39;t write a lot of Markdown.&lt;/p&gt;
+&lt;p&gt;Regarding &lt;strong&gt;Org-mode&lt;/strong&gt;: this man, Carsten Dominik, who created it – I think he&#39;s a genius. The whole concept is fascinating and it works great when you have to structure a lot of information and update it frequently. To get something similar I needed to have a wiki and constantly switch between &#39;read&#39; and &#39;write&#39; modes. Again, the &#39;export&#39; feature is one of my favorites. But Org-mode is implemented &lt;a href=&quot;https://orgmode.org/#editors&quot;&gt;in Vim and Neovim&lt;/a&gt; only partially. Why&#39;s that? Maybe not enough people are interested in that. And maybe it&#39;s not so simple to implement all the Org-mode features in Neovim even considering it has Lua.&lt;/p&gt;
+&lt;p&gt;I suppose I need all the power of Org-mode and I prefer to use a more stable product if I have a choice. Org-mode was the main reason for me to switch to Emacs because I can do everything else just in any editor.&lt;/p&gt;
+&lt;h2 id=&quot;current-state-of-neovim-development-vs-emacs&quot;&gt;Current state of Neovim development vs. Emacs&lt;/h2&gt;
+&lt;p&gt;Vim for a long time was considered a &#39;fast bare-metal editor&#39;, but look what&#39;s happening:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vim got a file manager&lt;/li&gt;
+&lt;li&gt;Vim has Org-mode implementation(s)&lt;/li&gt;
+&lt;li&gt;Neovim now has Lua to make it more customizable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Doesn&#39;t it seem like Vim/Neovim is just repeating Emacs&#39;s path? But a lot of talented people already put their effort into developing great modes and extensions for Emacs, you can just use it. When they needed to edit Markdown or write an Org-mode there was no Neovim with Lua, so they did it for Emacs. And these modes are still very, very useful. Why should I suffer then with a lack of functions and instability? So, I don&#39;t.&lt;/p&gt;
+&lt;h2 id=&quot;emacs-extensions-are-they-really-useful&quot;&gt;Emacs extensions, are they really useful&lt;/h2&gt;
+&lt;p&gt;I don&#39;t use lots of extensions for Emacs. I tried an email client and a &lt;a href=&quot;https://github.com/zevlg/telega.el&quot;&gt;Telegram client&lt;/a&gt; just for an experiment. But I use some Gmail features like &#39;undo send&#39; and &#39;schedule send&#39; that are hard to reproduce in an email client. So, are Emacs extensions an overkill? I think the RSS client and IRC client could be useful for me, just to use the same environment and the same keystrokes for editing.&lt;/p&gt;
+&lt;p&gt;And, by the way, I don&#39;t use &lt;a href=&quot;https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html&quot;&gt;dired&lt;/a&gt; or pdf viewer inside Emacs. But I&#39;m happy all these extensions exist, so people do have a choice. It&#39;s also great to have Vim/Neovim as a choice, so when is it preferable for me?&lt;/p&gt;
+&lt;h2 id=&quot;use-cases-where-vim-is-unbeatable&quot;&gt;Use cases where Vim is unbeatable&lt;/h2&gt;
+&lt;p&gt;First, there&#39;s an interesting concept using Vim with Tmux, along with Tmux&#39;s sessions. If it&#39;s preferable for your workflow, Emacs won&#39;t help you: it sucks in a terminal and it assumes it&#39;s an external program to everything that runs inside it.&lt;/p&gt;
+&lt;p&gt;Second, if you have a terminal-only environment, like &lt;a href=&quot;https://gitforwindows.org/&quot;&gt;Git for Windows&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;No holy wars, peace to everyone.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Reflecting on starting something new and big</title>
+    <link href="https://en.kovchinnikov.info/2023-07-big.html" />
+    <updated>2023-07-04T10:36:00Z</updated>
+    <id>https://en.kovchinnikov.info/2023-07-big.html</id>
+    <content type="html">&lt;p&gt;Again sharing some thoughts that normally go to my private journal only. This time it&#39;s about starting some initiative in an unknown field and something large-scale. How do you feel about that? Here&#39;s what I feel:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The idea itself seems fascinating at the very beginning, normally you do the following:
+&lt;ul&gt;
+&lt;li&gt;Write a general description, what&#39;s the problem and how you are going to resolve it&lt;/li&gt;
+&lt;li&gt;Break down the work into smaller chunks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;It starts to feel boring just executing those &#39;smaller chunks&#39;.&lt;/li&gt;
+&lt;li&gt;It turns out that you underestimated the amount of time and effort required like 3x-5x.&lt;/li&gt;
+&lt;li&gt;New ideas appear as you write, so you start to re-write, and you don&#39;t feel that you are moving forward.&lt;/li&gt;
+&lt;li&gt;You feel that you are not able to get to the most exciting and rewarding part for a long time, and every day this moment is postponed: the moment when something starts to appear and work.&lt;/li&gt;
+&lt;li&gt;You pray that all these ideas just let you go and you could get some sleep.&lt;/li&gt;
+&lt;li&gt;Each day you feel guilty that you didn&#39;t contribute enough time and effort.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I&#39;ve been through this several times, it&#39;s always like that and it&#39;s completely fine.&lt;/p&gt;
+&lt;p&gt;What helps?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Regular push-ups just to relieve the strain&lt;/li&gt;
+&lt;li&gt;Getting out for a walk&lt;/li&gt;
+&lt;li&gt;Taking time to think&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+</feed>

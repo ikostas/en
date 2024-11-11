@@ -1,106 +1,322 @@
 <!doctype html>
-<html lang="en" itemscope itemtype="http://schema.org/Person">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Cooking Linux the right way: choosing the distribution</title>
+		<meta name="description" content="Someone has to write the truth on how to use Linux">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
 
-  gtag('config', 'G-MWJX8WCGVQ');
-</script>
-            <meta charset="utf-8">
-        <!-- Site Meta Data -->
-        <title>Cooking Linux the right way: choosing the distribution</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="Konstantin Ovchinnikov">
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
 
-        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
 
-        <!-- schema.org -->
-        <meta itemprop="name" content="The Real Changes">
-        <meta itemprop="image" content="/theme/images/logo3_small.png">
-        <meta itemprop="description" content="">
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
 
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-        <!-- Style Meta Data -->
-        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
-        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
 
-        <!-- Feed Meta Data -->
-            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-                  title="The Real Changes ATOM Feed"/>
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
 
-        <!-- Twitter Feed -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="Konstan21511383">
-        <meta name="twitter:image" content="">
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
 
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
 
-    <meta name="twitter:creator" content="Konstan21511383">
-    <meta name="twitter:url" content="./2022-09-linux-1.html">
-    <meta name="twitter:title" content="The Real Changes ~ Cooking Linux the right way: choosing the distribution">
-    <meta name="twitter:description" content="Someone has to write the truth on how to use Linux">
+.token.punctuation {
+	color: #f8f8f2;
+}
 
-    <!-- Facebook Meta Data -->
-    <meta property="og:title" content="The Real Changes ~ Cooking Linux the right way: choosing the distribution"/>
-    <meta property="og:description" content="Someone has to write the truth on how to use Linux"/>
-    <meta property="og:image" content=""/>
-</head>
+.token.namespace {
+	opacity: .7;
+}
 
-<body>
-<!-- Sidebar -->
-<aside>
-    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
-        <p>Konstantin Ovchinnikov's personal page</p>
-		<p>
-        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
-    <!-- Site search -->
-<script async src="https://cse.google.com/cse.js?cx=75184ca4aae714aae">
-</script>
-<div class="gcse-search"></div>
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
 
-    <nav class="nav">
-        <ul class="list-bare">
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
 
-                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
-                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
 
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
 
-        </ul>
-    </nav>
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
 
-    <p class="social">
-                <a href="https://twitter.com/Konstan21511383" target="_blank"><img alt="Twitter"
-                        src="./theme/images/icons/twitter.png"></a>
-                <a href="https://t.me/therealchanges" target="_blank"><img alt="Telegram"
-                        src="./theme/images/icons/telegram.png"></a>
-                <a href="https://www.linkedin.com/in/konstantinovchinnikov/" target="_blank"><img alt="LinkedIn"
-                        src="./theme/images/icons/linkedin.png"></a>
-                <a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg" target="_blank"><img alt="YouTube"
-                        src="./theme/images/icons/youtube.png"></a>
-                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
-                        src="./theme/images/icons/github.png"></a>
-            <a href="./feeds/all.atom.xml" rel="alternate">
-                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
-    </p>
+.token.keyword {
+	color: #66d9ef;
+}
 
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
 
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
 
-</aside>
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
 
-<!-- Content -->
-<article>
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
 
-    <section id="content">
-        <article>
-<!--End mc_embed_signup-->
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
 
-            <h2 class="post_title post_detail"><a href="./2022-09-linux-1.html" rel="bookmark" title="Permalink to Cooking Linux the right way: choosing the distribution">Cooking Linux the right way: choosing the distribution</a></h2>
-            <div class="entry-content blog-post">
-                <h2>Preface</h2>
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+footer {
+	text-align: center;
+	font-size: 0.7em;
+}
+html {
+  font-family: 'Open Sans', 'helvetica', sans-serif;
+}
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: block;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+  display: inline-flex;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	display: block;
+	padding-top: 0.5em;
+	word-spacing: -0.5px;
+}
+.postlist-description {
+	display: block;
+	padding-top: 0.5em;
+}
+.postlist-link {
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+}
+.postlist-item-active .postlist-link {
+		font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.postlist-item > .post-tag {
+		align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata-li {
+	list-style: none;
+}
+
+.post-metadata time {
+		margin-right: 1em;
+}
+.links-nextprev {
+	display: flex;
+	justify-content: space-between;
+	gap: .5em 1em;
+	padding: 1em 0;
+}
+.links-nextprev-next {
+	text-align: right;
+	list-style: none;
+}
+.links-nextprev-prev {
+	text-align: left;
+	list-style: none;
+}</style>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="/pagefind/pagefind-ui.js"></script>
+		 <style>
+    svg {
+      width: var(--font-size);
+      height: var(--font-size);
+      color: var(--contrast);
+    }
+    </style>
+	</head>
+	<body>
+	<header class="container">
+			<div id="search"></div>
+			<script>
+			window.addEventListener('DOMContentLoaded', (event) => {
+				new PagefindUI({ element: "#search", showSubResults: true });
+			});
+			</script>
+		<nav>
+		<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/.11ty/image/?src=content%2Fimg%2Ftrc-logo.png&width=100&format=png&via=transform" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+		</ul>
+		<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/blog/">Archive</a></li>
+				<li><a href="/tags/">Tags</a></li>
+				<li>| </li>
+				<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-twitter"></i></a></li>
+				<li><a href="https://t.me/therealchanges"><i class="fa-brands fa-telegram"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+				<li><a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg"><i class="fa-brands fa-youtube"></i></a></li>
+				<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+				<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+				<li>| </li>
+				<li><a href="#" color="black" id="theme_switcher"></a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="container">
+			<heading-anchors data-pagefind-body="">
+				
+<h1 id="cooking-linux-the-right-way-choosing-the-distribution">Cooking Linux the right way: choosing the distribution</h1>
+
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2022-09-15">15 September 2022</time></li>
+	<li class="post-tag"><a href="/tags/linux/" class="post-tag">#linux</a>, </li>
+	<li class="post-tag"><a href="/tags/productivity/" class="post-tag">#productivity</a></li>
+</ul>
+
+<h2 id="preface">Preface</h2>
 <p>Linux is great for a server, but it's still a challenge for a desktop. The server requires stability and minimal resource usage, but does anybody know what the desktop requires? I used Linux at home for 20 years and I used it at work for several months, so in my viewpoint the following is important:</p>
 <ul>
 <li>Hardware support; you <strong>can</strong> know beforehand, whether the hardware is supported and choose the compatible hardware; so, it's better to have a wider choice!</li>
@@ -108,8 +324,8 @@
 <li>Known issues and solutions database aka community support and documentation availability.</li>
 </ul>
 <p>If you value your time and prefer to get the job done (whether it's a hobby or a payable job) vs. fixing and tuning, according to my experience deb or rpm package formats are preferable. Hardware manufacturers distribute drivers and accompanying software in these formats, and commercial software manufacturers also prefer them. Some software is available in deb and not available in rpm and vice versa, but on average you can find a package you need in these two formats. Arch and Manjaro users suffer here, but you are welcome to install these in a virtual environment and play as much as you like.</p>
-<p>The software availability issue is <em>almost</em> fixed with the help of Flatpak and <a href="https://flathub.org/">Flathub</a>: you can have fresh software on any distribution now, but for a limited number of programs. </p>
-<h2>The menu</h2>
+<p>The software availability issue is <em>almost</em> fixed with the help of Flatpak and <a href="https://flathub.org/">Flathub</a>: you can have fresh software on any distribution now, but for a limited number of programs.</p>
+<h2 id="the-menu">The menu</h2>
 <p>Regarding the list of distributions I'd list the following:</p>
 <table>
 <thead>
@@ -133,61 +349,71 @@
 </tbody>
 </table>
 <p>I tried 3 of 4: Fedora as my main system at home, Ubuntu at work, and Debian for a few months at home. But first, a few words concering the 'stability'. Yes, it's about the number of bugs, which lead to system faults and excessive resource consumption, but 'stable' distributions are also less user-friendly. Let's go through the alternatives.</p>
-<h2>Rocky Linux</h2>
+<h2 id="rocky-linux">Rocky Linux</h2>
 <p>It's a successor for CentOS, which was very popular among scientists because scientists need to get the job done, they also need stability and they need it cheap. I can't say anything bad about it, maybe it doesn't have the latest software like Gnome, which is important for desktop users. Debian <a href="https://wiki.debian.org/DontBreakDebian#Don.27t_suffer_from_Shiny_New_Stuff_Syndrome">warns us</a>:</p>
 <blockquote>
 <p>Don't suffer from Shiny New Stuff Syndrome</p>
 </blockquote>
 <p>I can fully admit that when you need to just get the job done, new shiny animations matter less than stability. With Rocky Linux, you can also fully benefit from <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/">Red Hat Linux documentation</a>.</p>
 <p>I just don't need this stability at home, so why not be on the edge with Fedora?</p>
-<h2>Debian</h2>
+<h2 id="debian">Debian</h2>
 <p>Debian is great for servers, I tried it at home and it lacks hardware support and some essential desktop features, like VPN support in Network Manager. It requires more effort in cases that require no effort in Fedora and Ubuntu. When my hard disk died, I decided to return to Fedora. I liked Debian for stability and low resource usage, but small desktop issues are disturbing and hard to fix. I mean suspend mode works not so well, wi-fi needs time to connect after suspend.</p>
 <p>In terms of hardware support, some hardware manufacturers tend to have old software, so the software for my MFD worked in Debian, although it didn't work in Ubuntu and Fedora.</p>
 <p>My idea was to combine Debian stability with the latest software versions from Flatpak, but for the desktop that wasn't enough, regretfully. You are trying to do desktop things on a server.</p>
-<h2>Ubuntu</h2>
+<h2 id="ubuntu">Ubuntu</h2>
 <p>Ubuntu works, but it seems that it was designed by marketing managers instead of engineers. It's heavily patched and these patches bring more bugs: more resource usage, less speed, and stability. It feels like windows if you missed it. I didn't get it, I tried to fix it by installing 'vanilla' software versions. Yes, it worked, but I didn't like it. For me, it seems that some solutions in Ubuntu are dead: Snap and Unity. At the end of the day, Ubuntu takes solutions from Fedora: Gnome, pipewire audio system. With Ubuntu, you just wait for technologies to migrate from Fedora. Still, some bugs are fixed and Ubuntu generally is more stable, than Fedora.</p>
 <p>Besides, I consider the deb package format outdated, I had to fix corrupted dependencies several times.</p>
-<h2>Fedora</h2>
-<p>Fedora's way to fix things is like "let's invent another system". We don't like pulseaudio, let's make pipewire. We don't like deb, let's make rpm. We don't like yum, let's make dnf. It works in major versions, but it brings lots of bugs in the beginning. The kernel is so fresh, that it breaks hardware compatibility: during three years I had two severe bugs, last time wi-fi stopped working. And this high pace of progress is not going to stop. Too fresh software? We have a new answer: <a href="https://silverblue.fedoraproject.org/">immutable linux</a>.</p>
+<h2 id="fedora">Fedora</h2>
+<p>Fedora's way to fix things is like &quot;let's invent another system&quot;. We don't like pulseaudio, let's make pipewire. We don't like deb, let's make rpm. We don't like yum, let's make dnf. It works in major versions, but it brings lots of bugs in the beginning. The kernel is so fresh, that it breaks hardware compatibility: during three years I had two severe bugs, last time wi-fi stopped working. And this high pace of progress is not going to stop. Too fresh software? We have a new answer: <a href="https://silverblue.fedoraproject.org/">immutable linux</a>.</p>
 <p>Regarding community it's smaller than Ubuntu's one, so sometimes you have to look for answers on Ubuntu (or Arch) wiki and forums.</p>
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>It's hard to recommend anything from the list, Fedora requires less effort after installation and works well for me. If you read this, it means that my wi-fi card worked. :) We'll look at a minimal software list for any distribution and apps to unleash the true Linux power in the next episodes, stay tuned!</p>
-            </div>
-            <div class="post_list">
-                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
-                <span class="post_date">Thu 15 September 2022</span>
-                <div><span>Tags: </span>
-                            <span><a href="./tag/linux.html">#linux </a></span>
-                            <span><a href="./tag/productivity.html">#productivity </a></span>
-                </div>
-            </div>
-                <div class="comments">
-                    <h2>Comments</h2>
-                    <div id="disqus_thread"></div>
-                    <script type="text/javascript">
-                        var disqus_identifier = "2022-09-linux-1.html";
-                        (function () {
-                            var dsq = document.createElement('script');
-                            dsq.type = 'text/javascript';
-                            dsq.async = true;
-                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
-                            (document.getElementsByTagName('head')[0] ||
-                            document.getElementsByTagName('body')[0]).appendChild(dsq);
-                        })();
-                    </script>
-                </div>
-        </article>
-    </section>
-</article>
 
-<!-- Footer -->
-    <footer>
-        <p>
-	  Made with <a href="http://getpelican.com/">Pelican</a>, 
-      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
-        </p>
-    </footer>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2022-09-obsidian-and-others.html">Obsidian And Others</a></li><li class="links-nextprev-next">Next <i class="fa-solid fa-arrow-right"></i><br><a href="/2022-09-linux-2.html">Cooking Linux the right way: installing the right programs the right way</a></li>
+</ul>
 
+			</heading-anchors>
+	</main>
 
-</body>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2022-09-linux-1.html` was built on 2024-11-11T20:56:56.051Z -->
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+<script>
+    const html = document.documentElement;
+    const switchTheme = document.getElementById('theme_switcher');
+    const sun = '<i class="fa-regular fa-sun"></i>';
+    const moon = '<i class="fa-solid fa-moon"></i>';
+
+    // Load the theme from localStorage or set to light by default
+    let isLight = localStorage.getItem('theme') === 'light';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Set initial theme
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+        removeTooltip(3000);
+    });
+
+    switchTheme.addEventListener('click', (e) => {
+        e.preventDefault();
+        isLight = !isLight;
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+
+        // Save the current theme to localStorage
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+        removeTooltip();
+    });
+
+    const removeTooltip = (timeInt = 1750) => {
+        setTimeout(() => {
+        switchTheme.blur();
+        }, timeInt);
+    }
+</script>
+	</body>
 </html>

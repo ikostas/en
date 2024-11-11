@@ -1,116 +1,331 @@
 <!doctype html>
-<html lang="en" itemscope itemtype="http://schema.org/Person">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>What commuting on a bike feels like</title>
+		<meta name="description" content="Based on my experience cycling for 3 weeks">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
 
-  gtag('config', 'G-MWJX8WCGVQ');
-</script>
-            <meta charset="utf-8">
-        <!-- Site Meta Data -->
-        <title>What commuting on a bike feels like</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="Konstantin Ovchinnikov">
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
 
-        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
 
-        <!-- schema.org -->
-        <meta itemprop="name" content="The Real Changes">
-        <meta itemprop="image" content="/theme/images/logo3_small.png">
-        <meta itemprop="description" content="">
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
 
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-        <!-- Style Meta Data -->
-        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
-        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
 
-        <!-- Feed Meta Data -->
-            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-                  title="The Real Changes ATOM Feed"/>
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
 
-        <!-- Twitter Feed -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="Konstan21511383">
-        <meta name="twitter:image" content="">
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
 
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
 
-    <meta name="twitter:creator" content="Konstan21511383">
-    <meta name="twitter:url" content="./2023-02-commuting.html">
-    <meta name="twitter:title" content="The Real Changes ~ What commuting on a bike feels like">
-    <meta name="twitter:description" content="Based on my experience cycling for 3 weeks">
+.token.punctuation {
+	color: #f8f8f2;
+}
 
-    <!-- Facebook Meta Data -->
-    <meta property="og:title" content="The Real Changes ~ What commuting on a bike feels like"/>
-    <meta property="og:description" content="Based on my experience cycling for 3 weeks"/>
-    <meta property="og:image" content=""/>
-</head>
+.token.namespace {
+	opacity: .7;
+}
 
-<body>
-<!-- Sidebar -->
-<aside>
-    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
-        <p>Konstantin Ovchinnikov's personal page</p>
-		<p>
-        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
-    <!-- Site search -->
-<script async src="https://cse.google.com/cse.js?cx=75184ca4aae714aae">
-</script>
-<div class="gcse-search"></div>
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
 
-    <nav class="nav">
-        <ul class="list-bare">
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
 
-                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
-                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
 
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
 
-        </ul>
-    </nav>
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
 
-    <p class="social">
-                <a href="https://twitter.com/Konstan21511383" target="_blank"><img alt="Twitter"
-                        src="./theme/images/icons/twitter.png"></a>
-                <a href="https://t.me/therealchanges" target="_blank"><img alt="Telegram"
-                        src="./theme/images/icons/telegram.png"></a>
-                <a href="https://www.linkedin.com/in/konstantinovchinnikov/" target="_blank"><img alt="LinkedIn"
-                        src="./theme/images/icons/linkedin.png"></a>
-                <a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg" target="_blank"><img alt="YouTube"
-                        src="./theme/images/icons/youtube.png"></a>
-                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
-                        src="./theme/images/icons/github.png"></a>
-            <a href="./feeds/all.atom.xml" rel="alternate">
-                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
-    </p>
+.token.keyword {
+	color: #66d9ef;
+}
 
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
 
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
 
-</aside>
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
 
-<!-- Content -->
-<article>
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
 
-    <section id="content">
-        <article>
-<!--End mc_embed_signup-->
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
 
-            <h2 class="post_title post_detail"><a href="./2023-02-commuting.html" rel="bookmark" title="Permalink to What commuting on a bike feels like">What commuting on a bike feels like</a></h2>
-            <div class="entry-content blog-post">
-                <h2>Preface</h2>
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+footer {
+	text-align: center;
+	font-size: 0.7em;
+}
+html {
+  font-family: 'Open Sans', 'helvetica', sans-serif;
+}
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: block;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+  display: inline-flex;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	display: block;
+	padding-top: 0.5em;
+	word-spacing: -0.5px;
+}
+.postlist-description {
+	display: block;
+	padding-top: 0.5em;
+}
+.postlist-link {
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+}
+.postlist-item-active .postlist-link {
+		font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.postlist-item > .post-tag {
+		align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata-li {
+	list-style: none;
+}
+
+.post-metadata time {
+		margin-right: 1em;
+}
+.links-nextprev {
+	display: flex;
+	justify-content: space-between;
+	gap: .5em 1em;
+	padding: 1em 0;
+}
+.links-nextprev-next {
+	text-align: right;
+	list-style: none;
+}
+.links-nextprev-prev {
+	text-align: left;
+	list-style: none;
+}</style>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="/pagefind/pagefind-ui.js"></script>
+		 <style>
+    svg {
+      width: var(--font-size);
+      height: var(--font-size);
+      color: var(--contrast);
+    }
+    </style>
+	</head>
+	<body>
+	<header class="container">
+			<div id="search"></div>
+			<script>
+			window.addEventListener('DOMContentLoaded', (event) => {
+				new PagefindUI({ element: "#search", showSubResults: true });
+			});
+			</script>
+		<nav>
+		<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/.11ty/image/?src=content%2Fimg%2Ftrc-logo.png&width=100&format=png&via=transform" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+		</ul>
+		<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/blog/">Archive</a></li>
+				<li><a href="/tags/">Tags</a></li>
+				<li>| </li>
+				<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-twitter"></i></a></li>
+				<li><a href="https://t.me/therealchanges"><i class="fa-brands fa-telegram"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+				<li><a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg"><i class="fa-brands fa-youtube"></i></a></li>
+				<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+				<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+				<li>| </li>
+				<li><a href="#" color="black" id="theme_switcher"></a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="container">
+			<heading-anchors data-pagefind-body="">
+				
+<h1 id="what-commuting-on-a-bike-feels-like">What commuting on a bike feels like</h1>
+
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2023-02-22">22 February 2023</time></li>
+	<li class="post-tag"><a href="/tags/cycling/" class="post-tag">#cycling</a></li>
+</ul>
+
+<h2 id="preface">Preface</h2>
 <p>I'm living in Esens (Northern Saxony in Germany) and studying in Wittmund. I chose to commute by bicycle, every day during a working week. Here's my route:</p>
-<p><img alt="My route" src="images/commuting_route.png"></p>
+<p><picture><source type="image/avif" srcset="/.11ty/image/?src=content%2Fimg%2Fcommuting_route.png&width=869&format=avif&via=transform 869w"><source type="image/webp" srcset="/.11ty/image/?src=content%2Fimg%2Fcommuting_route.png&width=869&format=webp&via=transform 869w"><img loading="lazy" decoding="async" src="/.11ty/image/?src=content%2Fimg%2Fcommuting_route.png&width=869&format=png&via=transform" alt="My route" width="869" height="763"></picture></p>
 <p>That involved significant changes in my life, so in this article, I'm going to cover the following topics:</p>
 <ul>
-<li><strong>Transportation</strong> &ndash; is it feasible to get from point A to point B on a bike in a predictable time?</li>
-<li><strong>Weather</strong> &ndash; does it matter so much?</li>
+<li><strong>Transportation</strong> – is it feasible to get from point A to point B on a bike in a predictable time?</li>
+<li><strong>Weather</strong> – does it matter so much?</li>
 <li><strong>Influence to the body</strong> what happens to you if you commute 30 km a day for 3 weeks?</li>
 </ul>
 <p>Ok, let's move on.</p>
-<h2>Transportation</h2>
+<h2 id="transportation">Transportation</h2>
 <p>I could choose a train, at a first glance the time is almost the same:</p>
 <ul>
 <li>45 minutes on the train (walk 15 minutes, then 15 minutes on the train, then walk 15-20 minutes again)</li>
@@ -123,54 +338,65 @@
 </ul>
 <p>The cost is not a concern for me, because if I take a train, I get compensated. The costs for bike maintenance are little. I was afraid of mechanical issues with the bike, none of them for 3 weeks though. Just clean and lube the chain, and pump the tires before the rides every week or so. A bonus number 1 is that you're not tied to the train's schedule, if you have to do anything in Wittmund it's not a problem, and you can leave any time on the bike. A bonus number 2 is that on the bike you can do more in Wittmund.</p>
 <p>Walking and taking a train is a bit depressing for me, while on the bike the landscape is always different: the fog, the sunrise, etc. The ride depends on you and you are interacting with the world around you.</p>
-<h2>Weather</h2>
+<h2 id="weather">Weather</h2>
 <p>The first question all the cyclists get is: is the rain so important? Well, for three weeks I was under the rain once, but it was an ice rain. I could just wait for half an hour or an hour, but I decided to ride. It was cold, but I knew I could tolerate that for 1 hour. I got home, took a warm bath, and... nothing happened. The trick here is that it rains, but not the time I ride. Usually, it rains at night and that's fine for me.</p>
 <p>But the winds are important. Now I have a singlespeed, so I can't switch the gear down. Sometimes I return fully exhausted after fighting with the wind. But the direction of the wind matters. Winds can be up to 95 km per hour, but strong winds blow only from the North. My destination is in the South, so I always come to my destination on time. On the way back I'm not in a hurry, I can walk. But the wind matters only in open spaces. For the whole distance, I have two such spaces about 800 m each. I see this as a challenge, and if you can tolerate the wind, you can tolerate a lot.</p>
-<p>It wasn't cold, the lowest temperature is -2&#8451;. Usually, it's above 0, so I put on my thermal T-shirt with a long sleeve and a windbreaker. At first, it's not comfortable, but then I warm up. When it's cold, I add a pullover and that's all.</p>
-<h2>Body</h2>
+<p>It wasn't cold, the lowest temperature is -2℃. Usually, it's above 0, so I put on my thermal T-shirt with a long sleeve and a windbreaker. At first, it's not comfortable, but then I warm up. When it's cold, I add a pullover and that's all.</p>
+<h2 id="body">Body</h2>
 <p>The <a href="https://komonews.com/news/coronavirus/study-finds-one-habit-can-significantly-lower-your-odds-of-getting-sick-from-covid-19-coronavirus-pandemic-variants-exercise-illness-infection-diseases-virus-doctors-hospital-health">study suggests</a> that exercises can significantly lower your odds of getting sick from COVID-19.</p>
 <p>The next is that when I ride in the morning, I awaken and get ready for intensive study. But in the long term, it's also energizing and raising the mood. More than that, it helps me to overcome other hard challenges. For example, I'm looking for a job now, and this involves writing a lot of cover letters and getting refused. That really can make anyone feel upset, so cycling helps a lot.</p>
-<p>What nobody is saying about cycling is that when you stop you're feeling cold. At first, you feel hot, but then the body starts to cool down until you feel really cold if you don't dress up or grab a hot drink. </p>
+<p>What nobody is saying about cycling is that when you stop you're feeling cold. At first, you feel hot, but then the body starts to cool down until you feel really cold if you don't dress up or grab a hot drink.</p>
 <p>The body adopts if you cycle regularly and dress up properly: it almost stops sweating. I get a sweat on my back because I'm riding with a backpack. And a rack to hold this backpack is the next upgrade I'm going to make. Shoulders feel also uncomfortable because of that. Regarding muscles, especially those heavily involved in cycling, stretching and massage roller are your best friends and then you get no issues.</p>
 <p>In the third week, I started to feel hungry. Like I'm eating my usual lunch and after that, I'm still hungry. It's normal, as I burn more calories. It's also better to eat more often.</p>
-<h2>Conclusions</h2>
+<h2 id="conclusions">Conclusions</h2>
 <p>Is it worth trying? Sure! Is it accurate in terms of time? Well, it depends, and sometimes it's not.</p>
 <p>I'm not giving any advice here, just sharing some of my own experiences. Lots of advice from YouTube helped me though, including bike ergonomics, and eating (before/after/while cycling), but one piece of advice was outstanding. It was from a guy riding hundreds of kilometers. His video <a href="https://www.youtube.com/watch?v=x7a5fQk2yvA">The Most Important Factor for Long Distance Rides/AUDAXs</a> is great. And the advice is really simple: don't concentrate on the distance or on the time, just enjoy riding!</p>
-            </div>
-            <div class="post_list">
-                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
-                <span class="post_date">Wed 22 February 2023</span>
-                <div><span>Tags: </span>
-                            <span><a href="./tag/cycling.html">#cycling </a></span>
-                </div>
-            </div>
-                <div class="comments">
-                    <h2>Comments</h2>
-                    <div id="disqus_thread"></div>
-                    <script type="text/javascript">
-                        var disqus_identifier = "2023-02-commuting.html";
-                        (function () {
-                            var dsq = document.createElement('script');
-                            dsq.type = 'text/javascript';
-                            dsq.async = true;
-                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
-                            (document.getElementsByTagName('head')[0] ||
-                            document.getElementsByTagName('body')[0]).appendChild(dsq);
-                        })();
-                    </script>
-                </div>
-        </article>
-    </section>
-</article>
 
-<!-- Footer -->
-    <footer>
-        <p>
-	  Made with <a href="http://getpelican.com/">Pelican</a>, 
-      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
-        </p>
-    </footer>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2023-02-hosting.html">Choosing a web hosting at the end of 2022</a></li><li class="links-nextprev-next">Next <i class="fa-solid fa-arrow-right"></i><br><a href="/2023-03-linuxlaptop.html">Spending a Christmas eve installing Linux on an old laptop</a></li>
+</ul>
 
+			</heading-anchors>
+	</main>
 
-</body>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2023-02-commuting.html` was built on 2024-11-11T20:56:56.053Z -->
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+<script>
+    const html = document.documentElement;
+    const switchTheme = document.getElementById('theme_switcher');
+    const sun = '<i class="fa-regular fa-sun"></i>';
+    const moon = '<i class="fa-solid fa-moon"></i>';
+
+    // Load the theme from localStorage or set to light by default
+    let isLight = localStorage.getItem('theme') === 'light';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Set initial theme
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+        removeTooltip(3000);
+    });
+
+    switchTheme.addEventListener('click', (e) => {
+        e.preventDefault();
+        isLight = !isLight;
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+
+        // Save the current theme to localStorage
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+        removeTooltip();
+    });
+
+    const removeTooltip = (timeInt = 1750) => {
+        setTimeout(() => {
+        switchTheme.blur();
+        }, timeInt);
+    }
+</script>
+	</body>
 </html>

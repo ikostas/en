@@ -1,157 +1,371 @@
 <!doctype html>
-<html lang="en" itemscope itemtype="http://schema.org/Person">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>We need older software</title>
+		<meta name="description" content="Changing linux distributions and hoping for the best">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
 
-  gtag('config', 'G-MWJX8WCGVQ');
-</script>
-            <meta charset="utf-8">
-        <!-- Site Meta Data -->
-        <title>We need older software</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="Konstantin Ovchinnikov">
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
 
-        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
 
-        <!-- schema.org -->
-        <meta itemprop="name" content="The Real Changes">
-        <meta itemprop="image" content="/theme/images/logo3_small.png">
-        <meta itemprop="description" content="">
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
 
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-        <!-- Style Meta Data -->
-        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
-        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
 
-        <!-- Feed Meta Data -->
-            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-                  title="The Real Changes ATOM Feed"/>
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
 
-        <!-- Twitter Feed -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="Konstan21511383">
-        <meta name="twitter:image" content="">
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
 
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
 
-    <meta name="twitter:creator" content="Konstan21511383">
-    <meta name="twitter:url" content="./2023-07-software.html">
-    <meta name="twitter:title" content="The Real Changes ~ We need older software">
-    <meta name="twitter:description" content="Changing linux distributions and hoping for the best">
+.token.punctuation {
+	color: #f8f8f2;
+}
 
-    <!-- Facebook Meta Data -->
-    <meta property="og:title" content="The Real Changes ~ We need older software"/>
-    <meta property="og:description" content="Changing linux distributions and hoping for the best"/>
-    <meta property="og:image" content=""/>
-</head>
+.token.namespace {
+	opacity: .7;
+}
 
-<body>
-<!-- Sidebar -->
-<aside>
-    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
-        <p>Konstantin Ovchinnikov's personal page</p>
-		<p>
-        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
-    <!-- Site search -->
-<script async src="https://cse.google.com/cse.js?cx=75184ca4aae714aae">
-</script>
-<div class="gcse-search"></div>
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
 
-    <nav class="nav">
-        <ul class="list-bare">
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
 
-                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
-                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
 
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
 
-        </ul>
-    </nav>
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
 
-    <p class="social">
-                <a href="https://twitter.com/Konstan21511383" target="_blank"><img alt="Twitter"
-                        src="./theme/images/icons/twitter.png"></a>
-                <a href="https://t.me/therealchanges" target="_blank"><img alt="Telegram"
-                        src="./theme/images/icons/telegram.png"></a>
-                <a href="https://www.linkedin.com/in/konstantinovchinnikov/" target="_blank"><img alt="LinkedIn"
-                        src="./theme/images/icons/linkedin.png"></a>
-                <a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg" target="_blank"><img alt="YouTube"
-                        src="./theme/images/icons/youtube.png"></a>
-                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
-                        src="./theme/images/icons/github.png"></a>
-            <a href="./feeds/all.atom.xml" rel="alternate">
-                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
-    </p>
+.token.keyword {
+	color: #66d9ef;
+}
 
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
 
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
 
-</aside>
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
 
-<!-- Content -->
-<article>
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
 
-    <section id="content">
-        <article>
-<!--End mc_embed_signup-->
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
 
-            <h2 class="post_title post_detail"><a href="./2023-07-software.html" rel="bookmark" title="Permalink to We need older software">We need older software</a></h2>
-            <div class="entry-content blog-post">
-                <h2>Introduction</h2>
-<p>As you may already know, 2023 is not the year of linux on the desktop, despite many predictions. As a (not so typical) linux user I continue to experience major difficulties using linux as my desktop, so I have to change linux distributions from time to time. My current choice is CentOS Stream (oh no!) and it feels good, despite some minor issues. So in this article, I'll try to cover: </p>
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+footer {
+	text-align: center;
+	font-size: 0.7em;
+}
+html {
+  font-family: 'Open Sans', 'helvetica', sans-serif;
+}
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: block;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+  display: inline-flex;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	display: block;
+	padding-top: 0.5em;
+	word-spacing: -0.5px;
+}
+.postlist-description {
+	display: block;
+	padding-top: 0.5em;
+}
+.postlist-link {
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+}
+.postlist-item-active .postlist-link {
+		font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.postlist-item > .post-tag {
+		align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata-li {
+	list-style: none;
+}
+
+.post-metadata time {
+		margin-right: 1em;
+}
+.links-nextprev {
+	display: flex;
+	justify-content: space-between;
+	gap: .5em 1em;
+	padding: 1em 0;
+}
+.links-nextprev-next {
+	text-align: right;
+	list-style: none;
+}
+.links-nextprev-prev {
+	text-align: left;
+	list-style: none;
+}</style>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="/pagefind/pagefind-ui.js"></script>
+		 <style>
+    svg {
+      width: var(--font-size);
+      height: var(--font-size);
+      color: var(--contrast);
+    }
+    </style>
+	</head>
+	<body>
+	<header class="container">
+			<div id="search"></div>
+			<script>
+			window.addEventListener('DOMContentLoaded', (event) => {
+				new PagefindUI({ element: "#search", showSubResults: true });
+			});
+			</script>
+		<nav>
+		<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/.11ty/image/?src=content%2Fimg%2Ftrc-logo.png&width=100&format=png&via=transform" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+		</ul>
+		<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/blog/">Archive</a></li>
+				<li><a href="/tags/">Tags</a></li>
+				<li>| </li>
+				<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-twitter"></i></a></li>
+				<li><a href="https://t.me/therealchanges"><i class="fa-brands fa-telegram"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+				<li><a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg"><i class="fa-brands fa-youtube"></i></a></li>
+				<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+				<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+				<li>| </li>
+				<li><a href="#" color="black" id="theme_switcher"></a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="container">
+			<heading-anchors data-pagefind-body="">
+				
+<h1 id="we-need-older-software">We need older software</h1>
+
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2023-07-03">03 July 2023</time></li>
+	<li class="post-tag"><a href="/tags/linux/" class="post-tag">#linux</a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+<p>As you may already know, 2023 is not the year of linux on the desktop, despite many predictions. As a (not so typical) linux user I continue to experience major difficulties using linux as my desktop, so I have to change linux distributions from time to time. My current choice is CentOS Stream (oh no!) and it feels good, despite some minor issues. So in this article, I'll try to cover:</p>
 <ul>
 <li>The distribution choice</li>
 <li>Migration process</li>
 <li>Some conclusions</li>
 </ul>
 <p>I hope you'll enjoy it and please don't treat it 100% seriously. There's still a lot of fun. At least we can continue to think so.</p>
-<h2>The distribution choice</h2>
+<h2 id="the-distribution-choice">The distribution choice</h2>
 <p>So my path to CentOS and the logic behind this choice was like this:</p>
 <ol>
 <li>I used <strong>Fedora</strong> at home for a long time.</li>
 <li>For 6 months I used <strong>Ubuntu LTS</strong> at work, it worked fine with some minor tuning and with a very old Gnome 3.</li>
 <li>Fedora at home started to seem unstable, and I thought of taking advantage of <strong>Debian</strong> stability and modern software from Flathub. It required some major tuning like installing and deleting software, VPN in Gnome didn't work at all, but everything else worked and was fine until my SSD died. And I can't say whether Debian or Fedora were involved. But I had my backups. And I had this idea that working with older software isn't that bad.</li>
 <li>I didn't have time to tune Debian one more time, so minimizing my efforts I installed <strong>Fedora</strong> and was happy for some time.</li>
-<li>After that Fedora started to be unstable again, I became afraid of kernel upgrades, after which my Wi-Fi can go down. And the kernel is so fresh, that no one knows the workarounds to the new kernel bugs. Besides, all the apps crash. So, I installed <strong>Ubuntu</strong> with vanilla Gnome. </li>
+<li>After that Fedora started to be unstable again, I became afraid of kernel upgrades, after which my Wi-Fi can go down. And the kernel is so fresh, that no one knows the workarounds to the new kernel bugs. Besides, all the apps crash. So, I installed <strong>Ubuntu</strong> with vanilla Gnome.</li>
 </ol>
 <p>It worked until it didn't. The file manager had annoying bugs, and I use it a lot. The system complained about SMBus and snap, although I removed snap completely:</p>
-<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="w">    </span><span class="mf">1.147188</span><span class="p">]</span><span class="w"> </span><span class="n">i801_smbus</span><span class="w"> </span><span class="mi">0000</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">1</span><span class="n">f</span><span class="o">.</span><span class="mi">4</span><span class="p">:</span><span class="w"> </span><span class="n">Transaction</span><span class="w"> </span><span class="n">timeout</span>
-<span class="p">[</span><span class="w">    </span><span class="mf">1.149358</span><span class="p">]</span><span class="w"> </span><span class="n">i801_smbus</span><span class="w"> </span><span class="mi">0000</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">1</span><span class="n">f</span><span class="o">.</span><span class="mi">4</span><span class="p">:</span><span class="w"> </span><span class="n">Failed</span><span class="w"> </span><span class="n">terminating</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">transaction</span>
-<span class="p">[</span><span class="w">    </span><span class="mf">1.149474</span><span class="p">]</span><span class="w"> </span><span class="n">i801_smbus</span><span class="w"> </span><span class="mi">0000</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">1</span><span class="n">f</span><span class="o">.</span><span class="mi">4</span><span class="p">:</span><span class="w"> </span><span class="n">SMBus</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">busy</span><span class="p">,</span><span class="w"> </span><span class="n">can</span><span class="s1">&#39;t use it!</span>
+<pre><code>[    1.147188] i801_smbus 0000:00:1f.4: Transaction timeout
+[    1.149358] i801_smbus 0000:00:1f.4: Failed terminating the transaction
+[    1.149474] i801_smbus 0000:00:1f.4: SMBus is busy, can't use it!
 
-<span class="p">[</span><span class="w">    </span><span class="mf">3.091517</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">snapd</span><span class="o">/</span><span class="n">snaps</span><span class="o">/</span><span class="n">bare_5</span><span class="o">.</span><span class="n">snap</span><span class="p">:</span><span class="w"> </span><span class="n">Can</span><span class="s1">&#39;t open blockdev</span>
-<span class="p">[</span><span class="w">    </span><span class="mf">3.094795</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">snapd</span><span class="o">/</span><span class="n">snaps</span><span class="o">/</span><span class="n">core22_607</span><span class="o">.</span><span class="n">snap</span><span class="p">:</span><span class="w"> </span><span class="n">Can</span><span class="s1">&#39;t open blockdev</span>
-<span class="p">[</span><span class="w">    </span><span class="mf">3.097791</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">snapd</span><span class="o">/</span><span class="n">snaps</span><span class="o">/</span><span class="n">firefox_2579</span><span class="o">.</span><span class="n">snap</span><span class="p">:</span><span class="w"> </span><span class="n">Can</span><span class="s1">&#39;t open blockdev</span>
-<span class="p">[</span><span class="w">    </span><span class="mf">3.111920</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">snapd</span><span class="o">/</span><span class="n">snaps</span><span class="o">/</span><span class="n">core20_1738</span><span class="o">.</span><span class="n">snap</span><span class="p">:</span><span class="w"> </span><span class="n">Can</span><span class="s1">&#39;t open blockdev</span>
-<span class="p">[</span><span class="w">    </span><span class="mf">3.113762</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">snapd</span><span class="o">/</span><span class="n">snaps</span><span class="o">/</span><span class="n">snapd_17883</span><span class="o">.</span><span class="n">snap</span><span class="p">:</span><span class="w"> </span><span class="n">Can</span><span class="s1">&#39;t open blockdev</span>
-<span class="p">[</span><span class="w">    </span><span class="mf">3.123071</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">snapd</span><span class="o">/</span><span class="n">snaps</span><span class="o">/</span><span class="n">snapd</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">integration_14</span><span class="o">.</span><span class="n">snap</span><span class="p">:</span><span class="w"> </span><span class="n">Can</span><span class="s1">&#39;t open blockdev</span>
-<span class="p">[</span><span class="w">    </span><span class="mf">3.125320</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">snapd</span><span class="o">/</span><span class="n">snaps</span><span class="o">/</span><span class="n">gtk</span><span class="o">-</span><span class="n">common</span><span class="o">-</span><span class="n">themes_1535</span><span class="o">.</span><span class="n">snap</span><span class="p">:</span><span class="w"> </span><span class="n">Can</span><span class="s1">&#39;t open blockdev</span>
-<span class="p">[</span><span class="w">    </span><span class="mf">3.137192</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">snapd</span><span class="o">/</span><span class="n">snaps</span><span class="o">/</span><span class="n">snapd_18933</span><span class="o">.</span><span class="n">snap</span><span class="p">:</span><span class="w"> </span><span class="n">Can</span><span class="s1">&#39;t open blockdev</span>
-<span class="p">[</span><span class="w">    </span><span class="mf">3.140238</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">snapd</span><span class="o">/</span><span class="n">snaps</span><span class="o">/</span><span class="n">core20_1852</span><span class="o">.</span><span class="n">snap</span><span class="p">:</span><span class="w"> </span><span class="n">Can</span><span class="s1">&#39;t open blockdev</span>
-<span class="p">[</span><span class="w">    </span><span class="mf">3.140616</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">snapd</span><span class="o">/</span><span class="n">snaps</span><span class="o">/</span><span class="n">snapd</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">integration_57</span><span class="o">.</span><span class="n">snap</span><span class="p">:</span><span class="w"> </span><span class="n">Can</span><span class="s1">&#39;t open blockdev</span>
-<span class="p">[</span><span class="w">    </span><span class="mf">3.142646</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">snapd</span><span class="o">/</span><span class="n">snaps</span><span class="o">/</span><span class="n">snapd</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">integration_49</span><span class="o">.</span><span class="n">snap</span><span class="p">:</span><span class="w"> </span><span class="n">Can</span><span class="s1">&#39;t open blockdev</span>
-</code></pre></div>
-
+[    3.091517] /var/lib/snapd/snaps/bare_5.snap: Can't open blockdev
+[    3.094795] /var/lib/snapd/snaps/core22_607.snap: Can't open blockdev
+[    3.097791] /var/lib/snapd/snaps/firefox_2579.snap: Can't open blockdev
+[    3.111920] /var/lib/snapd/snaps/core20_1738.snap: Can't open blockdev
+[    3.113762] /var/lib/snapd/snaps/snapd_17883.snap: Can't open blockdev
+[    3.123071] /var/lib/snapd/snaps/snapd-desktop-integration_14.snap: Can't open blockdev
+[    3.125320] /var/lib/snapd/snaps/gtk-common-themes_1535.snap: Can't open blockdev
+[    3.137192] /var/lib/snapd/snaps/snapd_18933.snap: Can't open blockdev
+[    3.140238] /var/lib/snapd/snaps/core20_1852.snap: Can't open blockdev
+[    3.140616] /var/lib/snapd/snaps/snapd-desktop-integration_57.snap: Can't open blockdev
+[    3.142646] /var/lib/snapd/snaps/snapd-desktop-integration_49.snap: Can't open blockdev
+</code></pre>
 <p>Maybe it's different with Ubuntu LTS. It just didn't feel right, you know. And I thought about these advanced RedHat technologies:</p>
 <ul>
-<li>RPM, which upgrades the system in transactions, so you don't get corrupt package dependencies &ndash; which is quite fixable in Ubuntu and Debian, though. But with Debian (if you want more stability) external repositories are evil just because of that &ndash; it's hard for deb/apt to handle them. So, I guess that Ubuntu invented snap to hide this, but this is a conspiracy theory already. </li>
+<li>RPM, which upgrades the system in transactions, so you don't get corrupt package dependencies – which is quite fixable in Ubuntu and Debian, though. But with Debian (if you want more stability) external repositories are evil just because of that – it's hard for deb/apt to handle them. So, I guess that Ubuntu invented snap to hide this, but this is a conspiracy theory already.</li>
 <li>SELinux, which adds extra security level to the system, and that's especially important if you install some closed-source software.</li>
-<li>Great Gnome experience right from the beginning &ndash; no need to tune this, at least.</li>
+<li>Great Gnome experience right from the beginning – no need to tune this, at least.</li>
 </ul>
 <p>I'm sure there are lots of other great technologies I don't know about, like XFS.</p>
 <p>Besides, most software has deb or rpm packages, so I wasn't even looking outside of this world (like Arch, Manjaro, etc.).</p>
 <p>I thought about installing RHEL, I even registered as a developer and RHEL download was available. But at least two points pushed me towards CentOS:</p>
-<ol>
+<ol start="2">
 <li>I wouldn't like to set up RHEL subscriptions for updates or in some way be dependent on them.</li>
 <li>Maybe it's not a bad idea to have a little fresher software than RHEL.</li>
 </ol>
 <p>So, I decided to try CentOS, but I hope the description of my migration procedure will help someone.</p>
-<h2>Migration process</h2>
+<h2 id="migration-process">Migration process</h2>
 <p>We need to do three tasks:</p>
-<ol>
+<ol start="2">
 <li>Prepare installation media</li>
 <li>Backup the data</li>
 <li>Install CentOS Stream and perform post-installation tasks</li>
@@ -170,23 +384,21 @@
 <li>Login with 'temp', insert backup media, and create a tar file on the backup media (without compression) of your normal user home directory.</li>
 </ol>
 <p>For example, my backup media is <code>/run/media/data</code> and my home catalog is <code>/home/kostya</code>. Then we do:</p>
-<div class="highlight"><pre><span></span><code># cd /run/media/data
+<pre><code># cd /run/media/data
 # sudo tar cf backup.tar /home/kostya
-</code></pre></div>
-
+</code></pre>
 <p>Normally the archive preserves just the last catalog, but to be sure, you can check the archive with <code>tar tf</code>.</p>
 <p>Now we wait till the backup is complete and <strong>safely extract</strong> the backup media.</p>
-<p>The installation process for CentOS is like 'nothing special', it just works. The only thing to mention here is that RHEL and Fedora have a 9 Gb installation image. I had 3 USB sticks capable of 8 Gb each, so I had to go outside my apartment (for the first time in a few months) and buy a bigger USB stick. Checkmate, CentOS Stream. No, I don't regret spending &euro;12.</p>
+<p>The installation process for CentOS is like 'nothing special', it just works. The only thing to mention here is that RHEL and Fedora have a 9 Gb installation image. I had 3 USB sticks capable of 8 Gb each, so I had to go outside my apartment (for the first time in a few months) and buy a bigger USB stick. Checkmate, CentOS Stream. No, I don't regret spending €12.</p>
 <p>And if you want to get CentOS documentation, regarding the installation, for example, you get... to the RHEL documentation, which is awesome.</p>
 <p>The first step after installation (I assume you created your user during installation) is to extract the backup. So, again:</p>
-<ol>
+<ol start="2">
 <li>Create a new user, say, 'temp', with administrative privileges.</li>
 <li>Login with 'temp', insert backup media, and extract the tar file on the backup media to your user home directory.</li>
 </ol>
-<div class="highlight"><pre><span></span><code># sudo tar xf /run/media/data/backup.tar -C /home
-</code></pre></div>
-
-<p>Or something like that, you know &ndash; in any case, it's a bad idea to trust some random code from the internet and launch it with 'sudo' privileges without understanding it.</p>
+<pre><code># sudo tar xf /run/media/data/backup.tar -C /home
+</code></pre>
+<p>Or something like that, you know – in any case, it's a bad idea to trust some random code from the internet and launch it with 'sudo' privileges without understanding it.</p>
 <p>I have some special requirements regarding software, so with CentOS, it was like this:</p>
 <ol>
 <li>Chrome is a must for me, so I just get rpm from the official website. It runs Microsoft Teams and Google Meet video conferences and lots of Google-specific websites (like Google Drive and Gmail).</li>
@@ -201,7 +413,7 @@
 </ol>
 <p>By the way, I don't get all this anxiety about desktop icons. It's better with desktop icons, but I have no problems launching Minecraft and Camunda Modeler from <kbd>Alt-F2</kbd> prompt. Yes, this prompt has auto-completion. And you can name your symlinks in <code>/usr/bin</code> whatever you want.</p>
 <p>Last, but not the least, we need backups! I used Deja Dup to make weekly backups to Google Drive, but I failed to install Google Drive support for Deja Dup in CentOS. But then I thought that my internet connection is slow and uploading 4 Gb to Google Drive takes a lot of bandwidth. I switched to <a href="https://torsion.org/borgmatic/">borgmatic</a> backup to an external HDD.  It's easy to set up and it takes just seconds. Maybe my backups to Google Drive were the reason for the lagging Zoom video or it was just a coincidence. No, Ubuntu couldn't do that to me.</p>
-<h2>Some conclusions</h2>
+<h2 id="some-conclusions">Some conclusions</h2>
 <p>Regarding CentOS, it works great with some minor 'desktop experience' exceptions:</p>
 <ul>
 <li>2 of 4 of my favorite Gnome extensions won't install for this Gnome version, but I was able to install Unity.</li>
@@ -215,101 +427,112 @@
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Criteria/Distribution</th>
-<th style="text-align: left;">Ubuntu</th>
-<th style="text-align: left;">Debian</th>
-<th style="text-align: left;">Fedora</th>
-<th style="text-align: left;">CentOS</th>
+<th style="text-align:left">Criteria/Distribution</th>
+<th style="text-align:left">Ubuntu</th>
+<th style="text-align:left">Debian</th>
+<th style="text-align:left">Fedora</th>
+<th style="text-align:left">CentOS</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Critical kernel bugs</td>
-<td style="text-align: left;">No</td>
-<td style="text-align: left;">No</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">No</td>
+<td style="text-align:left">Critical kernel bugs</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
 </tr>
 <tr>
-<td style="text-align: left;">Small annoying bugs</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">No</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">No</td>
+<td style="text-align:left">Small annoying bugs</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
 </tr>
 <tr>
-<td style="text-align: left;">Falling software</td>
-<td style="text-align: left;">No</td>
-<td style="text-align: left;">No</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">No</td>
+<td style="text-align:left">Falling software</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
 </tr>
 <tr>
-<td style="text-align: left;">Not so nice desktop experience</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">No</td>
-<td style="text-align: left;">No</td>
+<td style="text-align:left">Not so nice desktop experience</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">No</td>
 </tr>
 <tr>
-<td style="text-align: left;">Requires significant customization</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">No</td>
-<td style="text-align: left;">No</td>
+<td style="text-align:left">Requires significant customization</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">No</td>
 </tr>
 <tr>
-<td style="text-align: left;">Lacks modern technologies</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">Yes</td>
-<td style="text-align: left;">No</td>
-<td style="text-align: left;">No</td>
+<td style="text-align:left">Lacks modern technologies</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">No</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Total</strong></td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">6</td>
+<td style="text-align:left"><strong>Total</strong></td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">3</td>
+<td style="text-align:left">3</td>
+<td style="text-align:left">6</td>
 </tr>
 </tbody>
 </table>
 <p>It seems that I could be rational.</p>
-            </div>
-            <div class="post_list">
-                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
-                <span class="post_date">Mon 03 July 2023</span>
-                <div><span>Tags: </span>
-                            <span><a href="./tag/linux.html">#linux </a></span>
-                </div>
-            </div>
-                <div class="comments">
-                    <h2>Comments</h2>
-                    <div id="disqus_thread"></div>
-                    <script type="text/javascript">
-                        var disqus_identifier = "2023-07-software.html";
-                        (function () {
-                            var dsq = document.createElement('script');
-                            dsq.type = 'text/javascript';
-                            dsq.async = true;
-                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
-                            (document.getElementsByTagName('head')[0] ||
-                            document.getElementsByTagName('body')[0]).appendChild(dsq);
-                        })();
-                    </script>
-                </div>
-        </article>
-    </section>
-</article>
 
-<!-- Footer -->
-    <footer>
-        <p>
-	  Made with <a href="http://getpelican.com/">Pelican</a>, 
-      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
-        </p>
-    </footer>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2023-07-covid.html">Several ideas on global disasters</a></li><li class="links-nextprev-next">Next <i class="fa-solid fa-arrow-right"></i><br><a href="/2023-07-big.html">Reflecting on starting something new and big</a></li>
+</ul>
 
+			</heading-anchors>
+	</main>
 
-</body>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2023-07-software.html` was built on 2024-11-11T20:56:56.054Z -->
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+<script>
+    const html = document.documentElement;
+    const switchTheme = document.getElementById('theme_switcher');
+    const sun = '<i class="fa-regular fa-sun"></i>';
+    const moon = '<i class="fa-solid fa-moon"></i>';
+
+    // Load the theme from localStorage or set to light by default
+    let isLight = localStorage.getItem('theme') === 'light';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Set initial theme
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+        removeTooltip(3000);
+    });
+
+    switchTheme.addEventListener('click', (e) => {
+        e.preventDefault();
+        isLight = !isLight;
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+
+        // Save the current theme to localStorage
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+        removeTooltip();
+    });
+
+    const removeTooltip = (timeInt = 1750) => {
+        setTimeout(() => {
+        switchTheme.blur();
+        }, timeInt);
+    }
+</script>
+	</body>
 </html>

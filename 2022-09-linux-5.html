@@ -1,233 +1,437 @@
 <!doctype html>
-<html lang="en" itemscope itemtype="http://schema.org/Person">
-  <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Cooking Linux the right way: Vim and Emacs</title>
+		<meta name="description" content="Vim and Emacs for Markdown, HTML, and note taking">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
 
-  gtag('config', 'G-MWJX8WCGVQ');
-</script>
-            <meta charset="utf-8">
-        <!-- Site Meta Data -->
-        <title>Cooking Linux the right way: Vim and Emacs</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="Konstantin Ovchinnikov">
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
 
-        <link rel="shortcut icon" href="/theme/images/logo3.ico">
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
 
-        <!-- schema.org -->
-        <meta itemprop="name" content="The Real Changes">
-        <meta itemprop="image" content="/theme/images/logo3_small.png">
-        <meta itemprop="description" content="">
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
 
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-        <!-- Style Meta Data -->
-        <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
-        <link rel="stylesheet" href="./theme/css/pygments.css" type="text/css"/>
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
 
-        <!-- Feed Meta Data -->
-            <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-                  title="The Real Changes ATOM Feed"/>
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
 
-        <!-- Twitter Feed -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="Konstan21511383">
-        <meta name="twitter:image" content="">
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
 
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
 
-    <meta name="twitter:creator" content="Konstan21511383">
-    <meta name="twitter:url" content="./2022-09-linux-5.html">
-    <meta name="twitter:title" content="The Real Changes ~ Cooking Linux the right way: Vim and Emacs">
-    <meta name="twitter:description" content="Vim and Emacs for Markdown, HTML, and note taking">
+.token.punctuation {
+	color: #f8f8f2;
+}
 
-    <!-- Facebook Meta Data -->
-    <meta property="og:title" content="The Real Changes ~ Cooking Linux the right way: Vim and Emacs"/>
-    <meta property="og:description" content="Vim and Emacs for Markdown, HTML, and note taking"/>
-    <meta property="og:image" content=""/>
-</head>
+.token.namespace {
+	opacity: .7;
+}
 
-<body>
-<!-- Sidebar -->
-<aside>
-    <h1><a class="sitetitle" href=".">The Real Changes</a></h1>
-        <p>Konstantin Ovchinnikov's personal page</p>
-		<p>
-        <a href="."><img alt="Home" id="avatar" src="/theme/images/logo3_small.png"></a>
-    <!-- Site search -->
-<script async src="https://cse.google.com/cse.js?cx=75184ca4aae714aae">
-</script>
-<div class="gcse-search"></div>
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
 
-    <nav class="nav">
-        <ul class="list-bare">
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
 
-                <li><a class="nav__link" href="https://en.kovchinnikov.info">Blog</a></li>
-                <li><a class="nav__link" href="https://en.kovchinnikov.info/tags.html">Tags</a></li>
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
 
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
 
-        </ul>
-    </nav>
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
 
-    <p class="social">
-                <a href="https://twitter.com/Konstan21511383" target="_blank"><img alt="Twitter"
-                        src="./theme/images/icons/twitter.png"></a>
-                <a href="https://t.me/therealchanges" target="_blank"><img alt="Telegram"
-                        src="./theme/images/icons/telegram.png"></a>
-                <a href="https://www.linkedin.com/in/konstantinovchinnikov/" target="_blank"><img alt="LinkedIn"
-                        src="./theme/images/icons/linkedin.png"></a>
-                <a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg" target="_blank"><img alt="YouTube"
-                        src="./theme/images/icons/youtube.png"></a>
-                <a href="https://github.com/ikostas/" target="_blank"><img alt="GitHub"
-                        src="./theme/images/icons/github.png"></a>
-            <a href="./feeds/all.atom.xml" rel="alternate">
-                <img alt="RSS" src="./theme/images/icons/rss.png"></a>
-    </p>
+.token.keyword {
+	color: #66d9ef;
+}
 
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
 
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
 
-</aside>
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
 
-<!-- Content -->
-<article>
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
 
-    <section id="content">
-        <article>
-<!--End mc_embed_signup-->
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
 
-            <h2 class="post_title post_detail"><a href="./2022-09-linux-5.html" rel="bookmark" title="Permalink to Cooking Linux the right way: Vim and Emacs">Cooking Linux the right way: Vim and Emacs</a></h2>
-            <div class="entry-content blog-post">
-                <p>OK, let's talk about Linux superpowers. Vim's superpower is to move fast, really fast. To edit by commands with single keystrokes, cut, paste, find &amp; replace the text at a maximum speed. Yes, there's some learning curve, but you can start with Vim mode in some editors and IDE and after learning Vim make use of Vim keystrokes in other programs, including Chromium, for example. Navigating and editing with the keyboard, without using a mouse will be faster.</p>
-<p>Emacs' superpower is that you can get further than customizing, you can re-write the behavior of the editor using Lisp. As a demo of this deep customization or re-writing capabilities, you can use the Evil mode, which emulates Vim inside Emacs well. Emacs have modules for RSS reader, Telegram client, Media player, Email and Newsreader, IRC client, and more. The question with Emacs is actually "What do you want from it?"</p>
-<p>Vim and Emacs are different regarding approaches to text editing: Vim is like "The editor does exactly what I type", while Emacs is more "Let me do that for you", like inserting closing parenthesis, formatting text, etc. But both editors are customizable to the extent that you can have <strong>almost</strong> the same behavior. Both have file managers nowadays. Emacs is an integrated environment to suit all your needs, while Vim sticks to the standards and there's an advanced mode to use Vim, (which I'll cover in this article) with a terminal multiplexer. To demonstrate the superpowers I'll take three use cases Markdown, HTML, note taking. I'm not a programmer and that's what I use on a day-to-day basis. I worked in Vim and Emacs for several months like 8 hours a day, so it's not a first impression.</p>
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+footer {
+	text-align: center;
+	font-size: 0.7em;
+}
+html {
+  font-family: 'Open Sans', 'helvetica', sans-serif;
+}
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: block;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+  display: inline-flex;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	display: block;
+	padding-top: 0.5em;
+	word-spacing: -0.5px;
+}
+.postlist-description {
+	display: block;
+	padding-top: 0.5em;
+}
+.postlist-link {
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+}
+.postlist-item-active .postlist-link {
+		font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.postlist-item > .post-tag {
+		align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata-li {
+	list-style: none;
+}
+
+.post-metadata time {
+		margin-right: 1em;
+}
+.links-nextprev {
+	display: flex;
+	justify-content: space-between;
+	gap: .5em 1em;
+	padding: 1em 0;
+}
+.links-nextprev-next {
+	text-align: right;
+	list-style: none;
+}
+.links-nextprev-prev {
+	text-align: left;
+	list-style: none;
+}</style>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="/pagefind/pagefind-ui.js"></script>
+		 <style>
+    svg {
+      width: var(--font-size);
+      height: var(--font-size);
+      color: var(--contrast);
+    }
+    </style>
+	</head>
+	<body>
+	<header class="container">
+			<div id="search"></div>
+			<script>
+			window.addEventListener('DOMContentLoaded', (event) => {
+				new PagefindUI({ element: "#search", showSubResults: true });
+			});
+			</script>
+		<nav>
+		<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/.11ty/image/?src=content%2Fimg%2Ftrc-logo.png&width=100&format=png&via=transform" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+		</ul>
+		<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/blog/">Archive</a></li>
+				<li><a href="/tags/">Tags</a></li>
+				<li>| </li>
+				<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-twitter"></i></a></li>
+				<li><a href="https://t.me/therealchanges"><i class="fa-brands fa-telegram"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+				<li><a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg"><i class="fa-brands fa-youtube"></i></a></li>
+				<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+				<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+				<li>| </li>
+				<li><a href="#" color="black" id="theme_switcher"></a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="container">
+			<heading-anchors data-pagefind-body="">
+				
+<h1 id="cooking-linux-the-right-way-vim-and-emacs">Cooking Linux the right way: Vim and Emacs</h1>
+
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2022-10-20">20 October 2022</time></li>
+	<li class="post-tag"><a href="/tags/linux/" class="post-tag">#linux</a>, </li>
+	<li class="post-tag"><a href="/tags/productivity/" class="post-tag">#productivity</a>, </li>
+	<li class="post-tag"><a href="/tags/vim/" class="post-tag">#vim</a>, </li>
+	<li class="post-tag"><a href="/tags/emacs/" class="post-tag">#emacs</a></li>
+</ul>
+
+<p>OK, let's talk about Linux superpowers. Vim's superpower is to move fast, really fast. To edit by commands with single keystrokes, cut, paste, find &amp; replace the text at a maximum speed. Yes, there's some learning curve, but you can start with Vim mode in some editors and IDE and after learning Vim make use of Vim keystrokes in other programs, including Chromium, for example. Navigating and editing with the keyboard, without using a mouse will be faster.</p>
+<p>Emacs' superpower is that you can get further than customizing, you can re-write the behavior of the editor using Lisp. As a demo of this deep customization or re-writing capabilities, you can use the Evil mode, which emulates Vim inside Emacs well. Emacs have modules for RSS reader, Telegram client, Media player, Email and Newsreader, IRC client, and more. The question with Emacs is actually &quot;What do you want from it?&quot;</p>
+<p>Vim and Emacs are different regarding approaches to text editing: Vim is like &quot;The editor does exactly what I type&quot;, while Emacs is more &quot;Let me do that for you&quot;, like inserting closing parenthesis, formatting text, etc. But both editors are customizable to the extent that you can have <strong>almost</strong> the same behavior. Both have file managers nowadays. Emacs is an integrated environment to suit all your needs, while Vim sticks to the standards and there's an advanced mode to use Vim, (which I'll cover in this article) with a terminal multiplexer. To demonstrate the superpowers I'll take three use cases Markdown, HTML, note taking. I'm not a programmer and that's what I use on a day-to-day basis. I worked in Vim and Emacs for several months like 8 hours a day, so it's not a first impression.</p>
 <p>Emacs is better as a GUI app, and Vim, from my viewpoint, is better in a terminal. Thus Vim has a life hack: if you have to work in Windows and you don't have privileges to install programs, you can install <a href="https://gitforwindows.org/">Git for Windows</a>. Vim is included, so you can install any plugins and customize Vim further.</p>
 <p>I'll provide very basic configs I use, and I'd recommend learning both text editors, they are nice. When you are bothered, you can switch and have fun. :) For each use case, I'll try to describe briefly some useful functions.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"></th>
-<th style="text-align: left;">Vim</th>
-<th style="text-align: left;">Emacs</th>
+<th style="text-align:left"></th>
+<th style="text-align:left">Vim</th>
+<th style="text-align:left">Emacs</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Notes</td>
-<td style="text-align: left;"><a href="https://github.com/vimwiki/vimwiki">VimWiki</a>, <a href="https://nvim-orgmode.github.io/">Orgmode.nvim</a>, <a href="https://github.com/nvim-neorg/neorg">Neorg</a></td>
-<td style="text-align: left;"><a href="https://orgmode.org/">Org mode</a></td>
+<td style="text-align:left">Notes</td>
+<td style="text-align:left"><a href="https://github.com/vimwiki/vimwiki">VimWiki</a>, <a href="https://nvim-orgmode.github.io/">Orgmode.nvim</a>, <a href="https://github.com/nvim-neorg/neorg">Neorg</a></td>
+<td style="text-align:left"><a href="https://orgmode.org/">Org mode</a></td>
 </tr>
 <tr>
-<td style="text-align: left;">HTML</td>
-<td style="text-align: left;"><a href="https://github.com/mattn/emmet-vim">Emmet</a>, <a href="https://github.com/SirVer/ultisnips">Snippets</a></td>
-<td style="text-align: left;">HTML mode</td>
+<td style="text-align:left">HTML</td>
+<td style="text-align:left"><a href="https://github.com/mattn/emmet-vim">Emmet</a>, <a href="https://github.com/SirVer/ultisnips">Snippets</a></td>
+<td style="text-align:left">HTML mode</td>
 </tr>
 <tr>
-<td style="text-align: left;">Markdown</td>
-<td style="text-align: left;"><a href="https://github.com/preservim/vim-markdown">Vim-markdown</a>, <a href="https://github.com/SirVer/ultisnips">Snippets</a></td>
-<td style="text-align: left;"><a href="https://jblevins.org/projects/markdown-mode/">Markdown mode</a></td>
+<td style="text-align:left">Markdown</td>
+<td style="text-align:left"><a href="https://github.com/preservim/vim-markdown">Vim-markdown</a>, <a href="https://github.com/SirVer/ultisnips">Snippets</a></td>
+<td style="text-align:left"><a href="https://jblevins.org/projects/markdown-mode/">Markdown mode</a></td>
 </tr>
 </tbody>
 </table>
-<h2>Initial setup</h2>
+<h2 id="initial-setup">Initial setup</h2>
 <p>My configs are quite short, let's look at them, and then I'll explain everything line-by-line. So, my Vim config is the following</p>
-<div class="highlight"><pre><span></span><code><span class="nb">syntax</span> enable
-<span class="k">colorscheme</span> monokai
-<span class="k">set</span> <span class="nb">wrap</span> <span class="nb">linebreak</span> <span class="nb">nolist</span>
-<span class="k">call</span> plug#begin<span class="p">()</span>
-  Plug <span class="s1">&#39;itchyny/lightline.vim&#39;</span>
+<pre class="language-vim" tabindex="0"><code class="language-vim"><span class="token builtin">syntax</span> enable
+<span class="token keyword">colorscheme</span> monokai
+<span class="token keyword">set</span> <span class="token builtin">wrap</span> <span class="token builtin">linebreak</span> <span class="token builtin">nolist</span>
+<span class="token keyword">call</span> plug#<span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  Plug <span class="token string">'itchyny/lightline.vim'</span>
 
-  Plug <span class="s1">&#39;SirVer/ultisnips&#39;</span>
-  Plug <span class="s1">&#39;honza/vim-snippets&#39;</span>
-    <span class="k">let</span> <span class="k">g</span>:UltiSnipsExpandTrigger<span class="p">=</span><span class="s2">&quot;&lt;tab&gt;&quot;</span>
-    <span class="k">let</span> <span class="k">g</span>:UltiSnipsJumpForwardTrigger<span class="p">=</span><span class="s2">&quot;&lt;c-b&gt;&quot;</span>
-    <span class="k">let</span> <span class="k">g</span>:UltiSnipsJumpBackwardTrigger<span class="p">=</span><span class="s2">&quot;&lt;c-z&gt;&quot;</span>
+  Plug <span class="token string">'SirVer/ultisnips'</span>
+  Plug <span class="token string">'honza/vim-snippets'</span>
+    <span class="token keyword">let</span> g<span class="token punctuation">:</span>UltiSnipsExpandTrigger<span class="token operator">=</span><span class="token string">"&lt;tab>"</span>
+    <span class="token keyword">let</span> g<span class="token punctuation">:</span>UltiSnipsJumpForwardTrigger<span class="token operator">=</span><span class="token string">"&lt;c-b>"</span>
+    <span class="token keyword">let</span> g<span class="token punctuation">:</span>UltiSnipsJumpBackwardTrigger<span class="token operator">=</span><span class="token string">"&lt;c-z>"</span>
 
-  Plug <span class="s1">&#39;plasticboy/vim-markdown&#39;</span>
-  Plug <span class="s1">&#39;godlygeek/tabular&#39;</span>
-  Plug <span class="s1">&#39;mattn/emmet-vim&#39;</span>
-  <span class="k">call</span> plug#<span class="k">end</span><span class="p">()</span>
-  <span class="k">set</span> <span class="nb">laststatus</span><span class="p">=</span><span class="m">2</span> 
-  <span class="k">set</span> <span class="nb">langmap</span><span class="p">=</span>ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ<span class="p">,</span>фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
-  <span class="k">set</span> <span class="nb">conceallevel</span><span class="p">=</span><span class="m">2</span>
-</code></pre></div>
-
+  Plug <span class="token string">'plasticboy/vim-markdown'</span>
+  Plug <span class="token string">'godlygeek/tabular'</span>
+  Plug <span class="token string">'mattn/emmet-vim'</span>
+  <span class="token keyword">call</span> plug#<span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">set</span> <span class="token builtin">laststatus</span><span class="token operator">=</span><span class="token number">2</span>
+  <span class="token keyword">set</span> <span class="token builtin">langmap</span><span class="token operator">=</span>ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ<span class="token punctuation">;</span>ABCDEFGHIJKLMNOPQRSTUVWXYZ<span class="token punctuation">,</span>фисвуапршолдьтщзйкыегмцчня<span class="token punctuation">;</span>abcdefghijklmnopqrstuvwxyz
+  <span class="token keyword">set</span> conceallevel<span class="token operator">=</span><span class="token number">2</span></code></pre>
 <p>And this is my Emacs config file:</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">scroll-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">tool-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">menu-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">default-frame-alist</span><span class="w"> </span><span class="o">&#39;</span><span class="p">((</span><span class="nv">undecorated</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="no">t</span><span class="p">)))</span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">inhibit-startup-screen</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">dired-listing-switches</span><span class="w"> </span><span class="s">&quot;-laGh1v&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">setq-default</span><span class="w"> </span><span class="nv">word-wrap</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">sentence-end-double-space</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">custom-set-faces</span>
-<span class="o">&#39;</span><span class="p">(</span><span class="nv">default</span><span class="w"> </span><span class="p">((</span><span class="no">t</span><span class="w"> </span><span class="p">(</span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;Source Code Pro&quot;</span><span class="w"> </span><span class="ss">:foundry</span><span class="w"> </span><span class="s">&quot;ADBO&quot;</span><span class="w"> </span><span class="ss">:slant</span><span class="w"> </span><span class="nv">normal</span><span class="w"> </span><span class="ss">:weight</span><span class="w"> </span><span class="nv">semi-bold</span><span class="w"> </span><span class="ss">:height</span><span class="w"> </span><span class="mi">132</span><span class="w"> </span><span class="ss">:width</span><span class="w"> </span><span class="nv">normal</span><span class="p">)))))</span>
-<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;custom-theme-load-path</span><span class="w"> </span><span class="s">&quot;~/.emacs.d/themes/&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">load-theme</span><span class="w"> </span><span class="ss">&#39;monokai</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
-<span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;package</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;package-archives</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;melpa&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;https://melpa.org/packages/&quot;</span><span class="p">))</span>
-<span class="p">(</span><span class="nv">custom-set-variables</span>
-<span class="w">  </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">menu-bar-mode</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span>
-<span class="w">  </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">package-selected-packages</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nb">use-package</span><span class="w"> </span><span class="nv">reverse-im</span><span class="w"> </span><span class="nv">markdown-mode</span><span class="p">))</span>
-<span class="w">  </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">tool-bar-mode</span><span class="w"> </span><span class="no">nil</span><span class="p">))</span>
-<span class="p">(</span><span class="nb">use-package</span><span class="w"> </span><span class="nv">reverse-im</span>
-<span class="w">  </span><span class="ss">:ensure</span><span class="w"> </span><span class="no">t</span>
-<span class="w">  </span><span class="ss">:custom</span>
-<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-input-methods</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;russian-computer&quot;</span><span class="p">))</span>
-<span class="w">  </span><span class="ss">:config</span>
-<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-mode</span><span class="w"> </span><span class="no">t</span><span class="p">))</span>
-<span class="p">(</span><span class="nv">recentf-mode</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">global-set-key</span><span class="w"> </span><span class="p">(</span><span class="nv">kbd</span><span class="w"> </span><span class="s">&quot;C-x C-r&quot;</span><span class="p">)</span><span class="w"> </span><span class="ss">&#39;recentf-open-files</span><span class="p">)</span>
-</code></pre></div>
-
+<pre class="language-lisp" tabindex="0"><code class="language-lisp"><span class="token punctuation">(</span><span class="token car">scroll-bar-mode</span> <span class="token number">-1</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">tool-bar-mode</span> <span class="token number">-1</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">menu-bar-mode</span> <span class="token number">-1</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">setq</span> default-frame-alist <span class="token punctuation">'(</span><span class="token punctuation">(</span><span class="token car">undecorated</span> <span class="token punctuation">.</span> <span class="token boolean">t</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">setq</span> inhibit-startup-screen <span class="token boolean">t</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">setq</span> dired-listing-switches <span class="token string">"-laGh1v"</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">setq-default</span> word-wrap <span class="token boolean">t</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">setq</span> sentence-end-double-space <span class="token boolean">nil</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">custom-set-faces</span>
+<span class="token punctuation">'(</span><span class="token car">default</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token boolean">t</span> <span class="token punctuation">(</span><span class="token lisp-property property">:family</span> <span class="token string">"Source Code Pro"</span> <span class="token lisp-property property">:foundry</span> <span class="token string">"ADBO"</span> <span class="token lisp-property property">:slant</span> normal <span class="token lisp-property property">:weight</span> semi-bold <span class="token lisp-property property">:height</span> <span class="token number">132</span> <span class="token lisp-property property">:width</span> normal<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">add-to-list</span> <span class="token quoted-symbol variable symbol">'custom-theme-load-path</span> <span class="token string">"~/.emacs.d/themes/"</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">load-theme</span> <span class="token quoted-symbol variable symbol">'monokai</span> <span class="token boolean">t</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">require</span> <span class="token quoted-symbol variable symbol">'package</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">add-to-list</span> <span class="token quoted-symbol variable symbol">'package-archives</span> <span class="token punctuation">'(</span><span class="token string">"melpa"</span> <span class="token punctuation">.</span> <span class="token string">"https://melpa.org/packages/"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">custom-set-variables</span>
+  <span class="token punctuation">'(</span><span class="token car">menu-bar-mode</span> <span class="token boolean">nil</span><span class="token punctuation">)</span>
+  <span class="token punctuation">'(</span><span class="token car">package-selected-packages</span> <span class="token punctuation">'(</span><span class="token keyword">use-package</span> reverse-im markdown-mode<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">'(</span><span class="token car">tool-bar-mode</span> <span class="token boolean">nil</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">use-package</span> reverse-im
+  <span class="token lisp-property property">:ensure</span> <span class="token boolean">t</span>
+  <span class="token lisp-property property">:custom</span>
+  <span class="token punctuation">(</span><span class="token car">reverse-im-input-methods</span> <span class="token punctuation">'(</span><span class="token string">"russian-computer"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token lisp-property property">:config</span>
+  <span class="token punctuation">(</span><span class="token car">reverse-im-mode</span> <span class="token boolean">t</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">recentf-mode</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">global-set-key</span> <span class="token punctuation">(</span><span class="token car">kbd</span> <span class="token string">"C-x C-r"</span><span class="token punctuation">)</span> <span class="token quoted-symbol variable symbol">'recentf-open-files</span><span class="token punctuation">)</span></code></pre>
 <p>For me, that doesn't look too complicated. For Vim I add the color scheme, add a status line, and a soft word wrap:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">syntax</span> enable
-<span class="k">colorscheme</span> monokai
-<span class="k">set</span> <span class="nb">wrap</span> <span class="nb">linebreak</span> <span class="nb">nolist</span>
-<span class="k">call</span> plug#begin<span class="p">()</span>
-  Plug <span class="s1">&#39;itchyny/lightline.vim&#39;</span>
-<span class="k">call</span> plug#<span class="k">end</span><span class="p">()</span>
-</code></pre></div>
-
+<pre class="language-vim" tabindex="0"><code class="language-vim"><span class="token builtin">syntax</span> enable
+<span class="token keyword">colorscheme</span> monokai
+<span class="token keyword">set</span> <span class="token builtin">wrap</span> <span class="token builtin">linebreak</span> <span class="token builtin">nolist</span>
+<span class="token keyword">call</span> plug#<span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  Plug <span class="token string">'itchyny/lightline.vim'</span>
+<span class="token keyword">call</span> plug#<span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 <p>To fix a bug with the status line and add mapping to Cyrillic keys (not to switch to Cyrillic in normal mode) we need to add this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="nb">laststatus</span><span class="p">=</span><span class="m">2</span> 
-<span class="k">set</span> <span class="nb">langmap</span><span class="p">=</span>ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ<span class="p">,</span>фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
-</code></pre></div>
-
+<pre class="language-vim" tabindex="0"><code class="language-vim"><span class="token keyword">set</span> <span class="token builtin">laststatus</span><span class="token operator">=</span><span class="token number">2</span>
+<span class="token keyword">set</span> <span class="token builtin">langmap</span><span class="token operator">=</span>ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ<span class="token punctuation">;</span>ABCDEFGHIJKLMNOPQRSTUVWXYZ<span class="token punctuation">,</span>фисвуапршолдьтщзйкыегмцчня<span class="token punctuation">;</span>abcdefghijklmnopqrstuvwxyz</code></pre>
 <p>As Vim is launched in some terminals, I specify the font in the config for the terminal. Regarding Emacs, first, we need to switch off the menu (it's accessible with F10), and the scrollbar and switch off the window decoration to save some space. I also switch off the startup screen as it becomes annoying after a few launches. I turn on soft word wrap and make Dired, the file manager inside Emacs, look a bit prettier.</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nv">scroll-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">tool-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">menu-bar-mode</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">default-frame-alist</span><span class="w"> </span><span class="o">&#39;</span><span class="p">((</span><span class="nv">undecorated</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="no">t</span><span class="p">)))</span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">inhibit-startup-screen</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">dired-listing-switches</span><span class="w"> </span><span class="s">&quot;-laGh1v&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">setq-default</span><span class="w"> </span><span class="nv">word-wrap</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
-</code></pre></div>
-
+<pre class="language-lisp" tabindex="0"><code class="language-lisp"><span class="token punctuation">(</span><span class="token car">scroll-bar-mode</span> <span class="token number">-1</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">tool-bar-mode</span> <span class="token number">-1</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">menu-bar-mode</span> <span class="token number">-1</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">setq</span> default-frame-alist <span class="token punctuation">'(</span><span class="token punctuation">(</span><span class="token car">undecorated</span> <span class="token punctuation">.</span> <span class="token boolean">t</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">setq</span> inhibit-startup-screen <span class="token boolean">t</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">setq</span> dired-listing-switches <span class="token string">"-laGh1v"</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">setq-default</span> word-wrap <span class="token boolean">t</span><span class="token punctuation">)</span></code></pre>
 <p>To add a theme and specify a custom font set I do the following:</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">setq</span><span class="w"> </span><span class="nv">sentence-end-double-space</span><span class="w"> </span><span class="no">nil</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">custom-set-faces</span>
-<span class="o">&#39;</span><span class="p">(</span><span class="nv">default</span><span class="w"> </span><span class="p">((</span><span class="no">t</span><span class="w"> </span><span class="p">(</span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;Source Code Pro&quot;</span><span class="w"> </span><span class="ss">:foundry</span><span class="w"> </span><span class="s">&quot;ADBO&quot;</span><span class="w"> </span><span class="ss">:slant</span><span class="w"> </span><span class="nv">normal</span><span class="w"> </span><span class="ss">:weight</span><span class="w"> </span><span class="nv">semi-bold</span><span class="w"> </span><span class="ss">:height</span><span class="w"> </span><span class="mi">132</span><span class="w"> </span><span class="ss">:width</span><span class="w"> </span><span class="nv">normal</span><span class="p">)))))</span>
-<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;custom-theme-load-path</span><span class="w"> </span><span class="s">&quot;~/.emacs.d/themes/&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">load-theme</span><span class="w"> </span><span class="ss">&#39;monokai</span><span class="w"> </span><span class="no">t</span><span class="p">)</span>
-</code></pre></div>
-
+<pre class="language-lisp" tabindex="0"><code class="language-lisp"><span class="token punctuation">(</span><span class="token keyword">setq</span> sentence-end-double-space <span class="token boolean">nil</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">custom-set-faces</span>
+<span class="token punctuation">'(</span><span class="token car">default</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token boolean">t</span> <span class="token punctuation">(</span><span class="token lisp-property property">:family</span> <span class="token string">"Source Code Pro"</span> <span class="token lisp-property property">:foundry</span> <span class="token string">"ADBO"</span> <span class="token lisp-property property">:slant</span> normal <span class="token lisp-property property">:weight</span> semi-bold <span class="token lisp-property property">:height</span> <span class="token number">132</span> <span class="token lisp-property property">:width</span> normal<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">add-to-list</span> <span class="token quoted-symbol variable symbol">'custom-theme-load-path</span> <span class="token string">"~/.emacs.d/themes/"</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">load-theme</span> <span class="token quoted-symbol variable symbol">'monokai</span> <span class="token boolean">t</span><span class="token punctuation">)</span></code></pre>
 <p>I don't specify the font face manually, instead, I choose it from the menu and Emacs adds it to the config. For some reason Emacs thinks that sentences are divided using double spaces, so the first line is to fix it to be able to jump between sentences with Alt-E and Alt-A.</p>
 <p>I use a separate <a href="https://github.com/emacsmirror/reverse-im">reverse-im module</a> to make hotkeys work with Cyrillic keymap, first, we need to add repositories and install 'package':</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">require</span><span class="w"> </span><span class="ss">&#39;package</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;package-archives</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;melpa&quot;</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">&quot;https://melpa.org/packages/&quot;</span><span class="p">))</span>
-<span class="p">(</span><span class="nb">use-package</span><span class="w"> </span><span class="nv">reverse-im</span>
-<span class="w">  </span><span class="ss">:ensure</span><span class="w"> </span><span class="no">t</span>
-<span class="w">  </span><span class="ss">:custom</span>
-<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-input-methods</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;russian-computer&quot;</span><span class="p">))</span>
-<span class="w">  </span><span class="ss">:config</span>
-<span class="w">  </span><span class="p">(</span><span class="nv">reverse-im-mode</span><span class="w"> </span><span class="no">t</span><span class="p">))</span>
-</code></pre></div>
-
-<h2>Markdown</h2>
+<pre class="language-lisp" tabindex="0"><code class="language-lisp"><span class="token punctuation">(</span><span class="token keyword">require</span> <span class="token quoted-symbol variable symbol">'package</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">add-to-list</span> <span class="token quoted-symbol variable symbol">'package-archives</span> <span class="token punctuation">'(</span><span class="token string">"melpa"</span> <span class="token punctuation">.</span> <span class="token string">"https://melpa.org/packages/"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">use-package</span> reverse-im
+  <span class="token lisp-property property">:ensure</span> <span class="token boolean">t</span>
+  <span class="token lisp-property property">:custom</span>
+  <span class="token punctuation">(</span><span class="token car">reverse-im-input-methods</span> <span class="token punctuation">'(</span><span class="token string">"russian-computer"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token lisp-property property">:config</span>
+  <span class="token punctuation">(</span><span class="token car">reverse-im-mode</span> <span class="token boolean">t</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h2 id="markdown">Markdown</h2>
 <p>Regarding Markdown, let's take Vim first:</p>
 <ul>
 <li>Snippets allow you to insert markup for almost everything (links, images, headers, etc.)</li>
@@ -236,19 +440,17 @@
 <li>Auto table formatting</li>
 </ul>
 <p>To do this, you need to install several plugins and set conceal level:</p>
-<div class="highlight"><pre><span></span><code><span class="k">call</span> plug#begin<span class="p">()</span>
-  Plug <span class="s1">&#39;SirVer/ultisnips&#39;</span>
-  Plug <span class="s1">&#39;honza/vim-snippets&#39;</span>
-    <span class="k">let</span> <span class="k">g</span>:UltiSnipsExpandTrigger<span class="p">=</span><span class="s2">&quot;&lt;tab&gt;&quot;</span>
-    <span class="k">let</span> <span class="k">g</span>:UltiSnipsJumpForwardTrigger<span class="p">=</span><span class="s2">&quot;&lt;c-b&gt;&quot;</span>
-    <span class="k">let</span> <span class="k">g</span>:UltiSnipsJumpBackwardTrigger<span class="p">=</span><span class="s2">&quot;&lt;c-z&gt;&quot;</span>
+<pre class="language-vim" tabindex="0"><code class="language-vim"><span class="token keyword">call</span> plug#<span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  Plug <span class="token string">'SirVer/ultisnips'</span>
+  Plug <span class="token string">'honza/vim-snippets'</span>
+    <span class="token keyword">let</span> g<span class="token punctuation">:</span>UltiSnipsExpandTrigger<span class="token operator">=</span><span class="token string">"&lt;tab>"</span>
+    <span class="token keyword">let</span> g<span class="token punctuation">:</span>UltiSnipsJumpForwardTrigger<span class="token operator">=</span><span class="token string">"&lt;c-b>"</span>
+    <span class="token keyword">let</span> g<span class="token punctuation">:</span>UltiSnipsJumpBackwardTrigger<span class="token operator">=</span><span class="token string">"&lt;c-z>"</span>
 
-  Plug <span class="s1">&#39;plasticboy/vim-markdown&#39;</span>
-  Plug <span class="s1">&#39;godlygeek/tabular&#39;</span>
-  <span class="k">call</span> plug#<span class="k">end</span><span class="p">()</span>
-  <span class="k">set</span> <span class="nb">conceallevel</span><span class="p">=</span><span class="m">2</span>
-</code></pre></div>
-
+  Plug <span class="token string">'plasticboy/vim-markdown'</span>
+  Plug <span class="token string">'godlygeek/tabular'</span>
+  <span class="token keyword">call</span> plug#<span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">set</span> conceallevel<span class="token operator">=</span><span class="token number">2</span></code></pre>
 <p>Snippets are quite useful and some people don't get their full capabilities. For a link, for example, I enter '[c' and then Tab in Insert mode, then enter the name for the link, press Ctrl-B and then enter the URL. I also can get back to the link name with Ctrl-Z in Insert mode. Well, it doesn't work so well with links inside tables. :( Concealing also breaks formatting sometimes, like you have plenty of whitespace at the end of the line and some characters on the next line.</p>
 <p>Emacs allows it all this plus a bit more:</p>
 <ul>
@@ -257,9 +459,9 @@
 <li>A few more functions to work with headers</li>
 </ul>
 <p>All of this is done in the Markdown package. Emacs adds lines to config itself, you need to run a package install command. I like Emacs' documentation a bit more because it's embedded into the code. In Vim you have to look at the actual snippet code, and in Emacs, I do Ctrl-H M to view all the up-to-date documentation for Markdown mode.</p>
-<h2>HTML</h2>
-<p>It's simple, you need to insert tags, lots of tags. Emmet is available for Emacs, as for Vim. With Emmet you can enter ul&gt;li*3 to insert an unordered list with 3 bullets. Emmet is a bit overkill for me, so I use embedded HTML mode in Emacs and snippets in Vim to insert paragraphs and some lists. For example, in Vim this could be 'p' and Tab, in Emacs Ctrl-C and then Enter. The workflow after that can be different, as in the terminal I can use xclip to copy a file to the buffer, in Vim you can do ':%y+' and in Emacs, you can do Ctrl-X H and then Alt+W. </p>
-<h2>Taking notes</h2>
+<h2 id="html">HTML</h2>
+<p>It's simple, you need to insert tags, lots of tags. Emmet is available for Emacs, as for Vim. With Emmet you can enter ul&gt;li*3 to insert an unordered list with 3 bullets. Emmet is a bit overkill for me, so I use embedded HTML mode in Emacs and snippets in Vim to insert paragraphs and some lists. For example, in Vim this could be 'p' and Tab, in Emacs Ctrl-C and then Enter. The workflow after that can be different, as in the terminal I can use xclip to copy a file to the buffer, in Vim you can do ':%y+' and in Emacs, you can do Ctrl-X H and then Alt+W.</p>
+<h2 id="taking-notes">Taking notes</h2>
 <p>Org mode generally is a reason to use and learn Emacs, and it's great. At first, I didn't get it so I started with VimWiki. I had to leave it towards Emacs for several reasons:</p>
 <ul>
 <li>Working with links in convenient ways matters</li>
@@ -269,7 +471,7 @@
 </ul>
 <p>Org mode is embedded, so you can just open an .org file and start experimenting!</p>
 <p>For Vim you are welcome to try Orgmode.nvim and Neorg, they look promising, but I didn't try them. You can also use vim-markdown for note-taking, you'll be able to jump between files using links or preview HTML in a browser.</p>
-<h2>Vim advanced mode</h2>
+<h2 id="vim-advanced-mode">Vim advanced mode</h2>
 <p>The 'standard' Vim use is Gnome Terminal + Vim or GVim. What I call 'advanced' mode is a terminal multiplexer like Tmux + terminal (I prefer Alacritty) + Vim. It's a separate topic, how to set it up and use it, I'll just mention what it <strong>allows</strong> you to do:</p>
 <ul>
 <li>Have a terminal pane and a Vim pane inside one window and use Tmux to switch between windows</li>
@@ -277,7 +479,7 @@
 <li>Copy and paste a text from the terminal using the keyboard</li>
 </ul>
 <p>Some people say that it's less disturbing to have everything in a terminal, as you don't switch the context. Just try it and decide for yourself. :)</p>
-<h2>Conclusions</h2>
+<h2 id="conclusions">Conclusions</h2>
 <p>Emacs is my choice at the moment because my acid test revealed that I can do more and get stressed less with Emacs. For example, I work a lot with links, and my workflow is the following:</p>
 <ol>
 <li>Type some text</li>
@@ -286,44 +488,52 @@
 </ol>
 <p>I suffer to do the same with snippets. I had a lot of mistakes with link markup, so I prefer the Emacs way to work with them as it's error-proof. Besides, Org mode was developed in Emacs and it's polished, and Emacs has a lot of export functions which saved a ton of time for me. I learned about Orgmode.nvim and Neorg doing quick research right before writing this article, they seem to be still under development, and I had no reason to switch from Emacs. Although I wrote this particular article in Vim just to be sure that my .vimrc works. :)</p>
 <p>Update: I've found a way to get almost the same in Vim finally: <a href="https://www.reddit.com/r/neovim/comments/tqgcpw/comment/i2h9ivs/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3">UltiSnips + Visual mode</a>.</p>
-            </div>
-            <div class="post_list">
-                <a href="./author/konstantin-ovchinnikov.html">@Konstantin Ovchinnikov</a> 
-                <span class="post_date">Thu 20 October 2022</span>
-                <div><span>Tags: </span>
-                            <span><a href="./tag/linux.html">#linux </a></span>
-                            <span><a href="./tag/productivity.html">#productivity </a></span>
-                            <span><a href="./tag/vim.html">#vim </a></span>
-                            <span><a href="./tag/emacs.html">#emacs </a></span>
-                </div>
-            </div>
-                <div class="comments">
-                    <h2>Comments</h2>
-                    <div id="disqus_thread"></div>
-                    <script type="text/javascript">
-                        var disqus_identifier = "2022-09-linux-5.html";
-                        (function () {
-                            var dsq = document.createElement('script');
-                            dsq.type = 'text/javascript';
-                            dsq.async = true;
-                            dsq.src = 'https://the-real-changes.disqus.com/embed.js';
-                            (document.getElementsByTagName('head')[0] ||
-                            document.getElementsByTagName('body')[0]).appendChild(dsq);
-                        })();
-                    </script>
-                </div>
-        </article>
-    </section>
-</article>
 
-<!-- Footer -->
-    <footer>
-        <p>
-	  Made with <a href="http://getpelican.com/">Pelican</a>, 
-      <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> theme by <a href="https://parbhatpuri.com/">@parbhat</a>, icons by <a href="https://icons8.com/">icon8</a>.
-        </p>
-    </footer>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2022-09-linux-4.html">Cooking Linux the right way: use cases the Unix-way</a></li><li class="links-nextprev-next">Next <i class="fa-solid fa-arrow-right"></i><br><a href="/2023-02-hosting.html">Choosing a web hosting at the end of 2022</a></li>
+</ul>
 
+			</heading-anchors>
+	</main>
 
-</body>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2022-09-linux-5.html` was built on 2024-11-11T20:56:56.052Z -->
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
+<script>
+    const html = document.documentElement;
+    const switchTheme = document.getElementById('theme_switcher');
+    const sun = '<i class="fa-regular fa-sun"></i>';
+    const moon = '<i class="fa-solid fa-moon"></i>';
+
+    // Load the theme from localStorage or set to light by default
+    let isLight = localStorage.getItem('theme') === 'light';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Set initial theme
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+        removeTooltip(3000);
+    });
+
+    switchTheme.addEventListener('click', (e) => {
+        e.preventDefault();
+        isLight = !isLight;
+        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
+        switchTheme.innerHTML = isLight ? sun : moon;
+
+        // Save the current theme to localStorage
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+        removeTooltip();
+    });
+
+    const removeTooltip = (timeInt = 1750) => {
+        setTimeout(() => {
+        switchTheme.blur();
+        }, timeInt);
+    }
+</script>
+	</body>
 </html>

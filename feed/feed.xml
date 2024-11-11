@@ -5,11 +5,28 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2024-05-16T19:18:00Z</updated>
+  <updated>2024-11-11T19:04:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>I&#39;ve migrated the blog</title>
+    <link href="https://en.kovchinnikov.info/2024-11-blogupdate.html" />
+    <updated>2024-11-11T19:04:00Z</updated>
+    <id>https://en.kovchinnikov.info/2024-11-blogupdate.html</id>
+    <content type="html">&lt;p&gt;Hi everyone, a quick update about the blog. I&#39;ve migrated to 11ty, maybe Python is not fun anymore. :) I&#39;d like to mention a few upgrades (and one downgrade), which I did by the way:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Font Awesome instead of icons for social network links&lt;/li&gt;
+&lt;li&gt;Local search, powered by Pagefind, instead of Google search&lt;/li&gt;
+&lt;li&gt;Dark theme&lt;/li&gt;
+&lt;li&gt;PicoCSS&lt;/li&gt;
+&lt;li&gt;I didn&#39;t integrate Disqus this time&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So the focus is on usability and speed, I hope you&#39;ll like it!&lt;/p&gt;
+&lt;p&gt;P.S. I really think I should change something from time to time, just for the sake of changing.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>We&#39;re writing a web app</title>
     <link href="https://en.kovchinnikov.info/2024-05-webapp.html" />
@@ -439,35 +456,6 @@
 &lt;p&gt;First, there&#39;s an interesting concept using Vim with Tmux, along with Tmux&#39;s sessions. If it&#39;s preferable for your workflow, Emacs won&#39;t help you: it sucks in a terminal and it assumes it&#39;s an external program to everything that runs inside it.&lt;/p&gt;
 &lt;p&gt;Second, if you have a terminal-only environment, like &lt;a href=&quot;https://gitforwindows.org/&quot;&gt;Git for Windows&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;No holy wars, peace to everyone.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Reflecting on starting something new and big</title>
-    <link href="https://en.kovchinnikov.info/2023-07-big.html" />
-    <updated>2023-07-04T10:36:00Z</updated>
-    <id>https://en.kovchinnikov.info/2023-07-big.html</id>
-    <content type="html">&lt;p&gt;Again sharing some thoughts that normally go to my private journal only. This time it&#39;s about starting some initiative in an unknown field and something large-scale. How do you feel about that? Here&#39;s what I feel:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;The idea itself seems fascinating at the very beginning, normally you do the following:
-&lt;ul&gt;
-&lt;li&gt;Write a general description, what&#39;s the problem and how you are going to resolve it&lt;/li&gt;
-&lt;li&gt;Break down the work into smaller chunks.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;It starts to feel boring just executing those &#39;smaller chunks&#39;.&lt;/li&gt;
-&lt;li&gt;It turns out that you underestimated the amount of time and effort required like 3x-5x.&lt;/li&gt;
-&lt;li&gt;New ideas appear as you write, so you start to re-write, and you don&#39;t feel that you are moving forward.&lt;/li&gt;
-&lt;li&gt;You feel that you are not able to get to the most exciting and rewarding part for a long time, and every day this moment is postponed: the moment when something starts to appear and work.&lt;/li&gt;
-&lt;li&gt;You pray that all these ideas just let you go and you could get some sleep.&lt;/li&gt;
-&lt;li&gt;Each day you feel guilty that you didn&#39;t contribute enough time and effort.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;I&#39;ve been through this several times, it&#39;s always like that and it&#39;s completely fine.&lt;/p&gt;
-&lt;p&gt;What helps?&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Regular push-ups just to relieve the strain&lt;/li&gt;
-&lt;li&gt;Getting out for a walk&lt;/li&gt;
-&lt;li&gt;Taking time to think&lt;/li&gt;
-&lt;/ul&gt;
 </content>
   </entry>
 </feed>

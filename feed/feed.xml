@@ -5,11 +5,120 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2024-11-11T19:04:00Z</updated>
+  <updated>2024-11-24T19:04:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>How to get new ideas</title>
+    <link href="https://en.kovchinnikov.info/2024-11-newideas.html" />
+    <updated>2024-11-24T19:04:00Z</updated>
+    <id>https://en.kovchinnikov.info/2024-11-newideas.html</id>
+    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;Writing web apps is a thrilling adventure. Web apps allow many people to interact and thus create something great. But where to get ideas on what to write? I tried to look at Github stars and their projects, the projects that get lots of stars on Github and that didn&#39;t work for me. It was just too far away from my skills with the web apps, I needed something real-world small tasks, so I started to look around and just started building things. At the end of the 4th project, new exciting ideas started to come, and I&#39;d like to share this experience and this approach with you. You could also comment, on whether it worked for you.&lt;/p&gt;
+&lt;p&gt;Disclaimer: I&#39;m not so good at building web apps, but I&#39;m a lot better at talking about it. :) I&#39;ll still provide links to my Github repo if you are interested.&lt;/p&gt;
+&lt;h2 id=&quot;the-purpose&quot;&gt;The purpose&lt;/h2&gt;
+&lt;p&gt;Again, that was a fun and rewarding experience, tell me what you think, if you made it this far. :)&lt;/p&gt;
+&lt;p&gt;Building 4 apps sounds like a lot of work, and it is so. You need to stay motivated during this trip, it&#39;s very easy to give up, so here are my motivation tips, some of which are repeated from the &lt;a href=&quot;https://en.kovchinnikov.info/2024-05-webapp.html&quot;&gt;previous article&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First, we need to get experience building web apps for real-world tasks, so we can explore real-world requirements in detail and understand, what &#39;automation&#39; actually means in every particular small case and line of code&lt;/li&gt;
+&lt;li&gt;Second, if you work as a product manager, it&#39;s exciting to explore developers&#39; work. It&#39;s the second exciting thing to explore for me, after user support. :)&lt;/li&gt;
+&lt;li&gt;Third, it&#39;s great, in my opinion, to learn what the buzz about new technologies is about, what they look like, and how it feels working with them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I&#39;ll stop here, but there are a lot of more exciting fruits waiting for you, so let&#39;s go! I have 4 stories to tell:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Messages&lt;/li&gt;
+&lt;li&gt;Home office&lt;/li&gt;
+&lt;li&gt;Time-tracking&lt;/li&gt;
+&lt;li&gt;Resource planning&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I&#39;ll similarly structure every story:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;What the existing app does&lt;/li&gt;
+&lt;li&gt;The requirements – the ideas that they bring were sometimes innovative for me and fun to explore by themselves!&lt;/li&gt;
+&lt;li&gt;The app: I&#39;ll briefly describe, what the app does.&lt;/li&gt;
+&lt;li&gt;What I learned: what was fun, what was not, what I learned about the tools, etc.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here&#39;s a link to the Github repo, so you could explore my ugly code. :)&lt;/p&gt;
+&lt;h2 id=&quot;messages&quot;&gt;Messages&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Existing app functions&lt;/strong&gt;: there was an existing app, developed using Microsoft Power Platform. The entrance was free, but then you should pay, depending on the transaction number. But in our situation there were two other major drawbacks:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;We have field workers, who do not necessarily have emails. And with Microsoft, you always need to stick to their eco-system. And every corporate email using Exchange costs money.&lt;/li&gt;
+&lt;li&gt;I found a video about low-code apps, and it turns out that the generated code is a mess, you can&#39;t do anything with it if you&#39;d like to have something non-standard.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The functions were to create messages of different types and save them. Then there&#39;s a &#39;Microsoft list&#39; to have these messages in a table, where you can edit and delete them. The fields for each message type are a little bit different.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Requirements&lt;/strong&gt;. We need to manage the accounts: create accounts, log in/logout, have some roles, and limit the functions based on the user roles. After that, I&#39;d just duplicate the messages, but I&#39;d like to have a little bit more fancy interface to edit or delete a message. It&#39;s also logical to have a message status: open/closed. And for this, we need functions to close or re-open the messages. To collaborate we need comments for each message.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;My app functions&lt;/strong&gt;. I implemented all the requirements, including the roles. Also, I implemented a migration to have some default roles in a newly installed app.&lt;/p&gt;
+&lt;p&gt;Initial menu:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/TgOjB2j2qp-256.avif 256w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/TgOjB2j2qp-256.webp 256w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/TgOjB2j2qp-256.png&quot; alt=&quot;Initial menu&quot; title=&quot;Initial menu&quot; width=&quot;256&quot; height=&quot;182&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;List of messages:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/O7v3stvtu6-1329.avif 1329w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/O7v3stvtu6-1329.webp 1329w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/O7v3stvtu6-1329.png&quot; alt=&quot;List of messages&quot; title=&quot;List of messages&quot; width=&quot;1329&quot; height=&quot;347&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;A form to edit a message or leave comments:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/QDtD9xQmn--409.avif 409w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/QDtD9xQmn--409.webp 409w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/QDtD9xQmn--409.png&quot; alt=&quot;Edit a message&quot; title=&quot;Edit a message&quot; width=&quot;409&quot; height=&quot;913&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;Admin interface:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/uQMujHO2kq-692.avif 692w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/uQMujHO2kq-692.webp 692w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/uQMujHO2kq-692.png&quot; alt=&quot;Admin interface&quot; title=&quot;Admin interface&quot; width=&quot;692&quot; height=&quot;660&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What I learned&lt;/strong&gt;. Login and authentication/authorization functions are tricky and that&#39;s the strong point in Django. It even has roles. I also leveraged the admin interface not to write more than half of the app myself. Reloading the whole page is fast, for example, deleting a message and reloading a list of the messages, and it&#39;s not disturbing at all even without HTMX. I also used a CSS library and Google Material Symbols, so I was able to make a mobile interface as an adaptive page layout. Working with migrations is automated in Django, it speeds up the development as well.&lt;/p&gt;
+&lt;h2 id=&quot;homeoffice&quot;&gt;Homeoffice&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Existing app functions&lt;/strong&gt;. The existing app was an Excel list, which is rather smart if you ask me. In rows we have employees, in columns, we have dates from the current month. Copying the cell formatting from a template you can indicate for others, that you work at home, are on a business trip, are ill, have a vacation or it&#39;s a holiday for the whole company. The &#39;hack&#39; I found nice was that they use one letter and a colored background to indicate an event, so the whole table is very compact. You could also add a comment to a cell.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Requirements&lt;/strong&gt;. The problem with Excel is obviously that it&#39;s a single-user &#39;app&#39;. There are also no permissions, so normally an employee should not be able to edit events for other employees; only managers should be able to do that.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;My app functions&lt;/strong&gt;. I decided to leverage the function of the web app to display the same data in different views, so I added a &#39;My calendar&#39; view to view only my events. The calendar was also interesting to play with: I knew the current date and thus was able to display the current month by default (Excel displayed what the last user saw). I decided to display one month at a time only, and I gave a user a function to choose a month. I also added a setup table to add event types and choose a background color (type in HTML color) for this event type. And I have roles to &#39;edit my events&#39; and &#39;edit all events&#39; (a manager).&lt;/p&gt;
+&lt;p&gt;A calendar:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/WCUxIeTJit-921.avif 921w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/WCUxIeTJit-921.webp 921w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/WCUxIeTJit-921.png&quot; alt=&quot;Calendar&quot; title=&quot;Calendar&quot; width=&quot;921&quot; height=&quot;614&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;My calendar:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/A5JFysXtVS-494.avif 494w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/A5JFysXtVS-494.webp 494w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/A5JFysXtVS-494.png&quot; alt=&quot;My calendar&quot; title=&quot;My calendar&quot; width=&quot;494&quot; height=&quot;738&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What I learned&lt;/strong&gt; Working with the calendar makes you learn a lot: I ended with 3-dimensional arrays. But I needed more, and here template limitations come into play. A lack of variables is a major drawback, so I wrote a lot of code to convert data for a template and a lot of code in the template to convert data for a display. And it wasn&#39;t fun at all. I tried different designs, I also used classes to minimize the code. The calendar app pissed me off and made me think about switching to another framework, which is also a good result, I suppose.&lt;/p&gt;
+&lt;h2 id=&quot;time-tracking&quot;&gt;Time-tracking&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Existing app functions&lt;/strong&gt;. We have two apps: a full-time-tracking web app, which we rent, and Excel. In a web app, you can start/stop the time, have pauses, and so on. In Excel you have a tab for a month, you need to enter your working time overall, time off, and time per project.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Requirements&lt;/strong&gt;. I decided to clone an &#39;Excel app&#39;, but enhance it with a few automation: take info from the homeoffice table by default, and add some checks to make sure that the number of hours match.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;My app functions&lt;/strong&gt;. I didn&#39;t finish the app, because I stuck to Excel form with new functions. The complexity of the logic was a bit overwhelming for my skills. But the idea is that when the user opens the month, a time sheet is created based on the data in home-office.&lt;/p&gt;
+&lt;p&gt;Standard working hours setup:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/U-fIZrGh4s-534.avif 534w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/U-fIZrGh4s-534.webp 534w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/U-fIZrGh4s-534.png&quot; alt=&quot;Standard working hours&quot; title=&quot;Standard working hours&quot; width=&quot;534&quot; height=&quot;793&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;A time-sheet:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/W2RHX0fjGc-987.avif 987w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/W2RHX0fjGc-987.webp 987w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/W2RHX0fjGc-987.png&quot; alt=&quot;Time-sheet&quot; title=&quot;Time-sheet&quot; width=&quot;987&quot; height=&quot;808&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What I learned&lt;/strong&gt;. This level of complexity was a little bit too much for me, but I was able to demonstrate, that in a web app, you can use the data from one app in another app. And that&#39;s where automation starts. One more important outcome for me is to clarify the task before programming it. It doesn&#39;t become clearer while programming by itself. Python in general has some &#39;export to Excel&#39; functions, but I didn&#39;t get to that. The app served its purpose, and I wasn&#39;t motivated to finish it, because I knew we wouldn&#39;t use it anyway.&lt;/p&gt;
+&lt;h2 id=&quot;resource-planning&quot;&gt;Resource planning&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Existing app functions&lt;/strong&gt;. Workers and cars are planned daily in an Excel table for the project, which is a number and a location. Then updated table is sent using a messenger. What was unexpected, is that it&#39;s useful for them to know &#39;who is where&#39;. It was also obvious, that Excel was overcomplicated because there were a few ways to do one thing, to show that the worker was ill, for example.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Requirements&lt;/strong&gt;. The owner of this table agreed that the view should be changed, so I googled for some examples, and from the &#39;project-day&#39; table I came to the &#39;worker/car-day&#39; table. Regarding illnesses and vacations, I had this in &#39;Homeoffice&#39; already, so I could use that. I also had a &#39;my calendar&#39; view to see the tasks for a worker within a month and the car he/she has for these tasks. And the top idea was to add notifications to a messenger when the event was changed.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;My app functions&lt;/strong&gt;. I coded this app in 4 days because I had all the functions to work with the calendar and add/edit/delete events. I added a &#39;service event&#39; for a car. By the way, it was great to inherit &#39;my calendar&#39; class and extend it. I didn&#39;t code the notifications to the messenger, but generally, it&#39;s possible. Again, not on my skill level.&lt;/p&gt;
+&lt;p&gt;Resource planning:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/1Pstb3veV3-822.avif 822w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/1Pstb3veV3-822.webp 822w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/1Pstb3veV3-822.png&quot; alt=&quot;Resource planning&quot; title=&quot;Resource planning&quot; width=&quot;822&quot; height=&quot;872&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;My plan:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/6ja8RM-eQ2-1125.avif 1125w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/6ja8RM-eQ2-1125.webp 1125w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/2024-11-newideas.html/6ja8RM-eQ2-1125.png&quot; alt=&quot;My plan&quot; title=&quot;My plan&quot; width=&quot;1125&quot; height=&quot;584&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What I learned&lt;/strong&gt;. When you have a good problem statement, a live user able to discuss his/her requirements, and a real pain to resolve, it can be a lot of fun to develop an app. Besides, I had programmed some classes and functions before that, so it was encouraging to show the result for the user so fast.&lt;/p&gt;
+&lt;h2 id=&quot;a-video&quot;&gt;A video&lt;/h2&gt;
+&lt;p&gt;A very important point and a step is not to be shy and to make a video about your app(s) and share it with the world. I made a video for my colleagues, and they liked it. I had several bullet points to cover:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Multi-user apps vs. Excel&lt;/li&gt;
+&lt;li&gt;Apps for Microsoft ecosystem vs. opensource tools&lt;/li&gt;
+&lt;li&gt;The cost of ownership for an app&lt;/li&gt;
+&lt;li&gt;The case for writing your app&lt;/li&gt;
+&lt;li&gt;The marketplaces for hiring freelance developers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When I finished the video, it seemed that I started to understand some of the topics mentioned above. :) Seriously, it&#39;s hard to stop a development, and when you make a video, you reflect on your experience, you notice what could be done better, and you make a snapshot of the current app&#39;s version. It&#39;s a very important and underestimated step to get new ideas because you have to analyze the tasks and the solutions from a high level one more time. If you want to go further with the app development, just put a link to a video on your GitHub page, and it will contribute to the app&#39;s popularity!&lt;/p&gt;
+&lt;h2 id=&quot;the-real-world-outcome&quot;&gt;The real-world outcome&lt;/h2&gt;
+&lt;p&gt;My colleagues made some conclusions after watching my video, not quite what I expected:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Transactional DB-based systems are better than Excel&lt;/li&gt;
+&lt;li&gt;They&#39;d like to have an all-in-one system to minimize administration efforts&lt;/li&gt;
+&lt;li&gt;They looked attentively at opportunities to develop their apps and decided not to do that :)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I enjoy doing the job where I get more, so that&#39;s what I&#39;ve learned in general:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;There are great lean non-standard solutions to standard problems in terms of requirements. And I didn&#39;t expect that!&lt;/li&gt;
+&lt;li&gt;It&#39;s not difficult at all to create your web app with Django.&lt;/li&gt;
+&lt;li&gt;Writing an app with Django sometimes leads to writing a lot of code, which (I assume) I shouldn&#39;t be writing: maybe I need another patterns or algorithm knowledge, maybe I need another tool (so I started writing with Express.js and I write very little code indeed).&lt;/li&gt;
+&lt;li&gt;Django has some &#39;strong choices&#39; regarding the app structure, which are good and which I&#39;d like to have in Express.js, for example. I hope to write the next article about writing Express.js the Django way, so stay tuned. :)&lt;/li&gt;
+&lt;li&gt;Django has some limitations, with which it&#39;s not worth studying for me further, even with some front-ends or HTMX.&lt;/li&gt;
+&lt;li&gt;It&#39;s great to have some corner cases like working with the calendar when you can thoroughly evaluate your toolset; the calendar makes you work with the tables, and it differs from working with single values a lot; I like the tooling from JS for arrays more.&lt;/li&gt;
+&lt;li&gt;When the platform sticks to the standards like HTML and HTTP, it&#39;s great. For example, Django has only get and post requests, and I got tired of using these two types only, and the routing table becomes ugly quickly.&lt;/li&gt;
+&lt;li&gt;A lot of time developing a web app is spent writing templates, and an easy option like Pug works great for me. Maybe JSX is more like HTML (and I contradict myself from the previous point), but I get HTML fatigue from Django templates.
+The back-end-only app is easy to develop and quite feasible to develop alone, and it&#39;s highly functional, but it needs some revival, at least like HTMX. On the other hand, I&#39;m not assured that a front-end app is needed at all.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Again, that was a fun and rewarding experience; tell me what you think if you made it this far. :)&lt;/p&gt;
+&lt;p&gt;The github repo is here: &lt;a href=&quot;https://en.kovchinnikov.info/2024-11-newideas.html&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>I&#39;ve migrated the blog</title>
     <link href="https://en.kovchinnikov.info/2024-11-blogupdate.html" />
@@ -390,72 +499,6 @@
 &lt;/ul&gt;
 &lt;p&gt;I think that any app will do, you just need to install it and practice regularly.&lt;/p&gt;
 &lt;p&gt;And a bonus: if you need to edit PDF, LibreOffice Draw can do that!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Emacs is so underrated</title>
-    <link href="https://en.kovchinnikov.info/2023-07-emacs.html" />
-    <updated>2023-07-06T12:13:00Z</updated>
-    <id>https://en.kovchinnikov.info/2023-07-emacs.html</id>
-    <content type="html">&lt;p&gt;What initially sparked my interest in Emacs was that &lt;a href=&quot;https://survey.stackoverflow.co/2023/#section-most-popular-technologies-integrated-development-environment&quot;&gt;it was used so little&lt;/a&gt; (among developers). At this point, I used Emacs and Vim a lot and I chose Emacs for text writing (I&#39;m not a programmer) for Markdown (mostly this website), HTML (my private journal), and &lt;a href=&quot;https://orgmode.org/&quot;&gt;Org&lt;/a&gt; (structuring any information). I tried Doom Emacs and yet I&#39;m using vanilla Emacs with 45-line config, of which 11 lines are comments. So, in this post, I&#39;d like to comment on the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Doom Emacs and Spacemacs: the Good and the Bad&lt;/li&gt;
-&lt;li&gt;Writing texts vs. programming and the vi-mode&lt;/li&gt;
-&lt;li&gt;Using Emacs&#39; modes&lt;/li&gt;
-&lt;li&gt;Current state of Neovim development vs. Emacs&lt;/li&gt;
-&lt;li&gt;Emacs extensions, are they really useful&lt;/li&gt;
-&lt;li&gt;Use cases where Vim is unbeatable&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;It&#39;s not a &#39;Emacs vs. Vim&#39; article, I just try to structure my thoughts. Let&#39;s start then.&lt;/p&gt;
-&lt;h2 id=&quot;doom-emacs-and-spacemacs-the-good-and-the-bad&quot;&gt;Doom Emacs and Spacemacs: the good and the bad&lt;/h2&gt;
-&lt;p&gt;There are lots of great things about &lt;a href=&quot;https://github.com/doomemacs/doomemacs&quot;&gt;Doom Emacs&lt;/a&gt; and &lt;a href=&quot;https://www.spacemacs.org/&quot;&gt;Spacemacs&lt;/a&gt;. And first of all, I&#39;d like to say that the concepts and the products are great, from my viewpoint. Notably, for the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;These products initiated a new wave of interest towards Emacs and maybe inspired lots of other products, including &lt;a href=&quot;https://www.lazyvim.org/&quot;&gt;LazyVim&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;It&#39;s a lot easier to install packages in these products, especially when you need a lot of extensions&lt;/li&gt;
-&lt;li&gt;They add a fresh look to a really old product, which is valued by new users&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;There are some drawbacks though, which made me stay with vanilla Emacs, because I use only a few modes and extensions:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Both are environments, made for someone else&#39;s needs, not mine&lt;/li&gt;
-&lt;li&gt;At least Doom Emacs isn&#39;t very stable&lt;/li&gt;
-&lt;li&gt;I&#39;m totally fine with the Emacs standard package installation method&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I started tuning vanilla Emacs, got what I wanted in a few hours and I&#39;m still satisfied with that. But let&#39;s take a step back and look at my requirements.&lt;/p&gt;
-&lt;h2 id=&quot;writing-texts-vs-programming-and-the-vi-mode&quot;&gt;Writing texts vs. programming and the vi-mode&lt;/h2&gt;
-&lt;p&gt;I write texts, and I spend a lot more time writing than editing text. I just have some ideas, I need to put them into files fast. In programming, it&#39;s different, I assume, especially when you do some code refactoring. So I don&#39;t need to switch to &#39;edit mode&#39; (in any editor) very often. I&#39;d rather prefer to enter &#39;edit mode&#39; temporarily, fix a few things and then just continue writing the text. I need to minimize distraction and be able to move and fix things ASAP and think about my ideas and not about how to edit the text. I have vi keybindings in my muscle memory and still I&#39;m more comfortable with Emacs vanilla keybindings.&lt;/p&gt;
-&lt;p&gt;The second thing about &#39;vi modes&#39; in Emacs is that Emacs modes have &#39;Emacs-style&#39; keybindings. On the contrary, vim plugins have &#39;vi-style&#39; keybindings. But mixing these two drives me crazy. Yes, in Emacs you can customize any keybindings, but there are lots of them in just 4 modes I use (including plain-text editing). I assume it&#39;s not worth wasting my time on that. And even if you customize the keybindings... old keybindings will stay in the help files, which I use a lot. For example, I don&#39;t work often with tables in Markdown, so after customization, I&#39;ll have to look in my config and not in the Markdown help file.&lt;/p&gt;
-&lt;p&gt;There are two arguments, that Vim is more ergonomic than Emacs:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Editing in Vim requires fewer keystrokes&lt;/li&gt;
-&lt;li&gt;You don&#39;t need to press &lt;kbd&gt;Ctrl-Alt-something&lt;/kbd&gt;, which brings pain to your fingers&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Let&#39;s look at a particular use case: I need to insert a bulleted list in HTML:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;In Emacs, you can do that with HTML mode, which is installed by default. In Vim, you can install snippets or Emmet.&lt;/li&gt;
-&lt;li&gt;In Emacs, I press &lt;kbd&gt;Ctrl&lt;/kbd&gt; with one hand and press &lt;kbd&gt;C C&lt;/kbd&gt; with another hand, then release &lt;kbd&gt;Ctrl&lt;/kbd&gt; and press &lt;kbd&gt;U&lt;/kbd&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;It&#39;s very important to press modifier keys with another hand to evade discomfort. And it requires some self-discipline, but it&#39;s worth it. But what I see here, is that I pressed &lt;kbd&gt;Ctrl&lt;/kbd&gt; once: I pressed it, held it, and then released it. Instead, in Vim I need to enter command mode and exit command mode with two keystrokes. And in Emacs, I don&#39;t think about &#39;entering command mode&#39; and &#39;exiting command mode&#39; while I hold &lt;kbd&gt;Ctrl&lt;/kbd&gt;. What&#39;s more ergonomic then?&lt;/p&gt;
-&lt;p&gt;Ok, let&#39;s talk about the modes I use every day.&lt;/p&gt;
-&lt;h2 id=&quot;using-emacs-modes&quot;&gt;Using Emacs&#39; modes&lt;/h2&gt;
-&lt;p&gt;I use three modes main modes (and text mode, of course): Markdown, Org, and HTML.&lt;/p&gt;
-&lt;p&gt;Regarding &lt;strong&gt;Markdown&lt;/strong&gt; Emacs has a great mode written by &lt;a href=&quot;https://jblevins.org/projects/markdown-mode/&quot;&gt;Jason Blevins&lt;/a&gt;. Just install it, open the .md file in Emacs, and press &lt;kbd&gt;Ctrl-H M&lt;/kbd&gt;. It&#39;s just great, it can do almost everything. And there are some more markdown modes available, notably for creating a table of contents. On the contrary, in Vim I tried to use &lt;a href=&quot;https://github.com/vimwiki/vimwiki&quot;&gt;vimwiki&lt;/a&gt; and &lt;a href=&quot;https://github.com/honza/vim-snippets&quot;&gt;snippets&lt;/a&gt;, but I wasn&#39;t able to get even some part of Markdown mode functions in Emacs. It&#39;s very sad, but it seems that Vim is more used by programmers who don&#39;t write a lot of Markdown.&lt;/p&gt;
-&lt;p&gt;Regarding &lt;strong&gt;Org-mode&lt;/strong&gt;: this man, Carsten Dominik, who created it – I think he&#39;s a genius. The whole concept is fascinating and it works great when you have to structure a lot of information and update it frequently. To get something similar I needed to have a wiki and constantly switch between &#39;read&#39; and &#39;write&#39; modes. Again, the &#39;export&#39; feature is one of my favorites. But Org-mode is implemented &lt;a href=&quot;https://orgmode.org/#editors&quot;&gt;in Vim and Neovim&lt;/a&gt; only partially. Why&#39;s that? Maybe not enough people are interested in that. And maybe it&#39;s not so simple to implement all the Org-mode features in Neovim even considering it has Lua.&lt;/p&gt;
-&lt;p&gt;I suppose I need all the power of Org-mode and I prefer to use a more stable product if I have a choice. Org-mode was the main reason for me to switch to Emacs because I can do everything else just in any editor.&lt;/p&gt;
-&lt;h2 id=&quot;current-state-of-neovim-development-vs-emacs&quot;&gt;Current state of Neovim development vs. Emacs&lt;/h2&gt;
-&lt;p&gt;Vim for a long time was considered a &#39;fast bare-metal editor&#39;, but look what&#39;s happening:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Vim got a file manager&lt;/li&gt;
-&lt;li&gt;Vim has Org-mode implementation(s)&lt;/li&gt;
-&lt;li&gt;Neovim now has Lua to make it more customizable&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Doesn&#39;t it seem like Vim/Neovim is just repeating Emacs&#39;s path? But a lot of talented people already put their effort into developing great modes and extensions for Emacs, you can just use it. When they needed to edit Markdown or write an Org-mode there was no Neovim with Lua, so they did it for Emacs. And these modes are still very, very useful. Why should I suffer then with a lack of functions and instability? So, I don&#39;t.&lt;/p&gt;
-&lt;h2 id=&quot;emacs-extensions-are-they-really-useful&quot;&gt;Emacs extensions, are they really useful&lt;/h2&gt;
-&lt;p&gt;I don&#39;t use lots of extensions for Emacs. I tried an email client and a &lt;a href=&quot;https://github.com/zevlg/telega.el&quot;&gt;Telegram client&lt;/a&gt; just for an experiment. But I use some Gmail features like &#39;undo send&#39; and &#39;schedule send&#39; that are hard to reproduce in an email client. So, are Emacs extensions an overkill? I think the RSS client and IRC client could be useful for me, just to use the same environment and the same keystrokes for editing.&lt;/p&gt;
-&lt;p&gt;And, by the way, I don&#39;t use &lt;a href=&quot;https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html&quot;&gt;dired&lt;/a&gt; or pdf viewer inside Emacs. But I&#39;m happy all these extensions exist, so people do have a choice. It&#39;s also great to have Vim/Neovim as a choice, so when is it preferable for me?&lt;/p&gt;
-&lt;h2 id=&quot;use-cases-where-vim-is-unbeatable&quot;&gt;Use cases where Vim is unbeatable&lt;/h2&gt;
-&lt;p&gt;First, there&#39;s an interesting concept using Vim with Tmux, along with Tmux&#39;s sessions. If it&#39;s preferable for your workflow, Emacs won&#39;t help you: it sucks in a terminal and it assumes it&#39;s an external program to everything that runs inside it.&lt;/p&gt;
-&lt;p&gt;Second, if you have a terminal-only environment, like &lt;a href=&quot;https://gitforwindows.org/&quot;&gt;Git for Windows&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;No holy wars, peace to everyone.&lt;/p&gt;
 </content>
   </entry>
 </feed>

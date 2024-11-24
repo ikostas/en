@@ -8,315 +8,46 @@
 		<meta name="description" content="Learning web apps from a historical perspective">
 		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
 		<meta name="generator" content="Eleventy v3.0.0">
-		
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
-		<style>/**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-	color: #f8f8f2;
-	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-	border-radius: 0.3em;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #272822;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: #8292a2;
-}
-
-.token.punctuation {
-	color: #f8f8f2;
-}
-
-.token.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #f92672;
-}
-
-.token.boolean,
-.token.number {
-	color: #ae81ff;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: #a6e22e;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-	color: #f8f8f2;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-	color: #e6db74;
-}
-
-.token.keyword {
-	color: #66d9ef;
-}
-
-.token.regex,
-.token.important {
-	color: #fd971f;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
-}
-/*
- * New diff- syntax
- */
-
-pre[class*="language-diff-"] {
-	--eleventy-code-padding: 1.25em;
-	padding-left: var(--eleventy-code-padding);
-	padding-right: var(--eleventy-code-padding);
-}
-.token.deleted {
-	background-color: hsl(0, 51%, 37%);
-	color: inherit;
-}
-.token.inserted {
-	background-color: hsl(126, 31%, 39%);
-	color: inherit;
-}
-
-/* Make the + and - characters unselectable for copy/paste */
-.token.prefix.unchanged,
-.token.prefix.inserted,
-.token.prefix.deleted {
-	-webkit-user-select: none;
-	user-select: none;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding-top: 2px;
-	padding-bottom: 2px;
-}
-.token.prefix.inserted,
-.token.prefix.deleted {
-	width: var(--eleventy-code-padding);
-	background-color: rgba(0,0,0,.2);
-}
-
-/* Optional: full-width background color */
-.token.inserted:not(.prefix),
-.token.deleted:not(.prefix) {
-	display: block;
-	margin-left: calc(-1 * var(--eleventy-code-padding));
-	margin-right: calc(-1 * var(--eleventy-code-padding));
-	text-decoration: none; /* override del, ins, mark defaults */
-	color: inherit; /* override del, ins, mark defaults */
-}
-footer {
-	text-align: center;
-	font-size: 0.7em;
-}
-html {
-  font-family: 'Open Sans', 'helvetica', sans-serif;
-}
-.postlist {
-	list-style: none;
-	padding: 0;
-	padding-left: 1.5rem;
-}
-.postlist-item {
-	display: block;
-	flex-wrap: wrap;
-	align-items: baseline;
-	counter-increment: start-from -1;
-	margin-bottom: 1em;
-}
-.postlist-item:before {
-  display: inline-flex;
-	pointer-events: none;
-	content: "" counter(start-from, decimal-leading-zero) ". ";
-	line-height: 100%;
-	text-align: right;
-	margin-left: -1.5rem;
-}
-.postlist-date,
-.postlist-item:before {
-	color: var(--color-gray-90);
-}
-.postlist-date {
-	display: block;
-	padding-top: 0.5em;
-	word-spacing: -0.5px;
-}
-.postlist-description {
-	display: block;
-	padding-top: 0.5em;
-}
-.postlist-link {
-	flex-basis: calc(100% - 1.5rem);
-	padding-left: .25em;
-	padding-right: .5em;
-}
-.postlist-item-active .postlist-link {
-		font-weight: bold;
-}
-
-/* Tags */
-.post-tag {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-}
-.postlist-item > .post-tag {
-		align-self: center;
-}
-
-/* Tags list */
-.post-metadata {
-	display: inline-flex;
-	flex-wrap: wrap;
-	gap: .5em;
-	padding: 0;
-	margin: 0;
-}
-.post-metadata-li {
-	list-style: none;
-}
-
-.post-metadata time {
-		margin-right: 1em;
-}
-.links-nextprev {
-	display: flex;
-	justify-content: space-between;
-	gap: .5em 1em;
-	padding: 1em 0;
-}
-.links-nextprev-next {
-	text-align: right;
-	list-style: none;
-}
-.links-nextprev-prev {
-	text-align: left;
-	list-style: none;
-}</style>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 		<script src="/pagefind/pagefind-ui.js"></script>
-		 <style>
-    svg {
-      width: var(--font-size);
-      height: var(--font-size);
-      color: var(--contrast);
-    }
-    </style>
+		<link rel="stylesheet" href="/dist/c1uweZPBtd.css">
+		<script defer="" type="module" src="/dist/iI_QbEBaC4.js"></script>
 	</head>
 	<body>
-	<header class="container">
+		<header class="container">
 			<div id="search"></div>
-			<script>
-			window.addEventListener('DOMContentLoaded', (event) => {
-				new PagefindUI({ element: "#search", showSubResults: true });
-			});
-			</script>
-		<nav>
-		<ul>
+			<nav>
+				<ul>
 					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
-		</ul>
-		<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/blog/">Archive</a></li>
-				<li><a href="/tags/">Tags</a></li>
-				<li>| </li>
-				<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-twitter"></i></a></li>
-				<li><a href="https://t.me/therealchanges"><i class="fa-brands fa-telegram"></i></a></li>
-				<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
-				<li><a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg"><i class="fa-brands fa-youtube"></i></a></li>
-				<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
-				<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
-				<li>| </li>
-				<li><a href="#" color="black" id="theme_switcher"></a></li>
-			</ul>
-		</nav>
-	</header>
-	<main class="container">
+				</ul>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-twitter"></i></a></li>
+					<li><a href="https://t.me/therealchanges"><i class="fa-brands fa-telegram"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg"><i class="fa-brands fa-youtube"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
 			<heading-anchors data-pagefind-body="">
-				
 <h1 id="we-re-writing-a-web-app">We&#39;re writing a web app</h1>
-
 <ul class="post-metadata">
 	<li class="post-metadata-li"><time datetime="2024-05-16">16 May 2024</time></li>
-	<li class="post-tag"><a href="/tags/dev/" class="post-tag">#dev</a>, </li>
-	<li class="post-tag"><a href="/tags/productivity/" class="post-tag">#productivity</a>, </li>
+	<li class="post-tag"><a href="/tags/dev/" class="post-tag">#dev</a>,</li>
+	<li class="post-tag"><a href="/tags/productivity/" class="post-tag">#productivity</a>,</li>
 	<li class="post-tag"><a href="/tags/python/" class="post-tag">#python</a></li>
 </ul>
-
 <h2 id="why-write-a-web-app-1">Why write a web app #1</h2>
 <p>I wrote a lot about learning Linux tools and using them effectively. The question is what do we do with that? Or: what's next regarding personal development? What I've noticed, is that a lot of people tend to go into system administration, meaning setting up server applications. Here I should mention <a href="https://www.ubuntupit.com/">UbuntuPit</a> as a great source for these projects. This path has a few drawbacks, although it's useful for learning what exists:</p>
 <ul>
@@ -364,52 +95,12 @@ html {
 <li>I'm working with a calendar app, and now the idea of having a very limited language in the templates doesn't feel right. Yes, you could use Django as an API for a front-end app, but I was eager to leverage all of its advantages, fast models and fast templates being among them.</li>
 <li>When you step on JS and Express territory, you again have to choose the modules and you also feel the absence of documentation, compared to pythonic tools and specifically Django. It sucks, but there's a reason it's so popular, and it's interesting to find it out, so my journey continues.</li>
 </ol>
-
 <ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2024-04-maturity.html">A few maturity models</a></li><li class="links-nextprev-next">Next <i class="fa-solid fa-arrow-right"></i><br><a href="/2024-11-blogupdate.html">I&#39;ve migrated the blog</a></li>
 </ul>
-
-			</heading-anchors>
-	</main>
-
+</heading-anchors>
+		</main>
 		<footer>
 			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
 		</footer>
-		<!-- This page `/2024-05-webapp.html` was built on 2024-11-11T21:48:07.544Z -->
-		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
-		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
-<script>
-    const html = document.documentElement;
-    const switchTheme = document.getElementById('theme_switcher');
-    const sun = '<i class="fa-regular fa-sun"></i>';
-    const moon = '<i class="fa-solid fa-moon"></i>';
-
-    // Load the theme from localStorage or set to light by default
-    let isLight = localStorage.getItem('theme') === 'light';
-
-    document.addEventListener('DOMContentLoaded', () => {
-        // Set initial theme
-        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
-        switchTheme.innerHTML = isLight ? sun : moon;
-        removeTooltip(3000);
-    });
-
-    switchTheme.addEventListener('click', (e) => {
-        e.preventDefault();
-        isLight = !isLight;
-        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
-        switchTheme.innerHTML = isLight ? sun : moon;
-
-        // Save the current theme to localStorage
-        localStorage.setItem('theme', isLight ? 'light' : 'dark');
-
-        removeTooltip();
-    });
-
-    const removeTooltip = (timeInt = 1750) => {
-        setTimeout(() => {
-        switchTheme.blur();
-        }, timeInt);
-    }
-</script>
-	</body>
-</html>
+		<!-- This page `/2024-05-webapp.html` was built on 2024-11-24T22:26:51.186Z -->
+	</body></html>

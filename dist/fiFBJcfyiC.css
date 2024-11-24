@@ -1,0 +1,143 @@
+.postlist { counter-reset: start-from 12 }
+footer {
+	text-align: center;
+	font-size: 0.7em;
+}
+html {
+  font-family: 'Open Sans', 'helvetica', sans-serif;
+}
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: block;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+  display: inline-flex;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	display: block;
+	padding-top: 0.5em;
+	word-spacing: -0.5px;
+}
+.postlist-description {
+	display: block;
+	padding-top: 0.5em;
+}
+.postlist-link {
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+}
+.postlist-item-active .postlist-link {
+		font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.postlist-item > .post-tag {
+		align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata-li {
+	list-style: none;
+}
+
+.post-metadata time {
+		margin-right: 1em;
+}
+.links-nextprev {
+	display: flex;
+	justify-content: space-between;
+	gap: .5em 1em;
+	padding: 1em 0;
+}
+.links-nextprev-next {
+	text-align: right;
+	list-style: none;
+}
+.links-nextprev-prev {
+	text-align: left;
+	list-style: none;
+}
+svg {
+	width: var(--font-size);
+	height: var(--font-size);
+	color: var(--contrast);
+}
+/* Base Pagefind colors using Pico CSS variables */
+:root {
+  --pagefind-ui-primary: var(--primary);
+  --pagefind-ui-text: var(--color);
+  --pagefind-ui-background: var(--background-color);
+  --pagefind-ui-border: var(--muted-border-color);
+  --pagefind-ui-tag: var(--secondary);
+}
+
+/* Search input colors */
+.pagefind-ui__search-input {
+  background-color: var(--pagefind-ui-background);
+  color: var(--pagefind-ui-text);
+  border-color: var(--primary);
+}
+
+/* Search results text */
+.pagefind-ui__message,
+.pagefind-ui__result-excerpt,
+.pagefind-ui__result-tags {
+  color: var(--pagefind-ui-text);
+}
+
+/* Result title */
+.pagefind-ui__result-title {
+  color: var(--pagefind-ui-primary);
+}
+
+/* Tags */
+.pagefind-ui__tag {
+  background: var(--pagefind-ui-tag);
+  color: var(--contrast);
+}
+
+/* Clear button */
+.pagefind-ui__search-clear {
+  background-color: var(--secondary);
+  color: var(--contrast);
+}
+
+.pagefind-ui__search-clear:hover {
+  background-color: var(--secondary-hover);
+}
+
+/* Search match highlighting */
+mark {
+  background-color: var(--primary-hover);
+  color: var(--primary-inverse);
+}

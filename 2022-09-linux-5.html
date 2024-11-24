@@ -8,316 +8,47 @@
 		<meta name="description" content="Vim and Emacs for Markdown, HTML, and note taking">
 		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
 		<meta name="generator" content="Eleventy v3.0.0">
-		
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
-		<style>/**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-	color: #f8f8f2;
-	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-	border-radius: 0.3em;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #272822;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: #8292a2;
-}
-
-.token.punctuation {
-	color: #f8f8f2;
-}
-
-.token.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #f92672;
-}
-
-.token.boolean,
-.token.number {
-	color: #ae81ff;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: #a6e22e;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-	color: #f8f8f2;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-	color: #e6db74;
-}
-
-.token.keyword {
-	color: #66d9ef;
-}
-
-.token.regex,
-.token.important {
-	color: #fd971f;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
-}
-/*
- * New diff- syntax
- */
-
-pre[class*="language-diff-"] {
-	--eleventy-code-padding: 1.25em;
-	padding-left: var(--eleventy-code-padding);
-	padding-right: var(--eleventy-code-padding);
-}
-.token.deleted {
-	background-color: hsl(0, 51%, 37%);
-	color: inherit;
-}
-.token.inserted {
-	background-color: hsl(126, 31%, 39%);
-	color: inherit;
-}
-
-/* Make the + and - characters unselectable for copy/paste */
-.token.prefix.unchanged,
-.token.prefix.inserted,
-.token.prefix.deleted {
-	-webkit-user-select: none;
-	user-select: none;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding-top: 2px;
-	padding-bottom: 2px;
-}
-.token.prefix.inserted,
-.token.prefix.deleted {
-	width: var(--eleventy-code-padding);
-	background-color: rgba(0,0,0,.2);
-}
-
-/* Optional: full-width background color */
-.token.inserted:not(.prefix),
-.token.deleted:not(.prefix) {
-	display: block;
-	margin-left: calc(-1 * var(--eleventy-code-padding));
-	margin-right: calc(-1 * var(--eleventy-code-padding));
-	text-decoration: none; /* override del, ins, mark defaults */
-	color: inherit; /* override del, ins, mark defaults */
-}
-footer {
-	text-align: center;
-	font-size: 0.7em;
-}
-html {
-  font-family: 'Open Sans', 'helvetica', sans-serif;
-}
-.postlist {
-	list-style: none;
-	padding: 0;
-	padding-left: 1.5rem;
-}
-.postlist-item {
-	display: block;
-	flex-wrap: wrap;
-	align-items: baseline;
-	counter-increment: start-from -1;
-	margin-bottom: 1em;
-}
-.postlist-item:before {
-  display: inline-flex;
-	pointer-events: none;
-	content: "" counter(start-from, decimal-leading-zero) ". ";
-	line-height: 100%;
-	text-align: right;
-	margin-left: -1.5rem;
-}
-.postlist-date,
-.postlist-item:before {
-	color: var(--color-gray-90);
-}
-.postlist-date {
-	display: block;
-	padding-top: 0.5em;
-	word-spacing: -0.5px;
-}
-.postlist-description {
-	display: block;
-	padding-top: 0.5em;
-}
-.postlist-link {
-	flex-basis: calc(100% - 1.5rem);
-	padding-left: .25em;
-	padding-right: .5em;
-}
-.postlist-item-active .postlist-link {
-		font-weight: bold;
-}
-
-/* Tags */
-.post-tag {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-}
-.postlist-item > .post-tag {
-		align-self: center;
-}
-
-/* Tags list */
-.post-metadata {
-	display: inline-flex;
-	flex-wrap: wrap;
-	gap: .5em;
-	padding: 0;
-	margin: 0;
-}
-.post-metadata-li {
-	list-style: none;
-}
-
-.post-metadata time {
-		margin-right: 1em;
-}
-.links-nextprev {
-	display: flex;
-	justify-content: space-between;
-	gap: .5em 1em;
-	padding: 1em 0;
-}
-.links-nextprev-next {
-	text-align: right;
-	list-style: none;
-}
-.links-nextprev-prev {
-	text-align: left;
-	list-style: none;
-}</style>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 		<script src="/pagefind/pagefind-ui.js"></script>
-		 <style>
-    svg {
-      width: var(--font-size);
-      height: var(--font-size);
-      color: var(--contrast);
-    }
-    </style>
+		<link rel="stylesheet" href="/dist/c1uweZPBtd.css">
+		<script defer="" type="module" src="/dist/iI_QbEBaC4.js"></script>
 	</head>
 	<body>
-	<header class="container">
+		<header class="container">
 			<div id="search"></div>
-			<script>
-			window.addEventListener('DOMContentLoaded', (event) => {
-				new PagefindUI({ element: "#search", showSubResults: true });
-			});
-			</script>
-		<nav>
-		<ul>
+			<nav>
+				<ul>
 					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
-		</ul>
-		<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/blog/">Archive</a></li>
-				<li><a href="/tags/">Tags</a></li>
-				<li>| </li>
-				<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-twitter"></i></a></li>
-				<li><a href="https://t.me/therealchanges"><i class="fa-brands fa-telegram"></i></a></li>
-				<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
-				<li><a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg"><i class="fa-brands fa-youtube"></i></a></li>
-				<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
-				<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
-				<li>| </li>
-				<li><a href="#" color="black" id="theme_switcher"></a></li>
-			</ul>
-		</nav>
-	</header>
-	<main class="container">
+				</ul>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-twitter"></i></a></li>
+					<li><a href="https://t.me/therealchanges"><i class="fa-brands fa-telegram"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg"><i class="fa-brands fa-youtube"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
 			<heading-anchors data-pagefind-body="">
-				
 <h1 id="cooking-linux-the-right-way-vim-and-emacs">Cooking Linux the right way: Vim and Emacs</h1>
-
 <ul class="post-metadata">
 	<li class="post-metadata-li"><time datetime="2022-10-20">20 October 2022</time></li>
-	<li class="post-tag"><a href="/tags/linux/" class="post-tag">#linux</a>, </li>
-	<li class="post-tag"><a href="/tags/productivity/" class="post-tag">#productivity</a>, </li>
-	<li class="post-tag"><a href="/tags/vim/" class="post-tag">#vim</a>, </li>
+	<li class="post-tag"><a href="/tags/linux/" class="post-tag">#linux</a>,</li>
+	<li class="post-tag"><a href="/tags/productivity/" class="post-tag">#productivity</a>,</li>
+	<li class="post-tag"><a href="/tags/vim/" class="post-tag">#vim</a>,</li>
 	<li class="post-tag"><a href="/tags/emacs/" class="post-tag">#emacs</a></li>
 </ul>
-
 <p>OK, let's talk about Linux superpowers. Vim's superpower is to move fast, really fast. To edit by commands with single keystrokes, cut, paste, find &amp; replace the text at a maximum speed. Yes, there's some learning curve, but you can start with Vim mode in some editors and IDE and after learning Vim make use of Vim keystrokes in other programs, including Chromium, for example. Navigating and editing with the keyboard, without using a mouse will be faster.</p>
 <p>Emacs' superpower is that you can get further than customizing, you can re-write the behavior of the editor using Lisp. As a demo of this deep customization or re-writing capabilities, you can use the Evil mode, which emulates Vim inside Emacs well. Emacs have modules for RSS reader, Telegram client, Media player, Email and Newsreader, IRC client, and more. The question with Emacs is actually &quot;What do you want from it?&quot;</p>
 <p>Vim and Emacs are different regarding approaches to text editing: Vim is like &quot;The editor does exactly what I type&quot;, while Emacs is more &quot;Let me do that for you&quot;, like inserting closing parenthesis, formatting text, etc. But both editors are customizable to the extent that you can have <strong>almost</strong> the same behavior. Both have file managers nowadays. Emacs is an integrated environment to suit all your needs, while Vim sticks to the standards and there's an advanced mode to use Vim, (which I'll cover in this article) with a terminal multiplexer. To demonstrate the superpowers I'll take three use cases Markdown, HTML, note taking. I'm not a programmer and that's what I use on a day-to-day basis. I worked in Vim and Emacs for several months like 8 hours a day, so it's not a first impression.</p>
@@ -488,52 +219,12 @@ html {
 </ol>
 <p>I suffer to do the same with snippets. I had a lot of mistakes with link markup, so I prefer the Emacs way to work with them as it's error-proof. Besides, Org mode was developed in Emacs and it's polished, and Emacs has a lot of export functions which saved a ton of time for me. I learned about Orgmode.nvim and Neorg doing quick research right before writing this article, they seem to be still under development, and I had no reason to switch from Emacs. Although I wrote this particular article in Vim just to be sure that my .vimrc works. :)</p>
 <p>Update: I've found a way to get almost the same in Vim finally: <a href="https://www.reddit.com/r/neovim/comments/tqgcpw/comment/i2h9ivs/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3">UltiSnips + Visual mode</a>.</p>
-
 <ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2022-09-linux-4.html">Cooking Linux the right way: use cases the Unix-way</a></li><li class="links-nextprev-next">Next <i class="fa-solid fa-arrow-right"></i><br><a href="/2023-02-hosting.html">Choosing a web hosting at the end of 2022</a></li>
 </ul>
-
-			</heading-anchors>
-	</main>
-
+</heading-anchors>
+		</main>
 		<footer>
 			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
 		</footer>
-		<!-- This page `/2022-09-linux-5.html` was built on 2024-11-11T21:48:07.540Z -->
-		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
-		<script type="module" src="/dist/rJ3_G-2ArF.js"></script>
-<script>
-    const html = document.documentElement;
-    const switchTheme = document.getElementById('theme_switcher');
-    const sun = '<i class="fa-regular fa-sun"></i>';
-    const moon = '<i class="fa-solid fa-moon"></i>';
-
-    // Load the theme from localStorage or set to light by default
-    let isLight = localStorage.getItem('theme') === 'light';
-
-    document.addEventListener('DOMContentLoaded', () => {
-        // Set initial theme
-        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
-        switchTheme.innerHTML = isLight ? sun : moon;
-        removeTooltip(3000);
-    });
-
-    switchTheme.addEventListener('click', (e) => {
-        e.preventDefault();
-        isLight = !isLight;
-        html.setAttribute('data-theme', isLight ? 'light' : 'dark');
-        switchTheme.innerHTML = isLight ? sun : moon;
-
-        // Save the current theme to localStorage
-        localStorage.setItem('theme', isLight ? 'light' : 'dark');
-
-        removeTooltip();
-    });
-
-    const removeTooltip = (timeInt = 1750) => {
-        setTimeout(() => {
-        switchTheme.blur();
-        }, timeInt);
-    }
-</script>
-	</body>
-</html>
+		<!-- This page `/2022-09-linux-5.html` was built on 2024-11-24T22:26:51.183Z -->
+	</body></html>

@@ -137,27 +137,32 @@
 	</url>
 	
 	<url>
-		<loc>https://en.kovchinnikov.info/blog/</loc>
-		<lastmod>2024-11-11</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://en.kovchinnikov.info/</loc>
-		<lastmod>2024-11-11</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://en.kovchinnikov.info/tags/</loc>
-		<lastmod>2024-11-11</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://en.kovchinnikov.info/2024-11-blogupdate.html</loc>
 		<lastmod>2024-11-11</lastmod>
 	</url>
 	
 	<url>
+		<loc>https://en.kovchinnikov.info/blog/</loc>
+		<lastmod>2024-11-24</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://en.kovchinnikov.info/</loc>
+		<lastmod>2024-11-24</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://en.kovchinnikov.info/tags/</loc>
+		<lastmod>2024-11-24</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://en.kovchinnikov.info/2024-11-newideas.html</loc>
+		<lastmod>2024-11-24</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://en.kovchinnikov.info/feed/feed.xml</loc>
-		<lastmod>2024-11-11</lastmod>
+		<lastmod>2024-11-24</lastmod>
 	</url>
 </urlset>

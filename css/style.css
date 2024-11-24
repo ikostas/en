@@ -86,3 +86,8 @@ html {
 	text-align: left;
 	list-style: none;
 }
+svg {
+	width: var(--font-size);
+	height: var(--font-size);
+	color: var(--contrast);
+}

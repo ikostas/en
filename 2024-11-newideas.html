@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>How to get new ideas</title>
+		<meta name="description" content="Solving real-world problems with web apps to get new ideas">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/c1uweZPBtd.css">
+		<script defer="" type="module" src="/dist/iI_QbEBaC4.js"></script>
+	</head>
+	<body>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-twitter"></i></a></li>
+					<li><a href="https://t.me/therealchanges"><i class="fa-brands fa-telegram"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg"><i class="fa-brands fa-youtube"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors data-pagefind-body="">
+<h1 id="how-to-get-new-ideas">How to get new ideas</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2024-11-24">24 November 2024</time></li>
+	<li class="post-tag"><a href="/tags/dev/" class="post-tag">#dev</a></li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>Writing web apps is a thrilling adventure. Web apps allow many people to interact and thus create something great. But where to get ideas on what to write? I tried to look at Github stars and their projects, the projects that get lots of stars on Github and that didn't work for me. It was just too far away from my skills with the web apps, I needed something real-world small tasks, so I started to look around and just started building things. At the end of the 4th project, new exciting ideas started to come, and I'd like to share this experience and this approach with you. You could also comment, on whether it worked for you.</p>
+<p>Disclaimer: I'm not so good at building web apps, but I'm a lot better at talking about it. :) I'll still provide links to my Github repo if you are interested.</p>
+<h2 id="the-purpose">The purpose</h2>
+<p>Again, that was a fun and rewarding experience, tell me what you think, if you made it this far. :)</p>
+<p>Building 4 apps sounds like a lot of work, and it is so. You need to stay motivated during this trip, it's very easy to give up, so here are my motivation tips, some of which are repeated from the <a href="2024-05-webapp.html">previous article</a>:</p>
+<ul>
+<li>First, we need to get experience building web apps for real-world tasks, so we can explore real-world requirements in detail and understand, what 'automation' actually means in every particular small case and line of code</li>
+<li>Second, if you work as a product manager, it's exciting to explore developers' work. It's the second exciting thing to explore for me, after user support. :)</li>
+<li>Third, it's great, in my opinion, to learn what the buzz about new technologies is about, what they look like, and how it feels working with them.</li>
+</ul>
+<p>I'll stop here, but there are a lot of more exciting fruits waiting for you, so let's go! I have 4 stories to tell:</p>
+<ul>
+<li>Messages</li>
+<li>Home office</li>
+<li>Time-tracking</li>
+<li>Resource planning</li>
+</ul>
+<p>I'll similarly structure every story:</p>
+<ol>
+<li>What the existing app does</li>
+<li>The requirements – the ideas that they bring were sometimes innovative for me and fun to explore by themselves!</li>
+<li>The app: I'll briefly describe, what the app does.</li>
+<li>What I learned: what was fun, what was not, what I learned about the tools, etc.</li>
+</ol>
+<p>Here's a link to the Github repo, so you could explore my ugly code. :)</p>
+<h2 id="messages">Messages</h2>
+<p><strong>Existing app functions</strong>: there was an existing app, developed using Microsoft Power Platform. The entrance was free, but then you should pay, depending on the transaction number. But in our situation there were two other major drawbacks:</p>
+<ol>
+<li>We have field workers, who do not necessarily have emails. And with Microsoft, you always need to stick to their eco-system. And every corporate email using Exchange costs money.</li>
+<li>I found a video about low-code apps, and it turns out that the generated code is a mess, you can't do anything with it if you'd like to have something non-standard.</li>
+</ol>
+<p>The functions were to create messages of different types and save them. Then there's a 'Microsoft list' to have these messages in a table, where you can edit and delete them. The fields for each message type are a little bit different.</p>
+<p><strong>Requirements</strong>. We need to manage the accounts: create accounts, log in/logout, have some roles, and limit the functions based on the user roles. After that, I'd just duplicate the messages, but I'd like to have a little bit more fancy interface to edit or delete a message. It's also logical to have a message status: open/closed. And for this, we need functions to close or re-open the messages. To collaborate we need comments for each message.</p>
+<p><strong>My app functions</strong>. I implemented all the requirements, including the roles. Also, I implemented a migration to have some default roles in a newly installed app.</p>
+<p>Initial menu:</p>
+<p><picture><source type="image/avif" srcset="/2024-11-newideas.html/TgOjB2j2qp-256.avif 256w"><source type="image/webp" srcset="/2024-11-newideas.html/TgOjB2j2qp-256.webp 256w"><img loading="lazy" decoding="async" src="/2024-11-newideas.html/TgOjB2j2qp-256.png" alt="Initial menu" title="Initial menu" width="256" height="182"></picture></p>
+<p>List of messages:</p>
+<p><picture><source type="image/avif" srcset="/2024-11-newideas.html/O7v3stvtu6-1329.avif 1329w"><source type="image/webp" srcset="/2024-11-newideas.html/O7v3stvtu6-1329.webp 1329w"><img loading="lazy" decoding="async" src="/2024-11-newideas.html/O7v3stvtu6-1329.png" alt="List of messages" title="List of messages" width="1329" height="347"></picture></p>
+<p>A form to edit a message or leave comments:</p>
+<p><picture><source type="image/avif" srcset="/2024-11-newideas.html/QDtD9xQmn--409.avif 409w"><source type="image/webp" srcset="/2024-11-newideas.html/QDtD9xQmn--409.webp 409w"><img loading="lazy" decoding="async" src="/2024-11-newideas.html/QDtD9xQmn--409.png" alt="Edit a message" title="Edit a message" width="409" height="913"></picture></p>
+<p>Admin interface:</p>
+<p><picture><source type="image/avif" srcset="/2024-11-newideas.html/uQMujHO2kq-692.avif 692w"><source type="image/webp" srcset="/2024-11-newideas.html/uQMujHO2kq-692.webp 692w"><img loading="lazy" decoding="async" src="/2024-11-newideas.html/uQMujHO2kq-692.png" alt="Admin interface" title="Admin interface" width="692" height="660"></picture></p>
+<p><strong>What I learned</strong>. Login and authentication/authorization functions are tricky and that's the strong point in Django. It even has roles. I also leveraged the admin interface not to write more than half of the app myself. Reloading the whole page is fast, for example, deleting a message and reloading a list of the messages, and it's not disturbing at all even without HTMX. I also used a CSS library and Google Material Symbols, so I was able to make a mobile interface as an adaptive page layout. Working with migrations is automated in Django, it speeds up the development as well.</p>
+<h2 id="homeoffice">Homeoffice</h2>
+<p><strong>Existing app functions</strong>. The existing app was an Excel list, which is rather smart if you ask me. In rows we have employees, in columns, we have dates from the current month. Copying the cell formatting from a template you can indicate for others, that you work at home, are on a business trip, are ill, have a vacation or it's a holiday for the whole company. The 'hack' I found nice was that they use one letter and a colored background to indicate an event, so the whole table is very compact. You could also add a comment to a cell.</p>
+<p><strong>Requirements</strong>. The problem with Excel is obviously that it's a single-user 'app'. There are also no permissions, so normally an employee should not be able to edit events for other employees; only managers should be able to do that.</p>
+<p><strong>My app functions</strong>. I decided to leverage the function of the web app to display the same data in different views, so I added a 'My calendar' view to view only my events. The calendar was also interesting to play with: I knew the current date and thus was able to display the current month by default (Excel displayed what the last user saw). I decided to display one month at a time only, and I gave a user a function to choose a month. I also added a setup table to add event types and choose a background color (type in HTML color) for this event type. And I have roles to 'edit my events' and 'edit all events' (a manager).</p>
+<p>A calendar:</p>
+<p><picture><source type="image/avif" srcset="/2024-11-newideas.html/WCUxIeTJit-921.avif 921w"><source type="image/webp" srcset="/2024-11-newideas.html/WCUxIeTJit-921.webp 921w"><img loading="lazy" decoding="async" src="/2024-11-newideas.html/WCUxIeTJit-921.png" alt="Calendar" title="Calendar" width="921" height="614"></picture></p>
+<p>My calendar:</p>
+<p><picture><source type="image/avif" srcset="/2024-11-newideas.html/A5JFysXtVS-494.avif 494w"><source type="image/webp" srcset="/2024-11-newideas.html/A5JFysXtVS-494.webp 494w"><img loading="lazy" decoding="async" src="/2024-11-newideas.html/A5JFysXtVS-494.png" alt="My calendar" title="My calendar" width="494" height="738"></picture></p>
+<p><strong>What I learned</strong> Working with the calendar makes you learn a lot: I ended with 3-dimensional arrays. But I needed more, and here template limitations come into play. A lack of variables is a major drawback, so I wrote a lot of code to convert data for a template and a lot of code in the template to convert data for a display. And it wasn't fun at all. I tried different designs, I also used classes to minimize the code. The calendar app pissed me off and made me think about switching to another framework, which is also a good result, I suppose.</p>
+<h2 id="time-tracking">Time-tracking</h2>
+<p><strong>Existing app functions</strong>. We have two apps: a full-time-tracking web app, which we rent, and Excel. In a web app, you can start/stop the time, have pauses, and so on. In Excel you have a tab for a month, you need to enter your working time overall, time off, and time per project.</p>
+<p><strong>Requirements</strong>. I decided to clone an 'Excel app', but enhance it with a few automation: take info from the homeoffice table by default, and add some checks to make sure that the number of hours match.</p>
+<p><strong>My app functions</strong>. I didn't finish the app, because I stuck to Excel form with new functions. The complexity of the logic was a bit overwhelming for my skills. But the idea is that when the user opens the month, a time sheet is created based on the data in home-office.</p>
+<p>Standard working hours setup:</p>
+<p><picture><source type="image/avif" srcset="/2024-11-newideas.html/U-fIZrGh4s-534.avif 534w"><source type="image/webp" srcset="/2024-11-newideas.html/U-fIZrGh4s-534.webp 534w"><img loading="lazy" decoding="async" src="/2024-11-newideas.html/U-fIZrGh4s-534.png" alt="Standard working hours" title="Standard working hours" width="534" height="793"></picture></p>
+<p>A time-sheet:</p>
+<p><picture><source type="image/avif" srcset="/2024-11-newideas.html/W2RHX0fjGc-987.avif 987w"><source type="image/webp" srcset="/2024-11-newideas.html/W2RHX0fjGc-987.webp 987w"><img loading="lazy" decoding="async" src="/2024-11-newideas.html/W2RHX0fjGc-987.png" alt="Time-sheet" title="Time-sheet" width="987" height="808"></picture></p>
+<p><strong>What I learned</strong>. This level of complexity was a little bit too much for me, but I was able to demonstrate, that in a web app, you can use the data from one app in another app. And that's where automation starts. One more important outcome for me is to clarify the task before programming it. It doesn't become clearer while programming by itself. Python in general has some 'export to Excel' functions, but I didn't get to that. The app served its purpose, and I wasn't motivated to finish it, because I knew we wouldn't use it anyway.</p>
+<h2 id="resource-planning">Resource planning</h2>
+<p><strong>Existing app functions</strong>. Workers and cars are planned daily in an Excel table for the project, which is a number and a location. Then updated table is sent using a messenger. What was unexpected, is that it's useful for them to know 'who is where'. It was also obvious, that Excel was overcomplicated because there were a few ways to do one thing, to show that the worker was ill, for example.</p>
+<p><strong>Requirements</strong>. The owner of this table agreed that the view should be changed, so I googled for some examples, and from the 'project-day' table I came to the 'worker/car-day' table. Regarding illnesses and vacations, I had this in 'Homeoffice' already, so I could use that. I also had a 'my calendar' view to see the tasks for a worker within a month and the car he/she has for these tasks. And the top idea was to add notifications to a messenger when the event was changed.</p>
+<p><strong>My app functions</strong>. I coded this app in 4 days because I had all the functions to work with the calendar and add/edit/delete events. I added a 'service event' for a car. By the way, it was great to inherit 'my calendar' class and extend it. I didn't code the notifications to the messenger, but generally, it's possible. Again, not on my skill level.</p>
+<p>Resource planning:</p>
+<p><picture><source type="image/avif" srcset="/2024-11-newideas.html/1Pstb3veV3-822.avif 822w"><source type="image/webp" srcset="/2024-11-newideas.html/1Pstb3veV3-822.webp 822w"><img loading="lazy" decoding="async" src="/2024-11-newideas.html/1Pstb3veV3-822.png" alt="Resource planning" title="Resource planning" width="822" height="872"></picture></p>
+<p>My plan:</p>
+<p><picture><source type="image/avif" srcset="/2024-11-newideas.html/6ja8RM-eQ2-1125.avif 1125w"><source type="image/webp" srcset="/2024-11-newideas.html/6ja8RM-eQ2-1125.webp 1125w"><img loading="lazy" decoding="async" src="/2024-11-newideas.html/6ja8RM-eQ2-1125.png" alt="My plan" title="My plan" width="1125" height="584"></picture></p>
+<p><strong>What I learned</strong>. When you have a good problem statement, a live user able to discuss his/her requirements, and a real pain to resolve, it can be a lot of fun to develop an app. Besides, I had programmed some classes and functions before that, so it was encouraging to show the result for the user so fast.</p>
+<h2 id="a-video">A video</h2>
+<p>A very important point and a step is not to be shy and to make a video about your app(s) and share it with the world. I made a video for my colleagues, and they liked it. I had several bullet points to cover:</p>
+<ul>
+<li>Multi-user apps vs. Excel</li>
+<li>Apps for Microsoft ecosystem vs. opensource tools</li>
+<li>The cost of ownership for an app</li>
+<li>The case for writing your app</li>
+<li>The marketplaces for hiring freelance developers</li>
+</ul>
+<p>When I finished the video, it seemed that I started to understand some of the topics mentioned above. :) Seriously, it's hard to stop a development, and when you make a video, you reflect on your experience, you notice what could be done better, and you make a snapshot of the current app's version. It's a very important and underestimated step to get new ideas because you have to analyze the tasks and the solutions from a high level one more time. If you want to go further with the app development, just put a link to a video on your GitHub page, and it will contribute to the app's popularity!</p>
+<h2 id="the-real-world-outcome">The real-world outcome</h2>
+<p>My colleagues made some conclusions after watching my video, not quite what I expected:</p>
+<ul>
+<li>Transactional DB-based systems are better than Excel</li>
+<li>They'd like to have an all-in-one system to minimize administration efforts</li>
+<li>They looked attentively at opportunities to develop their apps and decided not to do that :)</li>
+</ul>
+<p>I enjoy doing the job where I get more, so that's what I've learned in general:</p>
+<ul>
+<li>There are great lean non-standard solutions to standard problems in terms of requirements. And I didn't expect that!</li>
+<li>It's not difficult at all to create your web app with Django.</li>
+<li>Writing an app with Django sometimes leads to writing a lot of code, which (I assume) I shouldn't be writing: maybe I need another patterns or algorithm knowledge, maybe I need another tool (so I started writing with Express.js and I write very little code indeed).</li>
+<li>Django has some 'strong choices' regarding the app structure, which are good and which I'd like to have in Express.js, for example. I hope to write the next article about writing Express.js the Django way, so stay tuned. :)</li>
+<li>Django has some limitations, with which it's not worth studying for me further, even with some front-ends or HTMX.</li>
+<li>It's great to have some corner cases like working with the calendar when you can thoroughly evaluate your toolset; the calendar makes you work with the tables, and it differs from working with single values a lot; I like the tooling from JS for arrays more.</li>
+<li>When the platform sticks to the standards like HTML and HTTP, it's great. For example, Django has only get and post requests, and I got tired of using these two types only, and the routing table becomes ugly quickly.</li>
+<li>A lot of time developing a web app is spent writing templates, and an easy option like Pug works great for me. Maybe JSX is more like HTML (and I contradict myself from the previous point), but I get HTML fatigue from Django templates.
+The back-end-only app is easy to develop and quite feasible to develop alone, and it's highly functional, but it needs some revival, at least like HTMX. On the other hand, I'm not assured that a front-end app is needed at all.</li>
+</ul>
+<p>Again, that was a fun and rewarding experience; tell me what you think if you made it this far. :)</p>
+<p>The github repo is here: <a href=""></a></p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2024-11-blogupdate.html">I&#39;ve migrated the blog</a></li>
+</ul>
+</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2024-11-newideas.html` was built on 2024-11-24T22:26:51.186Z -->
+	</body></html>

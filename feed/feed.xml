@@ -5,11 +5,78 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2024-11-24T19:04:00Z</updated>
+  <updated>2024-11-24T22:00:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>An Express web app</title>
+    <link href="https://en.kovchinnikov.info/2024-11-express.html" />
+    <updated>2024-11-24T22:00:00Z</updated>
+    <id>https://en.kovchinnikov.info/2024-11-express.html</id>
+    <content type="html">&lt;p&gt;As promised, I&#39;d like to write about my personal Express.js experience. A brief disclaimer: I know it&#39;s considered outdated, and I know everyone is writing with bun + Hono + TypeScript, but I have to say something. I compared Express.JS + JavaScript for single-man small projects with the following options, which I call web frameworks for non-programmers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Django&lt;/li&gt;
+&lt;li&gt;Ruby on Rails&lt;/li&gt;
+&lt;li&gt;Laravel&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And my criteria are a bit special:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sticking to the standards, like HTTP requests. I got some pain with POST/GET-only requests with Django.&lt;/li&gt;
+&lt;li&gt;Performance, not so slow as these three. :) I also like the idea of having more advanced architecture, although I don&#39;t understand much about software architecture. :)&lt;/li&gt;
+&lt;li&gt;Some automation like migrations, which is quite nice with Sequelize (I know everybody uses Prisma). But Django migrations are better. :(&lt;/li&gt;
+&lt;li&gt;Templates with minimal effort, so I like Pug. More on that below.&lt;/li&gt;
+&lt;li&gt;I&#39;d like to build a front-end as simple as possible with HTMX and some CSS library (PicoCSS in my case). You can do that with any framework by the way, I just explained my choice for UI/UX here.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;fixing-express&quot;&gt;Fixing Express&lt;/h2&gt;
+&lt;p&gt;The widely known drawback of the JS ecosystem is that it&#39;s very fragmented, and it&#39;s hard to figure out what to pick for your needs. And it turns out that reading the express.js manual helps, at least it helped me. To get a nice app structure, you could use something like:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;npm init -y&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;npm install express&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;npx express-generator -v pug --git&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;npm install&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The idea here is to get something similar to Django in terms of the structure. There was MVT (model-view-template), and we got to an MVC (model-view-controller). Express generator doesn&#39;t create separate files for controllers, but it&#39;s not complicated to do. After that, I got to a structure I liked, and I almost have my urls.py now! That&#39;s fine because this structure allows you to concentrate on writing the code and not think much about the structure anymore.&lt;/p&gt;
+&lt;h2 id=&quot;regarding-pug&quot;&gt;Regarding Pug&lt;/h2&gt;
+&lt;p&gt;I fully understand why the mainstream is now with JSX and other HTML-based templating engines. Again, my tastes and requirements are very specific:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I&#39;d like to write minimal code to generate HTML&lt;/li&gt;
+&lt;li&gt;I don&#39;t like to mess up with closing tags&lt;/li&gt;
+&lt;li&gt;I&#39;d like to have a programming language inside templates&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The syntax with meaningful indents resembles Python, and that&#39;s not bad at all if you ask me. Returning to the old templates and modifying them is as painful as it can be, just because I don&#39;t mess up with the angle brackets. And I didn&#39;t see any alternative to Pug in this regard. And I didn&#39;t migrate to another framework just because Express.js has basic routing and Pug support. That&#39;s all you get, and that&#39;s all I need. In my current app under development, I spend a lot of time writing templates, so it paid off.&lt;/p&gt;
+&lt;h2 id=&quot;css&quot;&gt;CSS&lt;/h2&gt;
+&lt;p&gt;Regarding the CSS, I fully understand why everyone is using Tailwind.css, but I just don&#39;t need all that, and the functionality is primary to me. I tried some styles and am completely satisfied with Pico.css. The forms are great there, and I use forms heavily. I work mostly with the placement of the elements on the page, not with their appearance. And I&#39;m quite happy with that for now. By the way, Pico.css has some CSS-only nice interactive elements like accordions.&lt;/p&gt;
+&lt;h2 id=&quot;htmx&quot;&gt;HTMX&lt;/h2&gt;
+&lt;p&gt;HTMX allows you not to reload a full page, and that&#39;s what AJAX is about. And HTMX is a user-friendly interface for AJAX. You have to invest some time to learn how to use HTMX and what level of interactivity you can get. It&#39;s opposite to the React approach, for example: there you have an interactive app, you need JSON from the back-end, and you don&#39;t think about it at all. Here you &lt;strong&gt;need&lt;/strong&gt; to think: about what&#39;s on the back end, what&#39;s in HTMX, and how to change the back end because of that. After that, you get some real-world use cases for HTMX. I first developed a page without HTMX and then added HTMX to improve user experience. If it doesn&#39;t work out, I just return to a static page. Sometimes I had several iterations, for example with tables.&lt;/p&gt;
+&lt;p&gt;It&#39;s easy to delete a row from the table, but when you add a row, you need to know: should I add a table header as well? I thought for some time about that, and I didn&#39;t like this idea: I needed a lot more code on the back end, so I stayed away from HTMX. But then I thought: it&#39;s useful to redraw a table alone in this case, there&#39;s no &#39;if&#39; for the table header.&lt;/p&gt;
+&lt;h2 id=&quot;sequelize&quot;&gt;Sequelize&lt;/h2&gt;
+&lt;p&gt;The reasoning behind choosing Sequelize was its pure-JS nature. I just compared the code I needed in Prisma and Sequelize for the same task. Sequelize is also not a full-auto migrations generator like Django, but you can generate a database structure and a migration with one command. It makes you think about the structure beforehand, but the structure &lt;strong&gt;is&lt;/strong&gt; important. In terms of learning, it&#39;s useful and not so hard.&lt;/p&gt;
+&lt;h2 id=&quot;typical-tasks&quot;&gt;Typical tasks&lt;/h2&gt;
+&lt;p&gt;Regarding logging the users in, I know that JWS-tokens are the best, but I failed to implement it and backed to &lt;code&gt;express-session&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For file uploads, I used &lt;code&gt;multer&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I like using Markdown, so I ended up using &lt;code&gt;marked&lt;/code&gt; for that.&lt;/p&gt;
+&lt;h2 id=&quot;the-workflow&quot;&gt;The workflow&lt;/h2&gt;
+&lt;p&gt;Experience with Django helped a lot to figure out the most important thing – my development workflow. I mean something like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Adding tables to the database and migrations with the Sequelize CLI&lt;/li&gt;
+&lt;li&gt;Adding routes&lt;/li&gt;
+&lt;li&gt;Adding templates&lt;/li&gt;
+&lt;li&gt;Adding controllers&lt;/li&gt;
+&lt;li&gt;Modifying routes, templates, and controllers to add HTMX&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The trick is that this workflow is described in lots of tutorials and courses for Django, but it&#39;s impossible to find a similar tutorial for Express. Just because Express is so non-opinionated and lots of components exist. The components combination and the workflow can be different in each case, so Django was a template that worked for me. When you are looking for an Express tutorial, in many cases you find tutorials for MongoDB, but it&#39;s so different, that it changes the application logic. And that was the major difficulty for me.&lt;/p&gt;
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+&lt;p&gt;Compared to Django, I think I progressed in many ways with the web app:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I write less code, and it&#39;s not more high-level; it&#39;s more meaningful, I would say.&lt;/li&gt;
+&lt;li&gt;I spend less time with the templates, and this time is more pleasant.&lt;/li&gt;
+&lt;li&gt;I added interactivity to the app with HTMX and enhanced UI with Pure.css.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I&#39;ve heard one thought from &lt;a href=&quot;https://www.youtube.com/@ThePrimeTimeagen/&quot;&gt;Primagen&lt;/a&gt;: the best framework is the framework you enjoy working with the most. Thus you can progress better and faster. Now I feel not constrained to implement my ideas, I have some more ideas to implement, and I don&#39;t find it complicated. I wish you could feel it, it&#39;s a very pleasant feeling.&lt;/p&gt;
+&lt;p&gt;If you made it this far, you may be interested in checking &lt;a href=&quot;https://github.com/ikostas/pmo-express&quot;&gt;my git repo&lt;/a&gt; for my ugly web app.&lt;/p&gt;
+&lt;p&gt;That&#39;s all for today, see you! More ugly web apps are to come! :)&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>How to get new ideas</title>
     <link href="https://en.kovchinnikov.info/2024-11-newideas.html" />
@@ -472,33 +539,6 @@ The back-end-only app is easy to develop and quite feasible to develop alone, an
 &lt;li&gt;In the Slow German podcast there was an &lt;a href=&quot;https://slowgerman.com/2023/03/16/noch-mehr-deutsche-musik-sg-254/&quot;&gt;issue about modern German music&lt;/a&gt;, and I found indie German music. Not all of these bands sing in German, regretfully, but I liked &lt;a href=&quot;https://www.youtube.com/channel/UCheky_SBEExtbK_T0onuDwg&quot;&gt;AnnenMayKantereit&lt;/a&gt; (a link to their YouTube channel), which do. And again, the sounds of the language are so soft and sweet... This band is now among my favorites on Spotify.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;So, if you want to save 50 USD with Lingoda, &lt;a href=&quot;https://learn.lingoda.com/en/referral/ve3amy&quot;&gt;here&#39;s the link&lt;/a&gt;. By the way, I chose Lingoda based on &lt;a href=&quot;https://www.thebalancemoney.com/best-online-german-classes-4844948&quot;&gt;this review&lt;/a&gt;. And that&#39;s it!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Four most valuable programs for Me</title>
-    <link href="https://en.kovchinnikov.info/2023-07-programs.html" />
-    <updated>2023-07-12T09:54:00Z</updated>
-    <id>https://en.kovchinnikov.info/2023-07-programs.html</id>
-    <content type="html">&lt;p&gt;In this article I&#39;ll be not talking about a terminal emulator or a browser, it&#39;s just not much to do with a computer nowadays without them. Instead, I&#39;d like to cover the following topics:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;PDF annotation&lt;/li&gt;
-&lt;li&gt;Typing trainers&lt;/li&gt;
-&lt;li&gt;PDF editing&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Xournal is a program I use not so often to fill in some PDF forms. They are not designed as PDF forms, they are just PDFs to fill in some information and put a signature. My process without a special program would be the following:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Find a place to print a document (as I don&#39;t have a printer or MFD at home)&lt;/li&gt;
-&lt;li&gt;Fill in and sign the document&lt;/li&gt;
-&lt;li&gt;Scan a document somewhere (because smartphone photos are not good enough)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;That&#39;s a loss of paper, time, and money. With Xournal and similar software, you can fill everything in the PDF and send it right away. I can&#39;t say whether there&#39;s an alternative for this program in Linux, it just works great. You can also create a signature in another program and insert it whenever you need it. In Europe, it works for most of the cases. By the way, I use xournal++ which is a fork of the original xournal.&lt;/p&gt;
-&lt;p&gt;Next, there are two programs I try to use daily, and using them is the simplest way to increase productivity. I&#39;m talking about the typing trainers, I just search for them using the package manager in my distribution, so my findings are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;gtypist, it works in terminal&lt;/li&gt;
-&lt;li&gt;klavaro, a GUI app&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I think that any app will do, you just need to install it and practice regularly.&lt;/p&gt;
-&lt;p&gt;And a bonus: if you need to edit PDF, LibreOffice Draw can do that!&lt;/p&gt;
 </content>
   </entry>
 </feed>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>An Express web app</title>
+		<meta name="description" content="Writing an Express.js web app, my personal experience">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/c1uweZPBtd.css">
+		<script defer="" type="module" src="/dist/iI_QbEBaC4.js"></script>
+	</head>
+	<body>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-twitter"></i></a></li>
+					<li><a href="https://t.me/therealchanges"><i class="fa-brands fa-telegram"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://www.youtube.com/channel/UCSWV-jXlrnxIMbAD-82_USg"><i class="fa-brands fa-youtube"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors data-pagefind-body="">
+<h1 id="an-express-web-app">An Express web app</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2024-11-24">24 November 2024</time></li>
+	<li class="post-tag"><a href="/tags/dev/" class="post-tag">#dev</a></li>
+</ul>
+<p>As promised, I'd like to write about my personal Express.js experience. A brief disclaimer: I know it's considered outdated, and I know everyone is writing with bun + Hono + TypeScript, but I have to say something. I compared Express.JS + JavaScript for single-man small projects with the following options, which I call web frameworks for non-programmers:</p>
+<ul>
+<li>Django</li>
+<li>Ruby on Rails</li>
+<li>Laravel</li>
+</ul>
+<p>And my criteria are a bit special:</p>
+<ul>
+<li>Sticking to the standards, like HTTP requests. I got some pain with POST/GET-only requests with Django.</li>
+<li>Performance, not so slow as these three. :) I also like the idea of having more advanced architecture, although I don't understand much about software architecture. :)</li>
+<li>Some automation like migrations, which is quite nice with Sequelize (I know everybody uses Prisma). But Django migrations are better. :(</li>
+<li>Templates with minimal effort, so I like Pug. More on that below.</li>
+<li>I'd like to build a front-end as simple as possible with HTMX and some CSS library (PicoCSS in my case). You can do that with any framework by the way, I just explained my choice for UI/UX here.</li>
+</ul>
+<h2 id="fixing-express">Fixing Express</h2>
+<p>The widely known drawback of the JS ecosystem is that it's very fragmented, and it's hard to figure out what to pick for your needs. And it turns out that reading the express.js manual helps, at least it helped me. To get a nice app structure, you could use something like:</p>
+<p><code>npm init -y</code></p>
+<p><code>npm install express</code></p>
+<p><code>npx express-generator -v pug --git</code></p>
+<p><code>npm install</code></p>
+<p>The idea here is to get something similar to Django in terms of the structure. There was MVT (model-view-template), and we got to an MVC (model-view-controller). Express generator doesn't create separate files for controllers, but it's not complicated to do. After that, I got to a structure I liked, and I almost have my urls.py now! That's fine because this structure allows you to concentrate on writing the code and not think much about the structure anymore.</p>
+<h2 id="regarding-pug">Regarding Pug</h2>
+<p>I fully understand why the mainstream is now with JSX and other HTML-based templating engines. Again, my tastes and requirements are very specific:</p>
+<ul>
+<li>I'd like to write minimal code to generate HTML</li>
+<li>I don't like to mess up with closing tags</li>
+<li>I'd like to have a programming language inside templates</li>
+</ul>
+<p>The syntax with meaningful indents resembles Python, and that's not bad at all if you ask me. Returning to the old templates and modifying them is as painful as it can be, just because I don't mess up with the angle brackets. And I didn't see any alternative to Pug in this regard. And I didn't migrate to another framework just because Express.js has basic routing and Pug support. That's all you get, and that's all I need. In my current app under development, I spend a lot of time writing templates, so it paid off.</p>
+<h2 id="css">CSS</h2>
+<p>Regarding the CSS, I fully understand why everyone is using Tailwind.css, but I just don't need all that, and the functionality is primary to me. I tried some styles and am completely satisfied with Pico.css. The forms are great there, and I use forms heavily. I work mostly with the placement of the elements on the page, not with their appearance. And I'm quite happy with that for now. By the way, Pico.css has some CSS-only nice interactive elements like accordions.</p>
+<h2 id="htmx">HTMX</h2>
+<p>HTMX allows you not to reload a full page, and that's what AJAX is about. And HTMX is a user-friendly interface for AJAX. You have to invest some time to learn how to use HTMX and what level of interactivity you can get. It's opposite to the React approach, for example: there you have an interactive app, you need JSON from the back-end, and you don't think about it at all. Here you <strong>need</strong> to think: about what's on the back end, what's in HTMX, and how to change the back end because of that. After that, you get some real-world use cases for HTMX. I first developed a page without HTMX and then added HTMX to improve user experience. If it doesn't work out, I just return to a static page. Sometimes I had several iterations, for example with tables.</p>
+<p>It's easy to delete a row from the table, but when you add a row, you need to know: should I add a table header as well? I thought for some time about that, and I didn't like this idea: I needed a lot more code on the back end, so I stayed away from HTMX. But then I thought: it's useful to redraw a table alone in this case, there's no 'if' for the table header.</p>
+<h2 id="sequelize">Sequelize</h2>
+<p>The reasoning behind choosing Sequelize was its pure-JS nature. I just compared the code I needed in Prisma and Sequelize for the same task. Sequelize is also not a full-auto migrations generator like Django, but you can generate a database structure and a migration with one command. It makes you think about the structure beforehand, but the structure <strong>is</strong> important. In terms of learning, it's useful and not so hard.</p>
+<h2 id="typical-tasks">Typical tasks</h2>
+<p>Regarding logging the users in, I know that JWS-tokens are the best, but I failed to implement it and backed to <code>express-session</code>.</p>
+<p>For file uploads, I used <code>multer</code>.</p>
+<p>I like using Markdown, so I ended up using <code>marked</code> for that.</p>
+<h2 id="the-workflow">The workflow</h2>
+<p>Experience with Django helped a lot to figure out the most important thing – my development workflow. I mean something like this:</p>
+<ol>
+<li>Adding tables to the database and migrations with the Sequelize CLI</li>
+<li>Adding routes</li>
+<li>Adding templates</li>
+<li>Adding controllers</li>
+<li>Modifying routes, templates, and controllers to add HTMX</li>
+</ol>
+<p>The trick is that this workflow is described in lots of tutorials and courses for Django, but it's impossible to find a similar tutorial for Express. Just because Express is so non-opinionated and lots of components exist. The components combination and the workflow can be different in each case, so Django was a template that worked for me. When you are looking for an Express tutorial, in many cases you find tutorials for MongoDB, but it's so different, that it changes the application logic. And that was the major difficulty for me.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>Compared to Django, I think I progressed in many ways with the web app:</p>
+<ul>
+<li>I write less code, and it's not more high-level; it's more meaningful, I would say.</li>
+<li>I spend less time with the templates, and this time is more pleasant.</li>
+<li>I added interactivity to the app with HTMX and enhanced UI with Pure.css.</li>
+</ul>
+<p>I've heard one thought from <a href="https://www.youtube.com/@ThePrimeTimeagen/">Primagen</a>: the best framework is the framework you enjoy working with the most. Thus you can progress better and faster. Now I feel not constrained to implement my ideas, I have some more ideas to implement, and I don't find it complicated. I wish you could feel it, it's a very pleasant feeling.</p>
+<p>If you made it this far, you may be interested in checking <a href="https://github.com/ikostas/pmo-express">my git repo</a> for my ugly web app.</p>
+<p>That's all for today, see you! More ugly web apps are to come! :)</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2024-11-newideas.html">How to get new ideas</a></li>
+</ul>
+</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2024-11-express.html` was built on 2024-11-24T23:25:50.419Z -->
+	</body></html>

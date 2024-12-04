@@ -71,10 +71,10 @@
 </ul>
 <h2 id="fixing-express">Fixing Express</h2>
 <p>The widely known drawback of the JS ecosystem is that it's very fragmented, and it's hard to figure out what to pick for your needs. And it turns out that reading the express.js manual helps, at least it helped me. To get a nice app structure, you could use something like:</p>
-<p><code>npm init -y</code></p>
-<p><code>npm install express</code></p>
-<p><code>npx express-generator -v pug --git</code></p>
-<p><code>npm install</code></p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token function">npm</span> init <span class="token parameter variable">-y</span>
+<span class="token function">npm</span> <span class="token function">install</span> express
+npx express-generator <span class="token parameter variable">-v</span> pug <span class="token parameter variable">--git</span>
+<span class="token function">npm</span> <span class="token function">install</span></code></pre>
 <p>The idea here is to get something similar to Django in terms of the structure. There was MVT (model-view-template), and we got to an MVC (model-view-controller). Express generator doesn't create separate files for controllers, but it's not complicated to do. After that, I got to a structure I liked, and I almost have my urls.py now! That's fine because this structure allows you to concentrate on writing the code and not think much about the structure anymore.</p>
 <h2 id="regarding-pug">Regarding Pug</h2>
 <p>I fully understand why the mainstream is now with JSX and other HTML-based templating engines. Again, my tastes and requirements are very specific:</p>
@@ -122,5 +122,5 @@
 		<footer>
 			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
 		</footer>
-		<!-- This page `/2024-11-express.html` was built on 2024-12-04T21:27:29.025Z -->
+		<!-- This page `/2024-11-express.html` was built on 2024-12-04T21:47:11.591Z -->
 	</body></html>

@@ -124,9 +124,8 @@
 <li>Login with 'temp', insert backup media, and create a tar file on the backup media (without compression) of your normal user home directory.</li>
 </ol>
 <p>For example, my backup media is <code>/run/media/data</code> and my home catalog is <code>/home/kostya</code>. Then we do:</p>
-<pre><code># cd /run/media/data
-# sudo tar cf backup.tar /home/kostya
-</code></pre>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token comment"># cd /run/media/data</span>
+<span class="token comment"># sudo tar cf backup.tar /home/kostya</span></code></pre>
 <p>Normally the archive preserves just the last catalog, but to be sure, you can check the archive with <code>tar tf</code>.</p>
 <p>Now we wait till the backup is complete and <strong>safely extract</strong> the backup media.</p>
 <p>The installation process for CentOS is like 'nothing special', it just works. The only thing to mention here is that RHEL and Fedora have a 9 Gb installation image. I had 3 USB sticks capable of 8 Gb each, so I had to go outside my apartment (for the first time in a few months) and buy a bigger USB stick. Checkmate, CentOS Stream. No, I don't regret spending €12.</p>
@@ -136,8 +135,7 @@
 <li>Create a new user, say, 'temp', with administrative privileges.</li>
 <li>Login with 'temp', insert backup media, and extract the tar file on the backup media to your user home directory.</li>
 </ol>
-<pre><code># sudo tar xf /run/media/data/backup.tar -C /home
-</code></pre>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token comment"># sudo tar xf /run/media/data/backup.tar -C /home</span></code></pre>
 <p>Or something like that, you know – in any case, it's a bad idea to trust some random code from the internet and launch it with 'sudo' privileges without understanding it.</p>
 <p>I have some special requirements regarding software, so with CentOS, it was like this:</p>
 <ol>
@@ -234,5 +232,5 @@
 		<footer>
 			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
 		</footer>
-		<!-- This page `/2023-07-software.html` was built on 2024-12-04T21:27:29.023Z -->
+		<!-- This page `/2023-07-software.html` was built on 2024-12-04T21:47:11.590Z -->
 	</body></html>

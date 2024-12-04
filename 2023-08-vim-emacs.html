@@ -75,26 +75,21 @@
 </ul>
 <h2 id="emacs">Emacs</h2>
 <p>First, we activate <a href="https://docs.projectile.mx/projectile/index.html">projectile</a> to be able to navigate within the project:</p>
-<p>:::lisp
-(projectile-mode +1)
-(define-key projectile-mode-map (kbd &quot;C-c p&quot;) 'projectile-command-map)</p>
+<pre class="language-lisp" tabindex="0"><code class="language-lisp"><span class="token punctuation">(</span><span class="token car">projectile-mode</span> <span class="token number">+1</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">define-key</span> projectile-mode-map <span class="token punctuation">(</span><span class="token car">kbd</span> <span class="token string">"C-c p"</span><span class="token punctuation">)</span> <span class="token quoted-symbol variable symbol">'projectile-command-map</span><span class="token punctuation">)</span></code></pre>
 <p>Then we activate <a href="https://www.masteringemacs.org/article/introduction-to-ido-mode">ido</a>, which a fuzzy finder. You could use <a href="https://tuhdo.github.io/helm-intro.html">helm</a> as well, by the way:</p>
-<p>:::lisp
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
-(setq ido-ignore-buffers '(&quot;\` &quot; &quot;^*&quot;))
-(setq ido-ignore-files '(&quot;^#&quot; &quot;~$&quot;))</p>
+<pre class="language-lisp" tabindex="0"><code class="language-lisp"><span class="token punctuation">(</span><span class="token keyword">setq</span> ido-enable-flex-matching <span class="token boolean">t</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">setq</span> ido-everywhere <span class="token boolean">t</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">ido-mode</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">setq</span> ido-ignore-buffers <span class="token punctuation">'(</span><span class="token string">"\\` "</span> <span class="token string">"^\*"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">setq</span> ido-ignore-files <span class="token punctuation">'(</span><span class="token string">"^\#"</span> <span class="token string">"\~$"</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
 <p>I added some lines to ignore backup files Emacs creates. And we also make ibuffer default:</p>
-<p>:::lisp
-(defalias 'list-buffers 'ibuffer)</p>
+<pre class="language-lisp" tabindex="0"><code class="language-lisp"><span class="token punctuation">(</span><span class="token car">defalias</span> <span class="token quoted-symbol variable symbol">'list-buffers</span> <span class="token quoted-symbol variable symbol">'ibuffer</span><span class="token punctuation">)</span></code></pre>
 <p>Now we are ready to activate evil-mode, which emulates Vim:</p>
-<p>:::lisp
-(require 'evil)
-(evil-mode 1)</p>
+<pre class="language-lisp" tabindex="0"><code class="language-lisp"><span class="token punctuation">(</span><span class="token keyword">require</span> <span class="token quoted-symbol variable symbol">'evil</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token car">evil-mode</span> <span class="token number">1</span><span class="token punctuation">)</span></code></pre>
 <p>And jumping between lines is easier with relative numbers:</p>
-<p>:::lisp
-(setq display-line-numbers-type 'relative)</p>
+<pre class="language-lisp" tabindex="0"><code class="language-lisp"><span class="token punctuation">(</span><span class="token keyword">setq</span> display-line-numbers-type <span class="token quoted-symbol variable symbol">'relative</span><span class="token punctuation">)</span></code></pre>
 <p>&quot;It ain't much, but it's honest work.&quot; © I still don't feel comfortable though.</p>
 <h2 id="neovim">Neovim</h2>
 <p>What are Neovim's super-powers? I think, <a href="https://github.com/nvim-treesitter/nvim-treesitter">tree sitter</a> and <a href="https://github.com/nvim-telescope/telescope.nvim">telescope</a> are among them. You could also turn on LSP, but I try to learn programming without it.</p>
@@ -119,5 +114,5 @@
 		<footer>
 			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
 		</footer>
-		<!-- This page `/2023-08-vim-emacs.html` was built on 2024-12-04T21:27:29.024Z -->
+		<!-- This page `/2023-08-vim-emacs.html` was built on 2024-12-04T21:47:11.591Z -->
 	</body></html>

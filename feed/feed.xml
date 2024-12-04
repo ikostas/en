@@ -31,10 +31,10 @@
 &lt;/ul&gt;
 &lt;h2 id=&quot;fixing-express&quot;&gt;Fixing Express&lt;/h2&gt;
 &lt;p&gt;The widely known drawback of the JS ecosystem is that it&#39;s very fragmented, and it&#39;s hard to figure out what to pick for your needs. And it turns out that reading the express.js manual helps, at least it helped me. To get a nice app structure, you could use something like:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;npm init -y&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;npm install express&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;npx express-generator -v pug --git&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;npm install&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; init &lt;span class=&quot;token parameter variable&quot;&gt;-y&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; express
+npx express-generator &lt;span class=&quot;token parameter variable&quot;&gt;-v&lt;/span&gt; pug &lt;span class=&quot;token parameter variable&quot;&gt;--git&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The idea here is to get something similar to Django in terms of the structure. There was MVT (model-view-template), and we got to an MVC (model-view-controller). Express generator doesn&#39;t create separate files for controllers, but it&#39;s not complicated to do. After that, I got to a structure I liked, and I almost have my urls.py now! That&#39;s fine because this structure allows you to concentrate on writing the code and not think much about the structure anymore.&lt;/p&gt;
 &lt;h2 id=&quot;regarding-pug&quot;&gt;Regarding Pug&lt;/h2&gt;
 &lt;p&gt;I fully understand why the mainstream is now with JSX and other HTML-based templating engines. Again, my tastes and requirements are very specific:&lt;/p&gt;
@@ -430,26 +430,21 @@ The back-end-only app is easy to develop and quite feasible to develop alone, an
 &lt;/ul&gt;
 &lt;h2 id=&quot;emacs&quot;&gt;Emacs&lt;/h2&gt;
 &lt;p&gt;First, we activate &lt;a href=&quot;https://docs.projectile.mx/projectile/index.html&quot;&gt;projectile&lt;/a&gt; to be able to navigate within the project:&lt;/p&gt;
-&lt;p&gt;:::lisp
-(projectile-mode +1)
-(define-key projectile-mode-map (kbd &amp;quot;C-c p&amp;quot;) &#39;projectile-command-map)&lt;/p&gt;
+&lt;pre class=&quot;language-lisp&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-lisp&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token car&quot;&gt;projectile-mode&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;+1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token car&quot;&gt;define-key&lt;/span&gt; projectile-mode-map &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token car&quot;&gt;kbd&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;C-c p&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token quoted-symbol variable symbol&quot;&gt;&#39;projectile-command-map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then we activate &lt;a href=&quot;https://www.masteringemacs.org/article/introduction-to-ido-mode&quot;&gt;ido&lt;/a&gt;, which a fuzzy finder. You could use &lt;a href=&quot;https://tuhdo.github.io/helm-intro.html&quot;&gt;helm&lt;/a&gt; as well, by the way:&lt;/p&gt;
-&lt;p&gt;:::lisp
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
-(setq ido-ignore-buffers &#39;(&amp;quot;&#92;` &amp;quot; &amp;quot;^*&amp;quot;))
-(setq ido-ignore-files &#39;(&amp;quot;^#&amp;quot; &amp;quot;~$&amp;quot;))&lt;/p&gt;
+&lt;pre class=&quot;language-lisp&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-lisp&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;setq&lt;/span&gt; ido-enable-flex-matching &lt;span class=&quot;token boolean&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;setq&lt;/span&gt; ido-everywhere &lt;span class=&quot;token boolean&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token car&quot;&gt;ido-mode&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;setq&lt;/span&gt; ido-ignore-buffers &lt;span class=&quot;token punctuation&quot;&gt;&#39;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&#92;&#92;` &quot;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;^&#92;*&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;setq&lt;/span&gt; ido-ignore-files &lt;span class=&quot;token punctuation&quot;&gt;&#39;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;^&#92;#&quot;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&#92;~$&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I added some lines to ignore backup files Emacs creates. And we also make ibuffer default:&lt;/p&gt;
-&lt;p&gt;:::lisp
-(defalias &#39;list-buffers &#39;ibuffer)&lt;/p&gt;
+&lt;pre class=&quot;language-lisp&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-lisp&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token car&quot;&gt;defalias&lt;/span&gt; &lt;span class=&quot;token quoted-symbol variable symbol&quot;&gt;&#39;list-buffers&lt;/span&gt; &lt;span class=&quot;token quoted-symbol variable symbol&quot;&gt;&#39;ibuffer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now we are ready to activate evil-mode, which emulates Vim:&lt;/p&gt;
-&lt;p&gt;:::lisp
-(require &#39;evil)
-(evil-mode 1)&lt;/p&gt;
+&lt;pre class=&quot;language-lisp&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-lisp&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;token quoted-symbol variable symbol&quot;&gt;&#39;evil&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token car&quot;&gt;evil-mode&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And jumping between lines is easier with relative numbers:&lt;/p&gt;
-&lt;p&gt;:::lisp
-(setq display-line-numbers-type &#39;relative)&lt;/p&gt;
+&lt;pre class=&quot;language-lisp&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-lisp&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;setq&lt;/span&gt; display-line-numbers-type &lt;span class=&quot;token quoted-symbol variable symbol&quot;&gt;&#39;relative&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&amp;quot;It ain&#39;t much, but it&#39;s honest work.&amp;quot; © I still don&#39;t feel comfortable though.&lt;/p&gt;
 &lt;h2 id=&quot;neovim&quot;&gt;Neovim&lt;/h2&gt;
 &lt;p&gt;What are Neovim&#39;s super-powers? I think, &lt;a href=&quot;https://github.com/nvim-treesitter/nvim-treesitter&quot;&gt;tree sitter&lt;/a&gt; and &lt;a href=&quot;https://github.com/nvim-telescope/telescope.nvim&quot;&gt;telescope&lt;/a&gt; are among them. You could also turn on LSP, but I try to learn programming without it.&lt;/p&gt;

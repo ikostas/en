@@ -2,6 +2,9 @@ footer {
 	text-align: center;
 	font-size: 0.7em;
 }
+.nav-custom {
+	flex-wrap: wrap;
+}
 html {
   font-family: 'Open Sans', 'helvetica', sans-serif;
 }

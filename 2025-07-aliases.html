@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-MWJX8WCGVQ');
+		</script>
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Bash aliases I use</title>
+		<meta name="description" content="Boosting productivity with minimal effort">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/aqkQBIVW4d.css">
+		<script defer="" type="module" src="/dist/iI_QbEBaC4.js"></script>
+	</head>
+	<body>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i> en</a></li>
+					<li><a href="https://www.youtube.com/@DiD-e1p"><i class="fa-brands fa-youtube"></i> de</a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors data-pagefind-body="">
+<h1 id="bash-aliases-i-use">Bash aliases I use</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2025-07-05">05 July 2025</time></li>
+	<li class="post-tag"><a href="/tags/productivity/" class="post-tag">#productivity</a></li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>I've realized I'm too lazy to remember certain commands, but I'm also just lazy enough to write bash scripts for them. The distinction isn't huge, as these are essentially one-liners. They significantly help me with blogging, backups, and Git workflows. If you're new to aliases, simply add these commands to your <code>~/.bashrc</code> file, then type <code>source ~/.bashrc</code> in your current session to activate them.</p>
+<h2 id="blogging">Blogging</h2>
+<p>I use 11ty for this blog. To preview a new article, I use:</p>
+<p><code>alias preview-blog='npx @11ty/eleventy --serve'</code></p>
+<p>This starts a web server that instantly reflects all changes I make. To prepare the final version for GitHub, I use this command:</p>
+<p><code>alias post='npx @11ty/eleventy &amp;&amp; cd _site/ &amp;&amp; git add . &amp;&amp; read -p &quot;Commit message: &quot; msg &amp;&amp; git commit -m &quot;$msg&quot; &amp;&amp; git push &amp;&amp; cd ..'</code></p>
+<p>Just generates the blog, adds new files to git, commits them, pushes them to GitHub, ad then returns to the main blog folder.</p>
+<h2 id="backup">Backup</h2>
+<p>Borg is an excellent solution for backups, but it's not the most user-friendly. Borgmatic, which essentially consists of Python scripts, makes it much easier to use. I configured it once and haven't had to think about it since. Now, to perform a backup to an external drive, I use this command:</p>
+<p><code>alias backup='borgmatic -c ~/.config/borgmatic.yaml'</code></p>
+<h2 id="converting-pdf-to-png">Converting PDF to PNG</h2>
+<p>It was surprising to discover that, despite the abundance of tools for working with PDFs, there isn't a simple, short command to convert PDF to PNG. It's achievable using ImageMagick, but some options can be tricky. I simply need sequentially numbered files, and that's all:</p>
+<p><code>alias pdftopng='counter=1; for i in *.pdf; do magick $i -background white -alpha remove $counter.png; ((counter++)); done'</code></p>
+<h2 id="development">Development</h2>
+<p>By &quot;development,&quot; I specifically mean JavaScript programming for Node.js. I have many Node projects, and I needed a single command to clean all of them at once, especially if I no longer need their <code>node_modules</code> folders:</p>
+<p><code>alias clean-node='find . -name &quot;node_modules&quot; -type d -prune -exec rm -rf {} \;'</code></p>
+<p>Some of these projects are in my GitHub repo, and I also took a course to learn more about Git. One command proved particularly useful:</p>
+<p><code>alias git-graph='git log --graph --decorate --oneline --all'</code></p>
+<p>That's all for today. I hope you found something useful for yourself!</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2025-14-samsung.html">Debulking a Samsung phone</a></li>
+</ul>
+</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2025-07-aliases.html` was built on 2025-07-05T13:51:29.729Z -->
+	</body></html>

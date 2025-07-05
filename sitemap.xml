@@ -178,6 +178,11 @@
 	
 	<url>
 		<loc>https://en.kovchinnikov.info/feed/feed.xml</loc>
-		<lastmod>2025-06-18</lastmod>
+		<lastmod>2025-07-05</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://en.kovchinnikov.info/2025-07-aliases.html</loc>
+		<lastmod>2025-07-05</lastmod>
 	</url>
 </urlset>

@@ -5,11 +5,38 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2025-05-14T11:38:00Z</updated>
+  <updated>2025-07-05T15:11:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>Bash aliases I use</title>
+    <link href="https://en.kovchinnikov.info/2025-07-aliases.html" />
+    <updated>2025-07-05T15:11:00Z</updated>
+    <id>https://en.kovchinnikov.info/2025-07-aliases.html</id>
+    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;I&#39;ve realized I&#39;m too lazy to remember certain commands, but I&#39;m also just lazy enough to write bash scripts for them. The distinction isn&#39;t huge, as these are essentially one-liners. They significantly help me with blogging, backups, and Git workflows. If you&#39;re new to aliases, simply add these commands to your &lt;code&gt;~/.bashrc&lt;/code&gt; file, then type &lt;code&gt;source ~/.bashrc&lt;/code&gt; in your current session to activate them.&lt;/p&gt;
+&lt;h2 id=&quot;blogging&quot;&gt;Blogging&lt;/h2&gt;
+&lt;p&gt;I use 11ty for this blog. To preview a new article, I use:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;alias preview-blog=&#39;npx @11ty/eleventy --serve&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This starts a web server that instantly reflects all changes I make. To prepare the final version for GitHub, I use this command:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;alias post=&#39;npx @11ty/eleventy &amp;amp;&amp;amp; cd _site/ &amp;amp;&amp;amp; git add . &amp;amp;&amp;amp; read -p &amp;quot;Commit message: &amp;quot; msg &amp;amp;&amp;amp; git commit -m &amp;quot;$msg&amp;quot; &amp;amp;&amp;amp; git push &amp;amp;&amp;amp; cd ..&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Just generates the blog, adds new files to git, commits them, pushes them to GitHub, ad then returns to the main blog folder.&lt;/p&gt;
+&lt;h2 id=&quot;backup&quot;&gt;Backup&lt;/h2&gt;
+&lt;p&gt;Borg is an excellent solution for backups, but it&#39;s not the most user-friendly. Borgmatic, which essentially consists of Python scripts, makes it much easier to use. I configured it once and haven&#39;t had to think about it since. Now, to perform a backup to an external drive, I use this command:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;alias backup=&#39;borgmatic -c ~/.config/borgmatic.yaml&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;converting-pdf-to-png&quot;&gt;Converting PDF to PNG&lt;/h2&gt;
+&lt;p&gt;It was surprising to discover that, despite the abundance of tools for working with PDFs, there isn&#39;t a simple, short command to convert PDF to PNG. It&#39;s achievable using ImageMagick, but some options can be tricky. I simply need sequentially numbered files, and that&#39;s all:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;alias pdftopng=&#39;counter=1; for i in *.pdf; do magick $i -background white -alpha remove $counter.png; ((counter++)); done&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;development&quot;&gt;Development&lt;/h2&gt;
+&lt;p&gt;By &amp;quot;development,&amp;quot; I specifically mean JavaScript programming for Node.js. I have many Node projects, and I needed a single command to clean all of them at once, especially if I no longer need their &lt;code&gt;node_modules&lt;/code&gt; folders:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;alias clean-node=&#39;find . -name &amp;quot;node_modules&amp;quot; -type d -prune -exec rm -rf {} &#92;;&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Some of these projects are in my GitHub repo, and I also took a course to learn more about Git. One command proved particularly useful:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;alias git-graph=&#39;git log --graph --decorate --oneline --all&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;That&#39;s all for today. I hope you found something useful for yourself!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Debulking a Samsung phone</title>
     <link href="https://en.kovchinnikov.info/2025-14-samsung.html" />
@@ -443,43 +470,6 @@ The back-end-only app is easy to develop and quite feasible to develop alone, an
 &lt;p&gt;Is it silent? It is until it gets to full speed, but the noise comes mostly from the print head. The print quality is great and stable. More than that, often I print with 15% infill, so I use less material.&lt;/p&gt;
 &lt;p&gt;Regarding the print speed, I have another dirty secret for those who don&#39;t know: if you want speed, just install a bigger nozzle.&lt;/p&gt;
 &lt;p&gt;The guys who paid for these great Core-XY machines often write the same thing: it&#39;s overkill, I printed all I wanted and I don&#39;t know what else to print. That&#39;s the power of marketing, folks. These Core-XY machines are nice, but you bought them although you didn&#39;t need them. My printer is just good enough for the tasks I have, small enough to fit right on my table, silent enough, and still quick enough.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>A dive into 3D-printing</title>
-    <link href="https://en.kovchinnikov.info/2023-10-3d-printing.html" />
-    <updated>2023-10-29T12:18:00Z</updated>
-    <id>https://en.kovchinnikov.info/2023-10-3d-printing.html</id>
-    <content type="html">&lt;h2 id=&quot;my-story&quot;&gt;My story&lt;/h2&gt;
-&lt;p&gt;It all started when my friend found a 3D printer on the street with lots of filament rolls. Here in Germany, people put stuff right on the street when they move to another apartment or when they don&#39;t need it. I decided to take a look:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;I made a photo and googled by image; it happened to be &lt;a href=&quot;https://www.anycubic.com/products/anycubic-i3-mega&quot;&gt;Anycubic M3 Mega&lt;/a&gt;, an old printer.&lt;/li&gt;
-&lt;li&gt;The bed was covered with filament, I cleaned it and found that it was damaged, probably due to a lack of bed leveling, so I ordered a bad replacement, for 20 €. I leveled the bed and was able to print a mic stand, as my mic stand was broken.&lt;/li&gt;
-&lt;li&gt;I found a new &lt;a href=&quot;https://github.com/davidramiro/Marlin-Ai3M&quot;&gt;custom firmware for this printer&lt;/a&gt;, which had great features: 25-point manual bed leveling, auto nozzle, and bed calibration, which significantly reduced the noise and probably power consumption as well. It printed, but then the filament didn&#39;t stop leaking, so I ordered print nozzles made of hardened steel, 15 € for a pack of 8.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;I leveled the bed again and... it printed great! Well, after lots of prints, I found the drawbacks:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;For sure it&#39;s slow and loud&lt;/li&gt;
-&lt;li&gt;The construction which is advertised as &amp;quot;hardened Ender&amp;quot; sucks, especially filament sensor placement&lt;/li&gt;
-&lt;li&gt;The quality sucks, it has issues with &lt;a href=&quot;https://www.youtube.com/watch?v=BMqLe_tQEVA&amp;amp;t=197s&quot;&gt;the extruder&lt;/a&gt; and the motion system; it&#39;s rough&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Still, I was excited, because I was able to print lots of useful and entertaining prints. For prints without details draft quality works well and is almost 2x faster. If you struggle with the question &amp;quot;What to print?&amp;quot;, there are two main categories:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Something useful like clips, organizers, stands&lt;/li&gt;
-&lt;li&gt;Something entertaining like anime figures, decorations&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;its-time-to-move-on&quot;&gt;It&#39;s time to move on&lt;/h2&gt;
-&lt;p&gt;This particular printer could be upgraded with Klipper, so at least you need Banana Pi and some soldering. Then it probably will be able to print 2x faster with a better quality. I don&#39;t think this printer is worth it. More than that, some research revealed that lots of YouTubers (at least) have this printer, but no one is excited about it. I guess that they all experience issues with the quality.&lt;/p&gt;
-&lt;p&gt;The next step to go further with 3D printing is to start 3D modeling myself, I have some ideas to make fastenings on my bike. I was shocked at how many models are available online for free, you can spend ages digging through these catalogs.&lt;/p&gt;
-&lt;h2 id=&quot;current-market-for-3d-printers&quot;&gt;Current market for 3d printers&lt;/h2&gt;
-&lt;p&gt;I&#39;d like to change the printer itself and it happened that although FDM printing is old, a few things have happened recently in this market.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;It all started with Bambu Lab x1, followed by more affordable P1P and smaller, but even more affordable A1 mini. I was able to launch their &lt;a href=&quot;https://github.com/bambulab/BambuStudio/releases&quot;&gt;slicer in Linux&lt;/a&gt;, but they have really &lt;a href=&quot;https://www.youtube.com/watch?v=Neakuea_uBY&amp;amp;t=1431s&quot;&gt;weird user agreement&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Other companies also decided to make a fast CoreXY printer, but all of them suck: &lt;a href=&quot;https://www.reddit.com/r/klippers/comments/134lh7s/comment/jin81g0/?utm_source=reddit&amp;amp;utm_medium=web2x&amp;amp;context=3&quot;&gt;Qidi Smart3&lt;/a&gt;, &lt;a href=&quot;https://www.reddit.com/r/FlashForge/comments/17aozng/adventurer_5m_in_stock/&quot;&gt;Flashforge Adventurer 5M&lt;/a&gt;, Creality K1. But Creality stands out as they fix the issues and finally, they came out with the full version of Klipper.&lt;/li&gt;
-&lt;li&gt;Some companies came out with fast sling-bed printers: Neptune 4 Pro &lt;a href=&quot;https://www.youtube.com/watch?v=-rlOoGLZdoo&amp;amp;t=5s&quot;&gt;can&#39;t print the cylinder&lt;/a&gt; and AnkerMake M5C needs a mobile app to operate, also tinkering is minimized: all the contacts are glued.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;I also learned about Voron printers and THE 100. They need some tools to build worth 170 €. And I&#39;m not sure that I&#39;ll cope with the assembly and will finish the tuning.&lt;/p&gt;
-&lt;p&gt;Everyone is so excited about fast printing, but it comes at a cost: it&#39;s always noisy (and costly). Other than speed, some great models are still available on the market. I mean Creality Ender 3 V3 SE and Creality Ender 5 S1. I&#39;m thinking about buying one of them, and after that maybe add Klipper with Orange Pi or something, which also allows to print using WiFi. Ender is more like evolution, rather than revolution. And it&#39;s not only about the community, lots of replacement and upgrade parts are available. It&#39;s not about the first print, it&#39;s about printing for some time, which requires some service. I&#39;d also like to have a working printer out of the box, and then maybe gradually upgrade it. Becase printing is fun!&lt;/p&gt;
 </content>
   </entry>
 </feed>

@@ -62,7 +62,7 @@
 <p><code>alias preview-blog='npx @11ty/eleventy --serve'</code></p>
 <p>This starts a web server that instantly reflects all changes I make. To prepare the final version for GitHub, I use this command:</p>
 <p><code>alias post='npx @11ty/eleventy &amp;&amp; cd _site/ &amp;&amp; git add . &amp;&amp; read -p &quot;Commit message: &quot; msg &amp;&amp; git commit -m &quot;$msg&quot; &amp;&amp; git push &amp;&amp; cd ..'</code></p>
-<p>Just generates the blog, adds new files to git, commits them, pushes them to GitHub, ad then returns to the main blog folder.</p>
+<p>Just generates the blog, adds new files to git, commits them, pushes them to GitHub, and then returns to the main blog folder.</p>
 <h2 id="backup">Backup</h2>
 <p>Borg is an excellent solution for backups, but it's not the most user-friendly. Borgmatic, which essentially consists of Python scripts, makes it much easier to use. I configured it once and haven't had to think about it since. Now, to perform a backup to an external drive, I use this command:</p>
 <p><code>alias backup='borgmatic -c ~/.config/borgmatic.yaml'</code></p>
@@ -82,5 +82,5 @@
 		<footer>
 			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
 		</footer>
-		<!-- This page `/2025-07-aliases.html` was built on 2025-07-05T13:51:29.729Z -->
+		<!-- This page `/2025-07-aliases.html` was built on 2025-07-05T13:53:17.359Z -->
 	</body></html>

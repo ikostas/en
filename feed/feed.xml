@@ -22,7 +22,7 @@
 &lt;p&gt;&lt;code&gt;alias preview-blog=&#39;npx @11ty/eleventy --serve&#39;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;This starts a web server that instantly reflects all changes I make. To prepare the final version for GitHub, I use this command:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;alias post=&#39;npx @11ty/eleventy &amp;amp;&amp;amp; cd _site/ &amp;amp;&amp;amp; git add . &amp;amp;&amp;amp; read -p &amp;quot;Commit message: &amp;quot; msg &amp;amp;&amp;amp; git commit -m &amp;quot;$msg&amp;quot; &amp;amp;&amp;amp; git push &amp;amp;&amp;amp; cd ..&#39;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Just generates the blog, adds new files to git, commits them, pushes them to GitHub, ad then returns to the main blog folder.&lt;/p&gt;
+&lt;p&gt;Just generates the blog, adds new files to git, commits them, pushes them to GitHub, and then returns to the main blog folder.&lt;/p&gt;
 &lt;h2 id=&quot;backup&quot;&gt;Backup&lt;/h2&gt;
 &lt;p&gt;Borg is an excellent solution for backups, but it&#39;s not the most user-friendly. Borgmatic, which essentially consists of Python scripts, makes it much easier to use. I configured it once and haven&#39;t had to think about it since. Now, to perform a backup to an external drive, I use this command:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;alias backup=&#39;borgmatic -c ~/.config/borgmatic.yaml&#39;&lt;/code&gt;&lt;/p&gt;

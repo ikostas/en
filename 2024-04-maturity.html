@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<!-- Google tag (gtag.js) -->
-		<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MWJX8WCGVQ"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'G-MWJX8WCGVQ');
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
 		</script>
-		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>A few maturity models</title>
@@ -21,11 +21,17 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
 		<script src="/pagefind/pagefind-ui.js"></script>
 		<link rel="stylesheet" href="/dist/aqkQBIVW4d.css">
-		<script defer="" type="module" src="/dist/iI_QbEBaC4.js"></script>
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
 	</head>
 	<body>
+		<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; background: #eee; color: black; padding: 1em; width: 100%; text-align: center; z-index: 2;">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
 		<header class="container">
 			<div id="search"></div>
 			<nav>
@@ -85,5 +91,5 @@
 		<footer>
 			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
 		</footer>
-		<!-- This page `/2024-04-maturity.html` was built on 2025-07-05T13:53:17.358Z -->
+		<!-- This page `/2024-04-maturity.html` was built on 2025-07-29T14:01:37.456Z -->
 	</body></html>

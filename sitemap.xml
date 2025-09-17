@@ -142,21 +142,6 @@
 	</url>
 	
 	<url>
-		<loc>https://en.kovchinnikov.info/blog/</loc>
-		<lastmod>2024-11-24</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://en.kovchinnikov.info/</loc>
-		<lastmod>2024-11-24</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://en.kovchinnikov.info/tags/</loc>
-		<lastmod>2024-11-24</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://en.kovchinnikov.info/2024-11-newideas.html</loc>
 		<lastmod>2024-11-24</lastmod>
 	</url>
@@ -182,7 +167,27 @@
 	</url>
 	
 	<url>
+		<loc>https://en.kovchinnikov.info/2025-09-linux-gui.html</loc>
+		<lastmod>2025-09-16</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://en.kovchinnikov.info/blog/</loc>
+		<lastmod>2025-09-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://en.kovchinnikov.info/</loc>
+		<lastmod>2025-09-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://en.kovchinnikov.info/tags/</loc>
+		<lastmod>2025-09-17</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://en.kovchinnikov.info/feed/feed.xml</loc>
-		<lastmod>2025-07-29</lastmod>
+		<lastmod>2025-09-17</lastmod>
 	</url>
 </urlset>

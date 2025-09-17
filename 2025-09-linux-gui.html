@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Linux GUI app is a rabbit hole</title>
+		<meta name="description" content="I just wanted to have some fun...">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i> en</a></li>
+					<li><a href="https://www.youtube.com/@DiD-e1p"><i class="fa-brands fa-youtube"></i> de</a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors data-pagefind-body="">
+<h1 id="linux-gui-app-is-a-rabbit-hole">Linux GUI app is a rabbit hole</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2025-09-16">16 September 2025</time></li>
+	<li class="post-tag"><a href="/tags/dev/" class="post-tag">#dev</a></li>
+</ul>
+<h2 id="how-it-started">How it started</h2>
+<p>First, I was reading the reddit /linuxsucks community. After that, I noticed more 'migration to Linux' discussions, and I thought: why would no one make a Windows-to-Linux migration toolkit? This raised two questions:</p>
+<ul>
+<li>Are there tasks worth automating?</li>
+<li>Can the program provide some links for novices to “start with Linux the right way”?</li>
+</ul>
+<p>Starting with the latter point, I suppose more people should get acquainted with Linux through Git for Windows and virtual machines. The main mistake is when you don’t understand what you are doing, and you install Linux as a single or dual-boot operating system (backups are for cowards), and then it doesn’t work as expected. That’s called 'expectation management', and probably we never really saw it as a task. The most successful case, Ubuntu, tried to meet existing expectations, making Linux 'almost like Windows', but I don’t think it’s worth it. I use Fedora and suggest more people should try it – but it’s an entirely different animal, and you’d better be prepared for that. And, by the way, the question of choosing a distribution could also be addressed in my program.</p>
+<p>What could be automated? I thought of two tasks: backups and saving a report about hardware and software installed, for reference. Both tasks are not '1-click' in Windows:</p>
+<ul>
+<li>For a backup, you shouldn’t save the 'home user directory'. Instead, you should back up individual folders like 'Documents', 'Pictures', etc. But, surprise, folder names are localized in Windows! And if you’re migrating to Linux, you’d better go with a tar or tar.bz2 archive – it just works better for lots of files and folders.</li>
+<li>For a hardware report, it’s not that easy to find and save this information. I also decided to include printers and scanners, since they cause plenty of compatibility issues.</li>
+</ul>
+<p>To develop this <a href="https://github.com/ikostas/lmtk">'one-time-use app'</a>, I went with Python + Tkinter. Python is great for its libraries: getting hardware/software info, creating backups, generating Markdown reports, converting Markdown to HTML, and so on. Tkinter is an integrated GUI toolkit—outdated, sure, but fast, small, and stable. The resulting program was about 17 MB. Then I decided to localize it to German, and Python made that pretty easy. Later, I ran pylint and found so many errors – I honestly don’t know how it worked at all. But I had fun programming it, thinking about class structure and so on.</p>
+<h2 id="how-it-s-going-a-new-challenge">How it’s going: a new challenge</h2>
+<p>For the next fun project, I decided to create a GUI app for Linux. The idea was to manipulate PDF files, but also to build a chain of commands: extract pages 3–4 from one file, unite them with pages 1–2 from another, and so on. I personally use the CLI for these tasks, the only problem I have is forgetting the CLI parameters. So I thought: wouldn’t it be nice if I could save this chain of commands and reuse it? Nothing you can’t do with a bash script, though. :) Anyway, here are my requirements:</p>
+<ul>
+<li>The GUI should be nice and fast – and this excludes Python. Not only is it slow and single-threaded, I ran into some rough edges with the 'threads' package when I tried to make the UI responsive. Still, Python gets credit for having great GTK4 bindings and PDF manipulation libraries.</li>
+<li>I’m not a programmer. I know Python, JS, and I took a course in Go at Codecademy (free, by the way). I didn’t like GJS; Go seemed like a reasonable choice. Goroutines allow threading, which makes the UI responsive, and the 'errors-first' approach in Go makes handling user input nice. Yes, I know about Vala, I saw the tutorial, but I doubt I have the programming skills required.</li>
+</ul>
+<p>The program itself should look like three vertically stacked parts:</p>
+<ol>
+<li><strong>Files</strong>: add and remove files; results of operations (e.g. splitting or uniting PDFs) also show up here.</li>
+<li><strong>Operations</strong>: a chain of manipulations in a human-readable form; users should be able to add/remove operations and (in the distant future) change their order.</li>
+<li><strong>Add an operation</strong>: choose an operation type, which changes the number of input fields. For split, I need the pages and an output filename; for unite, I need the files and output filename; and so on.</li>
+</ol>
+<p>This UI implies lots of changes on the fly: I need to redraw parts of the UI, but I also need to handle faulty situations. For example, you can’t use a file if it’s only created in the next step. There’s a long list of 'what can’t be done' and 'what to do if a filename or operation is removed', so this error-handling logic will be a significant part of the program.</p>
+<h2 id="a-rabbit-hole">A rabbit hole</h2>
+<p>And then the 'rabbit hole' thing began: choosing a GUI library. I chaotically researched everything below, had chatbots write examples to see if I could handle them, and I hope my findings will be useful to someone. I’ll rate GUI libraries from simplest to most complicated:</p>
+<ol>
+<li><a href="https://help.gnome.org/users/zenity/stable/">Zenity</a> is a great tool. You can use it with any language or even a bash script, but you’re not supposed to redraw parts of the UI – it’s like launching a single program. But it has a file-open dialog, and it can return multiple files. When I tried Fyne (which doesn’t allow selecting multiple files), I had to use Zenity as well.</li>
+<li><a href="https://pkg.go.dev/modernc.org/tk9.0">Tk</a>: sounds stupid because it’s old as hell, but it works. It has a new version (9), a new 'azure' theme, and new Go bindings. So, if it’s stupid but it works – then it’s not stupid (C). It’s fast, works on Linux, Mac, and Windows (a bonus since Go also works cross-platform), it’s surprisingly stable, and it’s rich in widgets. I mean, if your grandpa could get away with these widgets, so can you. It requires simulating HTML, but I don’t need that for this app. So I stuck with Tk9.0 for now. I even considered writing my app in Tcl – it has procedures, loops, and ifs – but it’s too primitive. Go is nicer with structs, interfaces, goroutines, and all that. And surprise! Tk supports selecting multiple files in a file-open dialog. I felt like the Tk guys were my brothers: they think about functionality first.</li>
+<li><a href="https://docs.fyne.io/started/">Fyne</a> is the recommended Go GUI library, and it’s great. But I tried to write a single operation (extracting pages from a PDF), and Fyne implied using channels just to keep the UI responsive. That felt like overkill. I cried and vented to a chatbot, and it agreed: in this case, Fyne is probably too much.</li>
+<li><a href="https://github.com/diamondburned/gotk4">GTK4 bindings</a> exist for Go. The funny part is that you can use <a href="https://gitlab.gnome.org/jpu/cambalache">Cambalache</a> (a RAD tool) and call it from your Go logic. It’s a bit like the next, more 'cutting-edge' approach: treating your GTK4 spec as a front-end. I couldn’t figure out why I should use these widgets, and GTK4 only works on Linux. I also doubted whether I’d be able to manipulate the UI easily by adding/removing data. Honestly, I miss React here.</li>
+<li><a href="https://wails.io/">Wails</a> (for Go) is a great approach: you use JS (probably React) for the front-end. It’s like <a href="https://v2.tauri.app/">Tauri</a> for Rust or <a href="https://www.electronjs.org/">Electron</a> for JS, with the same drawback: the output is always heavy (20 MB minimum). Yes, I considered Rust (Tauri’s footprint is a bit smaller), but my programming skills aren’t there. If your app is big and complicated anyway, this might be the way to go. React is awesome for declaring UIs and handling user input – I liked it.</li>
+</ol>
+<p>Ok, now you’re ready to look at my work in progress, which I spent about a week building, covered in blood and tears (needed some drama here): a Go app with Tk9.0 and the azure theme:</p>
+<p><picture><source type="image/avif" srcset="/img/RuinuRqTxP-825.avif 825w"><source type="image/webp" srcset="/img/RuinuRqTxP-825.webp 825w"><img loading="lazy" decoding="async" src="/img/RuinuRqTxP-825.png" alt="Add file" width="825" height="313"></picture></p>
+<p>I think we need more high-quality GUI apps like this one. :) That’s all for today, folks – hope you enjoyed the ride! :)</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2025-07-aliases.html">Bash aliases I use</a></li>
+</ul>
+</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2025-09-linux-gui.html` was built on 2025-09-17T19:41:32.798Z -->
+	</body></html>

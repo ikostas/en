@@ -5,11 +5,56 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2025-07-05T15:11:00Z</updated>
+  <updated>2025-09-16T20:34:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>Linux GUI app is a rabbit hole</title>
+    <link href="https://en.kovchinnikov.info/2025-09-linux-gui.html" />
+    <updated>2025-09-16T20:34:00Z</updated>
+    <id>https://en.kovchinnikov.info/2025-09-linux-gui.html</id>
+    <content type="html">&lt;h2 id=&quot;how-it-started&quot;&gt;How it started&lt;/h2&gt;
+&lt;p&gt;First, I was reading the reddit /linuxsucks community. After that, I noticed more &#39;migration to Linux&#39; discussions, and I thought: why would no one make a Windows-to-Linux migration toolkit? This raised two questions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Are there tasks worth automating?&lt;/li&gt;
+&lt;li&gt;Can the program provide some links for novices to “start with Linux the right way”?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Starting with the latter point, I suppose more people should get acquainted with Linux through Git for Windows and virtual machines. The main mistake is when you don’t understand what you are doing, and you install Linux as a single or dual-boot operating system (backups are for cowards), and then it doesn’t work as expected. That’s called &#39;expectation management&#39;, and probably we never really saw it as a task. The most successful case, Ubuntu, tried to meet existing expectations, making Linux &#39;almost like Windows&#39;, but I don’t think it’s worth it. I use Fedora and suggest more people should try it – but it’s an entirely different animal, and you’d better be prepared for that. And, by the way, the question of choosing a distribution could also be addressed in my program.&lt;/p&gt;
+&lt;p&gt;What could be automated? I thought of two tasks: backups and saving a report about hardware and software installed, for reference. Both tasks are not &#39;1-click&#39; in Windows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For a backup, you shouldn’t save the &#39;home user directory&#39;. Instead, you should back up individual folders like &#39;Documents&#39;, &#39;Pictures&#39;, etc. But, surprise, folder names are localized in Windows! And if you’re migrating to Linux, you’d better go with a tar or tar.bz2 archive – it just works better for lots of files and folders.&lt;/li&gt;
+&lt;li&gt;For a hardware report, it’s not that easy to find and save this information. I also decided to include printers and scanners, since they cause plenty of compatibility issues.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To develop this &lt;a href=&quot;https://github.com/ikostas/lmtk&quot;&gt;&#39;one-time-use app&#39;&lt;/a&gt;, I went with Python + Tkinter. Python is great for its libraries: getting hardware/software info, creating backups, generating Markdown reports, converting Markdown to HTML, and so on. Tkinter is an integrated GUI toolkit—outdated, sure, but fast, small, and stable. The resulting program was about 17 MB. Then I decided to localize it to German, and Python made that pretty easy. Later, I ran pylint and found so many errors – I honestly don’t know how it worked at all. But I had fun programming it, thinking about class structure and so on.&lt;/p&gt;
+&lt;h2 id=&quot;how-it-s-going-a-new-challenge&quot;&gt;How it’s going: a new challenge&lt;/h2&gt;
+&lt;p&gt;For the next fun project, I decided to create a GUI app for Linux. The idea was to manipulate PDF files, but also to build a chain of commands: extract pages 3–4 from one file, unite them with pages 1–2 from another, and so on. I personally use the CLI for these tasks, the only problem I have is forgetting the CLI parameters. So I thought: wouldn’t it be nice if I could save this chain of commands and reuse it? Nothing you can’t do with a bash script, though. :) Anyway, here are my requirements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The GUI should be nice and fast – and this excludes Python. Not only is it slow and single-threaded, I ran into some rough edges with the &#39;threads&#39; package when I tried to make the UI responsive. Still, Python gets credit for having great GTK4 bindings and PDF manipulation libraries.&lt;/li&gt;
+&lt;li&gt;I’m not a programmer. I know Python, JS, and I took a course in Go at Codecademy (free, by the way). I didn’t like GJS; Go seemed like a reasonable choice. Goroutines allow threading, which makes the UI responsive, and the &#39;errors-first&#39; approach in Go makes handling user input nice. Yes, I know about Vala, I saw the tutorial, but I doubt I have the programming skills required.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The program itself should look like three vertically stacked parts:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Files&lt;/strong&gt;: add and remove files; results of operations (e.g. splitting or uniting PDFs) also show up here.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Operations&lt;/strong&gt;: a chain of manipulations in a human-readable form; users should be able to add/remove operations and (in the distant future) change their order.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add an operation&lt;/strong&gt;: choose an operation type, which changes the number of input fields. For split, I need the pages and an output filename; for unite, I need the files and output filename; and so on.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This UI implies lots of changes on the fly: I need to redraw parts of the UI, but I also need to handle faulty situations. For example, you can’t use a file if it’s only created in the next step. There’s a long list of &#39;what can’t be done&#39; and &#39;what to do if a filename or operation is removed&#39;, so this error-handling logic will be a significant part of the program.&lt;/p&gt;
+&lt;h2 id=&quot;a-rabbit-hole&quot;&gt;A rabbit hole&lt;/h2&gt;
+&lt;p&gt;And then the &#39;rabbit hole&#39; thing began: choosing a GUI library. I chaotically researched everything below, had chatbots write examples to see if I could handle them, and I hope my findings will be useful to someone. I’ll rate GUI libraries from simplest to most complicated:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.gnome.org/users/zenity/stable/&quot;&gt;Zenity&lt;/a&gt; is a great tool. You can use it with any language or even a bash script, but you’re not supposed to redraw parts of the UI – it’s like launching a single program. But it has a file-open dialog, and it can return multiple files. When I tried Fyne (which doesn’t allow selecting multiple files), I had to use Zenity as well.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://pkg.go.dev/modernc.org/tk9.0&quot;&gt;Tk&lt;/a&gt;: sounds stupid because it’s old as hell, but it works. It has a new version (9), a new &#39;azure&#39; theme, and new Go bindings. So, if it’s stupid but it works – then it’s not stupid (C). It’s fast, works on Linux, Mac, and Windows (a bonus since Go also works cross-platform), it’s surprisingly stable, and it’s rich in widgets. I mean, if your grandpa could get away with these widgets, so can you. It requires simulating HTML, but I don’t need that for this app. So I stuck with Tk9.0 for now. I even considered writing my app in Tcl – it has procedures, loops, and ifs – but it’s too primitive. Go is nicer with structs, interfaces, goroutines, and all that. And surprise! Tk supports selecting multiple files in a file-open dialog. I felt like the Tk guys were my brothers: they think about functionality first.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.fyne.io/started/&quot;&gt;Fyne&lt;/a&gt; is the recommended Go GUI library, and it’s great. But I tried to write a single operation (extracting pages from a PDF), and Fyne implied using channels just to keep the UI responsive. That felt like overkill. I cried and vented to a chatbot, and it agreed: in this case, Fyne is probably too much.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/diamondburned/gotk4&quot;&gt;GTK4 bindings&lt;/a&gt; exist for Go. The funny part is that you can use &lt;a href=&quot;https://gitlab.gnome.org/jpu/cambalache&quot;&gt;Cambalache&lt;/a&gt; (a RAD tool) and call it from your Go logic. It’s a bit like the next, more &#39;cutting-edge&#39; approach: treating your GTK4 spec as a front-end. I couldn’t figure out why I should use these widgets, and GTK4 only works on Linux. I also doubted whether I’d be able to manipulate the UI easily by adding/removing data. Honestly, I miss React here.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://wails.io/&quot;&gt;Wails&lt;/a&gt; (for Go) is a great approach: you use JS (probably React) for the front-end. It’s like &lt;a href=&quot;https://v2.tauri.app/&quot;&gt;Tauri&lt;/a&gt; for Rust or &lt;a href=&quot;https://www.electronjs.org/&quot;&gt;Electron&lt;/a&gt; for JS, with the same drawback: the output is always heavy (20 MB minimum). Yes, I considered Rust (Tauri’s footprint is a bit smaller), but my programming skills aren’t there. If your app is big and complicated anyway, this might be the way to go. React is awesome for declaring UIs and handling user input – I liked it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Ok, now you’re ready to look at my work in progress, which I spent about a week building, covered in blood and tears (needed some drama here): a Go app with Tk9.0 and the azure theme:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/img/RuinuRqTxP-825.avif 825w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/img/RuinuRqTxP-825.webp 825w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/img/RuinuRqTxP-825.png&quot; alt=&quot;Add file&quot; width=&quot;825&quot; height=&quot;313&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;I think we need more high-quality GUI apps like this one. :) That’s all for today, folks – hope you enjoyed the ride! :)&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Bash aliases I use</title>
     <link href="https://en.kovchinnikov.info/2025-07-aliases.html" />
@@ -420,56 +465,6 @@ The back-end-only app is easy to develop and quite feasible to develop alone, an
 &lt;p&gt;Again, due to WSL limitations, I was able to use neovim binary only from the official site: AppImage didn&#39;t work for me. And you need a fresh neovim version for Lazy, which is used by kickstart.&lt;/p&gt;
 &lt;p&gt;You can find great ways to use tmux and also bind neovim and tmux together, I just keep it simple.&lt;/p&gt;
 &lt;p&gt;Someone could use docker, but Python&#39;s virtual environment works pretty well for me, I was able to copy it to the linux machine, mostly with &lt;code&gt;pip freeze&lt;/code&gt; and &lt;code&gt;pip install -r&lt;/code&gt;. And the app just works.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>My new old 3d-printer</title>
-    <link href="https://en.kovchinnikov.info/2024-04-3d-printer.html" />
-    <updated>2024-04-01T12:12:00Z</updated>
-    <id>https://en.kovchinnikov.info/2024-04-3d-printer.html</id>
-    <content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Year 2024: Core-XY printers took over the world. They are quick, but they are also big and loud. What should a normal dude like me do just get into 3D printing and not suffer so much? Notably, I suffer from poor quality and from the printer being unstable.&lt;/p&gt;
-&lt;p&gt;For the cheap printers tier, Creality V3 SE or V3 KE seems to be the obvious choice, but they have problems not so many people talk about:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The print plate is always bent&lt;/li&gt;
-&lt;li&gt;Aluminium frame may not survive the assembly and it&#39;s hard to make it stable again&lt;/li&gt;
-&lt;li&gt;They are supplied with some screwed software and you need to put some effort to get profiles for these printers in the slicer you want&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Creality Ender V3 seems to be better, but it&#39;s also more expensive. Creality CR-10 has problems with layers in all the reviews.&lt;/p&gt;
-&lt;p&gt;By the way, Qidi Tech Smart X3 is a small Core-XY printer with a relatively low price, but... there are not so many positive reviews, some questions regarding non-replaceable carbon rods, and... it&#39;s not available in the EU. And this can be for a reason: in the EU the law protects the customers, so when the quality of the product is poor, the manufacturers prefer to exit this market.&lt;/p&gt;
-&lt;p&gt;You can say, that there&#39;s Bambu Lab A1 Mini. When I was choosing a printer, it wasn&#39;t available without AMS Lite, which I don&#39;t need. I also have some questions regarding the construction and the approach of the company in general: closed-source, not friendly for tinkering or customization. Well, it&#39;s something different: it&#39;s completely hostile to these kind of things. And I&#39;m not going to vote with my money for this approach.&lt;/p&gt;
-&lt;p&gt;For lots of other manufacturers, the problems are the same as for Creality: print plates are bent and the software support is awful.&lt;/p&gt;
-&lt;h2 id=&quot;the-requirements&quot;&gt;The requirements&lt;/h2&gt;
-&lt;p&gt;The print volume is a good question. I printed some models and I needed this print volume only twice. In one case I could buy a laptop on Amazon. I thought even about Voron 0.2, but a 120x cube seems too little. I thought I could live with a 180x cube.&lt;/p&gt;
-&lt;p&gt;I also wanted the printer to be stable in terms of print quality, quick, and silent. The last two characteristics are contradicting. Well, they start to contradict when the printer pushes speed too much. But you need good engineering, good quality parts, and anti-shaping technology, ideally with sensors on the printer.&lt;/p&gt;
-&lt;p&gt;I thought about Sovol SV 06, but you need to replace some parts right away. And the print quality I saw on videos by the guys who did it, still sucked. And it just seems irrational to me to pay for the parts that go right into the bin.&lt;/p&gt;
-&lt;p&gt;Some more bad candidates:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;I had experience with AnyCubic, which is still alive. It&#39;s loud and the engineering is just anti-humane, which results in unstable and often bad print quality.&lt;/li&gt;
-&lt;li&gt;AnkerMake... just take a look at their group on Reddit... it is full of complains&lt;/li&gt;
-&lt;li&gt;FlashForge... again, awful software and lots of questions regarding the electrical safety of these devices&lt;/li&gt;
-&lt;li&gt;Neptune printers have problems with geometry, they are just not square, just as the prints they produce&lt;/li&gt;
-&lt;li&gt;The 100 is a great project, but it requires sourcing and assembly... and some special tools which also cost a few hundred euros&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;prusa&quot;&gt;Prusa&lt;/h2&gt;
-&lt;p&gt;OK, what about Prusa? These printers are expensive, they say. Is it the only drawback? If it is, I can live with that. You can find some negative reviews about Prusa Mini, but the current model is called Prusa Mini+, it also has firmware upgrades, and Prusa Slicer took a long path as well. And the fact is that Prusa Mini was used on lots of print farms. Now many print enthusiasts have replaced it with BambuLab Core-XY printers. Does it make Prusa Mini+ a bad printer? I don&#39;t think so. There are lots of advantages of small print volume:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;It&#39;s energy efficient as the heated table is small&lt;/li&gt;
-&lt;li&gt;The construction has worked well for this volume&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The approach here&#39;s the following: you can fully disassemble, service, and assemble the printer yourself. As it&#39;s not new on the market, there are plenty of upgrades available for cheap. For example, it uses a standard v6 nozzle, you can buy 8 of them for 14 EUR and they will be made of hardened steel.&lt;/p&gt;
-&lt;h2 id=&quot;my-experience&quot;&gt;My experience&lt;/h2&gt;
-&lt;p&gt;First, I should put a disclaimer, my printer came with some upgrades and I can&#39;t say anything about how the printer works without them:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The heat block&lt;/li&gt;
-&lt;li&gt;The Bondtech extruder he he he&lt;/li&gt;
-&lt;li&gt;A printed stabilizer for the Z-axis&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The problem was that the previous owner tried to print with nylon, and this material was in the heatsink, on the heatblock, and it clogged my new nozzle. So I ended up changing the heatsink and the nozzle again and warming up and cleaning the heat block. It took 1 evening and after that it was fine. And the previous owner sent lots of spare parts to me, including the upgrades.&lt;/p&gt;
-&lt;p&gt;But it started with assembly as my printer came partially disassembled. Here&#39;s the question for those who say that it costs too much: Do great assembly instructions with photos cost anything? I think they do and I was able to assemble the printer and after that change the nozzle, although I&#39;ve never done it before. I needed only hex wrenches for that. I also lubed the bearings and checked the belts and all the bolts. And after that I can say, that the engineering of this printer is great, because it&#39;s simple.&lt;/p&gt;
-&lt;p&gt;Is it silent? It is until it gets to full speed, but the noise comes mostly from the print head. The print quality is great and stable. More than that, often I print with 15% infill, so I use less material.&lt;/p&gt;
-&lt;p&gt;Regarding the print speed, I have another dirty secret for those who don&#39;t know: if you want speed, just install a bigger nozzle.&lt;/p&gt;
-&lt;p&gt;The guys who paid for these great Core-XY machines often write the same thing: it&#39;s overkill, I printed all I wanted and I don&#39;t know what else to print. That&#39;s the power of marketing, folks. These Core-XY machines are nice, but you bought them although you didn&#39;t need them. My printer is just good enough for the tasks I have, small enough to fit right on my table, silent enough, and still quick enough.&lt;/p&gt;
 </content>
   </entry>
 </feed>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>7 sins of disfunctional IT management</title>
+		<meta name="description" content="When you have this, it&#39;s really bad...">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i> en</a></li>
+					<li><a href="https://www.youtube.com/@DiD-e1p"><i class="fa-brands fa-youtube"></i> de</a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors data-pagefind-body="">
+<h1 id="7-sins-of-disfunctional-it-management">7 sins of disfunctional IT management</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2025-10-06">06 October 2025</time></li>
+	<li class="post-tag"><a href="/tags/maturity/" class="post-tag">#maturity</a>,</li>
+	<li class="post-tag"><a href="/tags/digitalization/" class="post-tag">#digitalization</a></li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>I'd like to present to you some point signs of a disfunctional IT management. These signs are easy to distinguish and to answer &quot;yes&quot; or &quot;no&quot;, whether you have them or you don't. But if you do, it means some major standard IT management practice or process is not in place at all. These signs don't care what your IT director declares or what certification you have. And yes, it's disproportional towards information security for a reason, actually all of the sections below are about information security. Because then you lose information in the best-case scenario, or pay for your information, in the worst case. For instance, many companies pay in these cases and do not advertise it, so we don't have actual statistics.</p>
+<p>I tried to pull some data, but for me the reasoning is simple: you have a hacker in a third world country with a 100 USD computer motivated to get some percent of million-dollar ransom for each case he/she/they was able to encrypt and/or steal/destroy company's data. And an employer can even not pay the hacker, just feed him, 5 USD a day would be enough. Just look at these differences, and you'll get the idea about this motivation. And the more the company pays, the more profitable this &quot;business&quot; becomes. But economics is egoistic, some companies pay to learn about information security the hard way, and they are not concerned about the information security of the others, except for the large companies requiring at least something from their suppliers.</p>
+<h2 id="1-no-minimal-itil-practices-implemented">1. No minimal ITIL practices implemented</h2>
+<p>Broadly speaking, ITIL is a well-known set of processes and practices for IT Service Management, you normally start with a Service Desk (a single point of contact) and Incident Management, then proceed to Problem Management, Change Management, Configuration Management and so on. Sure, every process costs a lot of money to implement and to keep it running. I usually start checking Service Desk and asking three basic questions:</p>
+<ol>
+<li>Does a single point of contact exist?</li>
+<li>Does everyone know about it?</li>
+<li>If I send a message to this point of contact, will anything happen?</li>
+</ol>
+<p>If you end up with a few different points of contact, someone is unaware, or actually nothing happens, you are in trouble. NIS2, an EU regulation, to put it into simple words, just says: bro, just use ITIL. Now NIS2 is a requirement for big companies or companies operating critical infrastructure, and it's not mandatory for all the businesses – for obvious reasons. But I think literally all the companies should implement minimal ITIL, which is also about some basic security, backups in terms of data and in terms of internet channels.</p>
+<p>&quot;We have one internet channel and we're doing fine!&quot; – say some &quot;top-managers&quot;, but that simply means your processes are not automated. By automation I mean something in the information system directs informational and/or material flows in reality. If you enter transactions post-factum, that's not automation in this sense. There's a particular very low level of information exchange and efficiency associated with this model, and there's nothing to be proud about, to put it mildly.</p>
+<p>For governments and government suppliers, a high level of ITIL implementation is actually mandatory, and a few recent incidents prove that:</p>
+<ul>
+<li>Security update ruined airport services over the world on 19th 2024 (delivered to you by CrowdStrike and Microsoft) – a typical example of release management not in place, and it's even not that high-level process. I'm maybe dumb, but I still can't get how you can run critical apps on Windows.</li>
+<li><a href="https://www.datacenterdynamics.com/en/news/858tb-of-government-data-may-be-lost-for-good-after-south-korea-data-center-fire/">Government data lost in South Korea data center yesterday</a> – well, it's something more advanced, it's called Continuity Management and it was widely adopted after 9/11, that you probably shouldn't have all the data centers and data in one physical location.</li>
+</ul>
+<p>But let's return to any company, no matter how small it is, and talk about basic stuff.</p>
+<h2 id="2-using-email-to-send-important-documents">2. Using email to send important documents</h2>
+<p>I'll start from the theory, but I'll try to make it exciting, because it's not about the email per se, it's about ignoring the fundamental principles. So information transfer should go like this:</p>
+<ol>
+<li>The sender sends the message</li>
+<li>The receiver receives the message</li>
+<li>The receiver sends the confirmation, that the message was received</li>
+<li>The sender receives the confirmation; if confirmation is not received within reasonable time, he tries again!</li>
+</ol>
+<p>To automate it and make it kind of standard, the engineers invented a transaction: before the first action the sender should probably open a transaction and close it when the confirmation is received, otherwise roll the transaction back, so the state is that the message was not received. Transactions guard one of the most important things everyone actually cares about, and it's called data integrity. People get that you can't be half-pregnant. But they use email, where transactions do not exist and you do not have idea if the message was received. Ok, technically there are private extensions that allow this confirmation check mark, but it's not standard and if there's no check mark it doesn't tell you anything as well.</p>
+<p>But that's not the only problem with email! The protocol presumes that there will be a number of servers in the middle, which are almost randomly selected. So, first, a server can get a message and go off-grid, and no one will ever know the message ever existed. But, second, any server in the middle can read your message. I'm in the church of cryptography with the open key, so I believe that it will be significantly harder to read encrypted messages, and I don't believe in any other &quot;security&quot; measures. But that's not all. The &quot;guy in the middle&quot; could modify the message and send it further or send other &quot;phishing&quot; messages based on the information he has. Any modern messenger (WhatsApp, Slack, MS Teams) is better than this.</p>
+<p>I literally have no idea why people still use email for any business-related issue, why all the services in the internet are activated using email. And if you send any business-related document, it's on you to encrypt it and to (well, manually) get a confirmation that it was received. And from that I see what telecom providers are doing as literally heroic efforts to make this zombie (I mean email) work. They do it using, for example, credibility score for the server, so although technically you can create your own email server, almost no one does it nowadays, because it's problematic to make it work. So, it's not <strong>that bad</strong>, but it's still bad. The thing that surprises me the most, that I've never read a single article like &quot;guys, we should stop using email and solve this email problem, maybe we should all agree on some new protocol&quot;. More companies use chats, because of the speed of information exchange. Don't get me wrong, I enjoy writing structured mails, but in this case chat is better from security and data integrity viewpoints. Ok, let's move on.</p>
+<h2 id="3-not-using-digital-signature">3. Not using digital signature</h2>
+<p>So, you can encrypt your email or you could sign it, that's basically a checksum, verifiable with the help of your publicly-available signature (the open key). But digital signature goes beyond that and in civilized countries the legislation is for a long time in place, so in Europe you can sign any contract with appropriate signature and it will be no different from a contract signed on paper. Why are paper transactions so bad? I read some papers of the Docusign, the market leader, and I saw some arguments, but they seem vague to me, so here's my version:</p>
+<ul>
+<li>Single source of truth: you trust the information system, what contract version is in place, you don't waste the time checking it and making suboptimal decisions based on guesses;</li>
+<li>The speed of working with information, because you can use all the digital tools to work with the contracts in the digital form, even basic operations like search, find and replace matter;</li>
+<li>Information security and data integrity: access is managed in the program and you can have all the proper backups for the data on all the continents, if it's justified.</li>
+</ul>
+<p>There's something still missing with digital signatures, at least in Europe. This technology is based on cryptography, I mean the algorithms are freely available to everyone. I know there are costs associated with running call centers for video verifications or cloud solutions to store the data and host the approval processes, integration with external systems, etc. Still, basic digital signature from my perspective should be dirt cheap, and it's not there. I looked for the solutions and the suppliers, the top-management of the small companies still can't justify the cost for themselves, especially if we are talking about signing numerous project documents, for example.</p>
+<p>And I don't know what are the limits for disrupting this industry, I mean for a competitor with a dirt-cheap solution to appear. I assume that there are some certification or license costs for signature providers, and it's like licensing the air, because the technology costs nothing. Nowadays it's a cringe to set Russia as an example, but just to prove the point that a digital signature can be working and dirt-cheap, that's what has been achieved in Russia, and I mean country-wide. Actually the size of the territory, disfunctional post services and an environment with a low trust between the counterparties accelerated this process. So, it can be done.</p>
+<h2 id="4-lamp-wordpress-even-for-external-websites">4. LAMP/Wordpress, even for external websites</h2>
+<p>This is going to be the most technical part, and probably the most arguable, but I carefully crafted and collected my arguments for a long time, so let's dive into it. First, a few words about the heading:</p>
+<ul>
+<li>LAMP stands for Linux + Apache + MySQL + PHP. Linux and MySQL are still going strong, from my point of view, but Apache and PHP seem to be irrelevant, more on that below;</li>
+<li>&quot;Even&quot; for external websites means that although external environment is more dangerous, you'd probably have no serious consequences if it's hacked, as it contains no critical info or personal data. It's a &quot;business card&quot; type website with some info about the company, it's not a web app involved in some business processes.</li>
+</ul>
+<p>The issues with Apache were noticed and fixed by Ryan Dahl, the Creator of Node.js, and you can read some useful stuff in his <a href="https://www.linkedin.com/pulse/interview-ryan-dahl-creator-nodejs-andrey-okhotnikov/">interview from 2018</a>. For me, it comes down to this:</p>
+<ul>
+<li>Launching application server, in case of Apache it's mod_php, to service just one request. One application server for one request, that's crazy!</li>
+<li>Blocking, which is discussed in the interview, which is consequence, because mod_php apps can't really communicate with each other.</li>
+<li>mod_php as the prevailing app making php the prevailing language for the back-end, although PHP stands for &quot;PHP hates programmers&quot;. :)</li>
+</ul>
+<p>Ok, let's look at the other side. The technologies evolved just to make Apache usable further:</p>
+<ul>
+<li>nginx, which was introduced as a caching web-server for static content, generated by mod_php;</li>
+<li>containers for load balancing; well, it's not that hard to overload Apache, if it launches new app for each request; by the way, it's called C10k problem, because you need just 10k connections for that;</li>
+<li>frameworks with caching architecture, like Drupal, again to address this mod_php problem.</li>
+</ul>
+<p>These technologies are the crutches for an outdated technology. The presence of these crutches itself poses a question: maybe we should invent a new solution without these flaws?</p>
+<p>And I'm really disappointed with breaking changes in PHP 8, which prevented me to use my favourite Dokuwiki in my next projects, made it harder to install Dokuwiki just to access my old knowledge base and raised security concerns about all the frameworks that didn't migrate to PHP 8, because PHP 7 will eventually come to the end of life. So, yes, breaking changes really break the trust in the technology. And that's apart from PHP not encouraging developers to build stable secure apps. On the contrary, it lowered the qualification required to write a web app, so, yes, it's still powering 80% of the web, an average PHP app being just horrible. Laravel still keeps PHP alive, though. Regretfully, but there's another problem: there are not so many battery-included frameworks, Laravel being one of them.</p>
+<p>Wordpress had numerous vulnerabilities, using it means you chose the cheapest solution not taking into consideration anything else. It's just displaying your IT illiteracy to the whole world. By the way, anyone can view the HTML source and find Wordpress there. It's just a joke when a corporate website is powered by it. It's a double joke when it's hosted on a shared web hosting, these guys can be just scam, making you pay more the next year for doing less – probably because they know that you are not that tech-savvy, if you use their services. That's the reason I migrated to the static website on GitHub.</p>
+<p>Were there days when LAMP and even Wordpress were cool? Sure, like in 90s. Why isn't it cool anymore? Well, we have other technologies. And by technologies I don't mean Node.js only, Go is probably better, it looks like a proper Node.js and fixed JavaScript. Of course there are hardships with Go and Node.js, as well as with React and other front-end frameworks. But it's better to have a modern stack even on a business-card type website. It turns out that <a href="https://justfuckingusereact.com/">React is still cool</a>, by the way.</p>
+<p>Why would you want a dynamic business-card website? You could have a static website and still have dynamic forms, even comments and search using external services. But your website would be blazing fast, bullet-proof secure, and nobody prevents you from making it look beautiful. You even could use React/Vue, although it presumes some back-end, and solutions like Docusaurus, Gatsby, Astro, VitePress. Because that's cool now. N.B.: I use 11ty, by the way, as you can see in the footer.</p>
+<h2 id="5-no-regular-pen-testing-from-external-company">5. No regular pen testing from external company</h2>
+<p>Let's return to security, and it's as good as it gets to break it. So, how do you break security? It turns out, that &quot;psy ops&quot; are more effective, so you'll probably use phishing emails or calls, even some offline contact with a person to build trust and to make him/her/them break security protocol. To open a link, to fill in the password on a phishing website, to send a confidential document to a hacker. You need not that complicated tech here, and you can't know how secure you are when you don't measure. Well, that's exactly the point to be measured: the end of the chain, the most vulnerable link, a human. Your dear employees passed the trainings, successfully answered all the questions after that. But what will they do, when they lack the time, they are stressed and they have never actually identified a menace or reacted to it properly? Well, they'll open the link and type in their password, what could go wrong?</p>
+<p>And testing your company with internal resources is just a conflict of interest, because you paid for these security trainings, it should mean you'd be safe, right? You tend to see reality as you want it, not how it is, and that's a problem.</p>
+<h2 id="6-no-security-trainings-for-everyone">6. No security trainings for everyone</h2>
+<p>So, there's a war going on, new measures to break your security systems or trick alarms of your employees are invented every day. But what's the chance that you face something that no one expected before? It's not that big. Most disasters happen when someone uses a known tactic and scales it. It could be prevented if you just inform people that this type of attack exists.</p>
+<p>A few fresh examples when I was almost tricked:</p>
+<ul>
+<li>A request from a chat app to enter my password for this app, it didn't look like it's external.</li>
+<li>A scam when two guys call: one talks to you and says that you'll get a confirmation code from the bank, and another calls the bank and asks them to send a confirmation call to you; so yes, you receive a confirmation code from your bank, if you're not aware, and this lowers your security.</li>
+</ul>
+<p>The knowledge tends to dissolve with time, so it's boring, but reminding people of the security concerns regularly makes them work, and it's still cheaper than dealing with the consequences. Ok, let's talk about the last topic here, when someone steals a laptop.</p>
+<h2 id="7-not-encrypting-laptop-drives">7. Not encrypting laptop drives</h2>
+<p>I worked at an audit company, in the consulting department though, and there was a mandatory training that the price of the laptop is nothing compared to the value of the information on it. I think probably more people should think about it. Sure enough, all the laptop drives were encrypted, and some other security measures were implemented to prevent copying data to non-encrypted USB drives or sending data over the network. From what I know now, that's not enough, but encrypting the hard drive is the ABC of information security. You even don't need anyone to steal a laptop; people just forget their laptops everywhere. You just need to apply statistics and probability theory, multiply by the number of employees in your company, and you'll get the exact number of laptops that will be lost per year for sure. Do I need to say more?</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>We don't know what will happen, but I believe in processes and practices that can deal at least with what we know about. The real facepalm happens when we knew about the risk, and we didn't manage it. It's strange that this type of behaviour is present in IT, but it is, and it's not always the money, it's about the literacy, curiosity and staying up-to-date. Well, that's what makes professionalism, isn't it?</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2025-09-linux-gui.html">Linux GUI app is a rabbit hole</a></li>
+</ul>
+</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2025-10-it-management-sins.html` was built on 2025-10-07T13:39:41.159Z -->
+	</body></html>

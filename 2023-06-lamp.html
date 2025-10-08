@@ -55,14 +55,15 @@
 			</nav>
 		</header>
 		<main class="container">
-			<heading-anchors data-pagefind-body="">
+			<heading-anchors>
+				<div data-pagefind-body="">
 <h1 id="installing-lamp-am-i-dumb">Installing LAMP -- Am I dumb?</h1>
 <ul class="post-metadata">
 	<li class="post-metadata-li"><time datetime="2023-06-10">10 June 2023</time></li>
 	<li class="post-tag"><a href="/tags/linux/" class="post-tag">#linux</a></li>
 </ul>
 <h2 id="task">Task</h2>
-<p>Here's the story: I had a <a href="https://tiki.org/">Tikiwiki</a>, installed on my web hosting. After some time I decided that it was an overkill, so I backed up the SQL database and the application and removed this wiki from hosting. Now the only hosting I use is GitHub Pages for static HTML pages. So, I decided to recover information from this wiki, what could be easier, right? LAMP (Linux + Apache + MySQL + PHP) was the most popular use case for Linux a while ago. I have Ubuntu 23.04, it's the most popular distribution, so what could go wrong? Well, here adventures begin.</p>
+<p>Here's the story: I had a <a href="https://tiki.org/">Tikiwiki</a>, installed on my web hosting. After some time I decided that it was an overkill, so I backed up the SQL database and the application and removed this wiki from hosting. Now the only hosting I use is GitHub Pages for static HTML pages. So, I decided to recover information from this wiki, what could be easier, right? LAMP (Linux + Apache + MySQL + PHP) was the most popular use case for Linux a while ago. I have Ubuntu 23.04, it's the most popular distribution, so what could go wrong? Well, here adventures begin.</p></div>
 <h2 id="all-went-wrong">All went wrong</h2>
 <p>So, the first idea was to install Apache, PHP, and MariaDB locally and just restore everything. It's not so clean method, because you install lots of packages and services to your system and if you don't need them, you have to clean up. But let's go for it. Well, Tikiwiki doesn't support PHP 8, which is shipped with Ubuntu. But you can install PHP 7.4 on Ubuntu, right? Well, you have to <a href="https://linux.how2shout.com/how-to-install-php-7-4-on-ubuntu-22-04-lts-jammy-linux/">add an external repository</a> and now only Ubuntu 22.04 is supported. I googled it, but I didn't find a solution. And I'm not going to change the distribution because of this task.</p>
 <p>OK, what else can we do? We have Docker, right? We even have <a href="https://github.com/sprintcube/docker-compose-lamp">a LAMP stack for Docker</a>, that's great! Apache worked, I could connect to the MariaDB server and restore the database. The issue with Docker is that you need to use TCP for database connection, not Unix sockets. Tikiwiki couldn't connect to the database, I tried to change the server name to 127.0.0.1, but it didn't help. The new installation of Tikiwiki couldn't connect to the database server as well.</p>
@@ -81,10 +82,11 @@
 <p>For me, it's at least strange, you know. :)</p>
 <ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2023-05-choosingabike.html">Choosing a Bike, Looking for Underdogs</a></li><li class="links-nextprev-next">Next <i class="fa-solid fa-arrow-right"></i><br><a href="/2023-07-covid.html">Several Ideas on Global Disasters</a></li>
 </ul>
-</heading-anchors>
+
+			</heading-anchors>
 		</main>
 		<footer>
 			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
 		</footer>
-		<!-- This page `/2023-06-lamp.html` was built on 2025-10-07T15:03:53.139Z -->
+		<!-- This page `/2023-06-lamp.html` was built on 2025-10-08T09:46:40.413Z -->
 	</body></html>

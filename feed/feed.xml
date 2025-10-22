@@ -5,11 +5,48 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2025-10-15T11:15:00Z</updated>
+  <updated>2025-10-22T12:20:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>7 Sins of Dysfunctional Project Management</title>
+    <link href="https://en.kovchinnikov.info/2025-10-pm-sins.html" />
+    <updated>2025-10-22T12:20:00Z</updated>
+    <id>https://en.kovchinnikov.info/2025-10-pm-sins.html</id>
+    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;If you are failing with the changes, the first reason could be that you have no project management processes and practices established. If you are aware of project management (PM) and think that you have projects, a project management office, project managers and so on, if you see something in common with the &amp;quot;7 sins&amp;quot; I enumerate and discuss below, you&#39;re in a really bad situation. It&#39;s about the basics, but they are called so for a reason – you build all the other stuff on top of that. When the foundation is rotten, you&#39;ll find out by failing to deliver.&lt;/p&gt;
+&lt;h2 id=&quot;1-not-adapting-a-pm-standard-with-written-process-description-and-templates&quot;&gt;1. Not adapting a PM standard with written process description and templates&lt;/h2&gt;
+&lt;p&gt;&amp;quot;Projects&amp;quot; have been a buzzword for decades: I go to buy some sausages, that&#39;s a project; I&#39;m visiting my mom, that&#39;s another project; I have so many projects going on, from going out with my friends to the bar on Friday night to going into coding. If it lasts for so long, it becomes socially accepted, it&#39;s for sure accepted and spread by journalists of any calibre, but it still doesn&#39;t mean to me that it should be accepted by PM professionals. Well, project implies some artifacts, to say the least, none of which are in place in the aforementioned cases for sure. The same goes for PM as a discipline, it implies practices and procedures, as well as templates, which do not just lie somewhere, but which are used and against which projects are checked and deviations are eliminated.&lt;/p&gt;
+&lt;p&gt;If you started your journey into the PM discipline from the PMBOK, I can feel nothing but sorry, because this standard is vague and overwhelming at the same time, unless you already know what PM is and what you need. And even if you do know, reading it will bring you to tears. That&#39;s why I prefer PRINCE2, which is a lot more practical, down-to-Earth and applicable to smaller-scale initiatives. The templates are also great and available for free, as well as (my favourite) Project Management Office (PMO) process diagram.&lt;/p&gt;
+&lt;p&gt;Adapting any practice, including PM, is a change, and it includes making a top-level decision, conducting training, making PM mandatory, controlling the progress and, again, taking actions including escalations, when things don&#39;t go as planned (they won&#39;t). If you don&#39;t feel the pain of a change, you are probably not advancing.&lt;/p&gt;
+&lt;h2 id=&quot;2-not-tailoring-a-pm-standard-to-the-companys-requirements&quot;&gt;2. Not tailoring a PM standard to the company&#39;s requirements&lt;/h2&gt;
+&lt;p&gt;When I&#39;m writing about adapting a PM standard, it&#39;s not about implementing it as is, it should be tailored to the company&#39;s requirements, and it&#39;s 80% of the work in this aspect. I&#39;ll give some examples, which are not applicable in every case, but I did it in most of the cases I build PMOs:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Cutting unnecessary steps and templates from the process; here we balance the resources we have and the risks we can take, still trying to implement something &amp;quot;in the direction of PM&amp;quot;.&lt;/li&gt;
+&lt;li&gt;Deciding how to deal with initiatives, too small to be called projects, I call these tasks. You don&#39;t write a project passport for the tasks and you don&#39;t conduct regular status meetings, but you need a decision to use resources, you need some brief description of goals and a plan, and management needs PMO to track these tasks. Tasks can be distinguished by the amount of money spent on them, by the way.&lt;/li&gt;
+&lt;li&gt;Choosing the regularity for status meetings and PMO meetings, it&#39;s all about spending resources: too seldom can get things out of control, too often makes them completely boring, so your busy top-managers lose interest.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;There&#39;s a cultural thing as well: you need to explain and I&#39;d even say &amp;quot;educate&amp;quot; your staff what PM is, using the cases and vocabulary, the pain points in a particular company. And you also explain the rough (and probably painful) edges of living with PM using these pain points, or you return to the previous step and adapt your PM approach further, if this roughness is not justified. That&#39;s what people get paid for.&lt;/p&gt;
+&lt;h2 id=&quot;3-no-gateways-in-place-for-project-phase-start-close&quot;&gt;3. No gateways in place for project/phase start/close&lt;/h2&gt;
+&lt;p&gt;The definition of not working PM as an approach is things slipping away. It can be negative, like budget or time overrun, and it can be &amp;quot;positive&amp;quot;, like accepting the deliverables for the stage with a proper procedure or off-line meeting. You can tailor the procedures, but you don&#39;t do it retroactively. If the procedure is in place, if I were paid every time I&#39;ve heard &amp;quot;do we really need to do this?&amp;quot;, I&#39;d be rich on my yacht somewhere in the Caribbean. Yes, that&#39;s the point of procedure, they work or they do not exist.&lt;/p&gt;
+&lt;p&gt;It feels right to simplify things &amp;quot;on the fly&amp;quot;, but it&#39;s not. I didn&#39;t allow it, but when the off-line discussion took place, I almost always heard someone who wasn&#39;t satisfied, and you need to address these issues here and now. Formal acceptance or stage/project start approval eliminates the need to return to these steps afterwards. This returning is hell, and it&#39;s a completely different type of hell than PM is by itself – it&#39;s the hell you create yourself and you could evade.&lt;/p&gt;
+&lt;p&gt;People who created these procedures for project/phase start/close definitely had some experience in terms of knife handles sticking out of their backs; I&#39;d trust these guys (and gals), unless you want these kinds of surprises for yourself.&lt;/p&gt;
+&lt;p&gt;Being too formal with these meetings is another trap, I&#39;ve seen it. In case you didn&#39;t know, the rule for meetings in PM is &amp;quot;no surprises&amp;quot;, so yes, everyone should be aware of what&#39;s going on and agree before the meeting. And if you prepare the meeting like that, you&#39;d probably still get manageable objections, otherwise you&#39;d be screwed.&lt;/p&gt;
+&lt;p&gt;So, to get this procedure up and running, you need the discipline to get all these top-managers to these meetings, as well as competent project managers to prepare &lt;strong&gt;the people&lt;/strong&gt; for the meetings. Yes, it&#39;s tough – well, life is tough and PM is tough as well. :)&lt;/p&gt;
+&lt;h2 id=&quot;4-not-requiring-pm-certification-from-the-suppliers&quot;&gt;4. Not requiring PM certification from the suppliers&lt;/h2&gt;
+&lt;p&gt;In PM and in management in general we often hear the term &amp;quot;team&amp;quot;, and it refers to the team inside one company. With projects, you share the risks and the activities with the supplier, so it&#39;s fair to consider their team as well. And their team has a project manager, so to be aligned with this project manager regarding the basics, he/she/them/they should probably be certified project managers. From my experience either a project manager is certified, or he/she/them/they doesn&#39;t believe in project plans at all, and that&#39;s a disaster. This project manager will then relocate all the resources to the task with the nearest deadline or do some other crazy stuff. We all have some crazy stuff to do besides breaking basic PM rules, just cut it off.&lt;/p&gt;
+&lt;h2 id=&quot;5-punishing-for-revealing-delays&quot;&gt;5. Punishing for revealing delays&lt;/h2&gt;
+&lt;p&gt;Projects always come with the bad news: delays, new problems, risks, changes and so on. Good news? Almost never heard of them. In this context, everything you can ask any team member to do is not to panic and to bring the news to the appropriate level as soon as possible. There should be &lt;strong&gt;absolutely no hesitation&lt;/strong&gt; to bring the bad news and to escalate the message. According to the basics, by doing this, a person lets the whole team down. And there&#39;s no substitute for the culture, which welcomes the bad news, no matter what. There&#39;s no &amp;quot;HR BS&amp;quot; to let the team know that they&#39;ll never ever be punished for doing so. This permission and even encouragement to bring the news in is applicable for the whole team, and it&#39;s a vital PM practice. People get the real message very fast, right after the trust is broken and anyone is discouraged from bringing in the news.&lt;/p&gt;
+&lt;h2 id=&quot;6-not-punishing-for-revealing-delays-post-factum&quot;&gt;6. Not punishing for revealing delays post-factum&lt;/h2&gt;
+&lt;p&gt;What PM is about regarding the schedule? Well, a classic PDCA cycle: plan-do-control-act. There&#39;s something else, called forecasting or predicting, and I&#39;ll not cover it here. I&#39;ll just say that if a project manager only states the delay post-factum, it means he/she/them/they doesn&#39;t manage the schedule at all. There&#39;s no reason for that, that&#39;s the job; every drunk project manager should be able to report the critical path and the probable delays. I wouldn&#39;t put it as a practical test, though, for obvious reasons. And yes, normally I&#39;d fire for that.&lt;/p&gt;
+&lt;h2 id=&quot;7-not-having-a-formal-project-prioritization-framework-in-place&quot;&gt;7. Not having a formal project prioritization framework in place&lt;/h2&gt;
+&lt;p&gt;Resources are always limited. I had a case when I suggested pausing 9 projects out of 10, because the most important project was eating all the resources. I can also confess that I could have 10 projects without a formal prioritization framework, and I regret not having it. Things just become so clear when you have it. I prefer RICE, by the way; you could also use another framework using quantifiable effects, but you need trustworthy business cases for that. PMO is for supporting top-management in any circumstances, and these circumstances can be shocking, meaning closing or pausing a significant part of the projects. When it happens, you don&#39;t have time to evaluate, you need to make decisions, and you need to be able to explain these decisions. With a formal framework, you can give the scoring table, and the decisions become clear; that&#39;s the beauty of it.&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;The signs I enumerated sound random, and they probably are, but they uncover some fundamental things below processes and practices: what it means in terms of &amp;quot;modus operandi&amp;quot; to have project standards in place, how a sane PM culture looks like, when you fire your project manager, and how your PMO is helping the business when a storm is coming. That&#39;s all for today, folks. I wish you survive all the storms, play safe.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Structuring the Job Search</title>
     <link href="https://en.kovchinnikov.info/2025-10-jobsearch.html" />
@@ -505,60 +542,6 @@ The back-end-only app is easy to develop and quite feasible to develop alone, an
 &lt;/ul&gt;
 &lt;p&gt;So the focus is on usability and speed, I hope you&#39;ll like it!&lt;/p&gt;
 &lt;p&gt;P.S. I really think I should change something from time to time, just for the sake of changing.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>We&#39;re Writing a Web App</title>
-    <link href="https://en.kovchinnikov.info/2024-05-webapp.html" />
-    <updated>2024-05-16T19:18:00Z</updated>
-    <id>https://en.kovchinnikov.info/2024-05-webapp.html</id>
-    <content type="html">&lt;h2 id=&quot;why-write-a-web-app-1&quot;&gt;Why write a web app #1&lt;/h2&gt;
-&lt;p&gt;I wrote a lot about learning Linux tools and using them effectively. The question is what do we do with that? Or: what&#39;s next regarding personal development? What I&#39;ve noticed, is that a lot of people tend to go into system administration, meaning setting up server applications. Here I should mention &lt;a href=&quot;https://www.ubuntupit.com/&quot;&gt;UbuntuPit&lt;/a&gt; as a great source for these projects. This path has a few drawbacks, although it&#39;s useful for learning what exists:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;You are limited to the tools which are already available&lt;/li&gt;
-&lt;li&gt;It can be frustrating because if it doesn&#39;t work, you&#39;re stuck; you&#39;re unable to modify the source code&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I think learning programming is beneficial regarding personal development, having new challenges, and so on. But why create a web app?&lt;/p&gt;
-&lt;h2 id=&quot;why-write-a-web-app-2&quot;&gt;Why write a web app #2&lt;/h2&gt;
-&lt;p&gt;For simplicity, we can distinguish the two app types: those intended for individual use and those intended for collaborating with others. It tends that people are hugely more productive when they collaborate (no, I don&#39;t mean boring Zoom meetings), while personal productivity is limited. If we have a new app, the more people use it, the more productive, potentially, they can get. So what types of apps exist to interact with each other:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Command-line apps (CLI) are the easiest to write, and are fun to start with, but the visualization is limited&lt;/li&gt;
-&lt;li&gt;Graphical desktop apps are great, but you (normally) need special tools for Linux, Mac and Windows&lt;/li&gt;
-&lt;li&gt;Mobile apps have several platforms as well, Android and iOS&lt;/li&gt;
-&lt;li&gt;The web apps, finally&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The web apps are displayed in any standard-conformant browser, but they can also have a special mobile layout and they can be converted to mobile apps (or lite mobile apps) – being a mobile app, just cashing the assets for a faster display. At first, we could start even without that, and we&#39;ll be able to open our web app on any platform in any browser when the app and the browser stick to the standards. It motivated me to start, but to manage your expectations you should be probably aware of some drawbacks.&lt;/p&gt;
-&lt;h2 id=&quot;why-its-hard&quot;&gt;Why it&#39;s hard&lt;/h2&gt;
-&lt;p&gt;It&#39;s just hard to make web apps, and the list of the reasons can be very long:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The tools to build web apps are less sophisticated, than IDEs for mobile or desktop apps. Sometimes it seems like you&#39;re back in time and you don&#39;t have the tools desktop developers already have. Nevertheless, you can start development with any text editor and it takes some practice to feel comfortable in this environment.&lt;/li&gt;
-&lt;li&gt;Web dev is not so much about dev. You have three parts (normally): a front-end, a back-end, and a database. You&#39;ll spend a lot of time messing with joining these parts together and looking for errors &#39;in-between&#39;. Sometimes you&#39;ll find yourself spending 80% of your time creating front-end because it&#39;s all about tiny details. So, you have less time for the logic of the app.&lt;/li&gt;
-&lt;li&gt;The number of web frameworks is overwhelming, and it took me several months to choose one (so you don&#39;t have to), and I&#39;m still in the process.&lt;/li&gt;
-&lt;li&gt;Choosing components for the front end, choosing a database engine, and choosing a back-end framework can be overwhelming too.&lt;/li&gt;
-&lt;li&gt;All this makes the progress relatively slow.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;It&#39;s not that technically hard, but it puts a moral toll on you when you&#39;re moving not that fast or (what I did several times) you have to choose another framework for your app and rewrite everything.&lt;/p&gt;
-&lt;p&gt;The tools you have, again for simplicity, can be divided into the things you can easily get without and the things you should know. But in what order to learn them? Well, ...&lt;/p&gt;
-&lt;h2 id=&quot;learning-the-web-from-a-historical-perspective&quot;&gt;Learning the web from a historical perspective&lt;/h2&gt;
-&lt;p&gt;I came to this idea recently, and I think it makes some sense: you could learn web technologies in the order they evolved because that happened for a reason. A reason for that was that humanity (or developers) came to some limitations with technology, so they invented a new technology until they had a better idea. I suggest that you learn in this order and the sign that you learned something is that you &lt;strong&gt;feel&lt;/strong&gt; the limitations of a technology. This means you are probably ready for the next step.&lt;/p&gt;
-&lt;p&gt;Roughly speaking, the sequence was like this:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Static web meaning HTML and CSS, are the basics.&lt;/li&gt;
-&lt;li&gt;Relational databases meaning SQL.&lt;/li&gt;
-&lt;li&gt;Basic back-end framework, here I was quite happy to start with &lt;a href=&quot;https://flask.palletsprojects.com/&quot;&gt;Flask&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Opionated back-end framework, which gives you at least a variant, of how this could be done. I&#39;m here now and I&#39;m starting to feel the limits of &lt;a href=&quot;https://www.djangoproject.com/&quot;&gt;Django&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Non-opinionated modern back-end framework, it seems that &lt;a href=&quot;https://expressjs.com/&quot;&gt;Express JS&lt;/a&gt; is quite popular, and I&#39;m targeting it now.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;There are a lot of things like React/Angular/Vue or Next.js/Nuxt.js, I just don&#39;t understand what limitations would make me use them. Generally maintaining focus and taking one step at a time is a good idea, from my experience, for the reason I&#39;ve already mentioned: the number of frameworks is overwhelming. And there&#39;s a bit of hype, too.&lt;/p&gt;
-&lt;h2 id=&quot;what-i-ve-learned-so-far&quot;&gt;What I&#39;ve learned so far&lt;/h2&gt;
-&lt;p&gt;I&#39;ll go through the same list from the previous section to note my conclusions and let a lot of people laugh at them. :)&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Static means you can&#39;t change anything, but when you generate the static code on the server it&#39;s generally more stable, just because the client side is simple. Unless you need an interactive app like a game or an interactive map, you can go further with HTML and CSS. There are plenty of ready CSS styles as well.&lt;/li&gt;
-&lt;li&gt;SQL databases are great when you understand what&#39;s going on. If you can model a data structure beforehand, I see no drawbacks, although I get the idea that NoSQL databases speed up the development. I&#39;m just old, so I stick to SQL. Some frameworks have tools to write platform-independent SQL, I&#39;m also happy to use that.&lt;/li&gt;
-&lt;li&gt;I was stuck with Flask and the authentication task. The number of modules you have to find and include is a bit overwhelming just to do the basic things. It blurs a bit the whole picture of what&#39;s going on, but maybe it&#39;s a perfect place to start because you get the basics without too complicated concepts and you get a result fast.&lt;/li&gt;
-&lt;li&gt;I&#39;m working with a calendar app, and now the idea of having a very limited language in the templates doesn&#39;t feel right. Yes, you could use Django as an API for a front-end app, but I was eager to leverage all of its advantages, fast models and fast templates being among them.&lt;/li&gt;
-&lt;li&gt;When you step on JS and Express territory, you again have to choose the modules and you also feel the absence of documentation, compared to pythonic tools and specifically Django. It sucks, but there&#39;s a reason it&#39;s so popular, and it&#39;s interesting to find it out, so my journey continues.&lt;/li&gt;
-&lt;/ol&gt;
 </content>
   </entry>
 </feed>

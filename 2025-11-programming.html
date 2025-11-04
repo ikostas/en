@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Learning Programming in 2026</title>
+		<meta name="description" content="My take on what&#39;s going on with programming, the value of human thinking and AI">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i> en</a></li>
+					<li><a href="https://www.youtube.com/@DiD-e1p"><i class="fa-brands fa-youtube"></i> de</a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="learning-programming-in-2026">Learning Programming in 2026</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2025-11-03">03 November 2025</time></li>
+	<li class="post-tag"><a href="/tags/productivity/" class="post-tag">#productivity</a>,</li>
+	<li class="post-tag"><a href="/tags/dev/" class="post-tag">#dev</a>,</li>
+	<li class="post-tag"><a href="/tags/python/" class="post-tag">#python</a></li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>We are at the end of 2025, so it's time to make some plans for 2026. And these plans for many people depend on the question: is learning programming still a thing? I'm not working as a developer and I'm not discussing the trend where lots of juniors have been dismissed and few are hired, with senior developers still in demand, though. I'm talking about the value of thinking and problem-solving, as well as the ability to understand what's going on with computer systems and make the right decisions.</p></div>
+<p>Almost like how security rules are written with blood, history is not about having a visionary and going in the right direction (although that was true with Unix and C++). It's often about testing all the variants and learning &quot;the hard way&quot; how they fail, so I'll bring some real-life &quot;Halloween&quot; stories to your attention.</p>
+<h2 id="the-wrong-decisions">The wrong decisions</h2>
+<p>The first story happened to me in my first job. We had a team of three people: a project manager, a developer, and me as a consultant. We were implementing Microsoft Dynamics AX ERP system (now called Microsoft 365 Finance and Operations), so it was around 2006. The situation was not standard: we needed to inject money into logistics transactions and the financial contour of the system. It turned out that our project manager had a plan which was completely unfeasible, but he didn't share it with his team. The takeaway is not about teamwork though – it's about planning something when at least someone knows how it works under the hood.</p>
+<p>It's no surprise this happens again: making decisions when no one actually knows what's going on. I've been in hundreds if not thousands of meetings, and the most frustrating ones are when no one understands what's going on and, in their ignorance, doesn't want to invite a subject matter expert to clarify the issue – because, well, it would reveal their incompetence. That can lead to anything from an incident to a disaster, and that's what the next two cases are about. The new idea, common for both cases, is the formula &quot;incompetent person + language model = competent person,&quot; which doesn’t work out at all:</p>
+<ul>
+<li>The Tea app, a social network for women, faced a massive personal data leak after boasting about extensive use of language-model-generated code.</li>
+<li>The AWS hub outage, noticed by almost everyone using the Internet: again, AWS had heavily promoted using language-model-generated code before that. A software bug was cited as the reason for the outage – I don't believe that in 2025 qualified programmers and testers are unable to push reliable code to production, but language models certainly are not able to do that.</li>
+</ul>
+<p>The trend toward language-model-generated code is like a locomotive – impossible to stop right now – so we'll see more outages for sure. Another funny thing is that some developers advertise themselves as &quot;re-writing&quot; AI-generated code, which is exhausting, by the way. You face at least 2–4x more code than there should be – code implementing features no one asked for, and not implementing security or reliability features... well, because no one asked for them.</p>
+<h2 id="what-is-programming">What is programming</h2>
+<p>I'd like to redefine programming, and my definition is not in line with a basic Computer Science (CS) course, regretfully:</p>
+<ul>
+<li>It’s about learning a programming language, but you need to learn at least one more language other than Python. Python is concise and simple, but it's so similar to human language, and the interpreter is so friendly in reporting errors, that it feels almost like cheating. With not enough <strong>resistance</strong>, you don’t get enough <strong>exercise</strong>, which is what working with computers is about – developing a certain level of problem-solving ability. So, I suggest learning something harder like C++, Java, or JavaScript.</li>
+<li>It’s about learning markup languages as well: HTML, Markdown, LaTeX. The ability to see structure when you read markup code is important, and these languages are the basis of modern IT. After learning front-end, I also changed my perspective on user interfaces: the back-end defines what capabilities you have, but representation matters, and you should at least have an opinion on front-end technologies like Angular, Vue, or React.</li>
+<li>It’s about learning SQL, which is included in CS courses, as <strong>logic</strong> is often not about transforming data but about storing and extracting it – and that may not be obvious.</li>
+<li>It’s about learning the basics of how the Internet and networks in general work. What are the protocol layers? Why would you prefer the Internet over a local network? When computers start to interact with each other, security questions arise: what level of security are we able to achieve and promise to our customers?</li>
+<li>It’s about learning the basics of operating systems – how they function, what layers they have, and why Linux is better (just joking). Working in IT implies having some outlook, knowing some history: what about microkernel architecture, for example? And history, especially computer history, has a lot of lessons to learn from – why something &quot;ugly&quot; works in the long term, and some architecturally beautiful or overhyped concepts fail.</li>
+</ul>
+<p>And even that’s not enough: there are programming patterns, architectures, and specific security vulnerabilities, which make the features visible to the user only about 10% of the iceberg. So yes, programming is hard.</p>
+<h2 id="what-about-ai">What about AI</h2>
+<p>Sorry for repeating myself, but I'll write it again just in case you don’t know: we don’t have AI yet. Just listen to the <a href="https://open.spotify.com/episode/3zAXRCFrHPShU4MuuIx4V5?si=LO8baLI5RxeLmrm0f5vNUg">podcast with Richard Sutton</a>: language models use knowledge – they are unable to learn, even like animals do. Yes, they can pass Turing’s test, but it’s still emulation of intellect rather than having it. True intellect is called AGI (artificial general intelligence). Forecasts vary – one of the latest episodes of the same <a href="https://open.spotify.com/episode/3iIYVmmhXwh3fOumypWVpC?si=B-Sk4SSVQbmi7k7hMDneNA">podcast with Andrej Karpathy</a> is called &quot;AGI is still a decade away.&quot; I’m not sure if I’m going to listen to it – it sounds pessimistic. Or optimistic – depending on how you look at the path behind.</p>
+<h2 id="what-professions-will-disappear">What professions will disappear</h2>
+<p>I'd recommend listening to the <a href="https://open.spotify.com/episode/6vBr2kDnmrUu17xdiRVbXR?si=KSjKbq_zQ_W6JTG8OTVotQ">podcast with Elon Musk</a>, although it’s boring at times. Elon states that all professions working with computers will disappear. I’d say that working with requirements is the most difficult part, even for humans. In the real world, product managers and project managers do this job. Being one of them, I can see the demand falling. Can developers do this job? Yes, sure. The great devs I know were great at working with requirements (and architecture). The work model just tends to be more primitive now: creating a prototype at each step and moving forward based on feedback. It’s not that bad – if &quot;the managers&quot; are so expensive, this model can even be more cost-effective.</p>
+<h2 id="a-side-history-quest">A side history quest</h2>
+<p>The history of IT is rather short, but I'd like to ask a question: when did humanity make progress in general? I believe it happened when highly talented and motivated people (self-)assembled in teams and faced challenging tasks. For me, the case &quot;Windows vs. Linux&quot; is clear and closed – and that’s what happened (in my humble opinion). In the early days of Linux, FreeBSD was also a thing, but for me, the turning point from FreeBSD to Linux was the journaling system ReiserFS, which boosted filesystem performance on Linux. Windows filesystem performance looked just ridiculous, and from a performance viewpoint, Windows made no sense because of its outdated multitasking model. So in this case, engineers (or developers) won over &quot;managers,&quot; whether they were managing products, projects, finances, or marketing.</p>
+<p>What’s happening now is like &quot;the managers&quot; striking back using language models to get rid of devs. Look at Windows now: it’s clearly a follower, copying Linux tech – be it WSL (Windows Subsystem for Linux) or PowerShell with its CLI approach (which existed before Linux, I must say). To cover Windows’ grave with asphalt, they even introduced ads in Windows – so even more Windows supporters are pissed off.</p>
+<p>It’s not &quot;devs vs. managers&quot; or &quot;devs vs. language models.&quot; It’s &quot;true vs. fake.&quot;</p>
+<h2 id="what-s-intelligence">What’s intelligence</h2>
+<p>I think intelligence reveals itself in solving problems, and there’s no other way to train intelligence than by solving problems – always raising the bar. Programming is great for training intelligence because, in real life, you can cut corners: people can abandon their own requirements if you’re convincing enough, you can motivate people to work overtime to compensate for bad planning, and so on. IT is ideal in terms of &quot;strict requirements&quot;: you’re unable to cut corners there – it works or it doesn’t. It also teaches a very important concept of &quot;good enough,&quot; which I think is underappreciated in real life.</p>
+<p>On the other hand, if you are suffering while learning, you’re probably on the right path, because it means you have a challenging task. By the way, choosing a &quot;good enough&quot; solution can also be quite painful for us perfectionists. :) That’s the reason why people choose to write programs using a language literally called &quot;Brainf*ck,&quot; or use Raspberry Pi – a computer with very limited resources. Because you raise the bar – not by making the task more complex, but by limiting the resources or the toolset. And it seems that it works.</p>
+<h2 id="what-are-the-challenges-for-programming">What are the challenges for programming</h2>
+<p>Okay, what if you’re trying to create an app and you’re not taking the fast, easy, and wrong path of generating code with a language model? Let’s start with the requirements:</p>
+<ul>
+<li>You need to deliver fast because you still compete with language models :)</li>
+<li>You need to deliver cheap for the same reason – and I’m not talking about outsourcing here.</li>
+<li>Your code needs to be stable and secure.</li>
+</ul>
+<p>I think choosing the right framework is the right place to start. It shouldn’t be too fresh and undocumented, but it should leverage recent advancements to... well, write less code.</p>
+<p>Let’s take an example and talk about a web app. Django, Ruby on Rails, and Laravel gained popularity for a reason – because (and DHH was right here) they solve an &quot;end-to-end&quot; problem. In the JS world, it’s a little more chaotic and &quot;DIY&quot;-like; I’ve actually lost track of what’s going on. :) It’s bad to start learning programming with a framework, but it’s so nice when you already have one you need. And I’m really inspired by how wide the choice is now, especially compared to the situation just a few years ago. Anyway, code generators within frameworks – when you know what you’re doing – are far better than copying code from a chatbot. Please, for the sake of humanity, don’t do that. :)</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Something else inspires me even more than the progress with the hardware and software we have compared to 1999, when I started playing with FreeBSD (and everybody was terrified of the “year 2000 problem,” ha-ha). It’s how much you have to play with now, and how many resources you have to satisfy your curiosity. Codecademy doesn’t pay me, but it’s hard not to mention their free resources to learn coding in any language, including Rust, Kotlin, and Bash. And this experience – to feel what’s on the edge of software development right now – is quite satisfying.</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2025-11-downshifting.html">A Forced Downshifting</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2025-11-programming.html` was built on 2025-11-04T10:30:33.047Z -->
+	</body></html>

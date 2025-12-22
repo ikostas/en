@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Happy Hacking New Year</title>
+		<meta name="description" content="A few ideas to learn something new and useful">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i> en</a></li>
+					<li><a href="https://www.youtube.com/@DiD-e1p"><i class="fa-brands fa-youtube"></i> de</a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="happy-hacking-new-year">Happy Hacking New Year</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2025-12-22">22 December 2025</time></li>
+	<li class="post-tag"><a href="/tags/productivity-linux/" class="post-tag">#productivity, linux</a></li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>If you, like me, have some free time during these Christmas holidays, I'd suggest spending some time tinkering and learning. The feeling of accomplishing something while learning is, for me, the best feeling ever, so I have the following on the menu: learning the Go programming language, setting up remote support using Tailscale, a multi-seat setup on a single machine, and network boot. I'll describe the use cases and the reasoning behind these &quot;projects&quot;, so you can decide for yourself whether it's worth it.</p></div>
+<p>A short disclaimer: I describe all the efforts on Linux, and although you could make it work on other platforms as well, I won't be able to help you with that.</p>
+<h2 id="learning-go">Learning Go</h2>
+<p>The invention of Go (which happened about 12 years ago, by the way) is, for me, a very important step in software development, because Go concepts try to fix the fundamental drawbacks of other languages. Here I'll describe the developer's perspective only – no performance discussion, although Go shines there as well.</p>
+<p>Let's start with the fundamental disadvantages of object-oriented programming (OOP), which were counter-intuitive for me at first: combining data and logic (methods) and inheritance.</p>
+<p>As we all know, a good programmer is a lazy programmer, but without clarity we get... well, Perl. Go is clear, splits data and logic, and doesn't use inheritance. And it prioritizes clarity. In my own experience, I had to write little code, it was functional and clear. So what's the problem with other languages?</p>
+<ul>
+<li>Python: OOP and no typing</li>
+<li>JavaScript: cursed syntax and OOP and no typing</li>
+<li>TypeScript: still cursed syntax and still OOP</li>
+<li>Java: too verbose and OOP</li>
+</ul>
+<p>Yes, it turns out that a lack of typing is a problem as well. But let's turn to another thing: programming paradigms. There are functional, procedural, and object-oriented paradigms, and the truth is that Python and JS/TS are hybrid – you can use any paradigm you like.</p>
+<p>When I started programming, I wrote Pascal and C code, and it was procedural. I read about the advantages of functional and object-oriented paradigms and I kind of still don't get it. You end up writing more unclear code. Go returned me to programming just logic, because logic is calling one procedure after another. And <code>switch/case</code> is finally useful in Go, by the way.</p>
+<p>&quot;Don't write a GUI app in Go&quot;, I've read in one book, and started using Tk 9.0. Tcl/Tk were introduced in 1989 – that's what I call &quot;mature software&quot;. And it has some markup language (ML), but you need to create and set up each tag; there are no function calls inside the tags. I decided to stay with Tk and generate my own tags, and that's where things got interesting:</p>
+<ul>
+<li>First, just touching a technology introduced in 1989, you get to know how great engineering was at that time. It's very declarative, and the set of functions is enough for many apps. And look at the <a href="https://pkg.go.dev/modernc.org/tk9.0@v1.73.0/themes/azure">azure theme</a> – it doesn't feel outdated at all.</li>
+<li>Second, it felt cool to continue using this technology where others would switch to something like Wails.</li>
+</ul>
+<p>And the UI is as abrupt as diarrhea, by the way, which I like. :)</p>
+<p>The point is that Go provides so much: it's completely free to play with, easy to start, powerful, and just feels &quot;right&quot; in lots of the aspects mentioned above. And this makes writing software fun.</p>
+<h2 id="tailscale">Tailscale</h2>
+<p>I've heard about Tailscale many times, but I ignored the ads as I didn't have a use case for it. The use case for me is remote support, but it can be a remote server of any kind. The goal was to have SSH access to the remote machine, and in case the machine is behind a router, you need to change the router setup. With Tailscale, you don't have to do that, as it creates a VPN and the machines think they are in the same local network.</p>
+<p>First, you need to connect to the remote machine, and in the worst-case scenario (an unqualified user), you could start with AnyDesk. It doesn't work with Wayland targets, by the way. So you create your user account with sudo privileges and install Tailscale.</p>
+<p>But Tailscale needs to be up to connect to it, so some user-related setup is required – preferably a button. In the case of GNOME there's a GNOME extension. I had to deal with XFCE, so I ended up with a Bash script for Tailscale up/down and a button on the XFCE panel launching this script. And in case of SSH/RDP we need to make sure these services are running.</p>
+<p>After that, we can connect using SSH and first set up key-based authentication. Now it's a bit simpler to do admin tasks (update the system, for instance), but you could also add two enhancements:</p>
+<ul>
+<li><code>tmux</code> or another terminal multiplexer to run several tasks simultaneously and recover sessions</li>
+<li><code>mosh</code> if you connect from an unstable network</li>
+</ul>
+<h2 id="multi-seat-setup">Multi-seat setup</h2>
+<p>A multi-seat setup in the base variant means 2 monitors, 2 keyboards, and 2 mice connected to one PC. As a rule, you start with a video card with 2 outputs. You can add more, but there are some limiting factors: the number of video cards you can install, whether you hit CPU/RAM/HDD limits, and the length of cables for keyboards/mice.</p>
+<p>3-seat setups were used at schools; they obviously don't fit heavy gaming scenarios. This configuration is a budget-friendly way to get computing power for 2 home-office workers, for example. Wayland does not support this configuration. The <a href="https://wiki.debian.org/Multi_Seat_Debian_HOWTO">Debian how-to</a> is a great place to start. Assuming the average CPU load is 0%, it's a natural lifehack for two people sitting next to each other.</p>
+<h2 id="network-boot">Network boot</h2>
+<p>Network boot means having a server with OS images and booting other machines from it. It allows you to have a diskless machine with an NFS server, which is relevant for old hardware, and it also simplifies user data backups. But you will need to set up a DHCP server to point to a server with images.</p>
+<p>You can combine diskless workstations with remote access like RDP to use the server's CPUs. The docs for the <a href="https://tldp.org/HOWTO/Network-boot-HOWTO/index.html">TLDP project</a> and <a href="https://docs.fedoraproject.org/en-US/fedora/f36/install-guide/advanced/Network_based_Installations/">Fedora</a> are probably helpful in this regard. And yes, setting up a network server for installations is also a nice option.</p>
+<p>It's assumed that hard drives are cheap and network boot has fewer use cases now, but for me the whole diskless option was eye-opening.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I hope you learned something new reading this article. I don't provide detailed instructions in order not to copy or misinterpret instructions from other sites (which are also updated). When &quot;learning&quot; hits &quot;useful&quot;, it can bring happiness – so happy hacking New Year to you!</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2025-12-signs.html">There Will Be Signs</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2025-12-hhny.html` was built on 2025-12-22T18:39:13.652Z -->
+	</body></html>

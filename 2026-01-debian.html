@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Debian With Almost No Flatpak</title>
+		<meta name="description" content="Choosing a distribution one more time and going through the configs and programs I use">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i> en</a></li>
+					<li><a href="https://www.youtube.com/@DiD-e1p"><i class="fa-brands fa-youtube"></i> de</a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="debian-with-almost-no-flatpak">Debian With Almost No Flatpak</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2026-01-02">02 January 2026</time></li>
+	<li class="post-tag"><a href="/tags/productivity-linux-dev/" class="post-tag">#productivity, linux, dev</a></li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>It all started with weird misclicks registered from my mouse, which turned out to be a hardware problem, but somehow led me to changing my distribution. At first I landed on CentOS, had problems setting up a printer (that was probably my skill issue), panicked and jumped to Debian. I'll write briefly about the reasons to choose Debian, but for the most part this hardware failure and migration was a reason to migrate all my stuff, data and programs, and to consider what I use and how. I hope it helps if you have similar use cases.</p></div>
+<h2 id="choosing-debian">Choosing Debian</h2>
+<p>Apart from hardware issues, it seemed that the last Fedora update brought some dbus bugs. I can't prove it, for the last 2.5 years of using Fedora there were some bugs, but nothing too serious. Still, programs were crashing, memory leaks were standard and lots of programs could not keep up with the pace of Fedora development. Notably my favourite Gnome extensions couldn't keep up, and that was painful. Well, I need something with fast dnf (a package manager), but a little bit more stable, so it's CentOS Stream 10. I installed all the programs, some from RPM Fusion, others from Flathub. And in the end I started setting up my printer and failed. Maybe it can be set up, but I just want to point out a list of distributions for hp drivers (and CentOS had these drivers, but the older version, which didn't include my relatively new MFD):</p>
+<p><picture><source type="image/avif" srcset="/img/Q3p9N1GfRq-205.avif 205w"><source type="image/webp" srcset="/img/Q3p9N1GfRq-205.webp 205w"><img loading="lazy" decoding="async" src="/img/Q3p9N1GfRq-205.png" alt="A distributions choice for HP drivers" width="205" height="633"></picture></p>
+<p>The choice is pretty wide, and there's no CentOS. Nowadays you can install just a binary, go for AppImage, Flatpak, but I still prefer a rpm or deb package as a first option. And CentOS dropped Gimp and LibreOffice in the favor of Flatpaks, if you're interested. And these are the most popular desktop apps, you can extrapolate to lots of other desktop apps to understand the situation. Maybe CentOS is a decent workstation desktop distribution, but not a home desktop distribution. You can still install nvidia drivers from RPM Fusion, by the way.</p>
+<p>What to choose then? As I remember OpenSuSe, zypper, the package manager, was very slow. Debian was fine, but I chose some strange iso and had to remove and install a lot of packages, and then my SSD died. And Debian doesn't like messing with external repos, they have a separate article about that. Well, let's try again.</p>
+<p>So, I installed Debian, and this time I decided to start with the printer. I opened Gnome Settings, and the printer was just already there. That's what I call 'a desktop experience'. To preserve my SSD I changed <code>vm.swappiness=10</code> in <code>/etc/sysctl.conf</code> and turned on trim:</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> fstrim.timer
+<span class="token function">sudo</span> systemctl start fstrim.timer</code></pre>
+<p>I'm not even sure that it's the right thing to do, I just pray for the best. :)</p>
+<h2 id="display-and-gnome-setup">Display and Gnome setup</h2>
+<p>Fonts are important, and the defaults in Debian are strange. But Debian Gnome desktop installation includes Gnome Tweaks, so I ended up with slight hinting and subpixel antialiasing:</p>
+<p><picture><source type="image/avif" srcset="/img/uH4nzvXC-L-1102.avif 1102w"><source type="image/webp" srcset="/img/uH4nzvXC-L-1102.webp 1102w"><img loading="lazy" decoding="async" src="/img/uH4nzvXC-L-1102.png" alt="Fonts setup" width="1102" height="762"></picture></p>
+<p>I use exactly two Gnome extensions, I suppose they enhance the productivity greatly, and I have a meltdown when I can't use them:</p>
+<p><picture><source type="image/avif" srcset="/img/ykeUcBEE2y-1091.avif 1091w"><source type="image/webp" srcset="/img/ykeUcBEE2y-1091.webp 1091w"><img loading="lazy" decoding="async" src="/img/ykeUcBEE2y-1091.png" alt="Gnome extensions" width="1091" height="193"></picture></p>
+<p>Combined with autostart in Gnome Tweaks I have the desktop I need every time I log in:</p>
+<p><picture><source type="image/avif" srcset="/img/AXF6f8P5w0-1042.avif 1042w"><source type="image/webp" srcset="/img/AXF6f8P5w0-1042.webp 1042w"><img loading="lazy" decoding="async" src="/img/AXF6f8P5w0-1042.png" alt="Gnome autostarted apps" width="1042" height="553"></picture></p>
+<p><picture><source type="image/avif" srcset="/img/l2wjrAE50b-757.avif 757w"><source type="image/webp" srcset="/img/l2wjrAE50b-757.webp 757w"><img loading="lazy" decoding="async" src="/img/l2wjrAE50b-757.png" alt="Auto move setup" width="757" height="790"></picture></p>
+<h2 id="chrome">Chrome</h2>
+<p>Installing Chrome is the first thing I do, it works for the websites I need, it also works as a web version for Microsoft Teams and Zoom, and I really appreciate that. I also use a number of useful extensions:</p>
+<p><picture><source type="image/avif" srcset="/img/G6UM9VCn_F-1124.avif 1124w"><source type="image/webp" srcset="/img/G6UM9VCn_F-1124.webp 1124w"><img loading="lazy" decoding="async" src="/img/G6UM9VCn_F-1124.png" alt="Chrome extensions" width="1124" height="804"></picture></p>
+<p>There's exactly one scenario when I open Firefox, and it's regrettably common: when a website uses WordPress with an extension that breaks scrolling. Yes, people pay money for someone to make these websites. Animations are more important, you know.</p>
+<p>There's also a command to make Gnome open Chrome for <code>mailto:</code> links:</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash">xdg-mime default google-chrome.desktop x-scheme-handler/mailto</code></pre>
+<p>To make it work, you need to click on a small sign in the addressbar when Gmail is opened:</p>
+<p><picture><source type="image/avif" srcset="/img/kdDi55VNdM-322.avif 322w"><source type="image/webp" srcset="/img/kdDi55VNdM-322.webp 322w"><img loading="lazy" decoding="async" src="/img/kdDi55VNdM-322.png" alt="Allow Gmail handle emails" width="322" height="274"></picture></p>
+<h2 id="dev">Dev</h2>
+<p>The first thing for me to do is to install a proper font for the terminal, and I've got used to Source Code Pro. It has a strange name with the <a href="https://www.nerdfonts.com/">Nerd symbols</a>, which are used by neovim-Kickstart:</p>
+<p><picture><source type="image/avif" srcset="/img/WPaUC9iytt-922.avif 922w"><source type="image/webp" srcset="/img/WPaUC9iytt-922.webp 922w"><img loading="lazy" decoding="async" src="/img/WPaUC9iytt-922.png" alt="Source Code Pro with Nerd symbols" width="922" height="722"></picture></p>
+<p>The rest of the installation was straightforward:</p>
+<ul>
+<li>Neovim distribution is a bit too old for Kickstart, so I just installed a binary.</li>
+<li>I don't use Emacs much, but I have a good config and just in case I installed it from the standard repo.</li>
+<li>I also installed kitty as a terminal from a standard repo and added themes from github</li>
+<li>To get the latest golang I installed a binary and updated paths in <code>.bashrc</code></li>
+<li>To get the latest node and npm I added a nodesource repo</li>
+<li>I use gemini-cli, it's installed using npm</li>
+</ul>
+<p>I installed tmux first, but then came across an interesting <a href="https://github.com/kovidgoyal/kitty/issues/391#issuecomment-638320745">comment that with kitty you don't need tmux</a>, so I removed tmux and learned kitty's hotkeys.</p>
+<p>By the way, I updated my <a href="https://github.com/ikostas/misc">config repo</a> on github, if you are interested.</p>
+<h2 id="communication">Communication</h2>
+<p>Trying to evade Flatpak, I did the following:</p>
+<ul>
+<li>Telegram – installed it from a binary and made a symlink to <code>/usr/local/bin</code>.</li>
+<li>Discord and Zoom have debs, so I used them; I use them for gaming and learning German, accordingly.</li>
+</ul>
+<h2 id="admin">Admin</h2>
+<p>Updating and helping some other people is important, so I use some specific apps for this:</p>
+<ul>
+<li>AnyDesk to access the screen, they have a deb</li>
+<li>tailscale to ssh to a linux pc and do all the work</li>
+</ul>
+<p>For myself I use borgmatic for backups, and again, it was just there, in the standard repos.</p>
+<p>Sometimes I need VirtualBox, they have deb as well.</p>
+<h2 id="hobbies">Hobbies</h2>
+<p>My hobbies include recording a podcast and 3d-printing:</p>
+<ul>
+<li>I didn't install Prusa Slicer yet, and it's the only program in the list that requires flatpak.</li>
+<li>To record a podcast from the call or record a screencast I use OBS Studio, so I installed it from the repo, although they recommend a flatpak. The version is outdated (30 vs. 32 on Flathub), but we'll see.</li>
+<li>To edit a podcast I use Reaper, it comes as a binary and just works.</li>
+</ul>
+<h2 id="games">Games</h2>
+<p>Minecraft has a deb, but surprisingly it's outdated and doesn't work. So I downloaded <code>.tar.gz</code> and added a symlink to <code>/usr/local/bin</code>. The strange thing is, you don't need a Java installed for Minecraft to work, because it installs Java.</p>
+<p>For cloud gaming I use Boosteroid, they have a deb and it works, I've played multiple hours. And they didn't pay me to mention them. :)</p>
+<h2 id="misc">Misc</h2>
+<p>Some useful apps, which are in repos:</p>
+<ul>
+<li>Xournal++ to fill in PDF forms</li>
+<li>VLC to have a media player with all the codecs (I think you need to enable <code>contrib</code> repo in <code>/etc/apt/sources.list</code>)</li>
+<li>stow to have my configs in one place and update my github repo from there</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>For the whole story of backing up and re-installing, I spent the most time with the following issues:</p>
+<ul>
+<li>Setting up a printer, which is relevant for CentOS only</li>
+<li>Setting up Kickstart in neovim, as there were recent changes in neovim and it's not distro-specific (it's a temporary issue, as Kickstart is designed to be exactly one-command install)</li>
+</ul>
+<p>Everything else went surprisingly smooth if you don't forget to move your ssh keys. :) I used Fedora as my playground for a lot of experiments, I used VirtualBox and Android Studio, and I must say Fedora is hard to break. Debian is not that hard to break when you start to add repos, but I didn't have to this time as the software versions are not that old, and it feels fast and stable. I hope I don't break it.</p>
+<p>The moral of the story is that it's important for a distro to give all the developers to keep up with it. I hope I can work well even in Debian, as I still remember those painful moments of dealing with outdated software or apt complains about broken dependencies. Debian got a great tech stack from Fedora, I mean Gnome and systemd. So, now we can enjoy Debian. I suppose Debian also got some development boost from Google, which uses its Testing branch.</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2025-12-hhny.html">Happy Hacking New Year</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2026-01-debian.html` was built on 2026-01-03T09:11:07.601Z -->
+	</body></html>

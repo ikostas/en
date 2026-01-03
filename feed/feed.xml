@@ -5,11 +5,98 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2025-12-22T18:43:00Z</updated>
+  <updated>2026-01-02T22:30:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>Debian With Almost No Flatpak</title>
+    <link href="https://en.kovchinnikov.info/2026-01-debian.html" />
+    <updated>2026-01-02T22:30:00Z</updated>
+    <id>https://en.kovchinnikov.info/2026-01-debian.html</id>
+    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;It all started with weird misclicks registered from my mouse, which turned out to be a hardware problem, but somehow led me to changing my distribution. At first I landed on CentOS, had problems setting up a printer (that was probably my skill issue), panicked and jumped to Debian. I&#39;ll write briefly about the reasons to choose Debian, but for the most part this hardware failure and migration was a reason to migrate all my stuff, data and programs, and to consider what I use and how. I hope it helps if you have similar use cases.&lt;/p&gt;
+&lt;h2 id=&quot;choosing-debian&quot;&gt;Choosing Debian&lt;/h2&gt;
+&lt;p&gt;Apart from hardware issues, it seemed that the last Fedora update brought some dbus bugs. I can&#39;t prove it, for the last 2.5 years of using Fedora there were some bugs, but nothing too serious. Still, programs were crashing, memory leaks were standard and lots of programs could not keep up with the pace of Fedora development. Notably my favourite Gnome extensions couldn&#39;t keep up, and that was painful. Well, I need something with fast dnf (a package manager), but a little bit more stable, so it&#39;s CentOS Stream 10. I installed all the programs, some from RPM Fusion, others from Flathub. And in the end I started setting up my printer and failed. Maybe it can be set up, but I just want to point out a list of distributions for hp drivers (and CentOS had these drivers, but the older version, which didn&#39;t include my relatively new MFD):&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/img/Q3p9N1GfRq-205.avif 205w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/img/Q3p9N1GfRq-205.webp 205w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/img/Q3p9N1GfRq-205.png&quot; alt=&quot;A distributions choice for HP drivers&quot; width=&quot;205&quot; height=&quot;633&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;The choice is pretty wide, and there&#39;s no CentOS. Nowadays you can install just a binary, go for AppImage, Flatpak, but I still prefer a rpm or deb package as a first option. And CentOS dropped Gimp and LibreOffice in the favor of Flatpaks, if you&#39;re interested. And these are the most popular desktop apps, you can extrapolate to lots of other desktop apps to understand the situation. Maybe CentOS is a decent workstation desktop distribution, but not a home desktop distribution. You can still install nvidia drivers from RPM Fusion, by the way.&lt;/p&gt;
+&lt;p&gt;What to choose then? As I remember OpenSuSe, zypper, the package manager, was very slow. Debian was fine, but I chose some strange iso and had to remove and install a lot of packages, and then my SSD died. And Debian doesn&#39;t like messing with external repos, they have a separate article about that. Well, let&#39;s try again.&lt;/p&gt;
+&lt;p&gt;So, I installed Debian, and this time I decided to start with the printer. I opened Gnome Settings, and the printer was just already there. That&#39;s what I call &#39;a desktop experience&#39;. To preserve my SSD I changed &lt;code&gt;vm.swappiness=10&lt;/code&gt; in &lt;code&gt;/etc/sysctl.conf&lt;/code&gt; and turned on trim:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; systemctl &lt;span class=&quot;token builtin class-name&quot;&gt;enable&lt;/span&gt; fstrim.timer
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; systemctl start fstrim.timer&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I&#39;m not even sure that it&#39;s the right thing to do, I just pray for the best. :)&lt;/p&gt;
+&lt;h2 id=&quot;display-and-gnome-setup&quot;&gt;Display and Gnome setup&lt;/h2&gt;
+&lt;p&gt;Fonts are important, and the defaults in Debian are strange. But Debian Gnome desktop installation includes Gnome Tweaks, so I ended up with slight hinting and subpixel antialiasing:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/img/uH4nzvXC-L-1102.avif 1102w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/img/uH4nzvXC-L-1102.webp 1102w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/img/uH4nzvXC-L-1102.png&quot; alt=&quot;Fonts setup&quot; width=&quot;1102&quot; height=&quot;762&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;I use exactly two Gnome extensions, I suppose they enhance the productivity greatly, and I have a meltdown when I can&#39;t use them:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/img/ykeUcBEE2y-1091.avif 1091w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/img/ykeUcBEE2y-1091.webp 1091w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/img/ykeUcBEE2y-1091.png&quot; alt=&quot;Gnome extensions&quot; width=&quot;1091&quot; height=&quot;193&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;Combined with autostart in Gnome Tweaks I have the desktop I need every time I log in:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/img/AXF6f8P5w0-1042.avif 1042w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/img/AXF6f8P5w0-1042.webp 1042w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/img/AXF6f8P5w0-1042.png&quot; alt=&quot;Gnome autostarted apps&quot; width=&quot;1042&quot; height=&quot;553&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/img/l2wjrAE50b-757.avif 757w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/img/l2wjrAE50b-757.webp 757w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/img/l2wjrAE50b-757.png&quot; alt=&quot;Auto move setup&quot; width=&quot;757&quot; height=&quot;790&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;h2 id=&quot;chrome&quot;&gt;Chrome&lt;/h2&gt;
+&lt;p&gt;Installing Chrome is the first thing I do, it works for the websites I need, it also works as a web version for Microsoft Teams and Zoom, and I really appreciate that. I also use a number of useful extensions:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/img/G6UM9VCn_F-1124.avif 1124w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/img/G6UM9VCn_F-1124.webp 1124w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/img/G6UM9VCn_F-1124.png&quot; alt=&quot;Chrome extensions&quot; width=&quot;1124&quot; height=&quot;804&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;There&#39;s exactly one scenario when I open Firefox, and it&#39;s regrettably common: when a website uses WordPress with an extension that breaks scrolling. Yes, people pay money for someone to make these websites. Animations are more important, you know.&lt;/p&gt;
+&lt;p&gt;There&#39;s also a command to make Gnome open Chrome for &lt;code&gt;mailto:&lt;/code&gt; links:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;xdg-mime default google-chrome.desktop x-scheme-handler/mailto&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To make it work, you need to click on a small sign in the addressbar when Gmail is opened:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/img/kdDi55VNdM-322.avif 322w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/img/kdDi55VNdM-322.webp 322w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/img/kdDi55VNdM-322.png&quot; alt=&quot;Allow Gmail handle emails&quot; width=&quot;322&quot; height=&quot;274&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;h2 id=&quot;dev&quot;&gt;Dev&lt;/h2&gt;
+&lt;p&gt;The first thing for me to do is to install a proper font for the terminal, and I&#39;ve got used to Source Code Pro. It has a strange name with the &lt;a href=&quot;https://www.nerdfonts.com/&quot;&gt;Nerd symbols&lt;/a&gt;, which are used by neovim-Kickstart:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/img/WPaUC9iytt-922.avif 922w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/img/WPaUC9iytt-922.webp 922w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/img/WPaUC9iytt-922.png&quot; alt=&quot;Source Code Pro with Nerd symbols&quot; width=&quot;922&quot; height=&quot;722&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;The rest of the installation was straightforward:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Neovim distribution is a bit too old for Kickstart, so I just installed a binary.&lt;/li&gt;
+&lt;li&gt;I don&#39;t use Emacs much, but I have a good config and just in case I installed it from the standard repo.&lt;/li&gt;
+&lt;li&gt;I also installed kitty as a terminal from a standard repo and added themes from github&lt;/li&gt;
+&lt;li&gt;To get the latest golang I installed a binary and updated paths in &lt;code&gt;.bashrc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;To get the latest node and npm I added a nodesource repo&lt;/li&gt;
+&lt;li&gt;I use gemini-cli, it&#39;s installed using npm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I installed tmux first, but then came across an interesting &lt;a href=&quot;https://github.com/kovidgoyal/kitty/issues/391#issuecomment-638320745&quot;&gt;comment that with kitty you don&#39;t need tmux&lt;/a&gt;, so I removed tmux and learned kitty&#39;s hotkeys.&lt;/p&gt;
+&lt;p&gt;By the way, I updated my &lt;a href=&quot;https://github.com/ikostas/misc&quot;&gt;config repo&lt;/a&gt; on github, if you are interested.&lt;/p&gt;
+&lt;h2 id=&quot;communication&quot;&gt;Communication&lt;/h2&gt;
+&lt;p&gt;Trying to evade Flatpak, I did the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Telegram – installed it from a binary and made a symlink to &lt;code&gt;/usr/local/bin&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Discord and Zoom have debs, so I used them; I use them for gaming and learning German, accordingly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;admin&quot;&gt;Admin&lt;/h2&gt;
+&lt;p&gt;Updating and helping some other people is important, so I use some specific apps for this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AnyDesk to access the screen, they have a deb&lt;/li&gt;
+&lt;li&gt;tailscale to ssh to a linux pc and do all the work&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For myself I use borgmatic for backups, and again, it was just there, in the standard repos.&lt;/p&gt;
+&lt;p&gt;Sometimes I need VirtualBox, they have deb as well.&lt;/p&gt;
+&lt;h2 id=&quot;hobbies&quot;&gt;Hobbies&lt;/h2&gt;
+&lt;p&gt;My hobbies include recording a podcast and 3d-printing:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I didn&#39;t install Prusa Slicer yet, and it&#39;s the only program in the list that requires flatpak.&lt;/li&gt;
+&lt;li&gt;To record a podcast from the call or record a screencast I use OBS Studio, so I installed it from the repo, although they recommend a flatpak. The version is outdated (30 vs. 32 on Flathub), but we&#39;ll see.&lt;/li&gt;
+&lt;li&gt;To edit a podcast I use Reaper, it comes as a binary and just works.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;games&quot;&gt;Games&lt;/h2&gt;
+&lt;p&gt;Minecraft has a deb, but surprisingly it&#39;s outdated and doesn&#39;t work. So I downloaded &lt;code&gt;.tar.gz&lt;/code&gt; and added a symlink to &lt;code&gt;/usr/local/bin&lt;/code&gt;. The strange thing is, you don&#39;t need a Java installed for Minecraft to work, because it installs Java.&lt;/p&gt;
+&lt;p&gt;For cloud gaming I use Boosteroid, they have a deb and it works, I&#39;ve played multiple hours. And they didn&#39;t pay me to mention them. :)&lt;/p&gt;
+&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
+&lt;p&gt;Some useful apps, which are in repos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Xournal++ to fill in PDF forms&lt;/li&gt;
+&lt;li&gt;VLC to have a media player with all the codecs (I think you need to enable &lt;code&gt;contrib&lt;/code&gt; repo in &lt;code&gt;/etc/apt/sources.list&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;stow to have my configs in one place and update my github repo from there&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;For the whole story of backing up and re-installing, I spent the most time with the following issues:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Setting up a printer, which is relevant for CentOS only&lt;/li&gt;
+&lt;li&gt;Setting up Kickstart in neovim, as there were recent changes in neovim and it&#39;s not distro-specific (it&#39;s a temporary issue, as Kickstart is designed to be exactly one-command install)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Everything else went surprisingly smooth if you don&#39;t forget to move your ssh keys. :) I used Fedora as my playground for a lot of experiments, I used VirtualBox and Android Studio, and I must say Fedora is hard to break. Debian is not that hard to break when you start to add repos, but I didn&#39;t have to this time as the software versions are not that old, and it feels fast and stable. I hope I don&#39;t break it.&lt;/p&gt;
+&lt;p&gt;The moral of the story is that it&#39;s important for a distro to give all the developers to keep up with it. I hope I can work well even in Debian, as I still remember those painful moments of dealing with outdated software or apt complains about broken dependencies. Debian got a great tech stack from Fedora, I mean Gnome and systemd. So, now we can enjoy Debian. I suppose Debian also got some development boost from Google, which uses its Testing branch.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Happy Hacking New Year</title>
     <link href="https://en.kovchinnikov.info/2025-12-hhny.html" />
@@ -448,33 +535,6 @@
 &lt;p&gt;Ok, now you’re ready to look at my work in progress, which I spent about a week building, covered in blood and tears (needed some drama here): a Go app with Tk9.0 and the azure theme:&lt;/p&gt;
 &lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/img/RuinuRqTxP-825.avif 825w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/img/RuinuRqTxP-825.webp 825w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/img/RuinuRqTxP-825.png&quot; alt=&quot;Add file&quot; width=&quot;825&quot; height=&quot;313&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;p&gt;I think we need more high-quality GUI apps like this one. :) That’s all for today, folks – hope you enjoyed the ride! :)&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Bash Aliases I Use</title>
-    <link href="https://en.kovchinnikov.info/2025-07-aliases.html" />
-    <updated>2025-07-05T15:11:00Z</updated>
-    <id>https://en.kovchinnikov.info/2025-07-aliases.html</id>
-    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
-&lt;p&gt;I&#39;ve realized I&#39;m too lazy to remember certain commands, but I&#39;m also just lazy enough to write bash scripts for them. The distinction isn&#39;t huge, as these are essentially one-liners. They significantly help me with blogging, backups, and Git workflows. If you&#39;re new to aliases, simply add these commands to your &lt;code&gt;~/.bashrc&lt;/code&gt; file, then type &lt;code&gt;source ~/.bashrc&lt;/code&gt; in your current session to activate them.&lt;/p&gt;
-&lt;h2 id=&quot;blogging&quot;&gt;Blogging&lt;/h2&gt;
-&lt;p&gt;I use 11ty for this blog. To preview a new article, I use:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;alias preview-blog=&#39;npx @11ty/eleventy --serve&#39;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;This starts a web server that instantly reflects all changes I make. To prepare the final version for GitHub, I use this command:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;alias post=&#39;npx @11ty/eleventy &amp;amp;&amp;amp; cd _site/ &amp;amp;&amp;amp; git add . &amp;amp;&amp;amp; read -p &amp;quot;Commit message: &amp;quot; msg &amp;amp;&amp;amp; git commit -m &amp;quot;$msg&amp;quot; &amp;amp;&amp;amp; git push &amp;amp;&amp;amp; cd ..&#39;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Just generates the blog, adds new files to git, commits them, pushes them to GitHub, and then returns to the main blog folder.&lt;/p&gt;
-&lt;h2 id=&quot;backup&quot;&gt;Backup&lt;/h2&gt;
-&lt;p&gt;Borg is an excellent solution for backups, but it&#39;s not the most user-friendly. Borgmatic, which essentially consists of Python scripts, makes it much easier to use. I configured it once and haven&#39;t had to think about it since. Now, to perform a backup to an external drive, I use this command:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;alias backup=&#39;borgmatic -c ~/.config/borgmatic.yaml&#39;&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;converting-pdf-to-png&quot;&gt;Converting PDF to PNG&lt;/h2&gt;
-&lt;p&gt;It was surprising to discover that, despite the abundance of tools for working with PDFs, there isn&#39;t a simple, short command to convert PDF to PNG. It&#39;s achievable using ImageMagick, but some options can be tricky. I simply need sequentially numbered files, and that&#39;s all:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;alias pdftopng=&#39;counter=1; for i in *.pdf; do magick $i -background white -alpha remove $counter.png; ((counter++)); done&#39;&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;development&quot;&gt;Development&lt;/h2&gt;
-&lt;p&gt;By &amp;quot;development,&amp;quot; I specifically mean JavaScript programming for Node.js. I have many Node projects, and I needed a single command to clean all of them at once, especially if I no longer need their &lt;code&gt;node_modules&lt;/code&gt; folders:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;alias clean-node=&#39;find . -name &amp;quot;node_modules&amp;quot; -type d -prune -exec rm -rf {} &#92;;&#39;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Some of these projects are in my GitHub repo, and I also took a course to learn more about Git. One command proved particularly useful:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;alias git-graph=&#39;git log --graph --decorate --oneline --all&#39;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;That&#39;s all for today. I hope you found something useful for yourself!&lt;/p&gt;
 </content>
   </entry>
 </feed>

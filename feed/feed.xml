@@ -5,11 +5,77 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2026-01-02T22:30:00Z</updated>
+  <updated>2026-01-04T13:00:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>I Tried to Write a Decent Desktop App</title>
+    <link href="https://en.kovchinnikov.info/2026-01-desktopapp.html" />
+    <updated>2026-01-04T13:00:00Z</updated>
+    <id>https://en.kovchinnikov.info/2026-01-desktopapp.html</id>
+    <content type="html">&lt;h2 id=&quot;idea&quot;&gt;Idea&lt;/h2&gt;
+&lt;p&gt;The starting point for me was learning Go and writing a simple app, and I thought about operations on PDF files: merge, split, etc. &lt;a href=&quot;https://www.pdf24.org/en/&quot;&gt;pdf24&lt;/a&gt; is one of the most popular apps for Windows, so I reviewed its functions and UI/UX as a baseline. The idea was to program 3% of the most useful functions. Does pdf24 do the job? Sure. Would I use it on Windows if I needed to transform PDFs? Yes, it’s just not worth looking for viruses. Linux has &lt;a href=&quot;https://flathub.org/en/apps/search?q=pdf&quot;&gt;a number of desktop apps&lt;/a&gt; for PDF manipulation, by the way, but let’s just have another one. And I have some very specific ideas about UI/UX, but as I’m scratching my own itch here, it’s useful to write two sets of requirements: user requirements and dev requirements. You can check &lt;a href=&quot;https://github.com/ikostas/pdf-tool&quot;&gt;the GitHub page&lt;/a&gt; for the result with screenshots.&lt;/p&gt;
+&lt;h2 id=&quot;user-requirements&quot;&gt;User requirements&lt;/h2&gt;
+&lt;p&gt;Most users may not care about the size of the app or some aspects of UI/UX if it gets the job done. Still, there are some nice things to have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hotkeys, because any app is faster with a keyboard&lt;/li&gt;
+&lt;li&gt;Fast, because nobody likes waiting&lt;/li&gt;
+&lt;li&gt;Modern UI, which includes &#39;looking nice&#39;, but also being humble and similar to native UI&lt;/li&gt;
+&lt;li&gt;Open multiple files at once for the merge operation; otherwise it’s unnerving&lt;/li&gt;
+&lt;li&gt;Handle user input errors&lt;/li&gt;
+&lt;li&gt;Intuitive in terms of simplicity, but also not allowing users to engage functions when it’s useless&lt;/li&gt;
+&lt;li&gt;UI doesn’t freeze while performing the task, which happens with some programs and the operating system can suggest closing the app&lt;/li&gt;
+&lt;li&gt;Simple or (better) no installation procedure, which is especially relevant for Windows with limited permissions&lt;/li&gt;
+&lt;li&gt;The same program for Linux, Windows, and Mac – because users can get used to an app on one platform&lt;/li&gt;
+&lt;li&gt;Small download size is arguable now, but let it be&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;dev-requirements&quot;&gt;Dev requirements&lt;/h2&gt;
+&lt;p&gt;As a (lazy and novice) developer, I’d like to have the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Writing less code (I mean, not like Java or GTK+)&lt;/li&gt;
+&lt;li&gt;Threads for UI and tasks (Python and JS can only emulate them)&lt;/li&gt;
+&lt;li&gt;Compile to Linux, Windows, and Mac without hassle&lt;/li&gt;
+&lt;li&gt;Small app size matters for easy distribution as well&lt;/li&gt;
+&lt;li&gt;Convenient syntax for error handling&lt;/li&gt;
+&lt;li&gt;Declarative UI&lt;/li&gt;
+&lt;li&gt;Mature UI toolkit with all the functions a GUI app needs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;design-choices&quot;&gt;Design choices&lt;/h2&gt;
+&lt;p&gt;Regarding the language, Go ticks the boxes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Less code&lt;/li&gt;
+&lt;li&gt;Threads&lt;/li&gt;
+&lt;li&gt;It’s natural to write error handling&lt;/li&gt;
+&lt;li&gt;Cross-compilation&lt;/li&gt;
+&lt;li&gt;Fast&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For the GUI toolkit, &lt;a href=&quot;https://gitlab.com/cznic/tk9.0&quot;&gt;Tk9.0&lt;/a&gt; ticks the boxes as well:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Declarative&lt;/li&gt;
+&lt;li&gt;Works on Linux, Windows, and Mac&lt;/li&gt;
+&lt;li&gt;All the functions for a GUI app included&lt;/li&gt;
+&lt;li&gt;A modern &lt;a href=&quot;https://pkg.go.dev/modernc.org/tk9.0@v1.73.0/themes/azure&quot;&gt;Azure theme&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Hotkeys support&lt;/li&gt;
+&lt;li&gt;A file dialog to open multiple files&lt;/li&gt;
+&lt;li&gt;Disabling buttons is easy&lt;/li&gt;
+&lt;li&gt;Compact and fast&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Regarding the UI/UX itself, I decided to have a menu with buttons, and for each operation to have three sections in one window:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Instructions with brief text&lt;/li&gt;
+&lt;li&gt;User input to open files and specify pages&lt;/li&gt;
+&lt;li&gt;Messages about success or failure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So no pop-up messages, just one logically organized window, and Tk allows me to do it.&lt;/p&gt;
+&lt;h2 id=&quot;statistics&quot;&gt;Statistics&lt;/h2&gt;
+&lt;p&gt;I’m too lazy to measure how fast the app is; it actually uses the pdfcpu library, also written in Go. But it seems fast enough. :)&lt;/p&gt;
+&lt;p&gt;The only statistics I have are file sizes and lines of code. The pdf24 distribution is 600 MB, being a lot more functional and with fancy stuff like PDF previews. My app is 29 MB for Windows and 46 MB for Linux, which includes debugging info. Without debugging info, the Linux app is 36 MB, which can be further reduced with upx to 20 MB.&lt;/p&gt;
+&lt;p&gt;For the lines of code, it’s 1004 lines, which is relatively small.&lt;/p&gt;
+&lt;p&gt;For the learning experience, I rewrote parts of the app multiple times and learned to prioritize clarity and trust the compiler. For Tk, it’s better to look at examples for guidelines, but what’s important for me is that it’s stable and doesn’t bring new bugs. One could complain about the absence of HTML: you need to emulate it with the included markup language and generate tags, but it was fun.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Debian With Almost No Flatpak</title>
     <link href="https://en.kovchinnikov.info/2026-01-debian.html" />
@@ -490,51 +556,6 @@
 &lt;p&gt;I worked at an audit company, in the consulting department though, and there was a mandatory training that the price of the laptop is nothing compared to the value of the information on it. I think probably more people should think about it. Sure enough, all the laptop drives were encrypted, and some other security measures were implemented to prevent copying data to non-encrypted USB drives or sending data over the network. From what I know now, that&#39;s not enough, but encrypting the hard drive is the ABC of information security. You even don&#39;t need anyone to steal a laptop; people just forget their laptops everywhere. You just need to apply statistics and probability theory, multiply by the number of employees in your company, and you&#39;ll get the exact number of laptops that will be lost per year for sure. Do I need to say more?&lt;/p&gt;
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;We don&#39;t know what will happen, but I believe in processes and practices that can deal at least with what we know about. The real facepalm happens when we knew about the risk, and we didn&#39;t manage it. It&#39;s strange that this type of behaviour is present in IT, but it is, and it&#39;s not always the money, it&#39;s about the literacy, curiosity and staying up-to-date. Well, that&#39;s what makes professionalism, isn&#39;t it?&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Linux GUI App is a Rabbit Hole</title>
-    <link href="https://en.kovchinnikov.info/2025-09-linux-gui.html" />
-    <updated>2025-09-16T20:34:00Z</updated>
-    <id>https://en.kovchinnikov.info/2025-09-linux-gui.html</id>
-    <content type="html">&lt;h2 id=&quot;how-it-started&quot;&gt;How it started&lt;/h2&gt;
-&lt;p&gt;First, I was reading the reddit /linuxsucks community. After that, I noticed more &#39;migration to Linux&#39; discussions, and I thought: why would no one make a Windows-to-Linux migration toolkit? This raised two questions:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Are there tasks worth automating?&lt;/li&gt;
-&lt;li&gt;Can the program provide some links for novices to “start with Linux the right way”?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Starting with the latter point, I suppose more people should get acquainted with Linux through Git for Windows and virtual machines. The main mistake is when you don’t understand what you are doing, and you install Linux as a single or dual-boot operating system (backups are for cowards), and then it doesn’t work as expected. That’s called &#39;expectation management&#39;, and probably we never really saw it as a task. The most successful case, Ubuntu, tried to meet existing expectations, making Linux &#39;almost like Windows&#39;, but I don’t think it’s worth it. I use Fedora and suggest more people should try it – but it’s an entirely different animal, and you’d better be prepared for that. And, by the way, the question of choosing a distribution could also be addressed in my program.&lt;/p&gt;
-&lt;p&gt;What could be automated? I thought of two tasks: backups and saving a report about hardware and software installed, for reference. Both tasks are not &#39;1-click&#39; in Windows:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;For a backup, you shouldn’t save the &#39;home user directory&#39;. Instead, you should back up individual folders like &#39;Documents&#39;, &#39;Pictures&#39;, etc. But, surprise, folder names are localized in Windows! And if you’re migrating to Linux, you’d better go with a tar or tar.bz2 archive – it just works better for lots of files and folders.&lt;/li&gt;
-&lt;li&gt;For a hardware report, it’s not that easy to find and save this information. I also decided to include printers and scanners, since they cause plenty of compatibility issues.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;To develop this &lt;a href=&quot;https://github.com/ikostas/lmtk&quot;&gt;&#39;one-time-use app&#39;&lt;/a&gt;, I went with Python + Tkinter. Python is great for its libraries: getting hardware/software info, creating backups, generating Markdown reports, converting Markdown to HTML, and so on. Tkinter is an integrated GUI toolkit—outdated, sure, but fast, small, and stable. The resulting program was about 17 MB. Then I decided to localize it to German, and Python made that pretty easy. Later, I ran pylint and found so many errors – I honestly don’t know how it worked at all. But I had fun programming it, thinking about class structure and so on.&lt;/p&gt;
-&lt;h2 id=&quot;how-it-s-going-a-new-challenge&quot;&gt;How it’s going: a new challenge&lt;/h2&gt;
-&lt;p&gt;For the next fun project, I decided to create a GUI app for Linux. The idea was to manipulate PDF files, but also to build a chain of commands: extract pages 3–4 from one file, unite them with pages 1–2 from another, and so on. I personally use the CLI for these tasks, the only problem I have is forgetting the CLI parameters. So I thought: wouldn’t it be nice if I could save this chain of commands and reuse it? Nothing you can’t do with a bash script, though. :) Anyway, here are my requirements:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The GUI should be nice and fast – and this excludes Python. Not only is it slow and single-threaded, I ran into some rough edges with the &#39;threads&#39; package when I tried to make the UI responsive. Still, Python gets credit for having great GTK4 bindings and PDF manipulation libraries.&lt;/li&gt;
-&lt;li&gt;I’m not a programmer. I know Python, JS, and I took a course in Go at Codecademy (free, by the way). I didn’t like GJS; Go seemed like a reasonable choice. Goroutines allow threading, which makes the UI responsive, and the &#39;errors-first&#39; approach in Go makes handling user input nice. Yes, I know about Vala, I saw the tutorial, but I doubt I have the programming skills required.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The program itself should look like three vertically stacked parts:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Files&lt;/strong&gt;: add and remove files; results of operations (e.g. splitting or uniting PDFs) also show up here.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Operations&lt;/strong&gt;: a chain of manipulations in a human-readable form; users should be able to add/remove operations and (in the distant future) change their order.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Add an operation&lt;/strong&gt;: choose an operation type, which changes the number of input fields. For split, I need the pages and an output filename; for unite, I need the files and output filename; and so on.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;This UI implies lots of changes on the fly: I need to redraw parts of the UI, but I also need to handle faulty situations. For example, you can’t use a file if it’s only created in the next step. There’s a long list of &#39;what can’t be done&#39; and &#39;what to do if a filename or operation is removed&#39;, so this error-handling logic will be a significant part of the program.&lt;/p&gt;
-&lt;h2 id=&quot;a-rabbit-hole&quot;&gt;A rabbit hole&lt;/h2&gt;
-&lt;p&gt;And then the &#39;rabbit hole&#39; thing began: choosing a GUI library. I chaotically researched everything below, had chatbots write examples to see if I could handle them, and I hope my findings will be useful to someone. I’ll rate GUI libraries from simplest to most complicated:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://help.gnome.org/users/zenity/stable/&quot;&gt;Zenity&lt;/a&gt; is a great tool. You can use it with any language or even a bash script, but you’re not supposed to redraw parts of the UI – it’s like launching a single program. But it has a file-open dialog, and it can return multiple files. When I tried Fyne (which doesn’t allow selecting multiple files), I had to use Zenity as well.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://pkg.go.dev/modernc.org/tk9.0&quot;&gt;Tk&lt;/a&gt;: sounds stupid because it’s old as hell, but it works. It has a new version (9), a new &#39;azure&#39; theme, and new Go bindings. So, if it’s stupid but it works – then it’s not stupid (C). It’s fast, works on Linux, Mac, and Windows (a bonus since Go also works cross-platform), it’s surprisingly stable, and it’s rich in widgets. I mean, if your grandpa could get away with these widgets, so can you. It requires simulating HTML, but I don’t need that for this app. So I stuck with Tk9.0 for now. I even considered writing my app in Tcl – it has procedures, loops, and ifs – but it’s too primitive. Go is nicer with structs, interfaces, goroutines, and all that. And surprise! Tk supports selecting multiple files in a file-open dialog. I felt like the Tk guys were my brothers: they think about functionality first.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.fyne.io/started/&quot;&gt;Fyne&lt;/a&gt; is the recommended Go GUI library, and it’s great. But I tried to write a single operation (extracting pages from a PDF), and Fyne implied using channels just to keep the UI responsive. That felt like overkill. I cried and vented to a chatbot, and it agreed: in this case, Fyne is probably too much.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/diamondburned/gotk4&quot;&gt;GTK4 bindings&lt;/a&gt; exist for Go. The funny part is that you can use &lt;a href=&quot;https://gitlab.gnome.org/jpu/cambalache&quot;&gt;Cambalache&lt;/a&gt; (a RAD tool) and call it from your Go logic. It’s a bit like the next, more &#39;cutting-edge&#39; approach: treating your GTK4 spec as a front-end. I couldn’t figure out why I should use these widgets, and GTK4 only works on Linux. I also doubted whether I’d be able to manipulate the UI easily by adding/removing data. Honestly, I miss React here.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://wails.io/&quot;&gt;Wails&lt;/a&gt; (for Go) is a great approach: you use JS (probably React) for the front-end. It’s like &lt;a href=&quot;https://v2.tauri.app/&quot;&gt;Tauri&lt;/a&gt; for Rust or &lt;a href=&quot;https://www.electronjs.org/&quot;&gt;Electron&lt;/a&gt; for JS, with the same drawback: the output is always heavy (20 MB minimum). Yes, I considered Rust (Tauri’s footprint is a bit smaller), but my programming skills aren’t there. If your app is big and complicated anyway, this might be the way to go. React is awesome for declaring UIs and handling user input – I liked it.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Ok, now you’re ready to look at my work in progress, which I spent about a week building, covered in blood and tears (needed some drama here): a Go app with Tk9.0 and the azure theme:&lt;/p&gt;
-&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://en.kovchinnikov.info/img/RuinuRqTxP-825.avif 825w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://en.kovchinnikov.info/img/RuinuRqTxP-825.webp 825w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://en.kovchinnikov.info/img/RuinuRqTxP-825.png&quot; alt=&quot;Add file&quot; width=&quot;825&quot; height=&quot;313&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
-&lt;p&gt;I think we need more high-quality GUI apps like this one. :) That’s all for today, folks – hope you enjoyed the ride! :)&lt;/p&gt;
 </content>
   </entry>
 </feed>

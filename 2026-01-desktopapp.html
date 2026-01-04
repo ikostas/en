@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>I Tried to Write a Decent Desktop App</title>
+		<meta name="description" content="Learning Go and scratching my own itch with PDF manipulation">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i> en</a></li>
+					<li><a href="https://www.youtube.com/@DiD-e1p"><i class="fa-brands fa-youtube"></i> de</a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="i-tried-to-write-a-decent-desktop-app">I Tried to Write a Decent Desktop App</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2026-01-04">04 January 2026</time></li>
+	<li class="post-tag"><a href="/tags/productivity-linux-dev/" class="post-tag">#productivity, linux, dev</a></li>
+</ul>
+<h2 id="idea">Idea</h2>
+<p>The starting point for me was learning Go and writing a simple app, and I thought about operations on PDF files: merge, split, etc. <a href="https://www.pdf24.org/en/">pdf24</a> is one of the most popular apps for Windows, so I reviewed its functions and UI/UX as a baseline. The idea was to program 3% of the most useful functions. Does pdf24 do the job? Sure. Would I use it on Windows if I needed to transform PDFs? Yes, it’s just not worth looking for viruses. Linux has <a href="https://flathub.org/en/apps/search?q=pdf">a number of desktop apps</a> for PDF manipulation, by the way, but let’s just have another one. And I have some very specific ideas about UI/UX, but as I’m scratching my own itch here, it’s useful to write two sets of requirements: user requirements and dev requirements. You can check <a href="https://github.com/ikostas/pdf-tool">the GitHub page</a> for the result with screenshots.</p></div>
+<h2 id="user-requirements">User requirements</h2>
+<p>Most users may not care about the size of the app or some aspects of UI/UX if it gets the job done. Still, there are some nice things to have:</p>
+<ul>
+<li>Hotkeys, because any app is faster with a keyboard</li>
+<li>Fast, because nobody likes waiting</li>
+<li>Modern UI, which includes 'looking nice', but also being humble and similar to native UI</li>
+<li>Open multiple files at once for the merge operation; otherwise it’s unnerving</li>
+<li>Handle user input errors</li>
+<li>Intuitive in terms of simplicity, but also not allowing users to engage functions when it’s useless</li>
+<li>UI doesn’t freeze while performing the task, which happens with some programs and the operating system can suggest closing the app</li>
+<li>Simple or (better) no installation procedure, which is especially relevant for Windows with limited permissions</li>
+<li>The same program for Linux, Windows, and Mac – because users can get used to an app on one platform</li>
+<li>Small download size is arguable now, but let it be</li>
+</ul>
+<h2 id="dev-requirements">Dev requirements</h2>
+<p>As a (lazy and novice) developer, I’d like to have the following:</p>
+<ul>
+<li>Writing less code (I mean, not like Java or GTK+)</li>
+<li>Threads for UI and tasks (Python and JS can only emulate them)</li>
+<li>Compile to Linux, Windows, and Mac without hassle</li>
+<li>Small app size matters for easy distribution as well</li>
+<li>Convenient syntax for error handling</li>
+<li>Declarative UI</li>
+<li>Mature UI toolkit with all the functions a GUI app needs</li>
+</ul>
+<h2 id="design-choices">Design choices</h2>
+<p>Regarding the language, Go ticks the boxes:</p>
+<ul>
+<li>Less code</li>
+<li>Threads</li>
+<li>It’s natural to write error handling</li>
+<li>Cross-compilation</li>
+<li>Fast</li>
+</ul>
+<p>For the GUI toolkit, <a href="https://gitlab.com/cznic/tk9.0">Tk9.0</a> ticks the boxes as well:</p>
+<ul>
+<li>Declarative</li>
+<li>Works on Linux, Windows, and Mac</li>
+<li>All the functions for a GUI app included</li>
+<li>A modern <a href="https://pkg.go.dev/modernc.org/tk9.0@v1.73.0/themes/azure">Azure theme</a></li>
+<li>Hotkeys support</li>
+<li>A file dialog to open multiple files</li>
+<li>Disabling buttons is easy</li>
+<li>Compact and fast</li>
+</ul>
+<p>Regarding the UI/UX itself, I decided to have a menu with buttons, and for each operation to have three sections in one window:</p>
+<ul>
+<li>Instructions with brief text</li>
+<li>User input to open files and specify pages</li>
+<li>Messages about success or failure</li>
+</ul>
+<p>So no pop-up messages, just one logically organized window, and Tk allows me to do it.</p>
+<h2 id="statistics">Statistics</h2>
+<p>I’m too lazy to measure how fast the app is; it actually uses the pdfcpu library, also written in Go. But it seems fast enough. :)</p>
+<p>The only statistics I have are file sizes and lines of code. The pdf24 distribution is 600 MB, being a lot more functional and with fancy stuff like PDF previews. My app is 29 MB for Windows and 46 MB for Linux, which includes debugging info. Without debugging info, the Linux app is 36 MB, which can be further reduced with upx to 20 MB.</p>
+<p>For the lines of code, it’s 1004 lines, which is relatively small.</p>
+<p>For the learning experience, I rewrote parts of the app multiple times and learned to prioritize clarity and trust the compiler. For Tk, it’s better to look at examples for guidelines, but what’s important for me is that it’s stable and doesn’t bring new bugs. One could complain about the absence of HTML: you need to emulate it with the included markup language and generate tags, but it was fun.</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2026-01-debian.html">Debian With Almost No Flatpak</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2026-01-desktopapp.html` was built on 2026-01-04T13:00:17.146Z -->
+	</body></html>

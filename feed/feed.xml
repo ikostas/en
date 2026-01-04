@@ -5,11 +5,44 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2026-01-04T13:00:00Z</updated>
+  <updated>2026-01-04T14:50:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>The End of the Midlife Crisis</title>
+    <link href="https://en.kovchinnikov.info/2026-01-crisis.html" />
+    <updated>2026-01-04T14:50:00Z</updated>
+    <id>https://en.kovchinnikov.info/2026-01-crisis.html</id>
+    <content type="html">&lt;p&gt;It&#39;s very easy to define midlife: before it everything goes up, and after it – down. It has two dimensions, though: one being a decline of cognitive and physical abilities, but another is the expectations – you will probably not meet better people, watch better movies, read better books. There&#39;s only one Gravity Falls and The Three-Body Problem, guys. :) Chasing brighter impressions is dangerous, as it leads to drugs or high-adrenaline adventures, both being, in fact, running from yourself. So, passing the midlife crisis is about stopping running and accepting reality. Mistakes are hard to accept, but the good news is that now you (hopefully) have made enough of them to benefit from this experience and &lt;strong&gt;try&lt;/strong&gt; to do everything right.&lt;/p&gt;
+&lt;p&gt;So what is this reality about, what&#39;s frightening us? This stuff is not necessarily negative, by the way. There&#39;s the deepest pool in the world, Deep Dive Dubai, and it has some inscriptions on the bottom for those who dive there. Metaphorically speaking, there are some bullet points at the bottom of the midlife crisis, and the end of the crisis doesn&#39;t happen without reading and accepting them. Thank God I had time to reflect on them, and thanks to my psychologist I had support and a baseline. So, here we go, without further comments and conclusions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Family and parental roles are the most important&lt;/li&gt;
+&lt;li&gt;Adulthood is about owning your mistakes&lt;/li&gt;
+&lt;li&gt;Most mistakes and their consequences can&#39;t be &amp;quot;fixed&amp;quot;&lt;/li&gt;
+&lt;li&gt;Sometimes there will be no external punishment for your mistakes, and you&#39;ll regret it the most&lt;/li&gt;
+&lt;li&gt;Nobody needs anyone; choosing a person as a friend or as a partner can only be a conscious choice&lt;/li&gt;
+&lt;li&gt;Being with a person who didn&#39;t choose you is a mistake&lt;/li&gt;
+&lt;li&gt;Giving up your boundaries or breaking another person&#39;s boundaries is a mistake&lt;/li&gt;
+&lt;li&gt;Having your own opinion and respecting yourself is important&lt;/li&gt;
+&lt;li&gt;Nothing will change in your favour accidentally; if you want something to change, do it yourself&lt;/li&gt;
+&lt;li&gt;Making a difference requires pushing through&lt;/li&gt;
+&lt;li&gt;Having a job is important, as being paid is a simple sign that you do something valuable&lt;/li&gt;
+&lt;li&gt;You know everything life is offering you, and the most valuable things are pretty basic and don&#39;t cost much money&lt;/li&gt;
+&lt;li&gt;It&#39;s easy to choose hobbies: those which are part of your lifestyle&lt;/li&gt;
+&lt;li&gt;Lifestyle is more important than goals&lt;/li&gt;
+&lt;li&gt;There are no external challenges&lt;/li&gt;
+&lt;li&gt;Without challenging yourself, life is boring and you&#39;ll probably degrade&lt;/li&gt;
+&lt;li&gt;There&#39;s no external meaning of life&lt;/li&gt;
+&lt;li&gt;Being a good man is important, and you can only try&lt;/li&gt;
+&lt;li&gt;Sometimes you just live on&lt;/li&gt;
+&lt;li&gt;Sometimes all options are bad, with not choosing at all being the worst&lt;/li&gt;
+&lt;li&gt;Downfalls shape you&lt;/li&gt;
+&lt;li&gt;We know almost nothing about life, so learning is important&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
   <entry>
     <title>I Tried to Write a Decent Desktop App</title>
     <link href="https://en.kovchinnikov.info/2026-01-desktopapp.html" />
@@ -473,89 +506,6 @@
 &lt;p&gt;Even very sensitive questions can be regarded this way – and nobody&#39;s watching. :)&lt;/p&gt;
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;I work with computers, systems, and processes, and I&#39;m convinced that at the end of the day we always have people and communication between them – and that always matters the most. Applying for a job and everything around it &lt;strong&gt;is&lt;/strong&gt; communication, so when you&#39;re unable to shape a message and convey it in an understandable manner, no framework will save you. But time and resources are limited, so I hope these thoughts regarding communication &lt;strong&gt;priorities&lt;/strong&gt; and &lt;strong&gt;content&lt;/strong&gt; could make a difference.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>7 Sins of Dysfunctional IT Management</title>
-    <link href="https://en.kovchinnikov.info/2025-10-it-management-sins.html" />
-    <updated>2025-10-06T19:03:00Z</updated>
-    <id>https://en.kovchinnikov.info/2025-10-it-management-sins.html</id>
-    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
-&lt;p&gt;I&#39;d like to present some signs of dysfunctional IT management that are easy to recognize. If these signs are present, it means that some major standard IT management practices or processes are missing. These indicators don’t care what your IT director declares or what certifications you hold. Yes, the focus is heavily on information security for a reason – in all the sections below, information security is central. If these practices are missing, you risk losing information in the best-case scenario, or paying for it in the worst case. Many companies do end up paying in such situations but don’t advertise it, so we lack reliable statistics.&lt;/p&gt;
-&lt;p&gt;I tried to pull some data, but for me the reasoning is simple: you have a hacker in a third world country with a 100 USD computer motivated to get some percent of million-dollar ransom for each case he/she/they was able to encrypt and/or steal/destroy company&#39;s data. And an employer can even not pay the hacker, just feed him, 5 USD a day would be enough. Just look at these differences, and you&#39;ll get the idea about this motivation. And the more the company pays, the more profitable this &amp;quot;business&amp;quot; becomes. But economics is egoistic, some companies pay to learn about information security the hard way, and they are not concerned about the information security of the others, except for the large companies requiring at least something from their suppliers.&lt;/p&gt;
-&lt;h2 id=&quot;1-no-minimal-itil-practices-implemented&quot;&gt;1. No minimal ITIL practices implemented&lt;/h2&gt;
-&lt;p&gt;Broadly speaking, ITIL is a well-known set of processes and practices for IT Service Management, you normally start with a Service Desk (a single point of contact) and Incident Management, then proceed to Problem Management, Change Management, Configuration Management and so on. Sure, every process costs a lot of money to implement and to keep it running. I usually start checking Service Desk and asking three basic questions:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Does a single point of contact exist?&lt;/li&gt;
-&lt;li&gt;Does everyone know about it?&lt;/li&gt;
-&lt;li&gt;If I send a message to this point of contact, will anything happen?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;If you end up with a few different points of contact, someone is unaware, or actually nothing happens, you are in trouble. NIS2, an EU regulation, to put it into simple words, just says: bro, just use ITIL. Now NIS2 is a requirement for big companies or companies operating critical infrastructure, and it&#39;s not mandatory for all the businesses – for obvious reasons. But I think literally all the companies should implement minimal ITIL, which is also about some basic security, backups in terms of data and in terms of internet channels.&lt;/p&gt;
-&lt;p&gt;&amp;quot;We have one internet channel and we&#39;re doing fine!&amp;quot; – say some &amp;quot;top-managers&amp;quot;, but that simply means your processes are not automated. By automation I mean something in the information system directs informational and/or material flows in reality. If you enter transactions post-factum, that&#39;s not automation in this sense. There&#39;s a particular very low level of information exchange and efficiency associated with this model, and there&#39;s nothing to be proud about, to put it mildly.&lt;/p&gt;
-&lt;p&gt;For governments and government suppliers, a high level of ITIL implementation is actually mandatory, and a few recent incidents prove that:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Security update ruined airport services over the world on 19th 2024 (delivered to you by CrowdStrike and Microsoft) – a typical example of release management not in place, and it&#39;s even not that high-level process. I&#39;m maybe dumb, but I still can&#39;t get how you can run critical apps on Windows.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.datacenterdynamics.com/en/news/858tb-of-government-data-may-be-lost-for-good-after-south-korea-data-center-fire/&quot;&gt;Government data lost in South Korea data center yesterday&lt;/a&gt; – well, it&#39;s something more advanced, it&#39;s called Continuity Management and it was widely adopted after 9/11, that you probably shouldn&#39;t have all the data centers and data in one physical location.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;But let&#39;s return to any company, no matter how small it is, and talk about basic stuff.&lt;/p&gt;
-&lt;h2 id=&quot;2-using-email-to-send-important-documents&quot;&gt;2. Using email to send important documents&lt;/h2&gt;
-&lt;p&gt;I&#39;ll start from the theory, but I&#39;ll try to make it exciting, because it&#39;s not about the email per se, it&#39;s about ignoring the fundamental principles. So information transfer should go like this:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;The sender sends the message&lt;/li&gt;
-&lt;li&gt;The receiver receives the message&lt;/li&gt;
-&lt;li&gt;The receiver sends the confirmation, that the message was received&lt;/li&gt;
-&lt;li&gt;The sender receives the confirmation; if confirmation is not received within reasonable time, he tries again!&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;To automate it and make it kind of standard, the engineers invented a transaction: before the first action the sender should probably open a transaction and close it when the confirmation is received, otherwise roll the transaction back, so the state is that the message was not received. Transactions guard one of the most important things everyone actually cares about, and it&#39;s called data integrity. People get that you can&#39;t be half-pregnant. But they use email, where transactions do not exist and you do not have idea if the message was received. Ok, technically there are private extensions that allow this confirmation check mark, but it&#39;s not standard and if there&#39;s no check mark it doesn&#39;t tell you anything as well.&lt;/p&gt;
-&lt;p&gt;But that&#39;s not the only problem with email! The protocol presumes that there will be a number of servers in the middle, which are almost randomly selected. So, first, a server can get a message and go off-grid, and no one will ever know the message ever existed. But, second, any server in the middle can read your message. I&#39;m in the church of cryptography with the open key, so I believe that it will be significantly harder to read encrypted messages, and I don&#39;t believe in any other &amp;quot;security&amp;quot; measures. But that&#39;s not all. The &amp;quot;guy in the middle&amp;quot; could modify the message and send it further or send other &amp;quot;phishing&amp;quot; messages based on the information he has. Any modern messenger (WhatsApp, Slack, MS Teams) is better than this.&lt;/p&gt;
-&lt;p&gt;I literally have no idea why people still use email for any business-related issue, why all the services in the internet are activated using email. And if you send any business-related document, it&#39;s on you to encrypt it and to (well, manually) get a confirmation that it was received. And from that I see what telecom providers are doing as literally heroic efforts to make this zombie (I mean email) work. They do it using, for example, credibility score for the server, so although technically you can create your own email server, almost no one does it nowadays, because it&#39;s problematic to make it work. So, it&#39;s not &lt;strong&gt;that bad&lt;/strong&gt;, but it&#39;s still bad. The thing that surprises me the most, that I&#39;ve never read a single article like &amp;quot;guys, we should stop using email and solve this email problem, maybe we should all agree on some new protocol&amp;quot;. More companies use chats, because of the speed of information exchange. Don&#39;t get me wrong, I enjoy writing structured mails, but in this case chat is better from security and data integrity viewpoints. Ok, let&#39;s move on.&lt;/p&gt;
-&lt;h2 id=&quot;3-not-using-digital-signature&quot;&gt;3. Not using digital signature&lt;/h2&gt;
-&lt;p&gt;So, you can encrypt your email or you could sign it, that&#39;s basically a checksum, verifiable with the help of your publicly-available signature (the open key). But digital signature goes beyond that and in civilized countries the legislation is for a long time in place, so in Europe you can sign any contract with appropriate signature and it will be no different from a contract signed on paper. Why are paper transactions so bad? I read some papers of the Docusign, the market leader, and I saw some arguments, but they seem vague to me, so here&#39;s my version:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Single source of truth: you trust the information system, what contract version is in place, you don&#39;t waste the time checking it and making suboptimal decisions based on guesses;&lt;/li&gt;
-&lt;li&gt;The speed of working with information, because you can use all the digital tools to work with the contracts in the digital form, even basic operations like search, find and replace matter;&lt;/li&gt;
-&lt;li&gt;Information security and data integrity: access is managed in the program and you can have all the proper backups for the data on all the continents, if it&#39;s justified.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;There&#39;s something still missing with digital signatures, at least in Europe. This technology is based on cryptography, I mean the algorithms are freely available to everyone. I know there are costs associated with running call centers for video verifications or cloud solutions to store the data and host the approval processes, integration with external systems, etc. Still, basic digital signature from my perspective should be dirt cheap, and it&#39;s not there. I looked for the solutions and the suppliers, the top-management of the small companies still can&#39;t justify the cost for themselves, especially if we are talking about signing numerous project documents, for example.&lt;/p&gt;
-&lt;p&gt;And I don&#39;t know what are the limits for disrupting this industry, I mean for a competitor with a dirt-cheap solution to appear. I assume that there are some certification or license costs for signature providers, and it&#39;s like licensing the air, because the technology costs nothing. Nowadays it&#39;s a cringe to set Russia as an example, but just to prove the point that a digital signature can be working and dirt-cheap, that&#39;s what has been achieved in Russia, and I mean country-wide. Actually the size of the territory, dysfunctional post services and an environment with a low trust between the counterparties accelerated this process. So, it can be done.&lt;/p&gt;
-&lt;h2 id=&quot;4-lamp-wordpress-even-for-external-websites&quot;&gt;4. LAMP/Wordpress, even for external websites&lt;/h2&gt;
-&lt;p&gt;This is going to be the most technical part, and probably the most arguable, but I carefully crafted and collected my arguments for a long time, so let&#39;s dive into it. First, a few words about the heading:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;LAMP stands for Linux + Apache + MySQL + PHP. Linux and MySQL are still going strong, from my point of view, but Apache and PHP seem to be irrelevant, more on that below;&lt;/li&gt;
-&lt;li&gt;&amp;quot;Even&amp;quot; for external websites means that although external environment is more dangerous, you&#39;d probably have no serious consequences if it&#39;s hacked, as it contains no critical info or personal data. It&#39;s a &amp;quot;business card&amp;quot; type website with some info about the company, it&#39;s not a web app involved in some business processes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The issues with Apache were noticed and fixed by Ryan Dahl, the Creator of Node.js, and you can read some useful stuff in his &lt;a href=&quot;https://www.linkedin.com/pulse/interview-ryan-dahl-creator-nodejs-andrey-okhotnikov/&quot;&gt;interview from 2018&lt;/a&gt;. For me, it comes down to this:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Launching application server, in case of Apache it&#39;s mod_php, to service just one request. One application server for one request, that&#39;s crazy!&lt;/li&gt;
-&lt;li&gt;Blocking, which is discussed in the interview, which is consequence, because mod_php apps can&#39;t really communicate with each other.&lt;/li&gt;
-&lt;li&gt;mod_php as the prevailing app making php the prevailing language for the back-end, although PHP stands for &amp;quot;PHP hates programmers&amp;quot;. :)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Ok, let&#39;s look at the other side. The technologies evolved just to make Apache usable further:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;nginx, which was introduced as a caching web-server for static content, generated by mod_php;&lt;/li&gt;
-&lt;li&gt;containers for load balancing; well, it&#39;s not that hard to overload Apache, if it launches new app for each request; by the way, it&#39;s called C10k problem, because you need just 10k connections for that;&lt;/li&gt;
-&lt;li&gt;frameworks with caching architecture, like Drupal, again to address this mod_php problem.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;These technologies are the crutches for an outdated technology. The presence of these crutches itself poses a question: maybe we should invent a new solution without these flaws?&lt;/p&gt;
-&lt;p&gt;And I&#39;m really disappointed with breaking changes in PHP 8, which prevented me to use my favourite Dokuwiki in my next projects, made it harder to install Dokuwiki just to access my old knowledge base and raised security concerns about all the frameworks that didn&#39;t migrate to PHP 8, because PHP 7 will eventually come to the end of life. So, yes, breaking changes really break the trust in the technology. And that&#39;s apart from PHP not encouraging developers to build stable secure apps. On the contrary, it lowered the qualification required to write a web app, so, yes, it&#39;s still powering 80% of the web, an average PHP app being just horrible. Laravel still keeps PHP alive, though. Regretfully, but there&#39;s another problem: there are not so many battery-included frameworks, Laravel being one of them.&lt;/p&gt;
-&lt;p&gt;Wordpress had numerous vulnerabilities, using it means you chose the cheapest solution not taking into consideration anything else. It&#39;s just displaying your IT illiteracy to the whole world. By the way, anyone can view the HTML source and find Wordpress there. It&#39;s just a joke when a corporate website is powered by it. It&#39;s a double joke when it&#39;s hosted on a shared web hosting, these guys can be just scam, making you pay more the next year for doing less – probably because they know that you are not that tech-savvy, if you use their services. That&#39;s the reason I migrated to the static website on GitHub.&lt;/p&gt;
-&lt;p&gt;Were there days when LAMP and even Wordpress were cool? Sure, like in 90s. Why isn&#39;t it cool anymore? Well, we have other technologies. And by technologies I don&#39;t mean Node.js only, Go is probably better, it looks like a proper Node.js and fixed JavaScript. Of course there are hardships with Go and Node.js, as well as with React and other front-end frameworks. But it&#39;s better to have a modern stack even on a business-card type website. It turns out that &lt;a href=&quot;https://justfuckingusereact.com/&quot;&gt;React is still cool&lt;/a&gt;, by the way.&lt;/p&gt;
-&lt;p&gt;Why would you want a dynamic business-card website? You could have a static website and still have dynamic forms, even comments and search using external services. But your website would be blazing fast, bullet-proof secure, and nobody prevents you from making it look beautiful. You even could use React/Vue, although it presumes some back-end, and solutions like Docusaurus, Gatsby, Astro, VitePress. Because that&#39;s cool now. N.B.: I use 11ty, by the way, as you can see in the footer.&lt;/p&gt;
-&lt;h2 id=&quot;5-no-regular-pen-testing-from-external-company&quot;&gt;5. No regular pen testing from external company&lt;/h2&gt;
-&lt;p&gt;Let&#39;s return to security, and it&#39;s as good as it gets to break it. So, how do you break security? It turns out, that &amp;quot;psy ops&amp;quot; are more effective, so you&#39;ll probably use phishing emails or calls, even some offline contact with a person to build trust and to make him/her/them break security protocol. To open a link, to fill in the password on a phishing website, to send a confidential document to a hacker. You need not that complicated tech here, and you can&#39;t know how secure you are when you don&#39;t measure. Well, that&#39;s exactly the point to be measured: the end of the chain, the most vulnerable link, a human. Your dear employees passed the trainings, successfully answered all the questions after that. But what will they do, when they lack the time, they are stressed and they have never actually identified a menace or reacted to it properly? Well, they&#39;ll open the link and type in their password, what could go wrong?&lt;/p&gt;
-&lt;p&gt;And testing your company with internal resources is just a conflict of interest, because you paid for these security trainings, it should mean you&#39;d be safe, right? You tend to see reality as you want it, not how it is, and that&#39;s a problem.&lt;/p&gt;
-&lt;h2 id=&quot;6-no-security-trainings-for-everyone&quot;&gt;6. No security trainings for everyone&lt;/h2&gt;
-&lt;p&gt;So, there&#39;s a war going on, new measures to break your security systems or trick alarms of your employees are invented every day. But what&#39;s the chance that you face something that no one expected before? It&#39;s not that big. Most disasters happen when someone uses a known tactic and scales it. It could be prevented if you just inform people that this type of attack exists.&lt;/p&gt;
-&lt;p&gt;A few fresh examples when I was almost tricked:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;A request from a chat app to enter my password for this app, it didn&#39;t look like it&#39;s external.&lt;/li&gt;
-&lt;li&gt;A scam when two guys call: one talks to you and says that you&#39;ll get a confirmation code from the bank, and another calls the bank and asks them to send a confirmation call to you; so yes, you receive a confirmation code from your bank, if you&#39;re not aware, and this lowers your security.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The knowledge tends to dissolve with time, so it&#39;s boring, but reminding people of the security concerns regularly makes them work, and it&#39;s still cheaper than dealing with the consequences. Ok, let&#39;s talk about the last topic here, when someone steals a laptop.&lt;/p&gt;
-&lt;h2 id=&quot;7-not-encrypting-laptop-drives&quot;&gt;7. Not encrypting laptop drives&lt;/h2&gt;
-&lt;p&gt;I worked at an audit company, in the consulting department though, and there was a mandatory training that the price of the laptop is nothing compared to the value of the information on it. I think probably more people should think about it. Sure enough, all the laptop drives were encrypted, and some other security measures were implemented to prevent copying data to non-encrypted USB drives or sending data over the network. From what I know now, that&#39;s not enough, but encrypting the hard drive is the ABC of information security. You even don&#39;t need anyone to steal a laptop; people just forget their laptops everywhere. You just need to apply statistics and probability theory, multiply by the number of employees in your company, and you&#39;ll get the exact number of laptops that will be lost per year for sure. Do I need to say more?&lt;/p&gt;
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;We don&#39;t know what will happen, but I believe in processes and practices that can deal at least with what we know about. The real facepalm happens when we knew about the risk, and we didn&#39;t manage it. It&#39;s strange that this type of behaviour is present in IT, but it is, and it&#39;s not always the money, it&#39;s about the literacy, curiosity and staying up-to-date. Well, that&#39;s what makes professionalism, isn&#39;t it?&lt;/p&gt;
 </content>
   </entry>
 </feed>

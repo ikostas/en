@@ -240,4 +240,9 @@
 		<loc>https://en.kovchinnikov.info/feed/feed.xml</loc>
 		<lastmod>2026-01-04</lastmod>
 	</url>
+	
+	<url>
+		<loc>https://en.kovchinnikov.info/2026-01-crisis.html</loc>
+		<lastmod>2026-01-04</lastmod>
+	</url>
 </urlset>

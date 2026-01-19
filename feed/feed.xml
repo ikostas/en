@@ -5,11 +5,26 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2026-01-04T14:50:00Z</updated>
+  <updated>2026-01-19T17:00:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>How I&#39;m Screening Out Vacancies</title>
+    <link href="https://en.kovchinnikov.info/2026-01-screening.html" />
+    <updated>2026-01-19T17:00:00Z</updated>
+    <id>https://en.kovchinnikov.info/2026-01-screening.html</id>
+    <content type="html">&lt;p&gt;I just wanted to share my experience with applying for vacancies, because time and resources are obviously limited, and some descriptions cry out, &amp;quot;Do not apply here.&amp;quot; So here are the red flags I use for project management, but you&#39;ll get the idea and will be able to apply them to other areas.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nothing in particular&lt;/strong&gt; means it&#39;s project management in IT, but there&#39;s no evidence of any other details. Managing IT services? Building infrastructure? Implementing solutions for business logic? Developing new digital products? After 22 years, I&#39;m sure all these areas require specific expertise, so the job description should be specific as well. You just can&#39;t write &amp;quot;IT Project Manager&amp;quot; and post it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mix of skills&lt;/strong&gt; is a great filter for greedy people. They want a project manager combined with a system admin and support. That&#39;s not &amp;quot;all-rounder&amp;quot; – you&#39;re just being greedy and unprofessional, so you&#39;ll get what you deserve: incompetence.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Not naming the system you implement&lt;/strong&gt;. These are not names of ERP systems: SAP, SAP ERP, M365. Why? Well, SAP is the name of the company, for instance. Again, the problem is that you need relevant experience to implement any ERP system, and the experience required is very different for each.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Outdated tech stack&lt;/strong&gt;. This could be the most arguable one, but in my personal opinion, if you&#39;re sticking in 2026 with PHP, C#, RPA, or no-code, you just create more problems than you&#39;re trying to solve, so these projects are cursed from the start.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Strange name for the role&lt;/strong&gt;, like project coordinator or project controller instead of project manager, indicates a major misunderstanding, a probable lack of authority accompanied by full responsibility, as well as a possible intent to pay significantly less.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Developing an in-house ERP system&lt;/strong&gt; is like reinventing the bicycle, and from an economic viewpoint, it&#39;s not viable unless a company is a vast retail network. For a midsize construction company – definitely a no-go, and a waste of resources for a false objective.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AI buzz&lt;/strong&gt; – because that&#39;s not how it works. You don&#39;t replace people with AI, and you don&#39;t jump over &lt;a href=&quot;https://en.kovchinnikov.info/2024-04-maturity.html&quot;&gt;maturity levels&lt;/a&gt;. You also can&#39;t compensate for incompetence with AI, by the way.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The End of the Midlife Crisis</title>
     <link href="https://en.kovchinnikov.info/2026-01-crisis.html" />
@@ -432,80 +447,6 @@
 &lt;p&gt;Resources are always limited. I had a case when I suggested pausing 9 projects out of 10, because the most important project was eating all the resources. I can also confess that I could have 10 projects without a formal prioritization framework, and I regret not having it. Things just become so clear when you have it. I prefer RICE, by the way; you could also use another framework using quantifiable effects, but you need trustworthy business cases for that. PMO is for supporting top-management in any circumstances, and these circumstances can be shocking, meaning closing or pausing a significant part of the projects. When it happens, you don&#39;t have time to evaluate, you need to make decisions, and you need to be able to explain these decisions. With a formal framework, you can give the scoring table, and the decisions become clear; that&#39;s the beauty of it.&lt;/p&gt;
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;The signs I enumerated sound random, and they probably are, but they uncover some fundamental things below processes and practices: what it means in terms of &amp;quot;modus operandi&amp;quot; to have project standards in place, how a sane PM culture looks like, when you fire your project manager, and how your PMO is helping the business when a storm is coming. That&#39;s all for today, folks. I wish you survive all the storms, play safe.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Structuring the Job Search</title>
-    <link href="https://en.kovchinnikov.info/2025-10-jobsearch.html" />
-    <updated>2025-10-15T11:15:00Z</updated>
-    <id>https://en.kovchinnikov.info/2025-10-jobsearch.html</id>
-    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
-&lt;p&gt;I know that many people are frustrated looking for a job nowadays; in particular, at the time of writing, in some regions and professional areas the situation looks desperate. And looking for a job can be a disappointing experience by itself – but what&#39;s the real problem here? I assume that it comes from the lack or absence of feedback, and an unstructured workflow, so until you get a contract it&#39;s hard to understand if there&#39;s any progress at all.&lt;/p&gt;
-&lt;p&gt;I&#39;m still looking for a job, and I&#39;m not an expert of any kind in this area, yet I found some practices useful – practices originating from consulting. I just thought, not everyone worked in consulting, and even if that&#39;s the case, it takes some effort to apply these approaches to the job search. The approaches I&#39;m going to discuss are the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Hypothesis testing&lt;/li&gt;
-&lt;li&gt;Building a sales funnel&lt;/li&gt;
-&lt;li&gt;Dealing with constraints&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;These practices could give you some structure and processes, and the output of these processes would be information or progress – both practically measurable. It&#39;s not a holistic framework in any way, and I will not talk here about any lifehacks or shortcuts, simply because I don&#39;t believe in them. It also leaves some frustrating moments intact: sometimes it&#39;s just a game; you have to play by the rules and you can&#39;t get feedback even if you invested a lot of time and effort applying for some position. I can&#39;t change that, and I don&#39;t believe any online platform with &amp;quot;new rules&amp;quot; could do it either. This text is about concentrating on what you can manage.&lt;/p&gt;
-&lt;h2 id=&quot;hypothesis-testing&quot;&gt;Hypothesis testing&lt;/h2&gt;
-&lt;p&gt;The job market can be untransparent, and that complicates the task of finding a job: is my profession in high demand? What salary can I expect? On the other hand, finding your dream job depends on so many detailed questions – how a particular sentence in your CV or cover letter is perceived, what&#39;s the right order of paragraphs in your cover letter, what impression you should leave your vis-à-vis with after the job interview, and so on. The right answers increase the likelihood of getting a job – so how do you get them when you lack feedback?&lt;/p&gt;
-&lt;p&gt;Well, this task is formalized in market research and product development and is solved with hypothesis testing. The principles are the following:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Have a written list of hypotheses. Include a description of the expected result indicating whether the hypothesis is true or false.&lt;/li&gt;
-&lt;li&gt;Isolate hypotheses from each other – in other words, follow the principle &amp;quot;other things being equal.&amp;quot;&lt;/li&gt;
-&lt;li&gt;Move from the most certain feedback to experiments, because experiments are more expensive, and asking questions is often free.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;That&#39;s just the beginning; I highly recommend reading some detailed descriptions of hypothesis testing. I just hope you get the idea – that you are not just &amp;quot;running around like a chicken with its head cut off.&amp;quot; (C) It&#39;s the chaotic yet time-consuming activities that make this experience so awful. Even if I don&#39;t get a job, I&#39;d like to get some information regarding the hypotheses I have. Here are the hypotheses I had and how I tested them:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Is there demand for the job I&#39;m looking for?&lt;/strong&gt; First, identify the keywords to look for, then search for the jobs, then read and try to find out if the job description is reasonable and relevant, and finally call and ask if this job is still available.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;How much money should I ask for?&lt;/strong&gt; External HR agencies are your friends in this case, as they are interested in selling you. The information is more relevant if you&#39;ve had an interview and understand the other variables (company size, responsibility in terms of budget and number of people or projects to manage, location, etc.).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;What impression should I leave?&lt;/strong&gt; Starting from the more direct feedback, you could speak with a familiar HR specialist, if you have one – especially if you apply not in the country of your origin; it&#39;s hard to feel cultural differences sometimes. But from my experience, experiments work best: just change your attitude a little bit and track the feedback.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;What should I change in my CV/cover letter?&lt;/strong&gt; There are too many options and it&#39;s hard to get representative data, so it&#39;s cheaper to ask someone you know. Still, I strongly believe in filtering the feedback, being and expressing yourself – because if you incorporate all the feedback, your CV/cover letter will become too general. We are in marketing here, so you need to differentiate yourself.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;If you&#39;ve tested all the hypotheses you needed, sometimes it&#39;s just about putting the work into applying for the jobs.&lt;/p&gt;
-&lt;h2 id=&quot;building-a-sales-funnel&quot;&gt;Building a sales funnel&lt;/h2&gt;
-&lt;p&gt;Building a sales funnel is a complicated way to say: how do you actually acquire opportunities? First, you have at least a few options:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Make a useful post on LinkedIn (you could also repost some article or video), as well as keep your profile updated and get noticed&lt;/li&gt;
-&lt;li&gt;Leverage your connections – family, friends, colleagues – at least inform them that you are looking for a job&lt;/li&gt;
-&lt;li&gt;Apply to recruiting agencies; if it&#39;s applicable in your country, it&#39;s called an &amp;quot;initiative application&amp;quot; in Germany; they also offer outstaffing opportunities&lt;/li&gt;
-&lt;li&gt;Apply to a company you like without a particular job – also an &amp;quot;initiative application&amp;quot;&lt;/li&gt;
-&lt;li&gt;Apply to recent job postings – that&#39;s obvious&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Second, these options work together: if someone finds you using keywords from your profile, they&#39;ll be more convinced to contact you if you have an updated profile and maybe some recent posts. Recently an interviewer opened my blog during the interview and found some interests in common. It&#39;s called &amp;quot;points of contact&amp;quot; in sales – and I have doubts if it&#39;s directly applicable here, but you get the idea.&lt;/p&gt;
-&lt;p&gt;Speaking of job postings, building a sales funnel has a slightly different meaning: it&#39;s about filtering the job postings, so you should write down your filtering criteria before the search:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Location&lt;/li&gt;
-&lt;li&gt;Websites&lt;/li&gt;
-&lt;li&gt;Date of the job posting&lt;/li&gt;
-&lt;li&gt;Keywords to search for&lt;/li&gt;
-&lt;li&gt;What % of travel is acceptable&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Some research and/or reflection are required to decide what you are actually looking for. What are the most favourable locations for you, where you could relocate easily? What websites have the freshest job postings and which ones are just &amp;quot;repost feeds&amp;quot;?&lt;/p&gt;
-&lt;p&gt;Ok, let&#39;s move on to the constraints.&lt;/p&gt;
-&lt;h2 id=&quot;dealing-with-constraints&quot;&gt;Dealing with constraints&lt;/h2&gt;
-&lt;p&gt;Constraints are the itemized answers to the question &amp;quot;why don&#39;t I get a job?&amp;quot; For example:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;I&#39;m not in the required location&lt;/li&gt;
-&lt;li&gt;I ask for too much in terms of money and benefits&lt;/li&gt;
-&lt;li&gt;My language proficiency is insufficient&lt;/li&gt;
-&lt;li&gt;My job experience is not relevant for the positions I&#39;m looking for&lt;/li&gt;
-&lt;li&gt;I face some discrimination issues&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;By the way, I do face some discrimination issues – but the question is: are the issues above internal or external? Language proficiency, for example, is internal, as you can fix it yourself. On the other hand, discrimination issues just narrow your job market. I personally decided to live with it; otherwise, it&#39;s about activism – and I&#39;m writing an article about the job search. :)&lt;/p&gt;
-&lt;p&gt;There&#39;s a book called &amp;quot;Goldratt&#39;s Theory of Constraints&amp;quot; by H. William Dettmer. The point is that you have a flow, and you have some narrow point which obstructs the flow. So you eliminate the obstacle that constrains the flow the most and then move to the next obstacle. In this case, all the obstacles are considered internal, and the reality is a little bit different. Anyway, asking yourself &amp;quot;What&#39;s my biggest constraint?&amp;quot; is followed by the following questions:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Can I internalize this constraint?&lt;/li&gt;
-&lt;li&gt;What hypotheses about the existence of this constraint should I have?&lt;/li&gt;
-&lt;li&gt;How could I test these hypotheses?&lt;/li&gt;
-&lt;li&gt;If it&#39;s internal, what do I need to fix it?&lt;/li&gt;
-&lt;li&gt;If it&#39;s external, should I avoid this constraint while building the sales funnel?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;A bonus tip: ask yourself – what constrains others’ trust in me? References, certificates, activity on social networks, and connections actually build trust. If you’re a good fit for the job, it may simply be a trust issue.&lt;/p&gt;
-&lt;p&gt;Even very sensitive questions can be regarded this way – and nobody&#39;s watching. :)&lt;/p&gt;
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;I work with computers, systems, and processes, and I&#39;m convinced that at the end of the day we always have people and communication between them – and that always matters the most. Applying for a job and everything around it &lt;strong&gt;is&lt;/strong&gt; communication, so when you&#39;re unable to shape a message and convey it in an understandable manner, no framework will save you. But time and resources are limited, so I hope these thoughts regarding communication &lt;strong&gt;priorities&lt;/strong&gt; and &lt;strong&gt;content&lt;/strong&gt; could make a difference.&lt;/p&gt;
 </content>
   </entry>
 </feed>

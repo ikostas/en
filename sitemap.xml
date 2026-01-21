@@ -242,12 +242,17 @@
 	</url>
 	
 	<url>
-		<loc>https://en.kovchinnikov.info/feed/feed.xml</loc>
+		<loc>https://en.kovchinnikov.info/2026-01-screening.html</loc>
 		<lastmod>2026-01-19</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://en.kovchinnikov.info/2026-01-screening.html</loc>
-		<lastmod>2026-01-19</lastmod>
+		<loc>https://en.kovchinnikov.info/2026-01-slip.html</loc>
+		<lastmod>2026-01-21</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://en.kovchinnikov.info/feed/feed.xml</loc>
+		<lastmod>2026-01-21</lastmod>
 	</url>
 </urlset>

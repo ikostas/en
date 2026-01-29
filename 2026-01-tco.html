@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>The TCO Thing</title>
+		<meta name="description" content="Adding post-apocalyptic scenarios to the TCO analysis">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i> en</a></li>
+					<li><a href="https://www.youtube.com/@DiD-e1p"><i class="fa-brands fa-youtube"></i> de</a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="the-tco-thing">The TCO Thing</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2026-01-29">29 January 2026</time></li>
+	<li class="post-tag"><a href="/tags/opensource/" class="post-tag">#opensource</a></li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>At first I had an idea to write a balancing article to my thoughts on opensource and custom solutions, to be a devil's advocate and to criticize myself. People choosing Windows, WordPress and ready-to-install systems can't be all wrong and they are not dumb for sure. And I thought I could prove their viewpoint with the TCO analysis, but then I had an intuitive feeling that I'm missing something. If this TCO analysis is correct, why is it often disproved lately? And then it struck me: we are already in some &quot;catastrophic&quot; scenarios, but I'm cheerful, so I'll call them post-apocalyptic scenarios (PAS). We are not living in post-apocalypse yet, although some people are building bunkers and there's a whole culture and community of &quot;preppers&quot;. But some changes are so drastic that they turn over the financial models, one of them being TCO.</p></div>
+<h2 id="tco-model">TCO model</h2>
+<p>A typical TCO model has two components, and that's a lot already: the cost of buying and the maintenance cost. I don't feel that's enough, so I'd add two more:</p>
+<ol>
+<li>Making a decision cost</li>
+<li>Buying/development/implementation cost</li>
+<li>Maintenance/enhancement cost</li>
+<li>PAS maintenance/enhancement cost</li>
+</ol>
+<p>Let's go really quick through it. First, you make a decision what to buy to fix your problem, and that involves costs: you need to become a minimal subject matter expert or to find one, you need to view some demos, find people you trust and ask them questions about how they feel using the product, find the reviews, create a &quot;+/-&quot; table, make your conclusions, get stuck in decision paralysis, find a way out, get stuck again and so on. <strong>Marketing</strong> and <strong>word of mouth</strong> do a great job supplying you with information, so it seems like you know the right choice. They both fail with opensource solutions, for instance: opensource products often do not have paid marketing at all (be grateful for a neat GitHub page), most people you know may not know about it or even have a non-professional negative attitude (that's what marketing specialists of the other products are paid for) toward these products, yet the opensource product can beat a closed-source one in product-market fit, being (mostly) free for acquisition cost.</p>
+<p>The buying phase is exploited by marketing as well: you visit a nice office, drink free coffee, have a talk with nice people, then you conveniently pay a large amount of money (assuming you can't be screwed if you pay this large amount), you get your license key or even a box. So, you have a box on the shelf, nothing works. Well, you have to pay for some consulting, but they will not do the work for you; in the case of an ERP system they will not figure out what to do with your 50 incompatible item directories. But they got the money, they are happy, and you are not.</p>
+<p>I've been implementing the best ERP systems available on the market since 2003, and I strongly believe in custom solutions, because they have three traits &quot;pre-packaged&quot; or even &quot;customizable&quot; solutions don't have:</p>
+<ul>
+<li>You start to understand your requirements during development</li>
+<li>You can create something unique, supporting your unique competitive advantage</li>
+<li>The tech stack of most &quot;pre-packaged&quot; solutions is pretty old, and you are free to leverage the advancements in technology</li>
+</ul>
+<p>B2B moves at a slower pace and there are reasons to have a &quot;pre-packaged&quot; solution as well:</p>
+<ul>
+<li>A stable tech stack</li>
+<li>Standardized supporting processes to deal with your contractors easier</li>
+<li>Figure out your requirements from the software description</li>
+</ul>
+<p>But the killing argument for a &quot;pre-packaged&quot; solution is the maintenance cost, because talented developers are not willing to support their software, they are willing to write new software. So eventually you'll lose even the ability to fix bugs in your custom solution. But that's not the case if IT is the core part of your business, and you put consistent effort and budget into its enhancement. Many retailers do it, some logistics companies do it, and they can be quite successful. Just don't slow down, because freezing is death for your product.</p>
+<p>&quot;Effort&quot; is a key word here. So, if you have a lot to do and you are not willing to put a lot of effort into software development, is the &quot;pre-packaged&quot; option still good? Well, it is, if we do not consider PAS. PAS changes a lot, not only TCO. But how to predict PAS?</p>
+<h2 id="how-to-predict-pas">How to predict PAS</h2>
+<p>In January 2022 I had a task from an IT company as a part of the hiring process: make a presentation for a potential new product. And I wrote that a war in Ukraine is possible and we should probably have a backup plan for the product in this scenario. How did I do that? Well, it's simple:</p>
+<ol>
+<li>PEST analysis (politics, economics, society, tech) – just read the news, bro</li>
+<li>SWOT analysis: how can external factors from PEST impact the product or the company? SWOT analysis normally includes internal factors as well, but for PAS they are mostly irrelevant.</li>
+</ol>
+<p>The Russian army was near the border of Unkraine, so there was information in the news that the probability of war is above zero. Why? Well, the troops have guns, and they shoot the guns, that's what they do if they have an order. Why place the troops and don't order them to shoot? It's called politics, but sometimes the politics ends and the war begins. I personally didn't believe that it would turn out this way, no one I knew believed and lots of strategically-thinking people didn't consider it an option, but it was there all the time and the probability turned into a matter of fact. And it was that easy to notice and predict; it was in the news.</p>
+<p>So there's usually some information about the probability of a PAS; the information is widely available, as it's a major event. What kind of event? Let's look at PEST again:</p>
+<ol>
+<li>War for politics</li>
+<li>Crisis for economics</li>
+<li>Civil war as a consequence of radicalization for society</li>
+<li>Systems hack/breakdown for tech</li>
+<li>We could add flood, earthquake, fire or meteorite for natural disasters</li>
+</ol>
+<p>In case you are not still panicking or ordered the bunker already, what are these events about?</p>
+<h2 id="what-pas-brings">What PAS brings</h2>
+<p>There's a book Trust by Francis Fukuyama. It's a shame I didn't read it, but I strongly recommend it. Here's my take on trust:</p>
+<ul>
+<li>Trust is a fundamental basis of the modern world (meaning all the letters from PEST)</li>
+<li>The fundamental flaw and the reason for poverty in the Global South is a lack of trust, and I observed it personally in Russia for 39 years</li>
+<li>In case of PAS the most damage it does is it breaks trust: in the government, economics, society or tech</li>
+</ul>
+<p>Just remember the latest bug causing software breakdown in the airports. We have to pay with our time and money buying alternatives, moving slower or reserving funds for possible losses caused by such an event. Anyway, let's return to TCO.</p>
+<h2 id="how-pas-changes-tco">How PAS changes TCO</h2>
+<p>A mild economic crisis can cause many companies to cease to exist. Yes, they promised to support your software (or, worse, you used their online platform), but in the case of closed source you have nothing to do. A mild political crisis can turn tech giants against you, and that's why Europe is so &quot;excited&quot; about replacing software and SaaS services from the US with alternatives. It turns out, it doesn't take WWIII to be screwed.</p>
+<p>The older logic was reasonable: in the case of WWIII we won't need this software anyway. Well, gents who said that, what do you say now? The US sanctions against <a href="https://www.euronews.com/my-europe/2025/06/06/eu-deplores-us-sanctions-against-icc-judges-including-slovenian">ICC judges</a> don't have a symmetric response, because EU and US were partners and <strong>trusted</strong> each other. Debanking, ban from apps and services. What's interesting is that it's a test, the same way lots of military technologies are sadly tested in Ukraine. Does it work? How do they react? That's valuable information. If you have this information, you are ahead of your opponents as you can leverage it. Opponents earlier considered partners, sad to say.</p>
+<p>The issue with opensource is that technically it can be created by developers from the US, but you can still be independent. That's the trick, until anyone proves the opposite. You can put any sanctions you want on a country, but you can't prohibit it from using opensource solutions, and this case with the most heavily-sanctioned countries proves the point. The flawed logic is when one says &quot;well, we'll always be on the other side, issuing sanctions&quot;. I have news: &quot;always&quot; doesn't exist in PAS.</p>
+<p>Software is a bunch of code, you need this code – it's an important point, we need to stop here for a moment – but you also need <strong>the competence</strong> to modify this code, then you have all the degrees of freedom with your software solutions. I've seen some software, notably JavaScript frameworks, which are opensource, the documentation exists, but to make money on it, the docs are brief and you are encouraged to obtain info via paid courses. That's not good enough! You need a leading technology for every area with a healthy independent community creating all the documents needed to reproduce all the results you want with the software. Yes, Linus Torvalds kicked all the Russia-based devs from the kernel team. Yes, independent.</p>
+<p>The next question: what do you need to create competence? There's a book by Quincy Larson <a href="https://www.freecodecamp.org/news/learn-to-code-book/">How to Learn to Code and Get a Developer Job</a> and he skyrocketed his career as a developer visiting hackathons and meetups. In the most introvert-filled industry, communication, communities and offline meetings are key. And I search through Eventbrite, Meetup.com in Germany and I cry, because <strong>there's nothing and it sucks</strong>. There are some meetups in Berlin, Cologne and Munich probably, and I'm in a rural area, and it can be the same in rural areas in the US. In any case, it's easier for me to find an English-speaking Discord group for Go development than to find anything online or offline in Germany. Is that the reason the US is so ahead of Europe regarding tech?</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>There's another level of trust: people as sentient species build trust when they meet each other personally. My job is 99% communication and trust is essential for me. And the thing I hate the most is 30-minute online interviews – it's impossible to build any trust with this lack of presence and this lack of time. In Europe people often consider environmental impact more important than personal contact. The contact can be a reason for pollution, but abandoning it doesn't solve the problem. And it's sad to live in this &quot;videoconference&quot; world, the lack of trust and the lack of means to build it being the reason for this sadness. That's all I have to say.</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2026-01-slip.html">When You Let It Slip</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2026-01-tco.html` was built on 2026-01-29T13:01:55.558Z -->
+	</body></html>

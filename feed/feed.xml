@@ -5,11 +5,76 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2026-01-21T14:10:00Z</updated>
+  <updated>2026-01-29T12:05:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>The TCO Thing</title>
+    <link href="https://en.kovchinnikov.info/2026-01-tco.html" />
+    <updated>2026-01-29T12:05:00Z</updated>
+    <id>https://en.kovchinnikov.info/2026-01-tco.html</id>
+    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;At first I had an idea to write a balancing article to my thoughts on opensource and custom solutions, to be a devil&#39;s advocate and to criticize myself. People choosing Windows, WordPress and ready-to-install systems can&#39;t be all wrong and they are not dumb for sure. And I thought I could prove their viewpoint with the TCO analysis, but then I had an intuitive feeling that I&#39;m missing something. If this TCO analysis is correct, why is it often disproved lately? And then it struck me: we are already in some &amp;quot;catastrophic&amp;quot; scenarios, but I&#39;m cheerful, so I&#39;ll call them post-apocalyptic scenarios (PAS). We are not living in post-apocalypse yet, although some people are building bunkers and there&#39;s a whole culture and community of &amp;quot;preppers&amp;quot;. But some changes are so drastic that they turn over the financial models, one of them being TCO.&lt;/p&gt;
+&lt;h2 id=&quot;tco-model&quot;&gt;TCO model&lt;/h2&gt;
+&lt;p&gt;A typical TCO model has two components, and that&#39;s a lot already: the cost of buying and the maintenance cost. I don&#39;t feel that&#39;s enough, so I&#39;d add two more:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Making a decision cost&lt;/li&gt;
+&lt;li&gt;Buying/development/implementation cost&lt;/li&gt;
+&lt;li&gt;Maintenance/enhancement cost&lt;/li&gt;
+&lt;li&gt;PAS maintenance/enhancement cost&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let&#39;s go really quick through it. First, you make a decision what to buy to fix your problem, and that involves costs: you need to become a minimal subject matter expert or to find one, you need to view some demos, find people you trust and ask them questions about how they feel using the product, find the reviews, create a &amp;quot;+/-&amp;quot; table, make your conclusions, get stuck in decision paralysis, find a way out, get stuck again and so on. &lt;strong&gt;Marketing&lt;/strong&gt; and &lt;strong&gt;word of mouth&lt;/strong&gt; do a great job supplying you with information, so it seems like you know the right choice. They both fail with opensource solutions, for instance: opensource products often do not have paid marketing at all (be grateful for a neat GitHub page), most people you know may not know about it or even have a non-professional negative attitude (that&#39;s what marketing specialists of the other products are paid for) toward these products, yet the opensource product can beat a closed-source one in product-market fit, being (mostly) free for acquisition cost.&lt;/p&gt;
+&lt;p&gt;The buying phase is exploited by marketing as well: you visit a nice office, drink free coffee, have a talk with nice people, then you conveniently pay a large amount of money (assuming you can&#39;t be screwed if you pay this large amount), you get your license key or even a box. So, you have a box on the shelf, nothing works. Well, you have to pay for some consulting, but they will not do the work for you; in the case of an ERP system they will not figure out what to do with your 50 incompatible item directories. But they got the money, they are happy, and you are not.&lt;/p&gt;
+&lt;p&gt;I&#39;ve been implementing the best ERP systems available on the market since 2003, and I strongly believe in custom solutions, because they have three traits &amp;quot;pre-packaged&amp;quot; or even &amp;quot;customizable&amp;quot; solutions don&#39;t have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You start to understand your requirements during development&lt;/li&gt;
+&lt;li&gt;You can create something unique, supporting your unique competitive advantage&lt;/li&gt;
+&lt;li&gt;The tech stack of most &amp;quot;pre-packaged&amp;quot; solutions is pretty old, and you are free to leverage the advancements in technology&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;B2B moves at a slower pace and there are reasons to have a &amp;quot;pre-packaged&amp;quot; solution as well:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A stable tech stack&lt;/li&gt;
+&lt;li&gt;Standardized supporting processes to deal with your contractors easier&lt;/li&gt;
+&lt;li&gt;Figure out your requirements from the software description&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But the killing argument for a &amp;quot;pre-packaged&amp;quot; solution is the maintenance cost, because talented developers are not willing to support their software, they are willing to write new software. So eventually you&#39;ll lose even the ability to fix bugs in your custom solution. But that&#39;s not the case if IT is the core part of your business, and you put consistent effort and budget into its enhancement. Many retailers do it, some logistics companies do it, and they can be quite successful. Just don&#39;t slow down, because freezing is death for your product.&lt;/p&gt;
+&lt;p&gt;&amp;quot;Effort&amp;quot; is a key word here. So, if you have a lot to do and you are not willing to put a lot of effort into software development, is the &amp;quot;pre-packaged&amp;quot; option still good? Well, it is, if we do not consider PAS. PAS changes a lot, not only TCO. But how to predict PAS?&lt;/p&gt;
+&lt;h2 id=&quot;how-to-predict-pas&quot;&gt;How to predict PAS&lt;/h2&gt;
+&lt;p&gt;In January 2022 I had a task from an IT company as a part of the hiring process: make a presentation for a potential new product. And I wrote that a war in Ukraine is possible and we should probably have a backup plan for the product in this scenario. How did I do that? Well, it&#39;s simple:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;PEST analysis (politics, economics, society, tech) – just read the news, bro&lt;/li&gt;
+&lt;li&gt;SWOT analysis: how can external factors from PEST impact the product or the company? SWOT analysis normally includes internal factors as well, but for PAS they are mostly irrelevant.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The Russian army was near the border of Unkraine, so there was information in the news that the probability of war is above zero. Why? Well, the troops have guns, and they shoot the guns, that&#39;s what they do if they have an order. Why place the troops and don&#39;t order them to shoot? It&#39;s called politics, but sometimes the politics ends and the war begins. I personally didn&#39;t believe that it would turn out this way, no one I knew believed and lots of strategically-thinking people didn&#39;t consider it an option, but it was there all the time and the probability turned into a matter of fact. And it was that easy to notice and predict; it was in the news.&lt;/p&gt;
+&lt;p&gt;So there&#39;s usually some information about the probability of a PAS; the information is widely available, as it&#39;s a major event. What kind of event? Let&#39;s look at PEST again:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;War for politics&lt;/li&gt;
+&lt;li&gt;Crisis for economics&lt;/li&gt;
+&lt;li&gt;Civil war as a consequence of radicalization for society&lt;/li&gt;
+&lt;li&gt;Systems hack/breakdown for tech&lt;/li&gt;
+&lt;li&gt;We could add flood, earthquake, fire or meteorite for natural disasters&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In case you are not still panicking or ordered the bunker already, what are these events about?&lt;/p&gt;
+&lt;h2 id=&quot;what-pas-brings&quot;&gt;What PAS brings&lt;/h2&gt;
+&lt;p&gt;There&#39;s a book Trust by Francis Fukuyama. It&#39;s a shame I didn&#39;t read it, but I strongly recommend it. Here&#39;s my take on trust:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Trust is a fundamental basis of the modern world (meaning all the letters from PEST)&lt;/li&gt;
+&lt;li&gt;The fundamental flaw and the reason for poverty in the Global South is a lack of trust, and I observed it personally in Russia for 39 years&lt;/li&gt;
+&lt;li&gt;In case of PAS the most damage it does is it breaks trust: in the government, economics, society or tech&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Just remember the latest bug causing software breakdown in the airports. We have to pay with our time and money buying alternatives, moving slower or reserving funds for possible losses caused by such an event. Anyway, let&#39;s return to TCO.&lt;/p&gt;
+&lt;h2 id=&quot;how-pas-changes-tco&quot;&gt;How PAS changes TCO&lt;/h2&gt;
+&lt;p&gt;A mild economic crisis can cause many companies to cease to exist. Yes, they promised to support your software (or, worse, you used their online platform), but in the case of closed source you have nothing to do. A mild political crisis can turn tech giants against you, and that&#39;s why Europe is so &amp;quot;excited&amp;quot; about replacing software and SaaS services from the US with alternatives. It turns out, it doesn&#39;t take WWIII to be screwed.&lt;/p&gt;
+&lt;p&gt;The older logic was reasonable: in the case of WWIII we won&#39;t need this software anyway. Well, gents who said that, what do you say now? The US sanctions against &lt;a href=&quot;https://www.euronews.com/my-europe/2025/06/06/eu-deplores-us-sanctions-against-icc-judges-including-slovenian&quot;&gt;ICC judges&lt;/a&gt; don&#39;t have a symmetric response, because EU and US were partners and &lt;strong&gt;trusted&lt;/strong&gt; each other. Debanking, ban from apps and services. What&#39;s interesting is that it&#39;s a test, the same way lots of military technologies are sadly tested in Ukraine. Does it work? How do they react? That&#39;s valuable information. If you have this information, you are ahead of your opponents as you can leverage it. Opponents earlier considered partners, sad to say.&lt;/p&gt;
+&lt;p&gt;The issue with opensource is that technically it can be created by developers from the US, but you can still be independent. That&#39;s the trick, until anyone proves the opposite. You can put any sanctions you want on a country, but you can&#39;t prohibit it from using opensource solutions, and this case with the most heavily-sanctioned countries proves the point. The flawed logic is when one says &amp;quot;well, we&#39;ll always be on the other side, issuing sanctions&amp;quot;. I have news: &amp;quot;always&amp;quot; doesn&#39;t exist in PAS.&lt;/p&gt;
+&lt;p&gt;Software is a bunch of code, you need this code – it&#39;s an important point, we need to stop here for a moment – but you also need &lt;strong&gt;the competence&lt;/strong&gt; to modify this code, then you have all the degrees of freedom with your software solutions. I&#39;ve seen some software, notably JavaScript frameworks, which are opensource, the documentation exists, but to make money on it, the docs are brief and you are encouraged to obtain info via paid courses. That&#39;s not good enough! You need a leading technology for every area with a healthy independent community creating all the documents needed to reproduce all the results you want with the software. Yes, Linus Torvalds kicked all the Russia-based devs from the kernel team. Yes, independent.&lt;/p&gt;
+&lt;p&gt;The next question: what do you need to create competence? There&#39;s a book by Quincy Larson &lt;a href=&quot;https://www.freecodecamp.org/news/learn-to-code-book/&quot;&gt;How to Learn to Code and Get a Developer Job&lt;/a&gt; and he skyrocketed his career as a developer visiting hackathons and meetups. In the most introvert-filled industry, communication, communities and offline meetings are key. And I search through Eventbrite, Meetup.com in Germany and I cry, because &lt;strong&gt;there&#39;s nothing and it sucks&lt;/strong&gt;. There are some meetups in Berlin, Cologne and Munich probably, and I&#39;m in a rural area, and it can be the same in rural areas in the US. In any case, it&#39;s easier for me to find an English-speaking Discord group for Go development than to find anything online or offline in Germany. Is that the reason the US is so ahead of Europe regarding tech?&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;There&#39;s another level of trust: people as sentient species build trust when they meet each other personally. My job is 99% communication and trust is essential for me. And the thing I hate the most is 30-minute online interviews – it&#39;s impossible to build any trust with this lack of presence and this lack of time. In Europe people often consider environmental impact more important than personal contact. The contact can be a reason for pollution, but abandoning it doesn&#39;t solve the problem. And it&#39;s sad to live in this &amp;quot;videoconference&amp;quot; world, the lack of trust and the lack of means to build it being the reason for this sadness. That&#39;s all I have to say.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>When You Let It Slip</title>
     <link href="https://en.kovchinnikov.info/2026-01-slip.html" />
@@ -416,39 +481,6 @@
 &lt;p&gt;Let’s take an example and talk about a web app. Django, Ruby on Rails, and Laravel gained popularity for a reason – because (and DHH was right here) they solve an &amp;quot;end-to-end&amp;quot; problem. In the JS world, it’s a little more chaotic and &amp;quot;DIY&amp;quot;-like; I’ve actually lost track of what’s going on. :) It’s bad to start learning programming with a framework, but it’s so nice when you already have one you need. And I’m really inspired by how wide the choice is now, especially compared to the situation just a few years ago. Anyway, code generators within frameworks – when you know what you’re doing – are far better than copying code from a chatbot. Please, for the sake of humanity, don’t do that. :)&lt;/p&gt;
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Something else inspires me even more than the progress with the hardware and software we have compared to 1999, when I started playing with FreeBSD (and everybody was terrified of the “year 2000 problem,” ha-ha). It’s how much you have to play with now, and how many resources you have to satisfy your curiosity. Codecademy doesn’t pay me, but it’s hard not to mention their free resources to learn coding in any language, including Rust, Kotlin, and Bash. And this experience – to feel what’s on the edge of software development right now – is quite satisfying.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>A Forced Downshifting</title>
-    <link href="https://en.kovchinnikov.info/2025-11-downshifting.html" />
-    <updated>2025-11-01T18:10:00Z</updated>
-    <id>https://en.kovchinnikov.info/2025-11-downshifting.html</id>
-    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
-&lt;p&gt;I have friends who worked as couriers during harsh times, and they felt bad. Germany now goes through a complicated situation, which can be defined on a scale from stagnation to economic crisis, depending on how pessimistic you are. I personally try to find a way out, and I think that describing overcoming is more important than &amp;quot;success stories&amp;quot;, but I&#39;d like to say something to people who struggle: you are not alone, and it&#39;s okay, don&#39;t be too hard on yourself. In this post, I&#39;ll analyse the most pessimistic viewpoint on the circumstances I have. I hope this analysis and the following self-reflection will help someone in a similar situation. If you can do this, it&#39;s already a step forward.&lt;/p&gt;
-&lt;h2 id=&quot;as-is&quot;&gt;AS IS&lt;/h2&gt;
-&lt;p&gt;So, what&#39;s happening in Germany now? It seems like a normal economic crisis: the stagnation was before, but the situation with the tariffs (auto-industry and pharma), &amp;quot;a tax of war&amp;quot; and other factors resulted in mass layoffs and the absence of vacancies, which I can clearly observe. What else is going on? Well, there are officially more bankruptcies this year than in the previous one. But the thing with pharma and autos is that it&#39;s just the beginning, and many suppliers are dependent on these companies. It takes some time to make the hard decisions, so we&#39;ll see these decisions soon. The issue with autos is that auto-producers like Audi invested in e-autos heavily, but it didn&#39;t play out, the demand is not there. Maybe as well as the infrastructure and the technology. The issue with pharma is that USA import tariffs were unexpected, it&#39;s a big industry with a surprisingly big share of export to the USA.&lt;/p&gt;
-&lt;p&gt;As the job market faced the consequences of the aforementioned crisis, the requirements started rising. It&#39;s not enough to be in Germany, have a permit and be a good specialist. Your German needs to be similar to native, which takes some more time than &amp;quot;negotiation-proficient&amp;quot; level. You also need to already live in the city where the vacancy is, which is not the case for me. You also compete with the Germans, who were laid off, and Germans are preferred. I&#39;d rather not call it &amp;quot;discrimination&amp;quot;, it&#39;s a normal national policy. There&#39;s a U-turn in migration politics as well, but as I&#39;m already in Germany, it&#39;s not an issue. Still, as the requirements rise, you can be selected if you are better integrated into German society. You understand that this society is about accepting diversity and democratic values – these are just words, understanding their meaning can be tricky. If you have a very first call with a recruiter, you&#39;ll proceed when you catch the nuances, get the rhythm of the dialog and know when to say what, where the pauses are and so on.&lt;/p&gt;
-&lt;h2 id=&quot;to-be&quot;&gt;TO BE&lt;/h2&gt;
-&lt;p&gt;If according to one&#39;s saying &amp;quot;everything is a comedy in the long term&amp;quot;, let&#39;s plan long term. I was asking for successful job searches in my particular area, and it took some guys five years of consistent effort to get there. I&#39;m in Germany for three years; I have two more years to go. That&#39;s about managing your own expectations as well, it really helps not to get upset every time you are rejected and change the perspective: OK, I need to live two more years in some &amp;quot;transitional mode&amp;quot;. If it works out earlier – great, but I don&#39;t expect that. There are some other consequences as well:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;I need just to learn German consistently; I don&#39;t need to &amp;quot;push the pedal to the metal&amp;quot; to the point of mental breakdown.&lt;/li&gt;
-&lt;li&gt;Integration should be regarded as a task; watching news and movies is obviously not sufficient. In Germany, socialization happens in &amp;quot;Vereine&amp;quot; as far as I know, it&#39;s not spontaneous on the street using small talk, that&#39;s a common misunderstanding.&lt;/li&gt;
-&lt;li&gt;The two years I need overlap with Germany getting out of crisis; it will eventually get better, but it needs time, so this time is the resource I have, but I need to make some practical stuff happen, meaning having any job, not building &amp;quot;a great career&amp;quot;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Look, I&#39;ve been through crises, including 2008. Things will calm down, it will get better, crises are a cure in terms of companies&#39; and economy restructuring. It&#39;s painful, but it works, there&#39;s no need to panic. Sure, inefficient companies will go bankrupt, and the resources will flow to the companies that can balance the value and the cost. Of course, there are human lives behind these events, but I don&#39;t think that it makes sense to cry about how the economy works. If it&#39;s a mess around, sometimes taking a break is the best, not to go crazy as well.&lt;/p&gt;
-&lt;h2 id=&quot;the-plan&quot;&gt;The Plan&lt;/h2&gt;
-&lt;p&gt;Based on my &amp;quot;crisis survival experience&amp;quot;, if you don&#39;t mind, I&#39;d say prioritizing your well-being and your mental state is the best thing to do. There are a lot of great guides on how to do it, but it&#39;s basically disconnecting yourself from the &amp;quot;crisis agenda&amp;quot; and finding inner resources and inner peace first. After that, you&#39;ll find out that many people around you struggle as well, and they probably need you as a human being around and supporting them.&lt;/p&gt;
-&lt;p&gt;Second, there are some things that are just to be done regularly, it&#39;s about consistency. For me, it&#39;s learning German, for you, it can be something else. There&#39;s one viral video of a priest who said something like &amp;quot;I asked God for courage, and he gave me challenges, so my prayers are fulfilled&amp;quot;. I call it &amp;quot;a minimum&amp;quot; – something I do what&#39;s in my calendar, no matter what. I just don&#39;t let myself miss another German class, it&#39;s as simple as that. 497 classes so far, I think I missed about five, but that was never about &amp;quot;not today&amp;quot; – just in case you&#39;d like to call me on that.&lt;/p&gt;
-&lt;p&gt;Third, as the title goes, is downshifting. There&#39;s nothing to be ashamed of when you don&#39;t want to stay at home and are eager to bring value to a society in the way you can. I&#39;m still looking and almost ready to apply, but there are a few catches here:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Some low-paid jobs are dangerous, meaning you&#39;ll not have the same health after that, or there are some high risks involved, so beware;&lt;/li&gt;
-&lt;li&gt;As I&#39;m selling my time, I&#39;d like to bring value, so I don&#39;t agree to sit and wait for something calling it &amp;quot;a job&amp;quot;;&lt;/li&gt;
-&lt;li&gt;The job should be profitable: if you have to buy a car to commute, then pay huge amounts for gas and end up financially broken, it&#39;s not worth it.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Bonus tip #1: maintain your skills. There will be an opportunity, the point is if you are ready for it. For me, my &amp;quot;core skills&amp;quot; are communication and problem-solving. The last is pretty universal, it applies to anything, it&#39;s just feeding the brain with some tasks it didn&#39;t accomplish before and has to figure things out. So, I&#39;m going with programming courses at Codecademy because learning programming is about problem-solving.&lt;/p&gt;
-&lt;p&gt;Bonus tip #2: there are a lot of inexpensive hobbies out there, go for them. When I had my &amp;quot;dream job&amp;quot;, I just couldn&#39;t do that – it seemed I was burning and thinking about the job all the time. A side note: maybe this career break is to get this point. Cycling, 3D modeling, even 3D printing (with a used printer), programming or building websites, playing guitar, paracord weaving, playing football – these are just some of the options.&lt;/p&gt;
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;In 2008 I had my personal motto: If everyone around is going crazy, it doesn&#39;t mean I have to go crazy. It worked pretty well. Even if there&#39;s a serious crisis outside, there&#39;s one more crisis to overcome – the one inside you.&lt;/p&gt;
 </content>
   </entry>
 </feed>

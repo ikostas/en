@@ -5,11 +5,70 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2026-01-29T18:16:10Z</updated>
+  <updated>2026-02-10T13:10:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>How To Get Interviews and Pass HR (At Least)</title>
+    <link href="https://en.kovchinnikov.info/2026-02-interviews.html" />
+    <updated>2026-02-10T13:10:00Z</updated>
+    <id>https://en.kovchinnikov.info/2026-02-interviews.html</id>
+    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;Following up on my &lt;a href=&quot;http://localhost:8080/2025-10-jobsearch.html&quot;&gt;article on structuring the job search&lt;/a&gt;, I have actually achieved some results through my own testing – these are likely tips you have heard before. The main difference here is that I saw an increase in my positive reply rate. The results might be slightly biased toward the German market, and I’ve structured them into the following stages:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Preparing the application&lt;/li&gt;
+&lt;li&gt;Applying + follow-up&lt;/li&gt;
+&lt;li&gt;Preparing for the interview&lt;/li&gt;
+&lt;li&gt;Speaking at the interview&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I still haven&#39;t landed a job yet, but I have secured several interviews and received positive feedback afterward, so I’m happy to share these tips!&lt;/p&gt;
+&lt;h2 id=&quot;1-preparing-for-the-application&quot;&gt;1. Preparing for the application&lt;/h2&gt;
+&lt;p&gt;It’s easy to get discouraged when applying for a long time, but I suggest &lt;strong&gt;revisiting your CV and cover letter&lt;/strong&gt; periodically. You might find new ideas or notice mistakes that are crucial for these documents. I found errors and lapses in logic that made me think, &amp;quot;Who could have even written this?&amp;quot; Well, I did, and no one I asked to check it noticed.&lt;/p&gt;
+&lt;p&gt;Another thing I learned the hard way: &lt;strong&gt;keep both your CV and cover letter concise and simple&lt;/strong&gt;. By &amp;quot;simple,&amp;quot; I mean even the technical aspects. I used to make my CV in Canva; it looked great, but it likely failed during parsing. I switched to Google Docs, keeping the formatting as simple as possible, and it worked. For the cover letter, I use the following structure, which is specific to my situation:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;A formal notice that I am applying for the position (including a job code if applicable).&lt;/li&gt;
+&lt;li&gt;Two paragraphs on why my experience and skills are a good fit, ideally mentioning specific relevant experience and results.&lt;/li&gt;
+&lt;li&gt;My story: how and why I moved to Germany.&lt;/li&gt;
+&lt;li&gt;What I did in my most recent role.&lt;/li&gt;
+&lt;li&gt;References with links to their LinkedIn profiles.&lt;/li&gt;
+&lt;li&gt;Logistics: how I plan to handle the commute or a move to another city (one sentence).&lt;/li&gt;
+&lt;li&gt;My work permit status (one sentence).&lt;/li&gt;
+&lt;li&gt;A polite closing note expressing hope that I provided enough info to minimize their risks or misunderstandings (one sentence).&lt;/li&gt;
+&lt;li&gt;Best regards.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;With Arial 11pt and 6pt spacing between paragraphs, the cover letter occupies roughly 3/4 of an A4 page. The parts that change are the first, second, and sixth. Keep in mind that the more you change, the higher the risk of introducing errors.&lt;/p&gt;
+&lt;h2 id=&quot;2-applying-follow-up&quot;&gt;2. Applying + follow-up&lt;/h2&gt;
+&lt;p&gt;Some obvious points, in case you weren&#39;t aware:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Always apply through the company&#39;s website if a form is available, or via email if requested.&lt;/li&gt;
+&lt;li&gt;Calling in advance helps.&lt;/li&gt;
+&lt;li&gt;Always include the cover letter and a Reference or Letter of Recommendation (Qualifiziertes Arbeitszeugnis in Germany), whether they ask for it or not. Include your diploma recognition (Anerkennung) as well, if you have it – if not, apply for it ASAP.&lt;/li&gt;
+&lt;li&gt;Sometimes they&#39;ll only have one field to upload a file, so merge your PDFs in this order: cover letter first, CV second, references third, and diploma recognition last.&lt;/li&gt;
+&lt;li&gt;Keep exploring different job boards: some become irrelevant while others rise; my latest find for Germany is &lt;a href=&quot;https://www.heyjobs.co/&quot;&gt;HeyJobs&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;LinkedIn works best when you post regularly and recruiters find you.&lt;/li&gt;
+&lt;li&gt;If you post on LinkedIn, 1/3 to 1/2 of your posts can be external content – don’t overstress yourself.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In Germany, the common rule of thumb is to expect a reply within two weeks; in reality, they often start inviting candidates to interviews within one week. I’ve concluded that it makes sense to follow up after one week. By the way, vacancies older than a week are probably not worth it. To follow up, you can try calling, but meetings often get in the way – email works just fine.&lt;/p&gt;
+&lt;h2 id=&quot;3-preparing-for-the-interview&quot;&gt;3. Preparing for the interview&lt;/h2&gt;
+&lt;p&gt;Standard stuff again – just do your homework:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Read their website. Know how many employees they have and what they do; write it down and memorize it.&lt;/li&gt;
+&lt;li&gt;Think about the questions they might ask. I don&#39;t mean &amp;quot;strengths and weaknesses&amp;quot; – if they respect you, they won&#39;t ask that. The &amp;quot;big three&amp;quot; for me are: tell us about your experience/story, your best achievement so far, and your biggest challenge.&lt;/li&gt;
+&lt;li&gt;Prepare your answers: write them down, check for mistakes, and say them out loud several times to get used to them. Simplify them if they are difficult to remember.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;4-speaking-at-the-interview&quot;&gt;4. Speaking at the interview&lt;/h2&gt;
+&lt;p&gt;Based heavily on my own mistakes, I present the following tips – especially if you are not speaking in your native language:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Speak slower and articulate more clearly than you think is necessary. You are a new person to them, and they need time to adapt to your speech pattern.&lt;/li&gt;
+&lt;li&gt;Show empathy: use active listening and comment on points they mention. Show involvement and understanding, even if they don&#39;t explicitly ask a question.&lt;/li&gt;
+&lt;li&gt;With HR, you need to prove you’ve actually read the job description. Talk about it and explain how you interpret the role.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;That’s all for today. I hope you learned something new! :)&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Raising Arizona Is Metaphorical</title>
     <link href="https://en.kovchinnikov.info/2026-01-raising.html" />
@@ -417,45 +476,6 @@
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 &lt;p&gt;From my experience, top management can be filled with psychos, and if this issue is not addressed directly, it spreads, because almost no KPIs show the problem, sometimes even employee turnover rate, as employees can be held in place using fear. And I also can&#39;t suggest a direct cure other than knowing people and taking an insight into what&#39;s going on in teams.&lt;/p&gt;
 &lt;p&gt;Careerists are less problematic as they are easier to spot. But giving them what they want, justifying their behaviour makes them advance and enlarge their influence. People are not idiots; they totally get who is promoted and why, so moving careerists up erodes a company&#39;s values when they exist. The funniest thing I saw was when a company full of careerists and greedy people collapsed and they blamed each other. It happens, and you don&#39;t even need an economic crisis for this. It&#39;s just the self-destruction they carry in themselves.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>We Can Make the Internet a Better Place</title>
-    <link href="https://en.kovchinnikov.info/2025-11-internet.html" />
-    <updated>2025-11-13T13:50:00Z</updated>
-    <id>https://en.kovchinnikov.info/2025-11-internet.html</id>
-    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
-&lt;p&gt;In the early days of the Internet, it was made and populated by users with extremely high intellect, and they cared to share something valuable. Then commercialization started, and here we are: one-page reviews generated by LLMs and filled with ads, acid-colored landing pages, business-card-type websites thinking they are apps and failing to do... scrolling, and so on. I&#39;d like to express some ideas obvious to me, as the current state of the Internet is quite mature in its &amp;quot;commercialization&amp;quot; phase, which brings us ugly and unusable websites:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Accessibility and functionality are underrated&lt;/li&gt;
-&lt;li&gt;On the other hand, animation and all the &amp;quot;dynamic&amp;quot; parts of websites are overrated&lt;/li&gt;
-&lt;li&gt;Monetization is a tricky thing; addressing it directly can hurt all the parties&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Let&#39;s get to it – I&#39;ve been collecting evidence for so long...&lt;/p&gt;
-&lt;h2 id=&quot;accessibility&quot;&gt;Accessibility&lt;/h2&gt;
-&lt;p&gt;By accessibility we often mean that the content on the page is semantically marked and thus people with disabilities can use screen readers and other tools to access it. It&#39;s a great thing, but in my opinion there&#39;s a lot more to the simplicity of HTML: it can be searched, it loads fast, it can be cached by the browser. If you have a fairly responsive server that renders HTML, or a static HTML page, it will feel faster and just better to use than a website with some heavy front-end. It&#39;s just so simple that nothing can beat it. Creating React.js and other front-end UIs is often justified by a better UX, but a fast-loading page &lt;strong&gt;is&lt;/strong&gt; the best experience. Besides, the more code – the more errors. Sometimes the bigger app doesn&#39;t load correctly, and UX suffers again.&lt;/p&gt;
-&lt;h2 id=&quot;functionality&quot;&gt;Functionality&lt;/h2&gt;
-&lt;p&gt;I can&#39;t justify one thing in the modern Internet: why do websites offering mostly text and graphics deem themselves &amp;quot;apps&amp;quot;? It has something to do with the abundance of resources, because they are not apps: newspapers, business-card-type company websites, blogs. If we ask ourselves &amp;quot;what do we need to deliver this content as accessibly as possible,&amp;quot; put the point and draw a straight line – that could actually be a great website. But in reality this does not happen, and we get bloatware and functions we don&#39;t need. &amp;quot;But we have these reactive apps, we should use them&amp;quot; – no. If you have a modern cool technology, its use still should be justified. We have a &amp;quot;default&amp;quot; situation: a WordPress site is default – I&#39;ve seen a dozen with broken scrolling in Chrome. Why? Well, it&#39;s WordPress, everybody uses it, it should be working. Should we have tested it? Oh, no...&lt;/p&gt;
-&lt;h2 id=&quot;an-entry-barrier&quot;&gt;An entry barrier&lt;/h2&gt;
-&lt;p&gt;In the early days of the Internet, if you needed to put something out there, learning HTML was mandatory. If you wanted to put something on a forum, you&#39;d probably write in HTML or some other markup language as well. By the way, you needed a computer to do that – smartphones were not there – so you had to figure out a way to get through all the specs of a computer, allocate money, buy it, bring it home, and connect it to the Internet, which could be a challenge as well. The absence of the entry barrier obviously erodes the quality of content, whether it&#39;s irrelevant conclusions about economics, medicine, racial discrimination, or computers and the Internet itself. And we have bots, which are able to amplify the most inappropriate conclusions.&lt;/p&gt;
-&lt;p&gt;Leaving bots aside, as it&#39;s mostly a technical issue to identify and disable them, are these &amp;quot;website builders&amp;quot; necessarily a good thing? I look at some &amp;quot;over-monetized&amp;quot; blogs, and I don&#39;t think so. They will eventually disappear, but the broken search will not be fixed, though. The damage was done, and I&#39;m not going to even try to prevent future damage. Let&#39;s address a particular issue: a company is going to pay for a website &amp;quot;without diving into details.&amp;quot; Don&#39;t do it – it&#39;s not that hard to find someone who knows HTML and also knows why WordPress is a dead end. IT is not outstanding; it&#39;s the same as any other area: applying competence to the task. If you apply no competence, you get a bad result, even if you have money.&lt;/p&gt;
-&lt;h2 id=&quot;over-monetization&quot;&gt;Over-monetization&lt;/h2&gt;
-&lt;p&gt;I deeply believe that direct monetization with ads or a paywall is an easy, widespread, and wrong solution to the problem. Direct monetization hurts – it destroys the trust between the author and the reader. And this trust has value by itself: you could get recommended and land your next job or a big project because of it. Why would you exchange this trust for some insignificant money flow?&lt;/p&gt;
-&lt;p&gt;Another thing is content marketing, and it&#39;s widely used: you have a company blog with high-quality content, and your company gets more attention because of this blog. It doesn’t make any sense to have ads in this blog. But a personal blog or any other blog could work the same way: people are not idiots – they can connect the dots between a paid service and the blog content, and they will follow the paid service if they need it. In general, I think treating people like idiots is at the core of &amp;quot;over-monetization,&amp;quot; and it&#39;s just a bad strategy. Sure, it can work short-term.&lt;/p&gt;
-&lt;h2 id=&quot;collective-blogs&quot;&gt;Collective blogs&lt;/h2&gt;
-&lt;p&gt;Collective blogs are great, and I honestly think we need more of them. Not just social networks like Reddit, but more profound articles like dev.to. It takes some effort to implement: you need an engine with ratings and karma, as well as moderators to look after the content, plus a policy on what&#39;s allowed and what&#39;s not. But it makes me so happy to visit these kinds of resources. I&#39;d say that since 2003 I&#39;ve spent most of my Internet time on these blogs, contributing my own articles – and this &amp;quot;community feeling&amp;quot; is amazing. Again, it&#39;s not that much about monetization, and not that direct. People can draw the line between an author representing a company and the company itself, so it works quite well in terms of content marketing.&lt;/p&gt;
-&lt;h2 id=&quot;privacy-and-cookies&quot;&gt;Privacy and cookies&lt;/h2&gt;
-&lt;p&gt;The law about cookies was just bad; I wonder when the EU will finally admit it. Privacy online is possible when you boot Tails (a Linux distribution) or something like that, and Snowden&#39;s case proves it, as he used it and they didn&#39;t catch him. :) All proprietary operating systems, including Android, are a grave to privacy – people should just get it at some point. That&#39;s all I have to say about it, and now I use the &amp;quot;I don&#39;t care about cookies&amp;quot; plugin.&lt;/p&gt;
-&lt;h2 id=&quot;css&quot;&gt;CSS&lt;/h2&gt;
-&lt;p&gt;CSS is a simple language, yet creating good CSS is hard. It should do at least the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Look nice and appealing to people&lt;/li&gt;
-&lt;li&gt;Be accessible in terms of free space between elements, font size, and so on&lt;/li&gt;
-&lt;li&gt;Have a mobile-friendly version&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Making a nice-looking website shows respect for the people visiting it, and design is hard. It&#39;s a separate discipline, and people need time to learn it. Yet there are plenty of great free CSS libraries. They cover all the points above and even more, and they assume customization, so your website won’t look like all the others. It’s great to be kind to people – let your website be kind to your visitors, just use tested CSS.&lt;/p&gt;
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;My nostalgia is not based on how the web used to look or even how simple it was. It&#39;s about people following their curiosity and a strong wish to make the web a better place with technology, spread knowledge, and lead other people with ideas from the frontier of scientific discovery. People know that money follows value, but they still panic and try to pursue money directly, putting 80% or more effort into marketing. You can say no to this when you choose what content to consume, what websites to bookmark, or what to contribute – your content or your effort – to build a better Internet.&lt;/p&gt;
 </content>
   </entry>
 </feed>

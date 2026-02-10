@@ -263,6 +263,11 @@
 	
 	<url>
 		<loc>https://en.kovchinnikov.info/feed/feed.xml</loc>
-		<lastmod>2026-01-29</lastmod>
+		<lastmod>2026-02-10</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://en.kovchinnikov.info/2026-02-interviews.html</loc>
+		<lastmod>2026-02-10</lastmod>
 	</url>
 </urlset>

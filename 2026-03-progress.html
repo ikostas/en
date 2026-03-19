@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Progress Was Always Practical</title>
+		<meta name="description" content="Some reflections on using AI in program development">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i> en</a></li>
+					<li><a href="https://www.youtube.com/@DiD-e1p"><i class="fa-brands fa-youtube"></i> de</a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="progress-was-always-practical">Progress Was Always Practical</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2026-03-19">19 March 2026</time></li>
+	<li class="post-tag"><a href="/tags/dev/" class="post-tag">#dev</a></li>
+</ul>
+<p>I've just watched <a href="https://youtu.be/julbw1JuAz0?si=Ul3BrhJ2imt0ON5S">an interview with Boris Cherny at the Pragmatic Engineer channel</a> and one idea struck me: programming for Boris was always practical; he uses tools and programming languages just to achieve his goals, and the same approach goes for AI tools. That's why he's using Claude, which has gotten significantly better, although it's still an LLM that has nothing to do with AGI.</p></div>
+<p>What I've observed before myself and read was convincing enough that AI &quot;is not there yet&quot;: 80-90% of the AI-generated code was not needed at all, and developers using AI spend 20% more time doing their jobs compared to their colleagues without AI tools. But the &quot;practical&quot; approach flips this over; maybe new Claude models contribute to this change too. I haven't tested the latest Claude models, but the point is that industrial programming – i.e., being paid to write code – is different from learning programming or writing code as a hobby (which is what I was doing). In industrial programming, &quot;tests passed&quot; can be a criterion, and it doesn't matter if it's a prototype or production code.</p>
+<p>And I was thinking about this from a completely different angle. I came across <a href="https://www.youtube.com/watch?v=wvU0JeYSoUs&amp;list=PLvb7IKzi4E7SUdIh5XHicJQfKikvtJXhg">LISP lectures</a> and watched some videos just because some ideas seemed non-trivial and I had some free time. But what are the practical implications of LISP nowadays? Emacs customization, probably, and that's it: if you write a web app, you'll use TypeScript or JavaScript on the front-end and probably Go on the back-end (OK, or Python, Java, TypeScript, JavaScript, and many others, but not LISP). If you want to process data, you'd probably use Python (or Kotlin). If you want to write a mobile app, you'd probably use... You get the idea; LISP is interesting to study, but it didn't survive the evolution of software. And Go won (in its niches), being the most practical language possible.</p>
+<p>So, even if the statistics for AI agents were as bad as mentioned above (and they are getting better), AI as a practical tool is winning, and it's completely clear to me now. There's a bunch of new challenges for software developers: competition on the job market just because fewer developers are required, and a new set of skills to set tasks for AI and review the results – to know which tasks to delegate and where to trust or to check, among others. I'm still glad I can code for pleasure, though.</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2026-02-seveneves.html">Seveneves Is a Great Book by Neal Stephenson, But It&#39;s Wrong IMO</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2026-03-progress.html` was built on 2026-03-19T12:41:04.635Z -->
+	</body></html>

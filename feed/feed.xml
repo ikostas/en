@@ -5,11 +5,22 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2026-02-10T14:50:00Z</updated>
+  <updated>2026-03-19T13:12:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>Progress Was Always Practical</title>
+    <link href="https://en.kovchinnikov.info/2026-03-progress.html" />
+    <updated>2026-03-19T13:12:00Z</updated>
+    <id>https://en.kovchinnikov.info/2026-03-progress.html</id>
+    <content type="html">&lt;p&gt;I&#39;ve just watched &lt;a href=&quot;https://youtu.be/julbw1JuAz0?si=Ul3BrhJ2imt0ON5S&quot;&gt;an interview with Boris Cherny at the Pragmatic Engineer channel&lt;/a&gt; and one idea struck me: programming for Boris was always practical; he uses tools and programming languages just to achieve his goals, and the same approach goes for AI tools. That&#39;s why he&#39;s using Claude, which has gotten significantly better, although it&#39;s still an LLM that has nothing to do with AGI.&lt;/p&gt;
+&lt;p&gt;What I&#39;ve observed before myself and read was convincing enough that AI &amp;quot;is not there yet&amp;quot;: 80-90% of the AI-generated code was not needed at all, and developers using AI spend 20% more time doing their jobs compared to their colleagues without AI tools. But the &amp;quot;practical&amp;quot; approach flips this over; maybe new Claude models contribute to this change too. I haven&#39;t tested the latest Claude models, but the point is that industrial programming – i.e., being paid to write code – is different from learning programming or writing code as a hobby (which is what I was doing). In industrial programming, &amp;quot;tests passed&amp;quot; can be a criterion, and it doesn&#39;t matter if it&#39;s a prototype or production code.&lt;/p&gt;
+&lt;p&gt;And I was thinking about this from a completely different angle. I came across &lt;a href=&quot;https://www.youtube.com/watch?v=wvU0JeYSoUs&amp;amp;list=PLvb7IKzi4E7SUdIh5XHicJQfKikvtJXhg&quot;&gt;LISP lectures&lt;/a&gt; and watched some videos just because some ideas seemed non-trivial and I had some free time. But what are the practical implications of LISP nowadays? Emacs customization, probably, and that&#39;s it: if you write a web app, you&#39;ll use TypeScript or JavaScript on the front-end and probably Go on the back-end (OK, or Python, Java, TypeScript, JavaScript, and many others, but not LISP). If you want to process data, you&#39;d probably use Python (or Kotlin). If you want to write a mobile app, you&#39;d probably use... You get the idea; LISP is interesting to study, but it didn&#39;t survive the evolution of software. And Go won (in its niches), being the most practical language possible.&lt;/p&gt;
+&lt;p&gt;So, even if the statistics for AI agents were as bad as mentioned above (and they are getting better), AI as a practical tool is winning, and it&#39;s completely clear to me now. There&#39;s a bunch of new challenges for software developers: competition on the job market just because fewer developers are required, and a new set of skills to set tasks for AI and review the results – to know which tasks to delegate and where to trust or to check, among others. I&#39;m still glad I can code for pleasure, though.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Seveneves Is a Great Book by Neal Stephenson, But It&#39;s Wrong IMO</title>
     <link href="https://en.kovchinnikov.info/2026-02-seveneves.html" />
@@ -428,53 +439,6 @@
 &lt;/ul&gt;
 &lt;p&gt;Everything else went surprisingly smooth if you don&#39;t forget to move your ssh keys. :) I used Fedora as my playground for a lot of experiments, I used VirtualBox and Android Studio, and I must say Fedora is hard to break. Debian is not that hard to break when you start to add repos, but I didn&#39;t have to this time as the software versions are not that old, and it feels fast and stable. I hope I don&#39;t break it.&lt;/p&gt;
 &lt;p&gt;The moral of the story is that it&#39;s important for a distro to give all the developers to keep up with it. I hope I can work well even in Debian, as I still remember those painful moments of dealing with outdated software or apt complains about broken dependencies. Debian got a great tech stack from Fedora, I mean Gnome and systemd. So, now we can enjoy Debian. I suppose Debian also got some development boost from Google, which uses its Testing branch.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Happy Hacking New Year</title>
-    <link href="https://en.kovchinnikov.info/2025-12-hhny.html" />
-    <updated>2025-12-22T18:43:00Z</updated>
-    <id>https://en.kovchinnikov.info/2025-12-hhny.html</id>
-    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
-&lt;p&gt;If you, like me, have some free time during these Christmas holidays, I&#39;d suggest spending some time tinkering and learning. The feeling of accomplishing something while learning is, for me, the best feeling ever, so I have the following on the menu: learning the Go programming language, setting up remote support using Tailscale, a multi-seat setup on a single machine, and network boot. I&#39;ll describe the use cases and the reasoning behind these &amp;quot;projects&amp;quot;, so you can decide for yourself whether it&#39;s worth it.&lt;/p&gt;
-&lt;p&gt;A short disclaimer: I describe all the efforts on Linux, and although you could make it work on other platforms as well, I won&#39;t be able to help you with that.&lt;/p&gt;
-&lt;h2 id=&quot;learning-go&quot;&gt;Learning Go&lt;/h2&gt;
-&lt;p&gt;The invention of Go (which happened about 12 years ago, by the way) is, for me, a very important step in software development, because Go concepts try to fix the fundamental drawbacks of other languages. Here I&#39;ll describe the developer&#39;s perspective only – no performance discussion, although Go shines there as well.&lt;/p&gt;
-&lt;p&gt;Let&#39;s start with the fundamental disadvantages of object-oriented programming (OOP), which were counter-intuitive for me at first: combining data and logic (methods) and inheritance.&lt;/p&gt;
-&lt;p&gt;As we all know, a good programmer is a lazy programmer, but without clarity we get... well, Perl. Go is clear, splits data and logic, and doesn&#39;t use inheritance. And it prioritizes clarity. In my own experience, I had to write little code, it was functional and clear. So what&#39;s the problem with other languages?&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Python: OOP and no typing&lt;/li&gt;
-&lt;li&gt;JavaScript: cursed syntax and OOP and no typing&lt;/li&gt;
-&lt;li&gt;TypeScript: still cursed syntax and still OOP&lt;/li&gt;
-&lt;li&gt;Java: too verbose and OOP&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Yes, it turns out that a lack of typing is a problem as well. But let&#39;s turn to another thing: programming paradigms. There are functional, procedural, and object-oriented paradigms, and the truth is that Python and JS/TS are hybrid – you can use any paradigm you like.&lt;/p&gt;
-&lt;p&gt;When I started programming, I wrote Pascal and C code, and it was procedural. I read about the advantages of functional and object-oriented paradigms and I kind of still don&#39;t get it. You end up writing more unclear code. Go returned me to programming just logic, because logic is calling one procedure after another. And &lt;code&gt;switch/case&lt;/code&gt; is finally useful in Go, by the way.&lt;/p&gt;
-&lt;p&gt;&amp;quot;Don&#39;t write a GUI app in Go&amp;quot;, I&#39;ve read in one book, and started using Tk 9.0. Tcl/Tk were introduced in 1989 – that&#39;s what I call &amp;quot;mature software&amp;quot;. And it has some markup language (ML), but you need to create and set up each tag; there are no function calls inside the tags. I decided to stay with Tk and generate my own tags, and that&#39;s where things got interesting:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;First, just touching a technology introduced in 1989, you get to know how great engineering was at that time. It&#39;s very declarative, and the set of functions is enough for many apps. And look at the &lt;a href=&quot;https://pkg.go.dev/modernc.org/tk9.0@v1.73.0/themes/azure&quot;&gt;azure theme&lt;/a&gt; – it doesn&#39;t feel outdated at all.&lt;/li&gt;
-&lt;li&gt;Second, it felt cool to continue using this technology where others would switch to something like Wails.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;And the UI is as abrupt as diarrhea, by the way, which I like. :)&lt;/p&gt;
-&lt;p&gt;The point is that Go provides so much: it&#39;s completely free to play with, easy to start, powerful, and just feels &amp;quot;right&amp;quot; in lots of the aspects mentioned above. And this makes writing software fun.&lt;/p&gt;
-&lt;h2 id=&quot;tailscale&quot;&gt;Tailscale&lt;/h2&gt;
-&lt;p&gt;I&#39;ve heard about Tailscale many times, but I ignored the ads as I didn&#39;t have a use case for it. The use case for me is remote support, but it can be a remote server of any kind. The goal was to have SSH access to the remote machine, and in case the machine is behind a router, you need to change the router setup. With Tailscale, you don&#39;t have to do that, as it creates a VPN and the machines think they are in the same local network.&lt;/p&gt;
-&lt;p&gt;First, you need to connect to the remote machine, and in the worst-case scenario (an unqualified user), you could start with AnyDesk. It doesn&#39;t work with Wayland targets, by the way. So you create your user account with sudo privileges and install Tailscale.&lt;/p&gt;
-&lt;p&gt;But Tailscale needs to be up to connect to it, so some user-related setup is required – preferably a button. In the case of GNOME there&#39;s a GNOME extension. I had to deal with XFCE, so I ended up with a Bash script for Tailscale up/down and a button on the XFCE panel launching this script. And in case of SSH/RDP we need to make sure these services are running.&lt;/p&gt;
-&lt;p&gt;After that, we can connect using SSH and first set up key-based authentication. Now it&#39;s a bit simpler to do admin tasks (update the system, for instance), but you could also add two enhancements:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;tmux&lt;/code&gt; or another terminal multiplexer to run several tasks simultaneously and recover sessions&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;mosh&lt;/code&gt; if you connect from an unstable network&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;multi-seat-setup&quot;&gt;Multi-seat setup&lt;/h2&gt;
-&lt;p&gt;A multi-seat setup in the base variant means 2 monitors, 2 keyboards, and 2 mice connected to one PC. As a rule, you start with a video card with 2 outputs. You can add more, but there are some limiting factors: the number of video cards you can install, whether you hit CPU/RAM/HDD limits, and the length of cables for keyboards/mice.&lt;/p&gt;
-&lt;p&gt;3-seat setups were used at schools; they obviously don&#39;t fit heavy gaming scenarios. This configuration is a budget-friendly way to get computing power for 2 home-office workers, for example. Wayland does not support this configuration. The &lt;a href=&quot;https://wiki.debian.org/Multi_Seat_Debian_HOWTO&quot;&gt;Debian how-to&lt;/a&gt; is a great place to start. Assuming the average CPU load is 0%, it&#39;s a natural lifehack for two people sitting next to each other.&lt;/p&gt;
-&lt;h2 id=&quot;network-boot&quot;&gt;Network boot&lt;/h2&gt;
-&lt;p&gt;Network boot means having a server with OS images and booting other machines from it. It allows you to have a diskless machine with an NFS server, which is relevant for old hardware, and it also simplifies user data backups. But you will need to set up a DHCP server to point to a server with images.&lt;/p&gt;
-&lt;p&gt;You can combine diskless workstations with remote access like RDP to use the server&#39;s CPUs. The docs for the &lt;a href=&quot;https://tldp.org/HOWTO/Network-boot-HOWTO/index.html&quot;&gt;TLDP project&lt;/a&gt; and &lt;a href=&quot;https://docs.fedoraproject.org/en-US/fedora/f36/install-guide/advanced/Network_based_Installations/&quot;&gt;Fedora&lt;/a&gt; are probably helpful in this regard. And yes, setting up a network server for installations is also a nice option.&lt;/p&gt;
-&lt;p&gt;It&#39;s assumed that hard drives are cheap and network boot has fewer use cases now, but for me the whole diskless option was eye-opening.&lt;/p&gt;
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;I hope you learned something new reading this article. I don&#39;t provide detailed instructions in order not to copy or misinterpret instructions from other sites (which are also updated). When &amp;quot;learning&amp;quot; hits &amp;quot;useful&amp;quot;, it can bring happiness – so happy hacking New Year to you!&lt;/p&gt;
 </content>
   </entry>
 </feed>

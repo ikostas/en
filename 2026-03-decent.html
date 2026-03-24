@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>It&#39;s Not a Race</title>
+		<meta name="description" content="It can be good enough to adapt a decent tech stack">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i> en</a></li>
+					<li><a href="https://www.youtube.com/@DiD-e1p"><i class="fa-brands fa-youtube"></i> de</a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="its-not-a-race">It&#39;s Not a Race</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2026-03-24">24 March 2026</time></li>
+	<li class="post-tag"><a href="/tags/opensource/" class="post-tag">#opensource</a>,</li>
+	<li class="post-tag"><a href="/tags/linux/" class="post-tag">#linux</a>,</li>
+	<li class="post-tag"><a href="/tags/dev/" class="post-tag">#dev</a></li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>Tech progress, as I feel it, was somewhat shadowed by dramatic political events and AI-buzz. If you dig deeper, it feels so inspiring how many good technologies evolved and matured lately – my favorite being Go, of course. :) Coming from a B2B world, which is very conservative about the tech stacks being used, I often notice a misconception: that you should always use &quot;the latest and the greatest.&quot; That's not necessarily true, especially if you take into account the term &quot;production-ready,&quot; which implies reality-testing and stability, as well as documentation and a community (with a known number of bugs and workarounds). My point is that on a country level, it's good enough to adopt decent technology rather than consider it a race with a winner and losers.</p></div>
+<h2 id="the-cobol-case">The COBOL case</h2>
+<p>If you look at job ads, you can notice that from time to time banks are looking for COBOL programmers because they still need to support COBOL apps, which can be core systems, by the way. Of course, Revolut will take over these banks with its modern tech stack, product-based approach, and the principle of &quot;attracting the best talent&quot; (probably being the most important). But the old COBOL code surprisingly works and does the job. It's not like with the introduction of a new tech stack the old apps stop working, but it almost seems like it.</p>
+<h2 id="the-php-case">The PHP case</h2>
+<p>There's also the &quot;When will the investments pay back&quot; principle – rewriting a core banking system can take a long time to pay back and comes with instability risks (which mean losing customers). Management in Germany frequently uses PHP-based apps because of investments made into learning this stack (I mean by suppliers, who can in turn offer lower prices). The thing is, it's too outdated and... it doesn't work. For example, some parts of websites have broken scrolling in Chrome because of a WordPress plugin; I'd also not trust business data to a PHP app, as they can be insecure. This PHP era has to end; it's five steps back, at least:</p>
+<ol>
+<li>First, there was PHP (and Perl)</li>
+<li>Then, we had Ruby and Ruby on Rails, Python and Django, probably C# and ASP.NET, and Java</li>
+<li>Then we had server-side JavaScript and Node.js</li>
+<li>After that, we had server-side TypeScript and server-side React (OMG) :)</li>
+<li>Now we have Go, and many companies are rewriting their Java, JavaScript, and Python with Go</li>
+</ol>
+<p>Go is mature; it has all the features, the community, and the libraries. It has much better packaging compared to npm (hell), and its design is holistic. And it delivers great performance. It's a matter of computer literacy to learn what PHP is, when it was relevant, and why it's relevant no more. Most people know that you should probably operate your mouse with your hand, not with your foot – for me, that's not even an exaggerated analogy. The more dramatic analogy is shooting yourself in the foot because it's cheaper, and that's what happens when someone orders a PHP app in 2026.</p>
+<h2 id="the-opensource-case">The Opensource case</h2>
+<p>When new tech evolves, it's just there, and as lots of engineers like open source, it often arises as an open-source project. It might not be pretty and is probably not well-documented, but if enough companies adopt this technology and <strong>contribute</strong> to it by fixing bugs and documenting, it can become great. The issue is that people in general – be they managers or bureaucrats – do not want to wait and/or to contribute. <strong>And that's the issue!</strong> We are all kids wanting something shiny right now, and as kids, we don't want to take responsibility for contributing or being real about the fact that shiny doesn't mean good. And that's when the tech gets commercialized and you see pitiful ads and promises:</p>
+<ul>
+<li>You are promised: stability, enterprise-level support, a good-looking box (which is already suspicious for a codebase), a high-quality development process, and a compatible environment.</li>
+<li>You get: dependency on a proprietary tech stack which you're not able to change, the same bugs as everywhere, and bad code quality because it's not open and you can't see the code itself – or it was outsourced to an LLM or a subqualified company.</li>
+</ul>
+<p>It's not a bad thing to believe that people will cut corners where they are allowed to, so managers maximizing profits in the short term will do it.</p>
+<h2 id="the-way-out">The way out</h2>
+<p>I've written that the <a href="2026-01-slip.html">EU was not radical enough</a> regarding regulations, but what would these regulations to implement open source look like? And, more importantly, what process is required? Just &quot;in my humble opinion&quot;:</p>
+<ol>
+<li>We need to identify areas where open-source solutions exist and implement requirements that, in these areas, solutions should be Opensource-based (maybe I'm not radical enough here).</li>
+<li>I believe that the only way to find out if a solution is good enough is to start using it – the wider, the better. Finding bugs or new requirements is the process here.</li>
+<li>We need to pay for adding features and fixing bugs, but these contributions should be sent as pull requests to the main branch, just because it's cheaper to maintain one main branch and one company shouldn't have to pay for that alone.</li>
+</ol>
+<p>If, say, you're in Germany and you invest in some software and write pull requests – will some company in the US benefit from that? Yes, sure, as well as North Korea and other bad actors. &quot;But that's not a bug, it's a feature&quot;:</p>
+<ol>
+<li>Civilization is essentially one noosphere;</li>
+<li>You maintain your digital sovereignty in any case, because no one can take the Opensource product from you;</li>
+<li>It's not that everyone can just &quot;install and use it&quot;; you need competence and a community, which bad actors don't have, so we're safe.</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>It's funny that when discussing tech or politics, we end up discussing being an adult and taking responsibility. I have a friend who migrated from Moscow to London, and he said that this attitude of being an adult is what makes the difference between countries. Being too conservative, on the other hand, is not compatible with tech; the challenge is to embrace the new Generation-Z-JS-frameworks and still feel comfortable and aware of what's going on. Do we have a term like &quot;Über-adult&quot; who can do that?</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2026-03-progress.html">Progress Was Always Practical</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2026-03-decent.html` was built on 2026-03-24T11:41:38.221Z -->
+	</body></html>

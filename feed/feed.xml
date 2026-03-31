@@ -5,11 +5,30 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2026-03-24T11:27:00Z</updated>
+  <updated>2026-03-31T13:23:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>Helldivers 2 and Self-Improvement</title>
+    <link href="https://en.kovchinnikov.info/2026-03-hd2.html" />
+    <updated>2026-03-31T13:23:00Z</updated>
+    <id>https://en.kovchinnikov.info/2026-03-hd2.html</id>
+    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;Helldivers 2 is a phenomenon for me as a game. It depicts a futuristic world of &amp;quot;Super Earth-based managed democracy,&amp;quot; bringing liberty and democracy to distant worlds using weapons and pumping oil as part of the process. The developers predicted the future by building the most absurd reality possible, joking and laughing all the way. The gameplay is surprisingly great, even while being goofy and buggy: fighting bugs with a machine gun is immensely satisfying. I do not play other games, and it is my way of getting in touch with real people and feeling a sense of camaraderie during missions. However, one thought kept disturbing me: this game is surprisingly metaphorical in the sense of self-development, not just having fun. The fun factor itself is connected to specific challenges, and that is exactly what I am going to discuss here.&lt;/p&gt;
+&lt;h2 id=&quot;diving&quot;&gt;Diving&lt;/h2&gt;
+&lt;p&gt;The concept of &amp;quot;diving&amp;quot; justifies having multiple lives in the game, which in this imaginary future is made possible with clones. On each mission, a team of four Helldivers or fewer is sent to a planet full of enemies (literally thousands), and when a character dies, a substitute is sent in. I associated this with the idea of reincarnation and accepting the world with all its drawbacks. If reincarnation exists and we are sent to the same world repeatedly, maybe we should start understanding something – or at least learn how to deal with the world and its problems. There is no way out; if you don&#39;t handle it, you simply don&#39;t play the game.&lt;/p&gt;
+&lt;p&gt;When you start, you suck, but you eventually get familiar with the weapons and the (awkward) controls. The key to success is also playing as a team: complementing your mates, helping each other, and sharing limited resources. In this regard, this game isn&#39;t different from the real world, but in the real world, we often &amp;quot;suck&amp;quot; without maturing – just concentrating on the suffering. We do not value teamwork and the evident necessity to share limited resources, at least for practical reasons. When that realization struck me, I stepped away from the computer like, &amp;quot;What the heck...&amp;quot;&lt;/p&gt;
+&lt;h2 id=&quot;challenging-yourself&quot;&gt;Challenging yourself&lt;/h2&gt;
+&lt;p&gt;The game has difficulty levels from 1 to 10, and the difference between levels is significant, with many more enemies – including heavily armored and armed ones – especially between levels 5 and 6. The point is that once you play at a certain level, it becomes boring. Again, in the game, it is very clear that you need to move to higher difficulty levels. Still, the idea of constantly challenging yourself is not so evident or widely accepted in real life, but that is what happens: life becomes boring.&lt;/p&gt;
+&lt;h2 id=&quot;self-reflecting&quot;&gt;Self-reflecting&lt;/h2&gt;
+&lt;p&gt;Can I play at this level? Well, you won&#39;t get the answer until you try. Sometimes I go back to easier levels in the game, but mostly I am surprised that even when I thought I &amp;quot;sucked,&amp;quot; we still finished the mission and all the objectives. It&#39;s like, &amp;quot;Do you mean I didn&#39;t suck?&amp;quot; It doesn&#39;t matter; what matters is if the mission was finished successfully and the spirit of camaraderie was there, along with all the positive vibes. I realized I had false criteria, because this &amp;quot;do I suck&amp;quot; metric is subjective, too focused on myself, and too distorting.&lt;/p&gt;
+&lt;p&gt;Let’s look at this differently: three guys are playing the game, I joined and killed some enemies, so I contributed and did what I could. You would never hear from the team &amp;quot;you shouldn&#39;t be here&amp;quot; or &amp;quot;you didn&#39;t contribute enough.&amp;quot; Why do we say this in real life? Probably because we are not enjoying the &amp;quot;game.&amp;quot; Twice, I joined a game and accidentally killed other characters with my hell-pod. No critique: &amp;quot;It&#39;s fine.&amp;quot; Once, I drove a vehicle with the others directly into a deep hole and we all got killed. The reaction? &amp;quot;LOL.&amp;quot; And it works, because you play worse when you think too much about your previous mistakes. Yet, we continue to criticize each other and feel ashamed in real life. Isn&#39;t it strange?&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;There was one video titled &amp;quot;HD2 is so realistic we had PTSD.&amp;quot; Of course, it’s an exaggeration and the guys were just having fun. The thing is that a lot of people have a kind of trauma from the constant flow of negative news and predictions that the world is coming to an end tomorrow. Some people get real PTSD, for sure. Is it good to escape this world? It kind of works for me, and it works surprisingly well when this fantasy world is worse and more absurd than the one we have now. No, I am not sponsored by Sony or Arrowhead, and I would not recommend HD2 to everyone. My current theory is that it attracts specific types of people who find something in chaos and challenges. Maybe men just need epic moments sometimes.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>It&#39;s Not a Race</title>
     <link href="https://en.kovchinnikov.info/2026-03-decent.html" />
@@ -329,72 +348,6 @@
 &lt;li&gt;Downfalls shape you&lt;/li&gt;
 &lt;li&gt;We know almost nothing about life, so learning is important&lt;/li&gt;
 &lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>I Tried to Write a Decent Desktop App</title>
-    <link href="https://en.kovchinnikov.info/2026-01-desktopapp.html" />
-    <updated>2026-01-04T13:00:00Z</updated>
-    <id>https://en.kovchinnikov.info/2026-01-desktopapp.html</id>
-    <content type="html">&lt;h2 id=&quot;idea&quot;&gt;Idea&lt;/h2&gt;
-&lt;p&gt;The starting point for me was learning Go and writing a simple app, and I thought about operations on PDF files: merge, split, etc. &lt;a href=&quot;https://www.pdf24.org/en/&quot;&gt;pdf24&lt;/a&gt; is one of the most popular apps for Windows, so I reviewed its functions and UI/UX as a baseline. The idea was to program 3% of the most useful functions. Does pdf24 do the job? Sure. Would I use it on Windows if I needed to transform PDFs? Yes, it’s just not worth looking for viruses. Linux has &lt;a href=&quot;https://flathub.org/en/apps/search?q=pdf&quot;&gt;a number of desktop apps&lt;/a&gt; for PDF manipulation, by the way, but let’s just have another one. And I have some very specific ideas about UI/UX, but as I’m scratching my own itch here, it’s useful to write two sets of requirements: user requirements and dev requirements. You can check &lt;a href=&quot;https://github.com/ikostas/pdf-tool&quot;&gt;the GitHub page&lt;/a&gt; for the result with screenshots.&lt;/p&gt;
-&lt;h2 id=&quot;user-requirements&quot;&gt;User requirements&lt;/h2&gt;
-&lt;p&gt;Most users may not care about the size of the app or some aspects of UI/UX if it gets the job done. Still, there are some nice things to have:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Hotkeys, because any app is faster with a keyboard&lt;/li&gt;
-&lt;li&gt;Fast, because nobody likes waiting&lt;/li&gt;
-&lt;li&gt;Modern UI, which includes &#39;looking nice&#39;, but also being humble and similar to native UI&lt;/li&gt;
-&lt;li&gt;Open multiple files at once for the merge operation; otherwise it’s unnerving&lt;/li&gt;
-&lt;li&gt;Handle user input errors&lt;/li&gt;
-&lt;li&gt;Intuitive in terms of simplicity, but also not allowing users to engage functions when it’s useless&lt;/li&gt;
-&lt;li&gt;UI doesn’t freeze while performing the task, which happens with some programs and the operating system can suggest closing the app&lt;/li&gt;
-&lt;li&gt;Simple or (better) no installation procedure, which is especially relevant for Windows with limited permissions&lt;/li&gt;
-&lt;li&gt;The same program for Linux, Windows, and Mac – because users can get used to an app on one platform&lt;/li&gt;
-&lt;li&gt;Small download size is arguable now, but let it be&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;dev-requirements&quot;&gt;Dev requirements&lt;/h2&gt;
-&lt;p&gt;As a (lazy and novice) developer, I’d like to have the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Writing less code (I mean, not like Java or GTK+)&lt;/li&gt;
-&lt;li&gt;Threads for UI and tasks (Python and JS can only emulate them)&lt;/li&gt;
-&lt;li&gt;Compile to Linux, Windows, and Mac without hassle&lt;/li&gt;
-&lt;li&gt;Small app size matters for easy distribution as well&lt;/li&gt;
-&lt;li&gt;Convenient syntax for error handling&lt;/li&gt;
-&lt;li&gt;Declarative UI&lt;/li&gt;
-&lt;li&gt;Mature UI toolkit with all the functions a GUI app needs&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;design-choices&quot;&gt;Design choices&lt;/h2&gt;
-&lt;p&gt;Regarding the language, Go ticks the boxes:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Less code&lt;/li&gt;
-&lt;li&gt;Threads&lt;/li&gt;
-&lt;li&gt;It’s natural to write error handling&lt;/li&gt;
-&lt;li&gt;Cross-compilation&lt;/li&gt;
-&lt;li&gt;Fast&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For the GUI toolkit, &lt;a href=&quot;https://gitlab.com/cznic/tk9.0&quot;&gt;Tk9.0&lt;/a&gt; ticks the boxes as well:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Declarative&lt;/li&gt;
-&lt;li&gt;Works on Linux, Windows, and Mac&lt;/li&gt;
-&lt;li&gt;All the functions for a GUI app included&lt;/li&gt;
-&lt;li&gt;A modern &lt;a href=&quot;https://pkg.go.dev/modernc.org/tk9.0@v1.73.0/themes/azure&quot;&gt;Azure theme&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Hotkeys support&lt;/li&gt;
-&lt;li&gt;A file dialog to open multiple files&lt;/li&gt;
-&lt;li&gt;Disabling buttons is easy&lt;/li&gt;
-&lt;li&gt;Compact and fast&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Regarding the UI/UX itself, I decided to have a menu with buttons, and for each operation to have three sections in one window:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Instructions with brief text&lt;/li&gt;
-&lt;li&gt;User input to open files and specify pages&lt;/li&gt;
-&lt;li&gt;Messages about success or failure&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;So no pop-up messages, just one logically organized window, and Tk allows me to do it.&lt;/p&gt;
-&lt;h2 id=&quot;statistics&quot;&gt;Statistics&lt;/h2&gt;
-&lt;p&gt;I’m too lazy to measure how fast the app is; it actually uses the pdfcpu library, also written in Go. But it seems fast enough. :)&lt;/p&gt;
-&lt;p&gt;The only statistics I have are file sizes and lines of code. The pdf24 distribution is 600 MB, being a lot more functional and with fancy stuff like PDF previews. My app is 29 MB for Windows and 46 MB for Linux, which includes debugging info. Without debugging info, the Linux app is 36 MB, which can be further reduced with upx to 20 MB.&lt;/p&gt;
-&lt;p&gt;For the lines of code, it’s 1004 lines, which is relatively small.&lt;/p&gt;
-&lt;p&gt;For the learning experience, I rewrote parts of the app multiple times and learned to prioritize clarity and trust the compiler. For Tk, it’s better to look at examples for guidelines, but what’s important for me is that it’s stable and doesn’t bring new bugs. One could complain about the absence of HTML: you need to emulate it with the included markup language and generate tags, but it was fun.&lt;/p&gt;
 </content>
   </entry>
 </feed>

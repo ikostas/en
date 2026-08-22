@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>What&#39;s Wrong With The Server Software</title>
+		<meta name="description" content="With the huge progress we had recently, B2B is still in the Middle Ages somehow">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i> en</a></li>
+					<li><a href="https://www.youtube.com/@DiD-e1p"><i class="fa-brands fa-youtube"></i> de</a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="whats-wrong-with-the-server-software">What&#39;s Wrong With The Server Software</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2026-08-22">22 August 2026</time></li>
+	<li class="post-tag"><a href="/tags/digitalization/" class="post-tag">#digitalization</a>,</li>
+	<li class="post-tag"><a href="/tags/opensource/" class="post-tag">#opensource</a></li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>The picture I see in August of 2026 really makes me sad: we have great technology stacks finally, we figured out that APIs are probably the most important, we have SSO as end-users and do not need to remember the login and password for every site, we even figured out that web interface probably makes the most sense, but we are still somehow in the Middle Ages in terms of how server software is actually used. I get it, to realize the acquired potential takes time. At the same time, it feels like a rollback and even progress denial after COVID, some kind of mental fatigue that stops people from taking new challenges and transforming the B2B digital environment one more time. They have their reasons, so let's get into the big three software types that are actually used:</p></div>
+<ul>
+<li>Microsoft Fanclub</li>
+<li>New Web Fanclub</li>
+<li>Old Web Fanclub</li>
+</ul>
+<p>It's not all that bad, it's usable (and widely used), it solves the problem, but it feels wrong for many reasons which I'll try to set out. More than that, software to fix this is already here, but it misses some new requirements we've got recently because of politics. OK, let's get into it.</p>
+<h2 id="microsoft-fanclub">Microsoft Fanclub</h2>
+<p>Before we start talking about Microsoft products, I have to confess: being a Linux-hobbyist myself, I generally don't like Microsoft products, but that's not the whole truth! Willing to solve real world problems, I found out that ERP solutions from Microsoft (from Navision and Damgaard initially, to be fair) work well and companies mainly use Microsoft environments. I learned Microsoft products and implemented them for a while (since 2003), as well as used the most hated Microsoft product, PowerPoint, to make money in consulting. That being said, I passed the stage of religious hatred and I could probably name a few down-to-earth reasons why these products are mediocre from the user perspective. But I'll point out the good as well.</p>
+<p>So, let's start with MS Teams. Collaboration via chat and video conferences wasn't a thing before COVID, as some of you may remember, but now it's the spine of communication. The video conference should just work, and it works. It works surprisingly well in Chrome in any Linux distribution, so I was able to attend a big number of video calls while I was looking for a job. The chat is mediocre: settings are really bad, posting and commenting is bad. I just don't understand how the thumbnail of the document half the size of the screen should increase my productivity – I still can't read anything, and I'd prefer just a link. I can use a link, and a great idea is to have all the files stored in one place (OneDrive) and all the apps (including SharePoint) pointing to this one storage. You can also get a link for a channel or a discussion, but the workflow is organized just badly. It's clear that MS Teams is Microsoft Edge trying and failing to render the web pages, so you are supposed to find a button to reload a page. The chat experience overall is a bad trip, especially when you have experienced Slack or Telegram.</p>
+<p>MS Teams has a place for files, and it looks exactly like a network folder, but it's more buggy because they reinvented the wheel here. MS Teams has apps, which are basically web apps rendered inside MS Teams. By the way, if you want to place an app in the marketplace, you have to become a certified MS partner. But beware, most administrators uncheck the &quot;allow third-party apps&quot; setting, so you enjoy a Microsoft-only app store. And due to licensing, you can use Planner for task management in the web version, but you can't use Planner in MS Teams, although MS Teams is actually a browser rendering web apps...</p>
+<p>OK, you know what you want – a website with a clear structure, descriptions for links, bullets, tables – you are ready for SharePoint. It works for simple tasks, again being slow and buggy, especially when editing content. I refuse to believe it's a technology from this century; it looks more like the 1990s with a modern design to me, but anyway.</p>
+<p>MS online office products, on the other hand, work surprisingly well for collaboration. They are not buggy, they are reasonably lightweight, they lack some functions, and they don't care about 1:1 compatibility with the desktop version. So documents don't look the same, fonts are often a mess, but it solves the problem. I think when they stopped caring about 1:1 exact appearance as on the desktop, it was a pivotal point and it got better. I still prefer to edit the first draft on the desktop version and then upload it, because it's more convenient.</p>
+<p>With this wide line of products – from office apps to ERP systems – Microsoft somehow managed to miss the whole middle segment of very useful apps: task management, knowledge base, workflow management, project management and so on. Maybe they don't want to compete with existing products, but at some point you'll have to search for these products and integrate them into the Microsoft ecosystem, which can be painful, because Microsoft invented its own whole world of domains and permissions, which nobody else can understand. How to get it? In Microsoft's world, you need to invest some money to become a certified partner and get access to the products, environments, and documentation.</p>
+<p>Frankly speaking, I don't get why anyone would use a Windows environment at this point. Just to have &quot;fun&quot; with domains? Especially when ERP systems are web-based and work in Chrome on any platform. OK, it's not tested yet – we need a couple more centuries to figure this out.</p>
+<h2 id="new-web-fanclub">New Web Fanclub</h2>
+<p>Notion, Asana, Atlassian, JetBrains, and the web applications inspired by them in my opinion belong to the &quot;New Web&quot;. They figured out a lot, they use reasonably modern tech stacks (a too modern tech stack can be a problem), they found highly valuable niches to automate, and they work really well. They also have APIs. My problem here is how they are used: I've seen a real employee copying and pasting data from a spreadsheet into one of these apps. And I have an answer to the question: what else should they do to solve this? Stress the importance of APIs and integration more? Give more non-technical presentations about the importance of integration and automation of the end-to-end workflow vs. automation of isolated functions? Maybe create a new integration standard, so integration would be nearly plug-and-play and we could finally avoid copy-pasting and the human errors and frustration associated with it? I don't really know, the fact is that we are all fascinated with these apps, we use them happily, and we switch between windows and copy-paste the same data. If you ask me what should be this one app where the seamless process flow should take place – I'll say: I don't know. Their value lies to such an extent in the front-end that it feels catastrophic to lose it by hiding it under some other app. But the key to the flow state is clearly one interface, at least for one process.</p>
+<h2 id="old-web-fanclub">Old Web Fanclub</h2>
+<p>I'm old enough to remember my sincere love for the good old web apps like Mantis and DokuWiki: simple, fast, well-designed, and... outdated. Pumping them up with plugins to bring them up to date (authentication and design) feels like... OK, I'll not use this metaphor here. :) I googled, I asked AI, and the place is just empty – there's nothing else so convenient. We could probably rewrite them using modern tech stacks and design templates, but nobody is there to do it. Why would you invest a lot of time to rewrite it and offer it as open source if someone else is already selling something like this as a subscription? Or the task to just rewrite them seems not challenging enough – we need more functions. But their simplicity was the key. In terms of integration again, they should be API-first. But I think both aforementioned apps deserve to become just the standard bug tracking and wiki module respectively in some future integrated apps infrastructure.</p>
+<h2 id="whats-next">What's next</h2>
+<p>Probably one integrated environment would be logical, right? And we have a few attempts to do exactly that. ClickUp and Monday.com are trying to do it. First, I haven't used these products – I hope they deliver what they promise. The idea of flow inside one app is there, though I can't say how well it's implemented. And then politics kick in: although both companies have EU infrastructure for GDPR compliance, American companies are out of fashion in the EU. And also the EU government rightfully presumes that it's better to rely on open source products. So closed source, especially in the cloud, is out of fashion too. There are some attempts, notably OpenProject, but it's not the environment – they are still at the &quot;single project management app&quot; stage. For a project of this scale you need investments, which the USA has or which the EU government could deliver. The problem with investments from the government is that they always leave questions and are mostly ineffective.</p>
+<p><a href="https://nextcloud.com/">Nextcloud</a> is another example – it's basically a file-sharing solution, but its app store is promising. Workflow automation is there, task management is there, document signing is also there, and they also have integrations with existing solutions like the aforementioned OpenProject. It's the best bet for the EU probably, and it would be logical to invest in it, right? And it's actually already happening, as well as implementations for EU government and governmental structures of several EU countries. What disappoints me personally still is this starting with file sharing – starting with an intranet / website / SharePoint alternative would be more logical, but maybe they know better. And it's open source with cloud and on-premise options, so all checks here. I'm also not sure, but it seems to be built around bureaucratic processes – it's heavily focused on file approvals. It breaks my logic a little bit, and also: why so much focus on approvals? Probably that's what governmental structures mostly do...</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Intranet, knowledge sharing, simple websites – these are the low-hanging fruits for me whenever I start an automation in any company, and it has served me well. It's standard, simple, safe, and I expect any groupware or solution for online collaboration to be centered around this concept, or at least have a major feature to share information by publishing it. Microsoft got many things wrong, but they surprisingly got it right with SharePoint and invested in it enough to make it usable. They also made it surprisingly extendable and scalable, so some companies build and sell CRM or DMS (I mean document management) or basically any workflow automation based on SharePoint – like, why not. Wiki is probably a better approach to information sharing than a site builder (or CMS, content management system); the problem is that existing solutions are outdated, the most modern being XWiki and Wiki.js. On the one hand, it feels like there's a lack of fresh air here; on the other hand, site builders are not dead, and I had a great time with Drupal, which integrates a publishing workflow, by the way. Or we really need something a little bit more flexible, like static site generators, which could be integrated into other products. I don't know, maybe everybody is using Astro or Strapi in custom software and just not sharing it.</p>
+<p>Another way to say what gives me an ick – maybe we need some high-level approach to integration between apps, because we already have great separate products and integration obviously multiplies their potential. The way it's going on now is that every product has its own documented API, but every API is unique. Maybe we should have standards for product types: wiki, workflow automation, DMS, CMS, task management, project management, and so on. Like, if you want, you can extend it, but please support the basic functions. Standards have always moved the industry forward, starting with HTTP or even earlier. And UI/UX is important too: maybe we should have a standard for an application look, not in the form of one CSS, but more in a document describing acceptable principles and guidelines for how the app looks and how the user is supposed to interact with it. And then maybe an integrating app with a marketplace will follow, or some existing solution like Nextcloud will naturally adopt and support these standards.</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2026-03-hd2.html">Helldivers 2 and Self-Improvement</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2026-08-wrong.html` was built on 2026-08-22T21:10:07.710Z -->
+	</body></html>

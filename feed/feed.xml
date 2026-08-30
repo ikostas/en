@@ -5,11 +5,53 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2026-08-22T17:20:00Z</updated>
+  <updated>2026-08-30T13:00:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>Gitea Is a Thing</title>
+    <link href="https://en.kovchinnikov.info/2026-08-gitea.html" />
+    <updated>2026-08-30T13:00:00Z</updated>
+    <id>https://en.kovchinnikov.info/2026-08-gitea.html</id>
+    <content type="html">&lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
+&lt;p&gt;I can&#39;t stop looking for a tool for both product management and project management; I even made an effort to build &lt;a href=&quot;https://github.com/ikostas/pmo-express&quot;&gt;my own&lt;/a&gt;. Okay, let&#39;s start with project management – what it&#39;s actually about:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Issue management, which could turn into&lt;/li&gt;
+&lt;li&gt;Risks,&lt;/li&gt;
+&lt;li&gt;Problems,&lt;/li&gt;
+&lt;li&gt;Changes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Besides that, you&#39;d like to have some project artifacts such as statuses and the deliverables themselves. I deliberately didn&#39;t mention tasks, because they belong to... well, task management. Still, task management is what a project manager does on a daily basis, so it would be nice to have a tool for that. In building my own tool, I realized that each type of issue requires a special set of fields, although of course technically I store them in one table. Let&#39;s take risks, for instance: we need a risk assessment matrix with likelihood and severity.&lt;/p&gt;
+&lt;p&gt;Issues have a few things in common, though:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;An automatically assigned ID, ideally easily referenced from other parts of the software&lt;/li&gt;
+&lt;li&gt;A name, just plain text&lt;/li&gt;
+&lt;li&gt;A description, preferably in Markdown (again, with the ability to reference other issues)&lt;/li&gt;
+&lt;li&gt;A discussion for each issue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And if we&#39;re talking about managing more than one project, we&#39;d like to group projects into programs and/or portfolios. A program or a portfolio should have its own definition, which boils down to the bullet points above or can be uploaded as documents.&lt;/p&gt;
+&lt;p&gt;For product management, we need a hierarchy:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Theme/Initiative&lt;/li&gt;
+&lt;li&gt;Epic&lt;/li&gt;
+&lt;li&gt;User Stories&lt;/li&gt;
+&lt;li&gt;Tasks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A hierarchy means that items should probably be linked to each other, similar to projects/programs/portfolios. But to describe each of them, we&#39;ll need the same components: an ID, a name, a description, and a discussion.&lt;/p&gt;
+&lt;p&gt;But that&#39;s not all; let&#39;s talk about storing project or product documents. I&#39;m still messing around with a folder containing 10 versions of the same file, because although version control systems are commonplace in software development, they are rarely used for office documents like contracts or presentations. Looking at this folder with 10 versions makes me sad, because this particular setup multiplies my chances of making a mistake and increases my stress. It also doesn&#39;t motivate us to use simpler formats like Markdown or Org, but we&#39;ll leave that story for now.&lt;/p&gt;
+&lt;h2 id=&quot;alternatives&quot;&gt;Alternatives&lt;/h2&gt;
+&lt;p&gt;Redmine could be a great solution if you are at peace with Ruby on Rails and its resource usage. Does it make sense to use it for a company? Absolutely. Does it make sense to use it on my personal laptop for juggling my personal tasks? It&#39;s too heavy and it&#39;s also total overkill. It&#39;s also kind of outdated in terms of backend and interface, but you can skip this part if you like. Anyway, B2B is quite conservative when it comes to choosing a tech stack.&lt;/p&gt;
+&lt;p&gt;My intuition and some &lt;a href=&quot;https://en.kovchinnikov.info/2025-12-hhny.html&quot;&gt;research&lt;/a&gt; tell me that Go should be a modern choice for the backend of a modern web app. The frontend probably shouldn&#39;t be heavy; single-page apps for particular parts are OK, but when they are used everywhere, things feel bloated. And in terms of scalability, I&#39;d like to be able to start with SQLite and migrate to MySQL or Postgres when things start to get serious. Well, Gitea and its open-source fork &lt;a href=&quot;https://forgejo.org/compare-to-gitea/&quot;&gt;Forgejo&lt;/a&gt; are here to help, as they tick all the boxes. But how do we actually manage a product or a project with them? Doesn&#39;t it look like a stretch?&lt;/p&gt;
+&lt;h2 id=&quot;tags-everywhere&quot;&gt;Tags Everywhere&lt;/h2&gt;
+&lt;p&gt;Well, it requires a certain amount of discipline, which I wouldn&#39;t expect from large teams, but it&#39;s certainly doable with the feature called tags. Every level of a hierarchy or a particular element within it can be a tag. For example, we can have a tag for a problem or an epic. An epic should ideally reference all included user stories, and the user stories should reference their parent epic. I know, it gets messy from here, but it seems to me that no one has ever tried to use this tool this way. I also see a clear path for future development – for example, adding a risk matrix to list all risks and calculate risk values (and highlight them with colors), or building something more convenient for Epic-User Story relationships.&lt;/p&gt;
+&lt;p&gt;The insight I experienced is that everything is an actionable item – an issue in terms of Gitea/Forgejo. It can be a task, a problem, a user story, or an epic. With Markdown, we can use a structured template for each issue type. Cross-referencing between issues is as easy as it gets. Furthermore, the discussion thread below each item is a critical feature for enhancing collaboration: yes, I want to discuss everything.&lt;/p&gt;
+&lt;p&gt;Git is not ideal: it struggles with larger files (sometimes presentations happen to be really big), and for contracts, I might have versions in different formats: first in PDF, then in MS Word, then in PDF again. But I am sure these issues are either solvable or minor enough not to prevent us from automating version control and finally stopping emailing files back and forth. This is a big change, obviously. My only hope is that in the far future, Git will be considered part of a basic education. As well as Markdown, by the way.&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Does this sound too futuristic to you when you look at Gitea/Forgejo? Sure, it&#39;s targeting developers for now, but I see the potential. The scalability and simplicity are great in my opinion, especially with Docker. Plus, there&#39;s the ability to switch databases easily. For me, if something is designed well (meaning the creators share my taste), everything just feels right. The interface is light and responsive, comes with a dark theme, and even offers a CLI version (no, I don&#39;t use it). I&#39;m managing two personal sets of tasks this way, let&#39;s put it that way, and it has already helped reduce my stress and anxiety by bringing in structure. It&#39;s so convenient that it&#39;s almost invisible to me. And if I want to collaborate with someone, I can just deploy this Docker container to any hosting. It all just clicks together, exactly as it should.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>What&#39;s Wrong With The Server Software</title>
     <link href="https://en.kovchinnikov.info/2026-08-wrong.html" />
@@ -333,21 +375,6 @@
 &lt;p&gt;We are living in a time of ignorance and false assumptions. And it is our tolerance that allows them to rule.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;And I&#39;d like to thank George Orwell and Yevgeny Zamyatin for their books.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>How I&#39;m Screening Out Vacancies</title>
-    <link href="https://en.kovchinnikov.info/2026-01-screening.html" />
-    <updated>2026-01-19T17:00:00Z</updated>
-    <id>https://en.kovchinnikov.info/2026-01-screening.html</id>
-    <content type="html">&lt;p&gt;I just wanted to share my experience with applying for vacancies, because time and resources are obviously limited, and some descriptions cry out, &amp;quot;Do not apply here.&amp;quot; So here are the red flags I use for project management, but you&#39;ll get the idea and will be able to apply them to other areas.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Nothing in particular&lt;/strong&gt; means it&#39;s project management in IT, but there&#39;s no evidence of any other details. Managing IT services? Building infrastructure? Implementing solutions for business logic? Developing new digital products? After 22 years, I&#39;m sure all these areas require specific expertise, so the job description should be specific as well. You just can&#39;t write &amp;quot;IT Project Manager&amp;quot; and post it.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Mix of skills&lt;/strong&gt; is a great filter for greedy people. They want a project manager combined with a system admin and support. That&#39;s not &amp;quot;all-rounder&amp;quot; – you&#39;re just being greedy and unprofessional, so you&#39;ll get what you deserve: incompetence.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Not naming the system you implement&lt;/strong&gt;. These are not names of ERP systems: SAP, SAP ERP, M365. Why? Well, SAP is the name of the company, for instance. Again, the problem is that you need relevant experience to implement any ERP system, and the experience required is very different for each.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Outdated tech stack&lt;/strong&gt;. This could be the most arguable one, but in my personal opinion, if you&#39;re sticking in 2026 with PHP, C#, RPA, or no-code, you just create more problems than you&#39;re trying to solve, so these projects are cursed from the start.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Strange name for the role&lt;/strong&gt;, like project coordinator or project controller instead of project manager, indicates a major misunderstanding, a probable lack of authority accompanied by full responsibility, as well as a possible intent to pay significantly less.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Developing an in-house ERP system&lt;/strong&gt; is like reinventing the bicycle, and from an economic viewpoint, it&#39;s not viable unless a company is a vast retail network. For a midsize construction company – definitely a no-go, and a waste of resources for a false objective.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;AI buzz&lt;/strong&gt; – because that&#39;s not how it works. You don&#39;t replace people with AI, and you don&#39;t jump over &lt;a href=&quot;https://en.kovchinnikov.info/2024-04-maturity.html&quot;&gt;maturity levels&lt;/a&gt;. You also can&#39;t compensate for incompetence with AI, by the way.&lt;/p&gt;
 </content>
   </entry>
 </feed>

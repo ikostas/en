@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Gitea Is a Thing</title>
+		<meta name="description" content="Still looking for a tool both for product and project management, as well as task management">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i> en</a></li>
+					<li><a href="https://www.youtube.com/@DiD-e1p"><i class="fa-brands fa-youtube"></i> de</a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="gitea-is-a-thing">Gitea Is a Thing</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2026-08-30">30 August 2026</time></li>
+	<li class="post-tag"><a href="/tags/digitalization/" class="post-tag">#digitalization</a>,</li>
+	<li class="post-tag"><a href="/tags/opensource/" class="post-tag">#opensource</a>,</li>
+	<li class="post-tag"><a href="/tags/product-management/" class="post-tag">#product management</a>,</li>
+	<li class="post-tag"><a href="/tags/project-management/" class="post-tag">#project management</a></li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<p>I can't stop looking for a tool for both product management and project management; I even made an effort to build <a href="https://github.com/ikostas/pmo-express">my own</a>. Okay, let's start with project management – what it's actually about:</p></div>
+<ul>
+<li>Issue management, which could turn into</li>
+<li>Risks,</li>
+<li>Problems,</li>
+<li>Changes</li>
+</ul>
+<p>Besides that, you'd like to have some project artifacts such as statuses and the deliverables themselves. I deliberately didn't mention tasks, because they belong to... well, task management. Still, task management is what a project manager does on a daily basis, so it would be nice to have a tool for that. In building my own tool, I realized that each type of issue requires a special set of fields, although of course technically I store them in one table. Let's take risks, for instance: we need a risk assessment matrix with likelihood and severity.</p>
+<p>Issues have a few things in common, though:</p>
+<ul>
+<li>An automatically assigned ID, ideally easily referenced from other parts of the software</li>
+<li>A name, just plain text</li>
+<li>A description, preferably in Markdown (again, with the ability to reference other issues)</li>
+<li>A discussion for each issue</li>
+</ul>
+<p>And if we're talking about managing more than one project, we'd like to group projects into programs and/or portfolios. A program or a portfolio should have its own definition, which boils down to the bullet points above or can be uploaded as documents.</p>
+<p>For product management, we need a hierarchy:</p>
+<ul>
+<li>Theme/Initiative</li>
+<li>Epic</li>
+<li>User Stories</li>
+<li>Tasks</li>
+</ul>
+<p>A hierarchy means that items should probably be linked to each other, similar to projects/programs/portfolios. But to describe each of them, we'll need the same components: an ID, a name, a description, and a discussion.</p>
+<p>But that's not all; let's talk about storing project or product documents. I'm still messing around with a folder containing 10 versions of the same file, because although version control systems are commonplace in software development, they are rarely used for office documents like contracts or presentations. Looking at this folder with 10 versions makes me sad, because this particular setup multiplies my chances of making a mistake and increases my stress. It also doesn't motivate us to use simpler formats like Markdown or Org, but we'll leave that story for now.</p>
+<h2 id="alternatives">Alternatives</h2>
+<p>Redmine could be a great solution if you are at peace with Ruby on Rails and its resource usage. Does it make sense to use it for a company? Absolutely. Does it make sense to use it on my personal laptop for juggling my personal tasks? It's too heavy and it's also total overkill. It's also kind of outdated in terms of backend and interface, but you can skip this part if you like. Anyway, B2B is quite conservative when it comes to choosing a tech stack.</p>
+<p>My intuition and some <a href="2025-12-hhny.html">research</a> tell me that Go should be a modern choice for the backend of a modern web app. The frontend probably shouldn't be heavy; single-page apps for particular parts are OK, but when they are used everywhere, things feel bloated. And in terms of scalability, I'd like to be able to start with SQLite and migrate to MySQL or Postgres when things start to get serious. Well, Gitea and its open-source fork <a href="https://forgejo.org/compare-to-gitea/">Forgejo</a> are here to help, as they tick all the boxes. But how do we actually manage a product or a project with them? Doesn't it look like a stretch?</p>
+<h2 id="tags-everywhere">Tags Everywhere</h2>
+<p>Well, it requires a certain amount of discipline, which I wouldn't expect from large teams, but it's certainly doable with the feature called tags. Every level of a hierarchy or a particular element within it can be a tag. For example, we can have a tag for a problem or an epic. An epic should ideally reference all included user stories, and the user stories should reference their parent epic. I know, it gets messy from here, but it seems to me that no one has ever tried to use this tool this way. I also see a clear path for future development – for example, adding a risk matrix to list all risks and calculate risk values (and highlight them with colors), or building something more convenient for Epic-User Story relationships.</p>
+<p>The insight I experienced is that everything is an actionable item – an issue in terms of Gitea/Forgejo. It can be a task, a problem, a user story, or an epic. With Markdown, we can use a structured template for each issue type. Cross-referencing between issues is as easy as it gets. Furthermore, the discussion thread below each item is a critical feature for enhancing collaboration: yes, I want to discuss everything.</p>
+<p>Git is not ideal: it struggles with larger files (sometimes presentations happen to be really big), and for contracts, I might have versions in different formats: first in PDF, then in MS Word, then in PDF again. But I am sure these issues are either solvable or minor enough not to prevent us from automating version control and finally stopping emailing files back and forth. This is a big change, obviously. My only hope is that in the far future, Git will be considered part of a basic education. As well as Markdown, by the way.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Does this sound too futuristic to you when you look at Gitea/Forgejo? Sure, it's targeting developers for now, but I see the potential. The scalability and simplicity are great in my opinion, especially with Docker. Plus, there's the ability to switch databases easily. For me, if something is designed well (meaning the creators share my taste), everything just feels right. The interface is light and responsive, comes with a dark theme, and even offers a CLI version (no, I don't use it). I'm managing two personal sets of tasks this way, let's put it that way, and it has already helped reduce my stress and anxiety by bringing in structure. It's so convenient that it's almost invisible to me. And if I want to collaborate with someone, I can just deploy this Docker container to any hosting. It all just clicks together, exactly as it should.</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2026-08-wrong.html">What&#39;s Wrong With The Server Software</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2026-08-gitea.html` was built on 2026-08-30T21:49:02.797Z -->
+	</body></html>

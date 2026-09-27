@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>A Process Map In ASCII Is a Thing</title>
+		<meta name="description" content="A process model in ASCII is accessible, but there&#39;s a catch">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i></a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="a-process-map-in-ascii-is-a-thing">A Process Map In ASCII Is a Thing</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2026-09-26">26 September 2026</time></li>
+	<li class="post-tag"><a href="/tags/productivity/" class="post-tag">#productivity</a>,</li>
+	<li class="post-tag"><a href="/tags/process-modeling/" class="post-tag">#process modeling</a></li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>It started in 2003, I was implementing Axapta or Microsoft Dynamics AX a bit later, and we were modeling the processes in eEPC notation using ARIS Toolset, which was expensive, about 10k USD per user. And it was great for managing changes and documenting the logic, the document flow, although I had some suspicions when we printed the maps on A0 (otherwise they were unreadable) or had 5 levels of decomposition. Could it be simpler – that was the question, but it did the job. About 5 years later I moved on to management consulting, these guys were more cost-aware, so we used eEPC in ARIS Express or flow charts in MS Visio with different notations and yes, in any case it was simpler and still got the job done. In my last effort to model something I chose BPMN 2.0 and Camunda Modeler, because it was free and it was real process modeling with a strict and compact notation.</p></div>
+<p>In Germany companies try to comply with ISO 9001, which says that business processes should be documented, and the simplest form of process flow is used with almost no branches, and it somewhat works for small companies, although I never saw anyone actually using it as a reference. And two times we started ERP implementation it turned out that these process maps hide some important details, to say the least.</p>
+<p>Anyway, I had a practical task to write an instruction for us and for a service provider, how we work together. I was discussing some options with an AI chatbot, and the chatbot drew what are called ASCII- or plain-text process maps. Actually it was not the first time, but that time it hit me: I could use it in the document. And yes, I use it a lot myself, I also used it to explain what is going on in conversations with different parties involved and my point is that no one asked a single question – it was that level of simplicity.</p>
+<h2 id="the-map">The map</h2>
+<p>Just to illustrate what I mean let's take a look at an example for a &quot;Purchase-to-Pay&quot; process:</p>
+<pre><code>Requisition Creation [Requester] (Purchase Requisition)
+  |
+PR Approval [Approver] (Approved Purchase Requisition)
+  |
+PO Generation [Procurement Specialist] (Purchase Order)
+  |
+PO Issued to Vendor [Procurement Specialist] (Purchase Order)
+  |
+Goods / Service Receipt [Warehouse] (Goods Receipt Note)
+  +-&gt; Issues Found [Warehouse] (Return / Dispute Note)
+  +-&gt; Accepted
+        |
+      Invoice Receipt &amp; Matching [Accounting] (Supplier Invoice)
+        +-&gt; Mismatch / Hold [Buyer] (Exception Report)
+        +-&gt; Verified (3-Way Match Record)
+              |
+            Payment Processing [Finance] (Payment Advice)
+</code></pre>
+<p>TL;DR: use the following with any chatbot along with the description to get a similar result:</p>
+<pre><code>Use [Roles], (Docs), and +-&gt; for branches
+</code></pre>
+<h2 id="the-good">The good</h2>
+<p>I'd name one critical advantage, the accessibility, but it's not that simple, so let's take a look at different perspectives:</p>
+<ul>
+<li>It's minimal in terms of artificial symbols or colors, so it's easy to read</li>
+<li>You can use it anywhere for explanation if you can use a monospace font: any document, email or comment</li>
+<li>There are no graphics, and when graphics are involved, especially something fancy, people are just tired of it and/or suspect BS</li>
+<li>Normal text search just works</li>
+<li>You can make small changes without any special tools, just editing the text</li>
+<li>You can make significant changes with a chatbot relatively easily just by explaining what you want</li>
+</ul>
+<p>Now let's take a look at the drawbacks.</p>
+<h2 id="the-bad">The bad</h2>
+<p>I learned the hard way why the roles, interfaces and documents are important – in fact, a document/information flow can be way more important than functions and branching logic. Having this discipline in mind using ASCII-based process maps is easy, but this may not be the case:</p>
+<ul>
+<li>There are no conditions for branching and no rules to enforce them</li>
+<li>Documents are not mandatory and are easy to forget about</li>
+<li>It's the same for the roles, and the &quot;swim lanes&quot; are non-existent</li>
+<li>There is no decomposition and I'm not sure whether this approach is scalable at all</li>
+<li>It's hard to follow if it's more than one process and/or one page long</li>
+<li>There are no statuses for the documents, so you should just remember not to forget them</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>There's a surprisingly wide range of online or offline tools to make ASCII process maps, although I would probably write something different. I liked the freedom from any tool I got. It's the same as any text-based format, you can edit it as long as you have a text editor. Some text editors, like Neovim, can make editing these process maps especially convenient, but we will not dig into this rabbit hole. If you are able to set a task for an AI chatbot, it can be very fast as well, and I personally have no problem with showing this process map to a company management at any level. But yes, these maps are not fancy.</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2026-09-timing.html">About Timing</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2026-09-ascii.html` was built on 2026-09-27T07:54:08.972Z -->
+	</body></html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>.net 10 Could Hit the Sweet Spot</title>
+		<meta name="description" content="C# could be not that bad for server-side and desktop as well">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i></a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="net-10-could-hit-the-sweet-spot">.net 10 Could Hit the Sweet Spot</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2026-09-30">30 September 2026</time></li>
+	<li class="post-tag"><a href="/tags/dev/" class="post-tag">#dev</a>,</li>
+	<li class="post-tag"><a href="/tags/opensource/" class="post-tag">#opensource</a>,</li>
+	<li class="post-tag"><a href="/tags/linux/" class="post-tag">#linux</a></li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>A quick recap of previous <a href="tags/dev/">episodes</a>:</p></div>
+<ol>
+<li>I tried to reflect on programming language development history and the reasoning behind it.</li>
+<li>I tried to write some real-world apps using JavaScript and Go.</li>
+<li>I still didn't find the unicorn and felt bad about wanting to write more server-side JavaScript.</li>
+</ol>
+<p>What fit me well and allowed me to write the most logic per hour was actually Django, because of some embedded stuff like roles, an ORM, security features, user management, and not overloading me with technical stuff. But my requirements emerged, and now I want the following as well:</p>
+<ul>
+<li>Components on the server-side like JSX</li>
+<li>CLI tools for standard development tasks</li>
+<li>Cross-platform with desktop and mobile</li>
+<li>Consistent language syntax (not like &quot;===&quot; in JS)</li>
+<li>Probably still object-oriented and compiled</li>
+</ul>
+<p>Of course, it should be open-source and permissive to write any apps I want – that's just non-negotiable, but something worth checking when you are dealing with Microsoft.</p>
+<p>Go is great – it really pushed me in terms of thinking, but if you take a &quot;machine-human&quot; scale, it's somewhere on the machine part. These are not roadblocks, it just made me realize one more time what I'm capable of:</p>
+<ul>
+<li>Expressing human logic with Go concepts can be hard, and it's more on the low-level and do-it-yourself end for technical stuff.</li>
+<li>Go pushes towards a SQL-first approach and away from ORMs, although real-life apps like <a href="2026-08-gitea.html">Gitea</a> do use ORMs to be able to support different DBMSs.</li>
+</ul>
+<p>And with all that said, I'm going to try another ecosystem that introduced a few exciting changes recently: .net 10.</p>
+<h2 id="net-10-perks">.net 10 perks</h2>
+<p>Actually, .net 10 has got everything from the above, specifically:</p>
+<ul>
+<li>Components with Razor pages</li>
+<li>An ORM, Entity Framework Core, supporting a really wide range of DBMSs</li>
+<li>An open-source web server is there as well</li>
+<li>C# fits all the requirements for a server-side compiled language with garbage collection, AOT, and co.</li>
+<li>All the aforementioned &quot;batteries-included&quot; features like role management</li>
+<li>The courses and documentation are all there</li>
+</ul>
+<p>And there's <a href="https://avaloniaui.net/">Avalonia</a> for a unified, modern UI across Linux, Windows, and macOS desktop as well as mobile (iOS and Android).</p>
+<p>At the moment, I tried to cross-compile a simple desktop app from WSL to Windows, and it worked. I compiled one for Linux, and it worked as well. The drawbacks? Sure:</p>
+<ul>
+<li>A minimal desktop app was about 200 MB, because .net 10 was included and it's naive to expect that it should be pre-installed; it's the opposite of Go's approach, thus requiring packaging for installation and dependency management, which is different on every platform and Linux distribution. 120 MB without .net, by the way, and I could probably trim that.</li>
+<li>The language is huge; it would probably take a lot of time to comprehend all of its features and be able to use them.</li>
+<li>The legacy of being tied to the Microsoft ecosystem, which can still be true for some add-ons; and... Microsoft behaving inconsistently.</li>
+</ul>
+<h2 id="conclusions">Conclusions</h2>
+<p>I always looked at C# as Java for Microsoft fanboys, but technically it was an effort to make Java normal. The surprise for me is that in .net 10, all the critical components are open-source and cross-platform. Even Microsoft itself hasn't produced apps leveraging all the features of .net 10. Teams could do that, but it has a legacy codebase and is a web-first app, so it makes sense for them to continue struggling with React. Let's review one reason pro and one reason contra.</p>
+<p>The reason contra is that I've heard a lot of stories of rewriting Java apps in Go, but I don't know any examples of rewriting a Java app in C# and .net. It's especially strange because C# is similar to Java, while Go is not. What I think is that .net got this critical package of features in .net 10 quite recently, while Google and Go have been consistent for more than 10 years. It's about trust, which is a weak side of Microsoft. Again, what forced Microsoft to make the right choices finally? Maybe they feel they are losing ground, and locking users into their ecosystem is not enough anymore. It's like companies making their tech stack open-source before filing for bankruptcy. And the next question is: will Microsoft remain consistent with open-source components if .net gains traction? With the reputation Microsoft built (or destroyed) over the years, it's a risky business to invest in C#. By the way: who is doing it? There are quite a few well-known examples built on this stack, although it's widely used (as well as Visual Basic). Can you build Docker or Twitch on a .net stack (for those who don't know, these are Go apps)?</p>
+<p>If you want to enter B2B apps with your product, you'll need to connect with very specific Microsoft stuff like domains and policies, and as business is conservative, it will not jump off this stack soon. It's kind of painful with any other tech stack, so it's a nice-to-have option.</p>
+<p>Even if .net occupies the place for custom apps for just one company, it was a viable option before for companies using the Microsoft stack, and the good news is that now it's a viable option even if you don't want that Microsoft dependency.</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2026-09-ascii.html">A Process Map In ASCII Is a Thing</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2026-09-dotnet.html` was built on 2026-09-30T18:02:16.857Z -->
+	</body></html>

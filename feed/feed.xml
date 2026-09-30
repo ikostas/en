@@ -5,11 +5,62 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2026-09-26T22:30:00Z</updated>
+  <updated>2026-09-30T19:40:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>.net 10 Could Hit the Sweet Spot</title>
+    <link href="https://en.kovchinnikov.info/2026-09-dotnet.html" />
+    <updated>2026-09-30T19:40:00Z</updated>
+    <id>https://en.kovchinnikov.info/2026-09-dotnet.html</id>
+    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;A quick recap of previous &lt;a href=&quot;https://en.kovchinnikov.info/tags/dev/&quot;&gt;episodes&lt;/a&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;I tried to reflect on programming language development history and the reasoning behind it.&lt;/li&gt;
+&lt;li&gt;I tried to write some real-world apps using JavaScript and Go.&lt;/li&gt;
+&lt;li&gt;I still didn&#39;t find the unicorn and felt bad about wanting to write more server-side JavaScript.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;What fit me well and allowed me to write the most logic per hour was actually Django, because of some embedded stuff like roles, an ORM, security features, user management, and not overloading me with technical stuff. But my requirements emerged, and now I want the following as well:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Components on the server-side like JSX&lt;/li&gt;
+&lt;li&gt;CLI tools for standard development tasks&lt;/li&gt;
+&lt;li&gt;Cross-platform with desktop and mobile&lt;/li&gt;
+&lt;li&gt;Consistent language syntax (not like &amp;quot;===&amp;quot; in JS)&lt;/li&gt;
+&lt;li&gt;Probably still object-oriented and compiled&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Of course, it should be open-source and permissive to write any apps I want – that&#39;s just non-negotiable, but something worth checking when you are dealing with Microsoft.&lt;/p&gt;
+&lt;p&gt;Go is great – it really pushed me in terms of thinking, but if you take a &amp;quot;machine-human&amp;quot; scale, it&#39;s somewhere on the machine part. These are not roadblocks, it just made me realize one more time what I&#39;m capable of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Expressing human logic with Go concepts can be hard, and it&#39;s more on the low-level and do-it-yourself end for technical stuff.&lt;/li&gt;
+&lt;li&gt;Go pushes towards a SQL-first approach and away from ORMs, although real-life apps like &lt;a href=&quot;https://en.kovchinnikov.info/2026-08-gitea.html&quot;&gt;Gitea&lt;/a&gt; do use ORMs to be able to support different DBMSs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And with all that said, I&#39;m going to try another ecosystem that introduced a few exciting changes recently: .net 10.&lt;/p&gt;
+&lt;h2 id=&quot;net-10-perks&quot;&gt;.net 10 perks&lt;/h2&gt;
+&lt;p&gt;Actually, .net 10 has got everything from the above, specifically:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Components with Razor pages&lt;/li&gt;
+&lt;li&gt;An ORM, Entity Framework Core, supporting a really wide range of DBMSs&lt;/li&gt;
+&lt;li&gt;An open-source web server is there as well&lt;/li&gt;
+&lt;li&gt;C# fits all the requirements for a server-side compiled language with garbage collection, AOT, and co.&lt;/li&gt;
+&lt;li&gt;All the aforementioned &amp;quot;batteries-included&amp;quot; features like role management&lt;/li&gt;
+&lt;li&gt;The courses and documentation are all there&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And there&#39;s &lt;a href=&quot;https://avaloniaui.net/&quot;&gt;Avalonia&lt;/a&gt; for a unified, modern UI across Linux, Windows, and macOS desktop as well as mobile (iOS and Android).&lt;/p&gt;
+&lt;p&gt;At the moment, I tried to cross-compile a simple desktop app from WSL to Windows, and it worked. I compiled one for Linux, and it worked as well. The drawbacks? Sure:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A minimal desktop app was about 200 MB, because .net 10 was included and it&#39;s naive to expect that it should be pre-installed; it&#39;s the opposite of Go&#39;s approach, thus requiring packaging for installation and dependency management, which is different on every platform and Linux distribution. 120 MB without .net, by the way, and I could probably trim that.&lt;/li&gt;
+&lt;li&gt;The language is huge; it would probably take a lot of time to comprehend all of its features and be able to use them.&lt;/li&gt;
+&lt;li&gt;The legacy of being tied to the Microsoft ecosystem, which can still be true for some add-ons; and... Microsoft behaving inconsistently.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+&lt;p&gt;I always looked at C# as Java for Microsoft fanboys, but technically it was an effort to make Java normal. The surprise for me is that in .net 10, all the critical components are open-source and cross-platform. Even Microsoft itself hasn&#39;t produced apps leveraging all the features of .net 10. Teams could do that, but it has a legacy codebase and is a web-first app, so it makes sense for them to continue struggling with React. Let&#39;s review one reason pro and one reason contra.&lt;/p&gt;
+&lt;p&gt;The reason contra is that I&#39;ve heard a lot of stories of rewriting Java apps in Go, but I don&#39;t know any examples of rewriting a Java app in C# and .net. It&#39;s especially strange because C# is similar to Java, while Go is not. What I think is that .net got this critical package of features in .net 10 quite recently, while Google and Go have been consistent for more than 10 years. It&#39;s about trust, which is a weak side of Microsoft. Again, what forced Microsoft to make the right choices finally? Maybe they feel they are losing ground, and locking users into their ecosystem is not enough anymore. It&#39;s like companies making their tech stack open-source before filing for bankruptcy. And the next question is: will Microsoft remain consistent with open-source components if .net gains traction? With the reputation Microsoft built (or destroyed) over the years, it&#39;s a risky business to invest in C#. By the way: who is doing it? There are quite a few well-known examples built on this stack, although it&#39;s widely used (as well as Visual Basic). Can you build Docker or Twitch on a .net stack (for those who don&#39;t know, these are Go apps)?&lt;/p&gt;
+&lt;p&gt;If you want to enter B2B apps with your product, you&#39;ll need to connect with very specific Microsoft stuff like domains and policies, and as business is conservative, it will not jump off this stack soon. It&#39;s kind of painful with any other tech stack, so it&#39;s a nice-to-have option.&lt;/p&gt;
+&lt;p&gt;Even if .net occupies the place for custom apps for just one company, it was a viable option before for companies using the Microsoft stack, and the good news is that now it&#39;s a viable option even if you don&#39;t want that Microsoft dependency.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>A Process Map In ASCII Is a Thing</title>
     <link href="https://en.kovchinnikov.info/2026-09-ascii.html" />
@@ -347,31 +398,6 @@ Goods / Service Receipt [Warehouse] (Goods Receipt Note)
 &lt;p&gt;And one of the most valuable tips that works (from &lt;a href=&quot;https://www.youtube.com/@ThePrimeTimeagen&quot;&gt;the Primagen&lt;/a&gt;): at the end of the interview ask for a brief feedback. In the era of corporate correctness you&#39;ll get some bits of information it&#39;s almost impossible to get otherwise.&lt;/p&gt;
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;That’s all for today. I hope you learned something new! :)&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Raising Arizona Is Metaphorical</title>
-    <link href="https://en.kovchinnikov.info/2026-01-raising.html" />
-    <updated>2026-01-29T18:16:10Z</updated>
-    <id>https://en.kovchinnikov.info/2026-01-raising.html</id>
-    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
-&lt;p&gt;My daughter has just turned 14, and I feel that I owe her this post. I remember vividly a few nervous days before the birth and a few days after I came to a maternity hospital to get a large bundle inside which there was a small human being. Who didn&#39;t react much, but was incredibly sweet, so we called her Sweety (if I were to translate it to English) for the first week. And I remember the first time she slept on my stomach and then on the bed, it was a pleasure just to be nearby and watch her. Being around children brings joy and happiness, but parenting challenges you like nothing else.&lt;/p&gt;
-&lt;p&gt;I watched Raising Arizona (a 1987 movie) recently, directed by Joel Coen, and I had a few associations with parenting pain points. It&#39;s all my interpretation. I thought it would be fun if my daughter finds these thoughts later, when she becomes a parent. We&#39;re going to visit some dark places.&lt;/p&gt;
-&lt;h2 id=&quot;but-we-also-love-her&quot;&gt;&amp;quot;But we also love her&amp;quot;&lt;/h2&gt;
-&lt;p&gt;There&#39;s a moment when bank robbers lose the child, H.I. (the husband) and Ed (the wife) are passing by, and the robbers beg &amp;quot;Take us with you! We also love her!&amp;quot; or something like that. The point is that in parenting love is care and when you screw up your love doesn&#39;t count. You have to learn to screw up less, and learn it quickly. It puts you under stress, especially if you are not used to managing your emotions, organizing stuff, dealing with uncertainty and making decisions, being kind to other human beings when you feel that something bad is happening to your child. Emotions do count, but at a young age children don&#39;t care, they just need to be safe and all the stuff around them organized. Frankly speaking, I&#39;m not in favor of excuses being an adult, but I totally get it. You see, here we deal with a prehistoric situation, the excuses were not invented yet, just get the stuff done.&lt;/p&gt;
-&lt;h2 id=&quot;a-dream-job&quot;&gt;A dream job&lt;/h2&gt;
-&lt;p&gt;H.I. thinks he&#39;s a robber, but I see robbery as a metaphor for a dream job. And I had it: visiting distant places, dealing with great people, accomplishing ambitious and risky projects. It was legal and they paid me for that. But until you are miserable at the job, you have to apply your skills and experience to something (legal, by the way) to provide for the family, that&#39;s what the family (and archetypical roles in it) is about. Family is more important than the job, that&#39;s the point. In the family you have a more fulfilling life and all the other roles in life can&#39;t compete with this role. I&#39;ll also advise running away from companies where management calls a team a family. It&#39;s manipulative.&lt;/p&gt;
-&lt;h2 id=&quot;pulling-the-ring-from-the-grenade&quot;&gt;Pulling the ring from the grenade&lt;/h2&gt;
-&lt;p&gt;So H.I. fights with the demon, pulls the ring from the grenade and kills the demon, which hardly can be lawful or &amp;quot;self-defense&amp;quot;. No, police doesn&#39;t come to the scene at all. My point is that it&#39;s naive to think that the laws cover all the cases in life. Laws are meant to be applied by decent people in the interests of humanity, but that&#39;s also not how it sometimes works. In totalitarian countries laws are used for anything else but the interests of humanity and people, applied selectively, although on paper they can look reasonable. There&#39;s also morale and ethics in society, which can change over time (which is funny by itself) and is heavily used for manipulation in worst cases. &amp;quot;Is it better for my family?&amp;quot; is a question that matters and it will keep you sane over time. &amp;quot;Better&amp;quot; meaning long-term, like can I tell this story to my daughter without being ashamed. After having a kid I learned the hard way not to blame people for anything. I kid you not: I bought a motorcycle, being afraid to be considered a coward by my daughter in the future. Kids can smell cowards and liars, by the way. And kids know their parents very well for sure.&lt;/p&gt;
-&lt;h2 id=&quot;are-you-ready&quot;&gt;Are you ready&lt;/h2&gt;
-&lt;p&gt;When you have a child, he/she doesn&#39;t care if you&#39;re ready or not. In the movie H.I. and Ed return the child as they figure out they are not ready to be parents, but that doesn&#39;t happen in real life (exceptions applied). You need to get over everything you did wrong and be there for your child, always. You have no place to hide, although you could probably hire a psychologist to listen to your regrets (not a bad idea at all to get some paid moral support). The point is that it can be easier and my biggest regret so far is not visiting parenting courses. My friend did that, he has four kids now, and it helped him for sure. Common knowledge doesn&#39;t work, the institutions to pass the knowledge from older members of your family probably don&#39;t work. Getting ready is a task and it should be addressed, it&#39;s that simple. On the opposite side, life will never be challenging and fulfilling (and these two go together) enough without a child, and I personally think it&#39;s a right reason to have a child. It also means you have resources, and you&#39;ll definitely need them.&lt;/p&gt;
-&lt;h2 id=&quot;old-friends-may-fade-away&quot;&gt;Old friends may fade away&lt;/h2&gt;
-&lt;p&gt;There&#39;s a moment when H.I. and Ed meet another family, H.I.&#39;s boss, who is a swinger with his wife (played by Frances McDormand). Parenting changes the point of view, you see people more profoundly and you assess if you want to communicate with people based on their family life and their attitude towards their own children. I don&#39;t care about the success stories of &amp;quot;achievers&amp;quot;, if their family life is poor or their kids didn&#39;t get enough love.&lt;/p&gt;
-&lt;p&gt;By the way, there was a research that &amp;quot;enough&amp;quot; doesn&#39;t exist for parental love: the more love children get, the more potent they become. Back to friends, this new viewpoint also means some friends will fade away, because they didn&#39;t settle or they have issues with family life. It&#39;s difficult to find people with similar family values and priorities. And planning anything with a few families is a project, but the time spent together is incredibly satisfying. These fading friends will be the symbols of hobbies or lifestyle you had, and you&#39;ll have to say goodbye, because family is the priority.&lt;/p&gt;
-&lt;h2 id=&quot;meet-yourself&quot;&gt;Meet yourself&lt;/h2&gt;
-&lt;p&gt;That&#39;s the toughest one, I&#39;ll not be able to crack it, I&#39;ll just barely touch it. There&#39;s a character, Leonard Smalls, to whom I referred as &amp;quot;demon&amp;quot; above, but he&#39;s obviously born by H.I. and I assume he is H.I.&#39;s dark side. H.I. is nice and loving and gentle, Smalls is the opposite. And dealing with your dark side (for men) is not as easy as having a fight and pulling a ring from a grenade. Imagine Smalls living with you, that&#39;s what family life can reveal. Being tired, exhausted, overloaded, every person can turn into Smalls. That&#39;s what I meant earlier by not judging people. Managing your emotions, aggression, even smaller movements and dealing with your inseparable dark side is The Challenge. And control is not an option, I can confirm. If I had easy answers, I&#39;d write them here, but I see none of them.&lt;/p&gt;
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;There&#39;s no conclusion here other than I suck as a parent, but I&#39;m still trying my best. And I&#39;d highly recommend you to watch the movie in case you didn&#39;t. There was another &amp;quot;dream job&amp;quot;, we gathered with colleagues and discussed movies every week. Yes, they paid for that as well, because that&#39;s what team building looks like. But that&#39;s another story.&lt;/p&gt;
 </content>
   </entry>
 </feed>

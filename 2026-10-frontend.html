@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Solving It On the Front-end</title>
+		<meta name="description" content="A case for using CLI and a JavaScript library to solve a real-world task">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.0.0">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i></a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="solving-it-on-the-front-end">Solving It On the Front-end</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2026-10-01">01 October 2026</time></li>
+	<li class="post-tag"><a href="/tags/dev/" class="post-tag">#dev</a>,</li>
+	<li class="post-tag"><a href="/tags/opensource/" class="post-tag">#opensource</a>,</li>
+	<li class="post-tag"><a href="/tags/linux/" class="post-tag">#linux</a></li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<p>As an input we have a website with some PDFs (documentation) for various modules and versions of some software in German and in English. We actually don't know:</p></div>
+<ul>
+<li>If all the docs exist for the latest version</li>
+<li>If the docs are duplicated in the different folders using different filenames</li>
+<li>If the docs are available only in one language or in both</li>
+</ul>
+<p>As I'll be the one using these docs, I thought of an HTML page with an integrated search where there's a table with the following fields:</p>
+<ul>
+<li>Doc type</li>
+<li>Doc name (the actual title, not the filename)</li>
+<li>Link to the English version</li>
+<li>Link to the German version</li>
+</ul>
+<p>That sounds reasonable, right? Let's get into it then.</p>
+<h2 id="the-tools">The tools</h2>
+<p>The idea is to export all the information into Excel and do some matching there, then identify the duplicates, delete them, and finally create the resulting page.</p>
+<p>The actual process involved choosing the tools along the way, but at the end I've got this:</p>
+<ul>
+<li><a href="https://chromewebstore.google.com/detail/pdf-downloader/oagehclebbbknfohkjhfbeiljpkpnjkg?hl=en-US&amp;utm_source=ext_sidebar">Chrome extension</a> to scan the page and download all PDFs</li>
+<li><a href="https://gridjs.io/">Grid.js</a> for the search</li>
+<li>Pico CSS, because I like the nice and accessible look (it's used on this website as well)</li>
+<li>Some custom JavaScript to make Pico CSS styles work for Grid.js</li>
+<li>Some custom JavaScript to output the link to the file in the EN and DE columns</li>
+<li>Some CLI commands like <code>ls</code> and <code>find</code> to create the list of the files</li>
+<li><code>pdfinfo</code> to extract the &quot;Title&quot; metadata from PDFs, if available (combined with some bash scripting)</li>
+<li><code>xargs</code> with <code>rm</code> to remove the files from the list</li>
+<li>A few <code>sed</code> commands to clean the CSV file saved in Excel from some Windows-specific symbols</li>
+<li><code>csv2list</code>, a custom Python script to convert the result in Excel into the &quot;list of lists&quot; format required by Grid.js</li>
+<li><code>list2csv</code>, a custom Python script for conversion backwards</li>
+<li>Excel for basic VLOOKUP operations and manual fixes</li>
+</ul>
+<h2 id="the-sequence">The sequence</h2>
+<p>I had to do some back-and-forth movements, so it took me about a day to make 300 lines from 600 files, but for the future I would do something like this:</p>
+<ol>
+<li>Download all the files</li>
+<li>Create a CSV with filename + folder and name (title) columns</li>
+<li>Match the files (duplicates, newer version, EN-DE) in Excel</li>
+<li>Create in Excel the list of files to remove and save to txt</li>
+<li>Remove the files with <code>xargs</code> + txt</li>
+<li>Save the table from Excel to CSV</li>
+<li>Convert CSV to list of lists</li>
+</ol>
+<p>It works quite well, and combined with fast Chrome rendering and an ability to open PDFs directly in the browser, it looks like a solid solution.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>I'm not a programmer, so I asked an AI chatbot to do the heavy lifting with the programming. You still need to understand the Python or JS code it produces, and bash scripts are particularly dangerous. Looking back, I'd just move slower and more systematically to eliminate manual work and associated mistakes as much as possible. Well, you can't know everything in advance. I thought it was a 2-hour task, but I'm still happy with the result every time I use it.</p>
+<p>The issue with the static HTML page is that it can work well only in a few cases:</p>
+<ul>
+<li>From a network folder, accessible to everyone, and when people are disciplined enough to open <code>index.html</code></li>
+<li>When an HTTP server delivers it, which requires some setup</li>
+</ul>
+<p>For example, to integrate it into SharePoint you would need to create a component and install this component. Which is kind of sad, because I can't see how a static page with some JS can be dangerous.</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2026-09-dotnet.html">.net 10 Could Hit the Sweet Spot</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2026-10-frontend.html` was built on 2026-10-02T21:26:27.818Z -->
+	</body></html>

@@ -5,11 +5,70 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2026-09-30T19:40:00Z</updated>
+  <updated>2026-10-01T21:40:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>Solving It On the Front-end</title>
+    <link href="https://en.kovchinnikov.info/2026-10-frontend.html" />
+    <updated>2026-10-01T21:40:00Z</updated>
+    <id>https://en.kovchinnikov.info/2026-10-frontend.html</id>
+    <content type="html">&lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
+&lt;p&gt;As an input we have a website with some PDFs (documentation) for various modules and versions of some software in German and in English. We actually don&#39;t know:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If all the docs exist for the latest version&lt;/li&gt;
+&lt;li&gt;If the docs are duplicated in the different folders using different filenames&lt;/li&gt;
+&lt;li&gt;If the docs are available only in one language or in both&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As I&#39;ll be the one using these docs, I thought of an HTML page with an integrated search where there&#39;s a table with the following fields:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Doc type&lt;/li&gt;
+&lt;li&gt;Doc name (the actual title, not the filename)&lt;/li&gt;
+&lt;li&gt;Link to the English version&lt;/li&gt;
+&lt;li&gt;Link to the German version&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That sounds reasonable, right? Let&#39;s get into it then.&lt;/p&gt;
+&lt;h2 id=&quot;the-tools&quot;&gt;The tools&lt;/h2&gt;
+&lt;p&gt;The idea is to export all the information into Excel and do some matching there, then identify the duplicates, delete them, and finally create the resulting page.&lt;/p&gt;
+&lt;p&gt;The actual process involved choosing the tools along the way, but at the end I&#39;ve got this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://chromewebstore.google.com/detail/pdf-downloader/oagehclebbbknfohkjhfbeiljpkpnjkg?hl=en-US&amp;amp;utm_source=ext_sidebar&quot;&gt;Chrome extension&lt;/a&gt; to scan the page and download all PDFs&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://gridjs.io/&quot;&gt;Grid.js&lt;/a&gt; for the search&lt;/li&gt;
+&lt;li&gt;Pico CSS, because I like the nice and accessible look (it&#39;s used on this website as well)&lt;/li&gt;
+&lt;li&gt;Some custom JavaScript to make Pico CSS styles work for Grid.js&lt;/li&gt;
+&lt;li&gt;Some custom JavaScript to output the link to the file in the EN and DE columns&lt;/li&gt;
+&lt;li&gt;Some CLI commands like &lt;code&gt;ls&lt;/code&gt; and &lt;code&gt;find&lt;/code&gt; to create the list of the files&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pdfinfo&lt;/code&gt; to extract the &amp;quot;Title&amp;quot; metadata from PDFs, if available (combined with some bash scripting)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;xargs&lt;/code&gt; with &lt;code&gt;rm&lt;/code&gt; to remove the files from the list&lt;/li&gt;
+&lt;li&gt;A few &lt;code&gt;sed&lt;/code&gt; commands to clean the CSV file saved in Excel from some Windows-specific symbols&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;csv2list&lt;/code&gt;, a custom Python script to convert the result in Excel into the &amp;quot;list of lists&amp;quot; format required by Grid.js&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;list2csv&lt;/code&gt;, a custom Python script for conversion backwards&lt;/li&gt;
+&lt;li&gt;Excel for basic VLOOKUP operations and manual fixes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;the-sequence&quot;&gt;The sequence&lt;/h2&gt;
+&lt;p&gt;I had to do some back-and-forth movements, so it took me about a day to make 300 lines from 600 files, but for the future I would do something like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download all the files&lt;/li&gt;
+&lt;li&gt;Create a CSV with filename + folder and name (title) columns&lt;/li&gt;
+&lt;li&gt;Match the files (duplicates, newer version, EN-DE) in Excel&lt;/li&gt;
+&lt;li&gt;Create in Excel the list of files to remove and save to txt&lt;/li&gt;
+&lt;li&gt;Remove the files with &lt;code&gt;xargs&lt;/code&gt; + txt&lt;/li&gt;
+&lt;li&gt;Save the table from Excel to CSV&lt;/li&gt;
+&lt;li&gt;Convert CSV to list of lists&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It works quite well, and combined with fast Chrome rendering and an ability to open PDFs directly in the browser, it looks like a solid solution.&lt;/p&gt;
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+&lt;p&gt;I&#39;m not a programmer, so I asked an AI chatbot to do the heavy lifting with the programming. You still need to understand the Python or JS code it produces, and bash scripts are particularly dangerous. Looking back, I&#39;d just move slower and more systematically to eliminate manual work and associated mistakes as much as possible. Well, you can&#39;t know everything in advance. I thought it was a 2-hour task, but I&#39;m still happy with the result every time I use it.&lt;/p&gt;
+&lt;p&gt;The issue with the static HTML page is that it can work well only in a few cases:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;From a network folder, accessible to everyone, and when people are disciplined enough to open &lt;code&gt;index.html&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;When an HTTP server delivers it, which requires some setup&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For example, to integrate it into SharePoint you would need to create a component and install this component. Which is kind of sad, because I can&#39;t see how a static page with some JS can be dangerous.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>.net 10 Could Hit the Sweet Spot</title>
     <link href="https://en.kovchinnikov.info/2026-09-dotnet.html" />
@@ -338,66 +397,6 @@ Goods / Service Receipt [Warehouse] (Goods Receipt Note)
 &lt;p&gt;&amp;quot;Stay away from negative people. They have a problem for every solution.&amp;quot;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Often attributed to Albert Einstein.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>How To Get Interviews and Pass HR (At Least)</title>
-    <link href="https://en.kovchinnikov.info/2026-02-interviews.html" />
-    <updated>2026-02-10T13:10:00Z</updated>
-    <id>https://en.kovchinnikov.info/2026-02-interviews.html</id>
-    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
-&lt;p&gt;Following up on my &lt;a href=&quot;http://localhost:8080/2025-10-jobsearch.html&quot;&gt;article on structuring the job search&lt;/a&gt;, I have actually achieved some results through my own testing – these are likely tips you have heard before. The main difference here is that I saw an increase in my positive reply rate. The results might be slightly biased toward the German market, and I’ve structured them into the following stages:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Preparing the application&lt;/li&gt;
-&lt;li&gt;Applying + follow-up&lt;/li&gt;
-&lt;li&gt;Preparing for the interview&lt;/li&gt;
-&lt;li&gt;Speaking at the interview&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;I still haven&#39;t landed a job yet, but I have secured several interviews and received positive feedback afterward, so I’m happy to share these tips!&lt;/p&gt;
-&lt;h2 id=&quot;1-preparing-for-the-application&quot;&gt;1. Preparing for the application&lt;/h2&gt;
-&lt;p&gt;It’s easy to get discouraged when applying for a long time, but I suggest &lt;strong&gt;revisiting your CV and cover letter&lt;/strong&gt; periodically. You might find new ideas or notice mistakes that are crucial for these documents. I found errors and lapses in logic that made me think, &amp;quot;Who could have even written this?&amp;quot; Well, I did, and no one I asked to check it noticed.&lt;/p&gt;
-&lt;p&gt;Another thing I learned the hard way: &lt;strong&gt;keep both your CV and cover letter concise and simple&lt;/strong&gt;. By &amp;quot;simple,&amp;quot; I mean even the technical aspects. I used to make my CV in Canva; it looked great, but it likely failed during parsing. I switched to Google Docs, keeping the formatting as simple as possible, and it worked. For the cover letter, I use the following structure, which is specific to my situation:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;A formal notice that I am applying for the position (including a job code if applicable).&lt;/li&gt;
-&lt;li&gt;Two paragraphs on why my experience and skills are a good fit, ideally mentioning specific relevant experience and results.&lt;/li&gt;
-&lt;li&gt;My story: how and why I moved to Germany.&lt;/li&gt;
-&lt;li&gt;What I did in my most recent role.&lt;/li&gt;
-&lt;li&gt;References with links to their LinkedIn profiles.&lt;/li&gt;
-&lt;li&gt;Logistics: how I plan to handle the commute or a move to another city (one sentence).&lt;/li&gt;
-&lt;li&gt;My work permit status (one sentence).&lt;/li&gt;
-&lt;li&gt;A polite closing note expressing hope that I provided enough info to minimize their risks or misunderstandings (one sentence).&lt;/li&gt;
-&lt;li&gt;Best regards.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;With Arial 11pt and 6pt spacing between paragraphs, the cover letter occupies roughly 3/4 of an A4 page. The parts that change are the first, second, and sixth. Keep in mind that the more you change, the higher the risk of introducing errors.&lt;/p&gt;
-&lt;h2 id=&quot;2-applying-follow-up&quot;&gt;2. Applying + follow-up&lt;/h2&gt;
-&lt;p&gt;Some obvious points, in case you weren&#39;t aware:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Always apply through the company&#39;s website if a form is available, or via email if requested.&lt;/li&gt;
-&lt;li&gt;Calling in advance helps.&lt;/li&gt;
-&lt;li&gt;Always include the cover letter and a Reference or Letter of Recommendation (Qualifiziertes Arbeitszeugnis in Germany), whether they ask for it or not. Include your diploma recognition (Anerkennung) as well, if you have it – if not, apply for it ASAP.&lt;/li&gt;
-&lt;li&gt;Sometimes they&#39;ll only have one field to upload a file, so merge your PDFs in this order: cover letter first, CV second, references third, and diploma recognition last.&lt;/li&gt;
-&lt;li&gt;Keep exploring different job boards: some become irrelevant while others rise; my latest find for Germany is &lt;a href=&quot;https://www.heyjobs.co/&quot;&gt;HeyJobs&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;LinkedIn works best when you post regularly and recruiters find you.&lt;/li&gt;
-&lt;li&gt;If you post on LinkedIn, 1/3 to 1/2 of your posts can be external content – don’t overstress yourself.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;In Germany, the common rule of thumb is to expect a reply within two weeks; in reality, they often start inviting candidates to interviews within one week. I’ve concluded that it makes sense to follow up after one week. By the way, vacancies older than a week are probably not worth it. To follow up, you can try calling, but meetings often get in the way – email works just fine.&lt;/p&gt;
-&lt;h2 id=&quot;3-preparing-for-the-interview&quot;&gt;3. Preparing for the interview&lt;/h2&gt;
-&lt;p&gt;Standard stuff again – just do your homework:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Read their website. Know how many employees they have and what they do; write it down and memorize it.&lt;/li&gt;
-&lt;li&gt;Think about the questions they might ask. I don&#39;t mean &amp;quot;strengths and weaknesses&amp;quot; – if they respect you, they won&#39;t ask that. The &amp;quot;big three&amp;quot; for me are: tell us about your experience/story, your best achievement so far, and your biggest challenge.&lt;/li&gt;
-&lt;li&gt;Prepare your answers: write them down, check for mistakes, and say them out loud several times to get used to them. Simplify them if they are difficult to remember.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;4-speaking-at-the-interview&quot;&gt;4. Speaking at the interview&lt;/h2&gt;
-&lt;p&gt;Based heavily on my own mistakes, I present the following tips – especially if you are not speaking in your native language:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Speak slower and articulate more clearly than you think is necessary. You are a new person to them, and they need time to adapt to your speech pattern.&lt;/li&gt;
-&lt;li&gt;Show empathy: use active listening and comment on points they mention. Show involvement and understanding, even if they don&#39;t explicitly ask a question.&lt;/li&gt;
-&lt;li&gt;With HR, you need to prove you’ve actually read the job description. Talk about it and explain how you interpret the role.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;And one of the most valuable tips that works (from &lt;a href=&quot;https://www.youtube.com/@ThePrimeTimeagen&quot;&gt;the Primagen&lt;/a&gt;): at the end of the interview ask for a brief feedback. In the era of corporate correctness you&#39;ll get some bits of information it&#39;s almost impossible to get otherwise.&lt;/p&gt;
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;That’s all for today. I hope you learned something new! :)&lt;/p&gt;
 </content>
   </entry>
 </feed>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Messing Around With Audio</title>
+		<meta name="description" content="TIL adventure with my audio setup">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.1.6">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i></a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="messing-around-with-audio">Messing Around With Audio</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2026-10-16">16 October 2026</time></li>
+	<li class="post-tag"><a href="/tags/linux/" class="post-tag">#linux</a>,</li>
+	<li class="post-tag"><a href="/tags/opensource/" class="post-tag">#opensource</a>,</li>
+	<li class="post-tag"><a href="/tags/audio/" class="post-tag">#audio</a></li>
+</ul>
+<h2 id="how-it-started">How it started</h2>
+<p>So I had the following audio setup:</p></div>
+<pre><code>Alexa ----(Bluetooth)---+
+                        +--&gt; Speakers
+Computer --(Bluetooth)--+
+   +&lt;--(USB)-- Mic
+   +--(3.5mm jack)--&gt; Headphones
+</code></pre>
+<p>And I had the following use cases:</p>
+<ol>
+<li>Listening to music from Spotify</li>
+<li>Watching movies (on the computer)</li>
+<li>Video calls &amp; podcasts</li>
+</ol>
+<p>And I thought: the third part just works, and I'm happy with that. But maybe I could improve the setup for music &amp; movies, because wired connections, wired speakers, and decent acoustics could make a difference. By the way, if you didn't know it, Alexa can connect to and disconnect from the Bluetooth speaker using voice commands. And it acts as a Spotify device, so I can control it from my phone using the Spotify app, which makes it quite useful.</p>
+<h2 id="the-raspberry-pi-part">The Raspberry Pi part</h2>
+<p>There are some special devices for listening to Spotify. They receive a network connection (probably, Wi-Fi) and have an output for the speakers. But if you add the movie-watching scenario to this, not all speakers are capable of switching sources, so you can end up needing a special device for that, which is suboptimal, to say the least. I thought: what's the state of computer audio for Raspberry Pi (RaPi), as it could be a good fit? And that's what I've found:</p>
+<ol>
+<li>You can have any RaPi you want, including the Zero 2 W, and use <a href="https://raspotify.com/">Raspotify</a> to play music and control RaPi with your phone or computer.</li>
+<li>If you want to play a movie and transmit audio to RaPi, you can do it with PulseAudio (a Linux audio system), but you'll get a delay over Wi-Fi. Adding Ethernet, which is required (but I haven't tested it, and there's still a chance you'll get a delay), adds complexity and requires a USB-to-Ethernet adapter, so you end up with a RaPi 3B+ and a HiFi HAT (a board for audio output).</li>
+<li>A HiFi HAT can have a DAC (which stands for digital-to-analog converter), so you can connect it to the speakers via RCA (analog) cables, or you can have an optical output, but you'll need another DAC: either an external one or one integrated into the speakers.</li>
+</ol>
+<pre><code>Computer --(Ethernet)--&gt; RaPi --(RCA)--&gt; Speakers
+</code></pre>
+<p>or</p>
+<pre><code>Computer --(Ethernet)--&gt; RaPi --(Optical)--&gt; DAC --(RCA)--&gt; Speakers
+</code></pre>
+<p>Could you hear the difference between digital and analog cables? Probably not. Could you hear the difference between an external DAC and one integrated into decent speakers? Probably not. But both options are better than transmitting analog audio from the computer, because the computer's DAC can be worse and the computer can add noise to the analog signal.</p>
+<p>RaPi is a side quest because it has a lot of use cases. Could I run an NFS server with a USB HDD? It would work, but for better performance, you'd need a RaPi 4, ideally with an SSD HAT and an SSD for the operating system. So the budget here can grow rapidly, although you could repurpose RaPi for other projects in the future. Another thing to note is that the speakers need a power supply, and RaPi needs one too, but a DAC can work just fine with a USB-C connection to the computer for both audio and power.</p>
+<p>How would RaPi switch between the audio sources (computer / Spotify)? It should work fine with PulseAudio, but by default it will mix the channels.</p>
+<p>Does an external DAC have any advantages? Yes, kind of: it can make your headphones sound better if they're high-quality ones. It also has a volume knob. It can convert an analog signal from the mic with less distortion than a computer, but I have a mic with an ADC built in, so it's better to connect the mic directly to the PC via USB in this case.</p>
+<p>Hybrid variants are also possible: leave RaPi Zero 2 W (Wi-Fi) alone with Spotify and connect it via RCA to the speakers. Then connect the computer to the speakers via optical cable, and switch the sources on the speakers. Then you can listen to music without turning on your computer, which probably saves some energy, but I think a laptop is quite efficient.</p>
+<pre><code>RaPi Zero 2 W --(RCA)--+
+                       +--&gt; Speakers
+Computer ---(Optical)--+
+</code></pre>
+<h2 id="the-pc-part">The PC part</h2>
+<p>At this point, I thought: do I need a RaPi? It won't give me voice commands, it requires a power supply and a separate budget, and I can do the same with the PC, which I don't turn off; it just sleeps when not in use. And I can control Spotify on the PC remotely with my phone; it's just another Spotify device. The PC is the only sound source, so all I need is a USB-to-optical converter because the speakers do not have a USB port.</p>
+<h2 id="how-it-ended">How it ended</h2>
+<p>I haven't decided yet. From a minimalist standpoint, the speakers + PC setup looks favorable, and I don't have to deal with all this RaPi architecture. Switching between outputs on the PC also looks convenient. Good speakers take up some space, though, and I kind of like my cable-free, voice-controlled setup. But better speakers and a wired connection should make a difference for music.</p>
+<p>As you probably noticed, I haven't considered soundbars because modern speakers have source switching and all the same input options, and stereo music sounds better. Soundbars occupy a niche for TVs, and they sound accordingly, especially with action movies. It still feels like some devices lack inputs, audio interfaces, or source switches, and you have to think too much about how to combine all this into a working system. It's kind of disappointing.</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2026-10-cv.html">Working CV Is About Consistency</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.1.6</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2026-10-audio.html` was built on 2026-10-16T22:15:18.681Z -->
+	</body></html>

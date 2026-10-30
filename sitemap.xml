@@ -337,12 +337,17 @@
 	</url>
 	
 	<url>
-		<loc>https://en.kovchinnikov.info/feed/feed.xml</loc>
+		<loc>https://en.kovchinnikov.info/2026-10-cnc.html</loc>
 		<lastmod>2026-10-28</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://en.kovchinnikov.info/2026-10-cnc.html</loc>
-		<lastmod>2026-10-28</lastmod>
+		<loc>https://en.kovchinnikov.info/feed/feed.xml</loc>
+		<lastmod>2026-10-30</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://en.kovchinnikov.info/2026-10-football.html</loc>
+		<lastmod>2026-10-30</lastmod>
 	</url>
 </urlset>

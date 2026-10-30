@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>We Need More Web Terminals</title>
+		<meta name="description" content="It seems that we don&#39;t use web-based technologies widely enough">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.1.6">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i></a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="we-need-more-web-terminals">We Need More Web Terminals</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2026-10-30">30 October 2026</time></li>
+	<li class="post-tag"><a href="/tags/productivity/" class="post-tag">#productivity</a>,</li>
+	<li class="post-tag"><a href="/tags/opensource/" class="post-tag">#opensource</a>,</li>
+	<li class="post-tag"><a href="/tags/linux/" class="post-tag">#linux</a></li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>So it was a Friday afternoon, and I found myself working on my computer locally as well as having 3 remote desktop sessions open, one of which was in a different domain, and I was trying to figure out how to copy a file between domains. So I opened Explorer as a user from a different domain, but as long as these machines didn't share any resources, it didn't help. And I thought to myself: it shouldn't be that complicated, although each and every step of how we got into this situation was logical. I also thought that the UX was far from smooth: some remote sessions required logging in, some didn't, it was hard to switch between them, and overall I found 4 desktops kind of overwhelming for me, one human being. I feel overwhelmed with more than 10 open tabs in the browser, and if you click on any link in any session, you get a new browser window in each session. That's rough.</p></div>
+<h2 id="pros">Pros</h2>
+<p>Web technologies made their way into all types of apps, including the most conservative ones, the ERP systems. The front-end frameworks matured, easing development and taking away the complexity of testing your app for each browser. And the browsers matured as well. And it came to the point where I don't get why the app is not web-based, as long as it's not a legacy one:</p>
+<ul>
+<li>You get an application server &quot;for free&quot;, and this 3-tier architecture is probably the best way to balance the load and process the data between the database and the application server. If you didn't understand the previous sentence, don't worry, it was something specific to my MS Dynamics AX implementation experience, because the devs of this system invented their own application server.</li>
+<li>It's safe, fast enough, and you get a remote option for free: you can work with your app remotely without a VPN. And the VPN experience is also, by the way, far from smooth, as long as you need to use the Internet as well.</li>
+<li>It's easy on the users, because modern front-end frameworks incorporate the UX we need, and the UX people have got used to when browsing websites. It's exactly the case where standards work, and it saves people lots of hours, because they don't have to figure out how to interact with the app.</li>
+</ul>
+<h2 id="the-options">The options</h2>
+<p>And thinking about all this, I came across ChromeOS Flex, an operating system with a browser intended for launching web apps, as well as Cameyo, a way to deliver Windows apps to this desktop as web apps. It surprised me that this technology already exists, and that it's not recommended only for graphics-heavy apps. It all costs money: you need to pay to administer ChromeOS Flex desktops, and you also need to pay for the server software. Is there another way?</p>
+<p>I thought of &quot;a poor man's web terminal&quot; as a Debian desktop with Chrome or Chromium. You'll probably have two types of users: &quot;power users&quot;, being able to learn and use the power of the Linux environment and native apps (like ffmpeg, for example), their speciality being dealing with non-standard tasks. And it's kind of strange (and counterproductive) to restrict their environment to the browser only. On the other hand, you'll have people working with a pre-defined set of apps, and for them, one local app, the browser, could probably be enough, provided your apps are web-based. You could even take it one step further by booting these desktops over the network and mounting their home folders on the server, minimizing the maintenance time and cost.</p>
+<h2 id="a-lean-server-setup">A lean server setup</h2>
+<p>For a small company, I'd start with the following set of web apps:</p>
+<ul>
+<li>E-mail, you need it in the cloud. With both Google and Microsoft, you get a web email client by default, and you don't get any friction from administering your own email server.</li>
+<li>It's a good question whether you should use Google's or Microsoft's office web apps. I find them both underpowered. You'd probably want to have some file exchange, and here you have another question: whether you should trust your files to these US companies. All that being said, I'd go with ownCloud, which has several office connectors, and some office products can work as web apps on the client but can also be installed on your server.</li>
+<li>I'd go for some web-based task manager (my favourite at the time being <a href="2026-08-gitea.html">Gitea</a>) for general admin tasks, it-support tasks and specific projects.</li>
+<li>I'd go for a statically generated website for an intranet. And yes, I think if you can't figure out how to use a static site generator, you probably shouldn't post your thoughts on the website. :)</li>
+<li>For any other apps, I'd search for Go alternatives first, because they are simple to install, they imply the right backend logic, and they consume a lot fewer resources than other apps (especially Java ones).</li>
+</ul>
+<p>All these choices give us even more reasons to use web terminals, or a computer with a browser as the main app, or an app-launching platform.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>It's funny to find that someone already monetises the thing that buzzes you, but I'm generally optimistic about progress: as long as this solution or architecture reveals its advantages, free and open-source alternatives will emerge. In fact, they already exist, with Cameyo cutting resource consumption and costs even more by providing only the required applications, not the whole desktop. And I quietly wait for someone to say that the Windows desktop experience has become unacceptable. Today I had a bad experience with a mouse moving as if the computer were under heavy load, although it wasn't. And I wouldn't be surprised if I found out that guys at Microsoft were using Linux desktops whenever they could, because it's just so much better. And yes, I have made peace with Debian.</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2026-10-football.html">Playing Football Is By Far the Best Experience of This Year</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.1.6</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2026-10-web.html` was built on 2026-10-30T21:49:42.092Z -->
+	</body></html>

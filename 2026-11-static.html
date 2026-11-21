@@ -63,7 +63,7 @@
 	<li class="post-tag"><a href="/tags/opensource/" class="post-tag">#opensource</a></li>
 </ul>
 <h2 id="intro">Intro</h2>
-<p>In the <a href="2026-10-intranet.html">Intranet</a> post we talked about using just a static website, and there's a stigma here. If you ask any IT specialist &quot;How do I get a protected static website?&quot;, they'll tell you to get a VPN. Which is costly and overcomplicated. For example, you can use cheap hosting to host a static website and an auth service, but it won't suffice for a VPN. You'd need VPS hosting, which costs more.</p></div>
+<p>In the <a href="2026-10-intranet.html">Intranet</a> post we talked about using just a static website, and there's a stigma here. If you ask any IT specialist &quot;How do I get a protected static website?&quot;, they'll tell you to get a VPN. Which is at least overcomplicated.</p></div>
 <p>The second stigma is that you need different password to access every resource, although auth services, one of which is Pocket ID, are available and are not that complicated. Yes, you definitely can and should have a single authentication system for all your services, because it's convenient and safer. Every time a user types in a password, it's actually bad from a security viewpoint.</p>
 <p>And there's a third common misconception, which actually made me write this post: you need more than a web server and an auth service to protect a static website. The reason is that an auth service usually expects an application to handle the authentication flow and communicate with it. A static website doesn't do that: it simply serves files and has no backend or authentication endpoints. This is where a reverse proxy comes in: it handles the authentication flow with the auth service and only serves the website to authenticated users. But with Caddy (a webserver) you can get a reverse proxy as well.</p>
 <p>I'd briefly describe how I set up a web server (Caddy) and an auth service (Pocket ID) for a static website, as it required some debugging. Both products I used are written in Go, which gives you a few advantages right away:</p>
@@ -159,5 +159,5 @@ auth.local.lan {
 		<footer>
 			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.1.6</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
 		</footer>
-		<!-- This page `/2026-11-static.html` was built on 2026-11-21T11:30:24.809Z -->
+		<!-- This page `/2026-11-static.html` was built on 2026-11-21T11:42:54.604Z -->
 	</body></html>

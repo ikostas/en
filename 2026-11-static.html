@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>A Protected Static Website with Caddy and Pocket ID</title>
+		<meta name="description" content="Solving the intranet problem the most efficient way">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.1.6">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i></a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="a-protected-static-website-with-caddy-and-pocket-id">A Protected Static Website with Caddy and Pocket ID</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2026-11-21">21 November 2026</time></li>
+	<li class="post-tag"><a href="/tags/linux/" class="post-tag">#linux</a>,</li>
+	<li class="post-tag"><a href="/tags/opensource/" class="post-tag">#opensource</a></li>
+</ul>
+<h2 id="intro">Intro</h2>
+<p>In the <a href="2026-10-intranet.html">Intranet</a> post we talked about using just a static website, and there's a stigma here. If you ask any IT specialist &quot;How do I get a protected static website?&quot;, they'll tell you to get a VPN. Which is costly and overcomplicated. For example, you can use cheap hosting to host a static website and an auth service, but it won't suffice for a VPN. You'd need VPS hosting, which costs more.</p></div>
+<p>The second stigma is that you need different password to access every resource, although auth services, one of which is Pocket ID, are available and are not that complicated. Yes, you definitely can and should have a single authentication system for all your services, because it's convenient and safer. Every time a user types in a password, it's actually bad from a security viewpoint.</p>
+<p>And there's a third common misconception, which actually made me write this post: you need more than a web server and an auth service to protect a static website. The reason is that an auth service usually expects an application to handle the authentication flow and communicate with it. A static website doesn't do that: it simply serves files and has no backend or authentication endpoints. This is where a reverse proxy comes in: it handles the authentication flow with the auth service and only serves the website to authenticated users. But with Caddy (a webserver) you can get a reverse proxy as well.</p>
+<p>I'd briefly describe how I set up a web server (Caddy) and an auth service (Pocket ID) for a static website, as it required some debugging. Both products I used are written in Go, which gives you a few advantages right away:</p>
+<ul>
+<li>Small resource footprint</li>
+<li>Fast and scalable, especially with more requests</li>
+<li>It's a single binary, so you can use Docker, but you can install it on bare metal as well</li>
+</ul>
+<h2 id="config">Config</h2>
+<p>The whole process is as follows:</p>
+<ol>
+<li>Add records to hosts.conf to point to app.local.lan (the website) and auth.local.lan (the auth service)</li>
+<li>Install Caddy (probably bare metal) and Pocket ID, probably with Docker</li>
+<li>Install a security module for Caddy, which can integrate a static website with Pocket ID</li>
+<li>Configure Pocket ID: two lines in the config file and a few steps in a web interface</li>
+<li>Add lines to Caddy's config</li>
+</ol>
+<p>I found Pocket ID configuration easy, but here are the steps for reference:</p>
+<ol>
+<li>You add a client</li>
+<li>You add a user group</li>
+<li>You give this user group access to the client</li>
+</ol>
+<p>Any chatbot or documentation can guide you, but every chatbot I tested starts going in circles with Caddy's config, as the security module config is not so obvious. So here it is:</p>
+<pre><code>{
+#    debug
+	security {
+		oauth identity provider generic {
+			delay_start 3
+			realm generic
+			driver generic
+			client_id &lt;your client id created in Pocket ID&gt;
+			client_secret &lt;your client secret created in Pocket ID&gt;
+			scopes openid email profile
+
+			base_auth_url https://auth.local.lan
+			metadata_url http://127.0.0.1:1411/.well-known/openid-configuration
+		}
+
+		authentication portal my_portal {
+			enable identity provider generic
+			cookie insecure off
+
+			trust login redirect uri domain exact app.local.lan path prefix /
+
+			transform user {
+				match realm generic
+				action add role authp/user
+			}
+		}
+
+		authorization policy my_policy {
+			set auth url /caddy-security/oauth2/generic
+			allow roles authp/user
+		}
+	}
+}
+
+app.local.lan {
+	tls internal
+
+	@portal path /caddy-security/*
+	route @portal {
+		authenticate with my_portal
+	}
+
+	route {
+		authorize with my_policy
+		root * /var/www/html
+		file_server
+	}
+}
+
+auth.local.lan {
+	tls internal
+	reverse_proxy 127.0.0.1:1411
+}
+</code></pre>
+<p>Beware, this is for localhost only, so it doesn't use real SSL certificates, which Caddy can easily install for you.</p>
+<p>Caddy is really nice:</p>
+<ol>
+<li>It has a validation tool to tell you about the errors in your config.</li>
+<li>It has a formatting tool to fix the issues.</li>
+<li>It has a debug mode (uncomment in the beginning) and you can check the logs to troubleshoot any issues.</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>I guess the main outcome is that everyone needs to be challenged, even your friendly IT colleagues, and pushed to use the modern tech stack, especially if it cuts costs dramatically.</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2026-11-gaming.html">Gaming Review on Linux No One Asked For</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.1.6</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2026-11-static.html` was built on 2026-11-21T11:30:24.809Z -->
+	</body></html>

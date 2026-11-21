@@ -5,11 +5,179 @@
   <subtitle>A blog about life &amp; tech</subtitle>
   <link href="https://en.kovchinnikov.info/feed/feed.xml" rel="self" />
   <link href="https://en.kovchinnikov.info/" />
-  <updated>2026-10-30T22:00:00Z</updated>
+  <updated>2026-11-21T11:50:00Z</updated>
   <id>https://en.kovchinnikov.info/</id>
   <author>
     <name>Konstantin Ovchinnikov</name>
   </author>
+  <entry>
+    <title>A Protected Static Website with Caddy and Pocket ID</title>
+    <link href="https://en.kovchinnikov.info/2026-11-static.html" />
+    <updated>2026-11-21T11:50:00Z</updated>
+    <id>https://en.kovchinnikov.info/2026-11-static.html</id>
+    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;In the &lt;a href=&quot;https://en.kovchinnikov.info/2026-10-intranet.html&quot;&gt;Intranet&lt;/a&gt; post we talked about using just a static website, and there&#39;s a stigma here. If you ask any IT specialist &amp;quot;How do I get a protected static website?&amp;quot;, they&#39;ll tell you to get a VPN. Which is costly and overcomplicated. For example, you can use cheap hosting to host a static website and an auth service, but it won&#39;t suffice for a VPN. You&#39;d need VPS hosting, which costs more.&lt;/p&gt;
+&lt;p&gt;The second stigma is that you need different password to access every resource, although auth services, one of which is Pocket ID, are available and are not that complicated. Yes, you definitely can and should have a single authentication system for all your services, because it&#39;s convenient and safer. Every time a user types in a password, it&#39;s actually bad from a security viewpoint.&lt;/p&gt;
+&lt;p&gt;And there&#39;s a third common misconception, which actually made me write this post: you need more than a web server and an auth service to protect a static website. The reason is that an auth service usually expects an application to handle the authentication flow and communicate with it. A static website doesn&#39;t do that: it simply serves files and has no backend or authentication endpoints. This is where a reverse proxy comes in: it handles the authentication flow with the auth service and only serves the website to authenticated users. But with Caddy (a webserver) you can get a reverse proxy as well.&lt;/p&gt;
+&lt;p&gt;I&#39;d briefly describe how I set up a web server (Caddy) and an auth service (Pocket ID) for a static website, as it required some debugging. Both products I used are written in Go, which gives you a few advantages right away:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Small resource footprint&lt;/li&gt;
+&lt;li&gt;Fast and scalable, especially with more requests&lt;/li&gt;
+&lt;li&gt;It&#39;s a single binary, so you can use Docker, but you can install it on bare metal as well&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;config&quot;&gt;Config&lt;/h2&gt;
+&lt;p&gt;The whole process is as follows:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Add records to hosts.conf to point to app.local.lan (the website) and auth.local.lan (the auth service)&lt;/li&gt;
+&lt;li&gt;Install Caddy (probably bare metal) and Pocket ID, probably with Docker&lt;/li&gt;
+&lt;li&gt;Install a security module for Caddy, which can integrate a static website with Pocket ID&lt;/li&gt;
+&lt;li&gt;Configure Pocket ID: two lines in the config file and a few steps in a web interface&lt;/li&gt;
+&lt;li&gt;Add lines to Caddy&#39;s config&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I found Pocket ID configuration easy, but here are the steps for reference:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;You add a client&lt;/li&gt;
+&lt;li&gt;You add a user group&lt;/li&gt;
+&lt;li&gt;You give this user group access to the client&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Any chatbot or documentation can guide you, but every chatbot I tested starts going in circles with Caddy&#39;s config, as the security module config is not so obvious. So here it is:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+#    debug
+	security {
+		oauth identity provider generic {
+			delay_start 3
+			realm generic
+			driver generic
+			client_id &amp;lt;your client id created in Pocket ID&amp;gt;
+			client_secret &amp;lt;your client secret created in Pocket ID&amp;gt;
+			scopes openid email profile
+
+			base_auth_url https://auth.local.lan
+			metadata_url http://127.0.0.1:1411/.well-known/openid-configuration
+		}
+
+		authentication portal my_portal {
+			enable identity provider generic
+			cookie insecure off
+
+			trust login redirect uri domain exact app.local.lan path prefix /
+
+			transform user {
+				match realm generic
+				action add role authp/user
+			}
+		}
+
+		authorization policy my_policy {
+			set auth url /caddy-security/oauth2/generic
+			allow roles authp/user
+		}
+	}
+}
+
+app.local.lan {
+	tls internal
+
+	@portal path /caddy-security/*
+	route @portal {
+		authenticate with my_portal
+	}
+
+	route {
+		authorize with my_policy
+		root * /var/www/html
+		file_server
+	}
+}
+
+auth.local.lan {
+	tls internal
+	reverse_proxy 127.0.0.1:1411
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Beware, this is for localhost only, so it doesn&#39;t use real SSL certificates, which Caddy can easily install for you.&lt;/p&gt;
+&lt;p&gt;Caddy is really nice:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;It has a validation tool to tell you about the errors in your config.&lt;/li&gt;
+&lt;li&gt;It has a formatting tool to fix the issues.&lt;/li&gt;
+&lt;li&gt;It has a debug mode (uncomment in the beginning) and you can check the logs to troubleshoot any issues.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I guess the main outcome is that everyone needs to be challenged, even your friendly IT colleagues, and pushed to use the modern tech stack, especially if it cuts costs dramatically.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Gaming Review on Linux No One Asked For</title>
+    <link href="https://en.kovchinnikov.info/2026-11-gaming.html" />
+    <updated>2026-11-21T10:20:00Z</updated>
+    <id>https://en.kovchinnikov.info/2026-11-gaming.html</id>
+    <content type="html">&lt;p&gt;Disclaimer: the hardware market is experiencing a price surge. Common sense, statistics, history and economics tell us that crises pass and commodity prices go down, so the recommendation for now is to wait, at least until January.&lt;/p&gt;
+&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;It&#39;s December again, time to play Helldivers 2 with the boys – or so I thought. The reality is that Arrowhead changed the anti-cheat for the game, so although it probably works better on Linux (no official support though), it doesn&#39;t work with cloud gaming anymore, except for Xbox Cloud. What are the options?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A tinkering project with AMD BC-250&lt;/li&gt;
+&lt;li&gt;A gaming PC&lt;/li&gt;
+&lt;li&gt;Surprisingly, a console&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;amd-bc-250&quot;&gt;AMD BC-250&lt;/h2&gt;
+&lt;p&gt;Aside from all the crises, AMD BC-250 costing less than 100 bucks became overhyped after some videos on YouTube, and it&#39;s really a thing: enough power, really cheap, and you can unlock even more cores. So, you&#39;ll need a power supply, a case (which can be 3D-printed, so even more fun here) and fans. Plenty of tinkering, it mostly works, plenty of customization options, well documented. It really surprised me how the Linux gaming community has grown over the years, because to use this very specific hardware you&#39;ll need Linux, and here are the options:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CachyOS, which is Arch-based and optimized best for this hardware.&lt;/li&gt;
+&lt;li&gt;SteamOS, which is also Arch-based&lt;/li&gt;
+&lt;li&gt;Bazzite, which is Fedora-based, but immutable&lt;/li&gt;
+&lt;li&gt;Fedora, which is a major Linux distribution&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can install Steam on all of these distros, and Steam installs games for a particular user, so no difference here.&lt;/p&gt;
+&lt;p&gt;Arch is not my weapon of choice (I&#39;m not a virgin anymore, you know), as well as immutable distributions, so I&#39;d probably stay with Fedora, which I used for years before Debian (Debian sucked then). As Fedora is a normal distribution, you&#39;ll be able to simply install the software (it&#39;s more complicated with immutable distros) and use it like a normal computer for any tasks you want. And what do you want from a gaming PC? Well, you&#39;d probably want to run a local LLM, and there&#39;s a catch here. With AMD, you&#39;d probably want AMD ROCm, which is like Nvidia CUDA and which is not (yet fully) supported here.&lt;/p&gt;
+&lt;h2 id=&quot;gaming-pc&quot;&gt;Gaming PC&lt;/h2&gt;
+&lt;p&gt;Well, I want a local LLM, and I&#39;ll get a gaming PC to run it, as well as games. It&#39;s not that simple:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nvidia CUDA is a great tech, but Nvidia on Linux is the same pain in the butt it always was, because of the closed-source drivers&lt;/li&gt;
+&lt;li&gt;AMD GPU would be an obvious choice, but AMD ROCm is supported by a lot fewer cards than you&#39;d expect, so you need to check carefully before you buy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Why do we discuss LLMs if we started with gaming PCs? Well, we can get more value from LLMs out of the same hardware, which can justify the price. For almost any other software, even video editing (which can also be done in the cloud or with AI in the cloud) can be accomplished now with an integrated video card, which is... an overlooked piece of good news, I guess?&lt;/p&gt;
+&lt;p&gt;So, taking into account the power consumption (which can get up to 1kW or more) of a gaming PC, the question is probably: do I really need one? When I look at all these LEDs, it makes me sad, because I&#39;m far past the age when colourful LEDs could bring joy. So, if you are still with me, the question actually remains: are there any other options? And a console can be the answer.&lt;/p&gt;
+&lt;h2 id=&quot;console&quot;&gt;Console&lt;/h2&gt;
+&lt;p&gt;If you understand the hardware and software just a little bit, you get the main hardship with software performance optimization: with standard software, it&#39;s 1; with the whole software zoo, it&#39;s N. Consoles are pieces of hardware which are well tested, cheap and the software is optimized for them. A side note: this could be the actual reason to make a Steam Machine. The main players are Sony with PlayStation and Microsoft with Xbox (oh, and Valve with Steam Deck and Steam Machine). Xbox is cheaper. To play games over the network, you also need to pay monthly for the service, but you get a bunch of games to play.&lt;/p&gt;
+&lt;p&gt;With my HD2 situation, there&#39;s no cross-progression, so all my achievements stay on my PC account, and there&#39;s no mouse and keyboard, which is depressing. And you need to buy another copy of the game for Xbox. There&#39;s cloud gaming, which technically should work in Chrome on Linux, but you&#39;ll need a controller anyway, because it&#39;s an Xbox in the cloud and it expects to see a controller, as well as a copy of the game.&lt;/p&gt;
+&lt;p&gt;Can you repurpose your game console for anything else? The answer is no with PlayStation and Xbox and yes with Steam Machine, as it&#39;s a normal Linux PC. The price of the Steam Machine is harder to justify though, as it&#39;s the most expensive of all.&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I define progress as something being faster and more accessible (cheaper), so we&#39;re kind of going back and forth here: we have cloud gaming for Linux, but it doesn&#39;t work in my particular case anymore. It&#39;s always a limited number of games, by the way, unless you rent a physical gaming Windows PC. We have Steam Machine, but it&#39;s pricey, like 2x compared to Xbox. We always had AMD and Nvidia options for graphics and benefited as consumers from their competition; now we get technologies for running LLMs locally, but Nvidia with closed Linux drivers and AMD with lacking ROCm support kind of hold us back. The progress of supporting Windows games on Linux is astonishing though, largely thanks to Valve. But it&#39;s always this feeling that gamers are some stupid human beings who will justify any price and any restricting conditions.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Educational Videos Are Still Worth It</title>
+    <link href="https://en.kovchinnikov.info/2026-11-video.html" />
+    <updated>2026-11-20T13:10:00Z</updated>
+    <id>https://en.kovchinnikov.info/2026-11-video.html</id>
+    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;I personally use YouTube largely as an educational resource, and it makes me sad to see some YouTubers abandoning their channels, blaming AI, lower attention spans and structural crises. I&#39;m a fan of educational videos, although it&#39;s better to try and hack it yourself, as well as read the manual. What&#39;s so special about educational videos?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You can find a video that explains the solution the way you like it (or when the author struggles with exactly the same issue you face)&lt;/li&gt;
+&lt;li&gt;It&#39;s about trust: you see the solution actually working, you can see all the steps that lead to it, and you start to believe that you can do it too&lt;/li&gt;
+&lt;li&gt;It&#39;s asynchronous: you can find the time that suits you best; it may be 2am, when you can watch it, pause or watch again some moments that are important&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I&#39;m working in a B2B/IT context, and it&#39;s specific for a number of reasons. It&#39;s restrictive in terms of software, format or the goals the videos should achieve. At the same time, I find a space for creativity inside these restrictive boundaries, and I&#39;d like to tell you my way of solving this problem: recording a video that actually helps someone.&lt;/p&gt;
+&lt;h2 id=&quot;preparation&quot;&gt;Preparation&lt;/h2&gt;
+&lt;p&gt;Well, you can start recording right away, but you&#39;ll learn quickly that preparation is key. In an IT context, the programs and settings should work, so there&#39;s no room for errors or even warnings. The last time I was doing it, it took me 10 tries to set up the data in the ERP system, figure out the right sequence of actions and get comfortable with this logic myself. But I don&#39;t rely on my memory alone!&lt;/p&gt;
+&lt;p&gt;So the next step is to write down the script. You can treat it as a guideline, feeling free to deviate from it, or even use a mind map just for the structure, but I prefer the full text, as it reveals inconsistencies early on. The next step is to read the script out loud, to make sure it sounds good and you are comfortable with it. You&#39;d probably want to read it a few more times to remember the scenario.&lt;/p&gt;
+&lt;p&gt;There are a few life hacks to calm down if you feel too much pressure or anxiety: meditate and breathe, or close your eyes and play the whole recording session in your head beforehand. I allow my anxiety to kick in this time, so the situation will be familiar to the brain, and it will think, &amp;quot;Oh, I&#39;ve been there, so nothing happened,&amp;quot; and it will calm down.&lt;/p&gt;
+&lt;h2 id=&quot;recording&quot;&gt;Recording&lt;/h2&gt;
+&lt;p&gt;I prefer to split the recording sessions into 2-3 minute chunks, to glue them together afterwards (which is a simple operation for the computer, by the way), and you&#39;ll be able to go relatively fast through one chunk, then take a break. Some important points of recording operations with software:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Try to start exactly where you finished the last chunk; I try even not to move the mouse.&lt;/li&gt;
+&lt;li&gt;Don&#39;t split the logical operations that should finish successfully from beginning to end; it will show up and you&#39;ll just confuse yourself.&lt;/li&gt;
+&lt;li&gt;You can record several times, but in some cases you&#39;ll need to change the data or start from the beginning (regrettably): for instance, your viewers need to see that the production orders are derived from the production plan you worked with before.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The tech side of the effort is the software. If you have an opportunity to install OBS Studio, just go for it. If you are in a restricted Windows environment, surprisingly, you can use the infamous Snipping Tool to record the screencast and the audio, and it works. If you need a video from your camera in the corner, go for OBS Studio. If you prefer to record audio afterwards, I&#39;d not recommend that. It always seemed strange, and you&#39;ll need a video editor (one more program).&lt;/p&gt;
+&lt;h2 id=&quot;making-a-product&quot;&gt;Making a product&lt;/h2&gt;
+&lt;p&gt;To glue the things together, you&#39;d need ffmpeg, which is a command-line utility available for Mac, Linux and Windows. I used it in WSL for obvious reasons; it works just fine.&lt;/p&gt;
+&lt;p&gt;The first thing to do is to glue the files together, and ffmpeg does it without re-encoding if the encodings of all the files match. As input, you feed ffmpeg a list of files in a particular order (Captain Obvious here), and you get a single file.&lt;/p&gt;
+&lt;p&gt;The second step is to compress the video (with ffmpeg as well); I&#39;d just use a chatbot to get the proper command-line parameters. In my case, it compressed a 1.2 GB video to 42 MB, which made it a lot easier to distribute without any quality loss! Again, compressing your video with the right parameters is respecting your viewers. And you never know how many views you&#39;ll get!&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Nothing new here: preparation is key. And having a plan like &amp;quot;How am I going to edit the video?&amp;quot; helps with the technical issues. I did some video editing; the issue here is that it&#39;s a time-consuming and resource-consuming process. Some people enjoy it; you can apply effects and transitions, but it takes about 6x the recording time. I just have some stuff to do. :) If a lack of time or video-editing skills prevents you from sharing information with the world or your colleagues, now you have a recipe, I hope.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>We Need More Web Terminals</title>
     <link href="https://en.kovchinnikov.info/2026-10-web.html" />
@@ -254,173 +422,6 @@ Computer ---(Optical)--+
 &lt;li&gt;Front derailleurs are generally not recommended by some people because they tend not to work well&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Well, I&#39;m quite happy and not thinking about upgrades for now. That&#39;s the whole point – to ride rather than look for new stuff to buy. If I had a bigger budget, I would go for an aluminum bike from Rose. Alternatively, Canyon offers a surprisingly affordable carbon bike, but I&#39;d need to spend at least €80 on an Orbea bike rack. Those are good options, though, and I&#39;m sure a lot of people are happy with them. The point is that all the tech is essentially the same; geometry and components do make a difference, but not for my use case. The frame fits well, by the way, which is really important, although the riding position feels more relaxed and neutral than aggressive. It&#39;s a road bike, at the end of the day, not a race bike.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Solving It On the Front-end</title>
-    <link href="https://en.kovchinnikov.info/2026-10-frontend.html" />
-    <updated>2026-10-01T21:40:00Z</updated>
-    <id>https://en.kovchinnikov.info/2026-10-frontend.html</id>
-    <content type="html">&lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
-&lt;p&gt;As an input we have a website with some PDFs (documentation) for various modules and versions of some software in German and in English. We actually don&#39;t know:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;If all the docs exist for the latest version&lt;/li&gt;
-&lt;li&gt;If the docs are duplicated in the different folders using different filenames&lt;/li&gt;
-&lt;li&gt;If the docs are available only in one language or in both&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;As I&#39;ll be the one using these docs, I thought of an HTML page with an integrated search where there&#39;s a table with the following fields:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Doc type&lt;/li&gt;
-&lt;li&gt;Doc name (the actual title, not the filename)&lt;/li&gt;
-&lt;li&gt;Link to the English version&lt;/li&gt;
-&lt;li&gt;Link to the German version&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;That sounds reasonable, right? Let&#39;s get into it then.&lt;/p&gt;
-&lt;h2 id=&quot;the-tools&quot;&gt;The tools&lt;/h2&gt;
-&lt;p&gt;The idea is to export all the information into Excel and do some matching there, then identify the duplicates, delete them, and finally create the resulting page.&lt;/p&gt;
-&lt;p&gt;The actual process involved choosing the tools along the way, but at the end I&#39;ve got this:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://chromewebstore.google.com/detail/pdf-downloader/oagehclebbbknfohkjhfbeiljpkpnjkg?hl=en-US&amp;amp;utm_source=ext_sidebar&quot;&gt;Chrome extension&lt;/a&gt; to scan the page and download all PDFs&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://gridjs.io/&quot;&gt;Grid.js&lt;/a&gt; for the search&lt;/li&gt;
-&lt;li&gt;Pico CSS, because I like the nice and accessible look (it&#39;s used on this website as well)&lt;/li&gt;
-&lt;li&gt;Some custom JavaScript to make Pico CSS styles work for Grid.js&lt;/li&gt;
-&lt;li&gt;Some custom JavaScript to output the link to the file in the EN and DE columns&lt;/li&gt;
-&lt;li&gt;Some CLI commands like &lt;code&gt;ls&lt;/code&gt; and &lt;code&gt;find&lt;/code&gt; to create the list of the files&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;pdfinfo&lt;/code&gt; to extract the &amp;quot;Title&amp;quot; metadata from PDFs, if available (combined with some bash scripting)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;xargs&lt;/code&gt; with &lt;code&gt;rm&lt;/code&gt; to remove the files from the list&lt;/li&gt;
-&lt;li&gt;A few &lt;code&gt;sed&lt;/code&gt; commands to clean the CSV file saved in Excel from some Windows-specific symbols&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;csv2list&lt;/code&gt;, a custom Python script to convert the result in Excel into the &amp;quot;list of lists&amp;quot; format required by Grid.js&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;list2csv&lt;/code&gt;, a custom Python script for conversion backwards&lt;/li&gt;
-&lt;li&gt;Excel for basic VLOOKUP operations and manual fixes&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;the-sequence&quot;&gt;The sequence&lt;/h2&gt;
-&lt;p&gt;I had to do some back-and-forth movements, so it took me about a day to make 300 lines from 600 files, but for the future I would do something like this:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Download all the files&lt;/li&gt;
-&lt;li&gt;Create a CSV with filename + folder and name (title) columns&lt;/li&gt;
-&lt;li&gt;Match the files (duplicates, newer version, EN-DE) in Excel&lt;/li&gt;
-&lt;li&gt;Create in Excel the list of files to remove and save to txt&lt;/li&gt;
-&lt;li&gt;Remove the files with &lt;code&gt;xargs&lt;/code&gt; + txt&lt;/li&gt;
-&lt;li&gt;Save the table from Excel to CSV&lt;/li&gt;
-&lt;li&gt;Convert CSV to list of lists&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;It works quite well, and combined with fast Chrome rendering and an ability to open PDFs directly in the browser, it looks like a solid solution.&lt;/p&gt;
-&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
-&lt;p&gt;I&#39;m not a programmer, so I asked an AI chatbot to do the heavy lifting with the programming. You still need to understand the Python or JS code it produces, and bash scripts are particularly dangerous. Looking back, I&#39;d just move slower and more systematically to eliminate manual work and associated mistakes as much as possible. Well, you can&#39;t know everything in advance. I thought it was a 2-hour task, but I&#39;m still happy with the result every time I use it.&lt;/p&gt;
-&lt;p&gt;The issue with the static HTML page is that it can work well only in a few cases:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;From a network folder, accessible to everyone, and when people are disciplined enough to open &lt;code&gt;index.html&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;When an HTTP server delivers it, which requires some setup&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For example, to integrate it into SharePoint you would need to create a component and install this component. Which is kind of sad, because I can&#39;t see how a static page with some JS can be dangerous.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>.net 10 Could Hit the Sweet Spot</title>
-    <link href="https://en.kovchinnikov.info/2026-09-dotnet.html" />
-    <updated>2026-09-30T19:40:00Z</updated>
-    <id>https://en.kovchinnikov.info/2026-09-dotnet.html</id>
-    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
-&lt;p&gt;A quick recap of previous &lt;a href=&quot;https://en.kovchinnikov.info/tags/dev/&quot;&gt;episodes&lt;/a&gt;:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;I tried to reflect on programming language development history and the reasoning behind it.&lt;/li&gt;
-&lt;li&gt;I tried to write some real-world apps using JavaScript and Go.&lt;/li&gt;
-&lt;li&gt;I still didn&#39;t find the unicorn and felt bad about wanting to write more server-side JavaScript.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;What fit me well and allowed me to write the most logic per hour was actually Django, because of some embedded stuff like roles, an ORM, security features, user management, and not overloading me with technical stuff. But my requirements emerged, and now I want the following as well:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Components on the server-side like JSX&lt;/li&gt;
-&lt;li&gt;CLI tools for standard development tasks&lt;/li&gt;
-&lt;li&gt;Cross-platform with desktop and mobile&lt;/li&gt;
-&lt;li&gt;Consistent language syntax (not like &amp;quot;===&amp;quot; in JS)&lt;/li&gt;
-&lt;li&gt;Probably still object-oriented and compiled&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Of course, it should be open-source and permissive to write any apps I want – that&#39;s just non-negotiable, but something worth checking when you are dealing with Microsoft.&lt;/p&gt;
-&lt;p&gt;Go is great – it really pushed me in terms of thinking, but if you take a &amp;quot;machine-human&amp;quot; scale, it&#39;s somewhere on the machine part. These are not roadblocks, it just made me realize one more time what I&#39;m capable of:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Expressing human logic with Go concepts can be hard, and it&#39;s more on the low-level and do-it-yourself end for technical stuff.&lt;/li&gt;
-&lt;li&gt;Go pushes towards a SQL-first approach and away from ORMs, although real-life apps like &lt;a href=&quot;https://en.kovchinnikov.info/2026-08-gitea.html&quot;&gt;Gitea&lt;/a&gt; do use ORMs to be able to support different DBMSs.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;And with all that said, I&#39;m going to try another ecosystem that introduced a few exciting changes recently: .net 10.&lt;/p&gt;
-&lt;h2 id=&quot;net-10-perks&quot;&gt;.net 10 perks&lt;/h2&gt;
-&lt;p&gt;Actually, .net 10 has got everything from the above, specifically:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Components with Razor pages&lt;/li&gt;
-&lt;li&gt;An ORM, Entity Framework Core, supporting a really wide range of DBMSs&lt;/li&gt;
-&lt;li&gt;An open-source web server is there as well&lt;/li&gt;
-&lt;li&gt;C# fits all the requirements for a server-side compiled language with garbage collection, AOT, and co.&lt;/li&gt;
-&lt;li&gt;All the aforementioned &amp;quot;batteries-included&amp;quot; features like role management&lt;/li&gt;
-&lt;li&gt;The courses and documentation are all there&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;And there&#39;s &lt;a href=&quot;https://avaloniaui.net/&quot;&gt;Avalonia&lt;/a&gt; for a unified, modern UI across Linux, Windows, and macOS desktop as well as mobile (iOS and Android).&lt;/p&gt;
-&lt;p&gt;At the moment, I tried to cross-compile a simple desktop app from WSL to Windows, and it worked. I compiled one for Linux, and it worked as well. The drawbacks? Sure:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;A minimal desktop app was about 200 MB, because .net 10 was included and it&#39;s naive to expect that it should be pre-installed; it&#39;s the opposite of Go&#39;s approach, thus requiring packaging for installation and dependency management, which is different on every platform and Linux distribution. 120 MB without .net, by the way, and I could probably trim that.&lt;/li&gt;
-&lt;li&gt;The language is huge; it would probably take a lot of time to comprehend all of its features and be able to use them.&lt;/li&gt;
-&lt;li&gt;The legacy of being tied to the Microsoft ecosystem, which can still be true for some add-ons; and... Microsoft behaving inconsistently.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
-&lt;p&gt;I always looked at C# as Java for Microsoft fanboys, but technically it was an effort to make Java normal. The surprise for me is that in .net 10, all the critical components are open-source and cross-platform. Even Microsoft itself hasn&#39;t produced apps leveraging all the features of .net 10. Teams could do that, but it has a legacy codebase and is a web-first app, so it makes sense for them to continue struggling with React. Let&#39;s review one reason pro and one reason contra.&lt;/p&gt;
-&lt;p&gt;The reason contra is that I&#39;ve heard a lot of stories of rewriting Java apps in Go, but I don&#39;t know any examples of rewriting a Java app in C# and .net. It&#39;s especially strange because C# is similar to Java, while Go is not. What I think is that .net got this critical package of features in .net 10 quite recently, while Google and Go have been consistent for more than 10 years. It&#39;s about trust, which is a weak side of Microsoft. Again, what forced Microsoft to make the right choices finally? Maybe they feel they are losing ground, and locking users into their ecosystem is not enough anymore. It&#39;s like companies making their tech stack open-source before filing for bankruptcy. And the next question is: will Microsoft remain consistent with open-source components if .net gains traction? With the reputation Microsoft built (or destroyed) over the years, it&#39;s a risky business to invest in C#. By the way: who is doing it? There are quite a few well-known examples built on this stack, although it&#39;s widely used (as well as Visual Basic). Can you build Docker or Twitch on a .net stack (for those who don&#39;t know, these are Go apps)?&lt;/p&gt;
-&lt;p&gt;If you want to enter B2B apps with your product, you&#39;ll need to connect with very specific Microsoft stuff like domains and policies, and as business is conservative, it will not jump off this stack soon. It&#39;s kind of painful with any other tech stack, so it&#39;s a nice-to-have option.&lt;/p&gt;
-&lt;p&gt;Even if .net occupies the place for custom apps for just one company, it was a viable option before for companies using the Microsoft stack, and the good news is that now it&#39;s a viable option even if you don&#39;t want that Microsoft dependency.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>A Process Map In ASCII Is a Thing</title>
-    <link href="https://en.kovchinnikov.info/2026-09-ascii.html" />
-    <updated>2026-09-26T22:30:00Z</updated>
-    <id>https://en.kovchinnikov.info/2026-09-ascii.html</id>
-    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
-&lt;p&gt;It started in 2003, I was implementing Axapta or Microsoft Dynamics AX a bit later, and we were modeling the processes in eEPC notation using ARIS Toolset, which was expensive, about 10k USD per user. And it was great for managing changes and documenting the logic, the document flow, although I had some suspicions when we printed the maps on A0 (otherwise they were unreadable) or had 5 levels of decomposition. Could it be simpler – that was the question, but it did the job. About 5 years later I moved on to management consulting, these guys were more cost-aware, so we used eEPC in ARIS Express or flow charts in MS Visio with different notations and yes, in any case it was simpler and still got the job done. In my last effort to model something I chose BPMN 2.0 and Camunda Modeler, because it was free and it was real process modeling with a strict and compact notation.&lt;/p&gt;
-&lt;p&gt;In Germany companies try to comply with ISO 9001, which says that business processes should be documented, and the simplest form of process flow is used with almost no branches, and it somewhat works for small companies, although I never saw anyone actually using it as a reference. And two times we started ERP implementation it turned out that these process maps hide some important details, to say the least.&lt;/p&gt;
-&lt;p&gt;Anyway, I had a practical task to write an instruction for us and for a service provider, how we work together. I was discussing some options with an AI chatbot, and the chatbot drew what are called ASCII- or plain-text process maps. Actually it was not the first time, but that time it hit me: I could use it in the document. And yes, I use it a lot myself, I also used it to explain what is going on in conversations with different parties involved and my point is that no one asked a single question – it was that level of simplicity.&lt;/p&gt;
-&lt;h2 id=&quot;the-map&quot;&gt;The map&lt;/h2&gt;
-&lt;p&gt;Just to illustrate what I mean let&#39;s take a look at an example for a &amp;quot;Purchase-to-Pay&amp;quot; process:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Requisition Creation [Requester] (Purchase Requisition)
-  |
-PR Approval [Approver] (Approved Purchase Requisition)
-  |
-PO Generation [Procurement Specialist] (Purchase Order)
-  |
-PO Issued to Vendor [Procurement Specialist] (Purchase Order)
-  |
-Goods / Service Receipt [Warehouse] (Goods Receipt Note)
-  +-&amp;gt; Issues Found [Warehouse] (Return / Dispute Note)
-  +-&amp;gt; Accepted
-        |
-      Invoice Receipt &amp;amp; Matching [Accounting] (Supplier Invoice)
-        +-&amp;gt; Mismatch / Hold [Buyer] (Exception Report)
-        +-&amp;gt; Verified (3-Way Match Record)
-              |
-            Payment Processing [Finance] (Payment Advice)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;TL;DR: use the following with any chatbot along with the description to get a similar result:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Use [Roles], (Docs), and +-&amp;gt; for branches
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;the-good&quot;&gt;The good&lt;/h2&gt;
-&lt;p&gt;I&#39;d name one critical advantage, the accessibility, but it&#39;s not that simple, so let&#39;s take a look at different perspectives:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;It&#39;s minimal in terms of artificial symbols or colors, so it&#39;s easy to read&lt;/li&gt;
-&lt;li&gt;You can use it anywhere for explanation if you can use a monospace font: any document, email or comment&lt;/li&gt;
-&lt;li&gt;There are no graphics, and when graphics are involved, especially something fancy, people are just tired of it and/or suspect BS&lt;/li&gt;
-&lt;li&gt;Normal text search just works&lt;/li&gt;
-&lt;li&gt;You can make small changes without any special tools, just editing the text&lt;/li&gt;
-&lt;li&gt;You can make significant changes with a chatbot relatively easily just by explaining what you want&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Now let&#39;s take a look at the drawbacks.&lt;/p&gt;
-&lt;h2 id=&quot;the-bad&quot;&gt;The bad&lt;/h2&gt;
-&lt;p&gt;I learned the hard way why the roles, interfaces and documents are important – in fact, a document/information flow can be way more important than functions and branching logic. Having this discipline in mind using ASCII-based process maps is easy, but this may not be the case:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;There are no conditions for branching and no rules to enforce them&lt;/li&gt;
-&lt;li&gt;Documents are not mandatory and are easy to forget about&lt;/li&gt;
-&lt;li&gt;It&#39;s the same for the roles, and the &amp;quot;swim lanes&amp;quot; are non-existent&lt;/li&gt;
-&lt;li&gt;There is no decomposition and I&#39;m not sure whether this approach is scalable at all&lt;/li&gt;
-&lt;li&gt;It&#39;s hard to follow if it&#39;s more than one process and/or one page long&lt;/li&gt;
-&lt;li&gt;There are no statuses for the documents, so you should just remember not to forget them&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;There&#39;s a surprisingly wide range of online or offline tools to make ASCII process maps, although I would probably write something different. I liked the freedom from any tool I got. It&#39;s the same as any text-based format, you can edit it as long as you have a text editor. Some text editors, like Neovim, can make editing these process maps especially convenient, but we will not dig into this rabbit hole. If you are able to set a task for an AI chatbot, it can be very fast as well, and I personally have no problem with showing this process map to a company management at any level. But yes, these maps are not fancy.&lt;/p&gt;
 </content>
   </entry>
 </feed>

@@ -347,12 +347,27 @@
 	</url>
 	
 	<url>
-		<loc>https://en.kovchinnikov.info/feed/feed.xml</loc>
+		<loc>https://en.kovchinnikov.info/2026-10-web.html</loc>
 		<lastmod>2026-10-30</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://en.kovchinnikov.info/2026-10-web.html</loc>
-		<lastmod>2026-10-30</lastmod>
+		<loc>https://en.kovchinnikov.info/2026-11-video.html</loc>
+		<lastmod>2026-11-20</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://en.kovchinnikov.info/2026-11-gaming.html</loc>
+		<lastmod>2026-11-21</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://en.kovchinnikov.info/feed/feed.xml</loc>
+		<lastmod>2026-11-21</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://en.kovchinnikov.info/2026-11-static.html</loc>
+		<lastmod>2026-11-21</lastmod>
 	</url>
 </urlset>

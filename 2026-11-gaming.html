@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Gaming Review on Linux No One Asked For</title>
+		<meta name="description" content="I just wanted to play HD2 once again">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.1.6">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i></a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="gaming-review-on-linux-no-one-asked-for">Gaming Review on Linux No One Asked For</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2026-11-21">21 November 2026</time></li>
+	<li class="post-tag"><a href="/tags/linux/" class="post-tag">#linux</a>,</li>
+	<li class="post-tag"><a href="/tags/opensource/" class="post-tag">#opensource</a></li>
+</ul>
+<p>Disclaimer: the hardware market is experiencing a price surge. Common sense, statistics, history and economics tell us that crises pass and commodity prices go down, so the recommendation for now is to wait, at least until January.</p></div>
+<h2 id="intro">Intro</h2>
+<p>It's December again, time to play Helldivers 2 with the boys – or so I thought. The reality is that Arrowhead changed the anti-cheat for the game, so although it probably works better on Linux (no official support though), it doesn't work with cloud gaming anymore, except for Xbox Cloud. What are the options?</p>
+<ul>
+<li>A tinkering project with AMD BC-250</li>
+<li>A gaming PC</li>
+<li>Surprisingly, a console</li>
+</ul>
+<h2 id="amd-bc-250">AMD BC-250</h2>
+<p>Aside from all the crises, AMD BC-250 costing less than 100 bucks became overhyped after some videos on YouTube, and it's really a thing: enough power, really cheap, and you can unlock even more cores. So, you'll need a power supply, a case (which can be 3D-printed, so even more fun here) and fans. Plenty of tinkering, it mostly works, plenty of customization options, well documented. It really surprised me how the Linux gaming community has grown over the years, because to use this very specific hardware you'll need Linux, and here are the options:</p>
+<ul>
+<li>CachyOS, which is Arch-based and optimized best for this hardware.</li>
+<li>SteamOS, which is also Arch-based</li>
+<li>Bazzite, which is Fedora-based, but immutable</li>
+<li>Fedora, which is a major Linux distribution</li>
+</ul>
+<p>You can install Steam on all of these distros, and Steam installs games for a particular user, so no difference here.</p>
+<p>Arch is not my weapon of choice (I'm not a virgin anymore, you know), as well as immutable distributions, so I'd probably stay with Fedora, which I used for years before Debian (Debian sucked then). As Fedora is a normal distribution, you'll be able to simply install the software (it's more complicated with immutable distros) and use it like a normal computer for any tasks you want. And what do you want from a gaming PC? Well, you'd probably want to run a local LLM, and there's a catch here. With AMD, you'd probably want AMD ROCm, which is like Nvidia CUDA and which is not (yet fully) supported here.</p>
+<h2 id="gaming-pc">Gaming PC</h2>
+<p>Well, I want a local LLM, and I'll get a gaming PC to run it, as well as games. It's not that simple:</p>
+<ul>
+<li>Nvidia CUDA is a great tech, but Nvidia on Linux is the same pain in the butt it always was, because of the closed-source drivers</li>
+<li>AMD GPU would be an obvious choice, but AMD ROCm is supported by a lot fewer cards than you'd expect, so you need to check carefully before you buy</li>
+</ul>
+<p>Why do we discuss LLMs if we started with gaming PCs? Well, we can get more value from LLMs out of the same hardware, which can justify the price. For almost any other software, even video editing (which can also be done in the cloud or with AI in the cloud) can be accomplished now with an integrated video card, which is... an overlooked piece of good news, I guess?</p>
+<p>So, taking into account the power consumption (which can get up to 1kW or more) of a gaming PC, the question is probably: do I really need one? When I look at all these LEDs, it makes me sad, because I'm far past the age when colourful LEDs could bring joy. So, if you are still with me, the question actually remains: are there any other options? And a console can be the answer.</p>
+<h2 id="console">Console</h2>
+<p>If you understand the hardware and software just a little bit, you get the main hardship with software performance optimization: with standard software, it's 1; with the whole software zoo, it's N. Consoles are pieces of hardware which are well tested, cheap and the software is optimized for them. A side note: this could be the actual reason to make a Steam Machine. The main players are Sony with PlayStation and Microsoft with Xbox (oh, and Valve with Steam Deck and Steam Machine). Xbox is cheaper. To play games over the network, you also need to pay monthly for the service, but you get a bunch of games to play.</p>
+<p>With my HD2 situation, there's no cross-progression, so all my achievements stay on my PC account, and there's no mouse and keyboard, which is depressing. And you need to buy another copy of the game for Xbox. There's cloud gaming, which technically should work in Chrome on Linux, but you'll need a controller anyway, because it's an Xbox in the cloud and it expects to see a controller, as well as a copy of the game.</p>
+<p>Can you repurpose your game console for anything else? The answer is no with PlayStation and Xbox and yes with Steam Machine, as it's a normal Linux PC. The price of the Steam Machine is harder to justify though, as it's the most expensive of all.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I define progress as something being faster and more accessible (cheaper), so we're kind of going back and forth here: we have cloud gaming for Linux, but it doesn't work in my particular case anymore. It's always a limited number of games, by the way, unless you rent a physical gaming Windows PC. We have Steam Machine, but it's pricey, like 2x compared to Xbox. We always had AMD and Nvidia options for graphics and benefited as consumers from their competition; now we get technologies for running LLMs locally, but Nvidia with closed Linux drivers and AMD with lacking ROCm support kind of hold us back. The progress of supporting Windows games on Linux is astonishing though, largely thanks to Valve. But it's always this feeling that gamers are some stupid human beings who will justify any price and any restricting conditions.</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2026-11-video.html">Educational Videos Are Still Worth It</a></li><li class="links-nextprev-next">Next <i class="fa-solid fa-arrow-right"></i><br><a href="/2026-11-static.html">A Protected Static Website with Caddy and Pocket ID</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.1.6</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2026-11-gaming.html` was built on 2026-11-21T11:30:24.809Z -->
+	</body></html>

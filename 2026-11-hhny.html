@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script type="module">
+		import {loadGA, acceptCookies, declineCookies} from "/dist/KxuTUM8d2Q.js";
+		window.addEventListener('DOMContentLoaded', () => {
+			const consent = localStorage.getItem('ga-consent');
+			if (consent === 'true') loadGA();
+				else if (consent === null) document.getElementById('cookie-banner').style.display = 'block';
+		});
+		window.acceptCookies = acceptCookies;
+		window.declineCookies = declineCookies;
+		</script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Happy Hacking New Year, 2027 Edition</title>
+		<meta name="description" content="Some more ideas for personal dev projects">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="The Real Changes">
+		<meta name="generator" content="Eleventy v3.1.6">
+		<link rel="icon" type="image/x-icon" href="img/trc.ico">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+		<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/ee60bac4ec.js" crossorigin="anonymous"></script>
+		<script src="/pagefind/pagefind-ui.js"></script>
+		<link rel="stylesheet" href="/dist/K_oz6xhRcG.css">
+		<script defer="" type="module" src="/dist/KxuTUM8d2Q.js"></script>
+	</head>
+	<body>
+		<div id="cookie-banner">
+			This site uses cookies to analyze traffic. Do you accept?
+			<button onclick="acceptCookies()">Accept</button>
+			<button onclick="declineCookies()">Decline</button>
+		</div>
+		<header class="container">
+			<div id="search"></div>
+			<nav>
+				<ul>
+					<li><a href="/"><img loading="lazy" decoding="async" src="/img/Aq0CVtfyfu-100.png" alt="TRC" width="100" height="100"></a> <strong><a href="/">The Real Changes</a></strong></li>
+				</ul>
+				<ul class="nav-custom">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Archive</a></li>
+					<li><a href="/tags/">Tags</a></li>
+					<li>| </li>
+					<li><a href="https://www.linkedin.com/in/konstantinovchinnikov/"><i class="fa-brands fa-linkedin"></i></a></li>
+					<li><a href="https://github.com/ikostas/"><i class="fa-brands fa-github"></i></a></li>
+					<li><a href="https://www.youtube.com/@TRC-t6p"><i class="fa-brands fa-youtube"></i></a></li>
+					<li><a href="https://twitter.com/Konstan21511383"><i class="fa-brands fa-x-twitter"></i></a></li>
+					<li><a href="/feed/feed.xml"><i class="fa-solid fa-square-rss"></i></a></li>
+					<li>| </li>
+					<li><a href="#" color="black" id="theme_switcher"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<heading-anchors>
+				<div data-pagefind-body="">
+<h1 id="happy-hacking-new-year-2027-edition">Happy Hacking New Year, 2027 Edition</h1>
+<ul class="post-metadata">
+	<li class="post-metadata-li"><time datetime="2026-11-24">24 November 2026</time></li>
+	<li class="post-tag"><a href="/tags/linux/" class="post-tag">#linux</a>,</li>
+	<li class="post-tag"><a href="/tags/productivity/" class="post-tag">#productivity</a>,</li>
+	<li class="post-tag"><a href="/tags/dev/" class="post-tag">#dev</a></li>
+</ul>
+<h2 id="inspiration">Inspiration</h2>
+<p>Once I was just looking for something on my computer and saw this:</p></div>
+<p><picture><source type="image/avif" srcset="/img/EWJxRhuwpf-941.avif 941w"><source type="image/webp" srcset="/img/EWJxRhuwpf-941.webp 941w"><img loading="lazy" decoding="async" src="/img/EWJxRhuwpf-941.png" alt="TeXdoctk" width="941" height="489"></picture></p>
+<p>It's a documentation browser, and it looks outdated, because it's written in Perl and old Tk, but it accomplishes a lot:</p>
+<ul>
+<li>It can open documentation in pdf, dvi, ps, txt and html formats</li>
+<li>It has a search</li>
+<li>It can print</li>
+<li>It has games!</li>
+<li>It has Settings and About sections</li>
+</ul>
+<p>The authors were probably concerned about simplicity, size, speed and some other stuff which modern developers do not remember how to spell. And I thought: it's a perfect candidate to do something, as the content (still useful, by the way) is there. Maybe someone even wrote something more modern, but it will not stop us!</p>
+<h2 id="the-ways">The ways</h2>
+<p>According to what I've learned and bearing portability in mind, there are the following paths to improve the user experience and worsen everything else, he-he-he:</p>
+<ul>
+<li>Zenity, if you prefer pure shell scripting – and it's probably a good path here, because you're going to call external programs a lot</li>
+<li>Python + Tk, if you prefer Python (which is not a bad idea per se, but do not forget the linter)</li>
+<li><a href="2026-01-desktopapp.html">Go + Tk</a>, which is the closest to the original idea you can get and even one step further (as Go is a lot better than Perl)</li>
+<li><a href="2026-10-frontend.html">An HTML page with a search</a> or a number of HTML pages, which you'll probably want to generate programmatically</li>
+<li><a href="2026-09-dotnet.html">.net with avalonia</a>, just don't think about the app size so much</li>
+<li>A web app would probably be overkill, but nevertheless: a web app</li>
+<li>And, new in our list: a local LLM with a vector database to ask questions about the docs and get the answers</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Programming by hand and not generating code seems counter-intuitive, but I'd argue that it's still one of the most satisfying hobbies, especially when you do understand what each line of code and each function does and why it's written this way. That doesn't mean you can't ask for clarifications, examples, directions, but don't rob yourself of pure joy, creating something new and useful, which works just like you designed it.</p>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><i class="fa-solid fa-arrow-left"></i> Previous<br> <a href="/2026-11-harder.html">Life Is Harder, Make No Mistake</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+		<footer>
+			<p>Built with <a href="https://www.11ty.dev/">Eleventy v3.1.6</a>, <a href="https://pagefind.app/">Pagefind</a>, <a href="https://picocss.com/">PicoCSS</a> and <a href="https://fontawesome.com/">Font Awesome</a></p>
+		</footer>
+		<!-- This page `/2026-11-hhny.html` was built on 2026-11-24T19:30:16.880Z -->
+	</body></html>
